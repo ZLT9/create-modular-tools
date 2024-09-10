@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_pickaxe"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "create_modular_tools:iron_pickaxe_head"
+    }
+  ]
+}

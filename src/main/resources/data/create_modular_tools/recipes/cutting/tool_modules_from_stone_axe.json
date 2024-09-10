@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:stone_axe"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "create_modular_tools:stone_axe_head"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.zlt.create_modular_tools.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AllFanProcessingTypesMixin",
+    "AnvilMenuMixin",
+    "DiggerEnchantmentCategoryMixin",
+    "EnchantmentHelperMixin",
+    "FillingBySpoutMixin",
+    "GenericItemEmptyingMixin",
+    "GrindstoneMenuMixin",
+    "ItemEntityMixin",
+    "ItemStackMixin",
+    "LiquidBlockMixin",
+    "MechanicalPressBlockEntityMixin",
+    "MobMixin",
+    "PlayerMixin",
+    "SawBlockEntityMixin",
+    "WeaponEnchantmentCategoryMixin"
+  ],
+  "client": [
+    "client.LevelRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

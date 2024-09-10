@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:netherite_hoe_head"
+    }
+  ],
+  "results": [
+    {
+      "amount": 18000,
+      "fluid": "create_modular_tools:molten_netherite"
+    }
+  ]
+}

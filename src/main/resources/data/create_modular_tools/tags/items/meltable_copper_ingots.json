@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#c:copper_ingots",
+    "#c:copper_plates",
+    "#c:raw_copper_ores",
+    "create:crushed_raw_copper"
+  ]
+}

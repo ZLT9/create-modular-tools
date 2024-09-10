@@ -1,0 +1,20 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_shovel"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "create_modular_tools:wooden_tool_grip"
+    },
+    {
+      "item": "create_modular_tools:iron_shovel_head"
+    }
+  ]
+}

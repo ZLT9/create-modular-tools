@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_pickaxe"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "create_modular_tools:netherite_pickaxe_head"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "for_free": {
+      "conditions": {},
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "create_modular_tools:textures/block/sand_mold_bottom.png",
+    "description": {
+      "translate": "advancements.create_modular_tools.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "create_modular_tools:modular_pickaxe",
+      "nbt": "{Damage:0,ToolModules:{PickaxeHead:\"create_modular_tools:pickaxe_head/brass\",ToolGrip:\"create_modular_tools:tool_grip/copper\",ToolHandle:\"create_modular_tools:tool_handle/zinc\"}}"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.create_modular_tools.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "for_free"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

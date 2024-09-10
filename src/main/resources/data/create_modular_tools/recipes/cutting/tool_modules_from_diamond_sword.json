@@ -1,0 +1,23 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_sword"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "create_modular_tools:diamond_sword_pommel"
+    },
+    {
+      "item": "create_modular_tools:diamond_sword_guard"
+    },
+    {
+      "item": "create_modular_tools:diamond_sword_blade"
+    }
+  ]
+}

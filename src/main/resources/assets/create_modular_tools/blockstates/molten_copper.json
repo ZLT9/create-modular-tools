@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "create_modular_tools:block/molten_copper"
+    }
+  }
+}

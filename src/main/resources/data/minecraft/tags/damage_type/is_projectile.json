@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:passive_boomerang",
+    "create_modular_tools:active_boomerang"
+  ]
+}

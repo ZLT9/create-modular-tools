@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:stone_axe_head"
+    }
+  ],
+  "results": [
+    {
+      "amount": 27000,
+      "fluid": "minecraft:lava"
+    }
+  ]
+}

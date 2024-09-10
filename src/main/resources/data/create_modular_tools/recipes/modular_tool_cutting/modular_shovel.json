@@ -1,0 +1,14 @@
+{
+  "type": "create_modular_tools:modular_tool_cutting",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:modular_shovel"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "item": "create_modular_tools:modular_shovel"
+    }
+  ]
+}

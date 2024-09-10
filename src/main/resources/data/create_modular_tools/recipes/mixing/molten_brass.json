@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "amount": 9000,
+      "fluid": "create_modular_tools:molten_zinc"
+    },
+    {
+      "amount": 9000,
+      "fluid": "create_modular_tools:molten_copper"
+    }
+  ],
+  "results": [
+    {
+      "amount": 36000,
+      "fluid": "create_modular_tools:molten_brass"
+    }
+  ]
+}

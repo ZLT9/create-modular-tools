@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:stone_sword_guard"
+    }
+  ],
+  "results": [
+    {
+      "amount": 4500,
+      "fluid": "minecraft:lava"
+    }
+  ]
+}

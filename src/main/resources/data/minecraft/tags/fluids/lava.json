@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:molten_iron",
+    "create_modular_tools:flowing_molten_iron",
+    "create_modular_tools:molten_copper",
+    "create_modular_tools:flowing_molten_copper",
+    "create_modular_tools:molten_gold",
+    "create_modular_tools:flowing_molten_gold",
+    "create_modular_tools:molten_netherite",
+    "create_modular_tools:flowing_molten_netherite",
+    "create_modular_tools:molten_zinc",
+    "create_modular_tools:flowing_molten_zinc",
+    "create_modular_tools:molten_brass",
+    "create_modular_tools:flowing_molten_brass",
+    "create_modular_tools:molten_diamond",
+    "create_modular_tools:flowing_molten_diamond"
+  ]
+}

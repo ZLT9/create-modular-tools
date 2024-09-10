@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#c:copper_blocks",
+    "#c:raw_copper_blocks",
+    "minecraft:exposed_copper",
+    "minecraft:weathered_copper",
+    "minecraft:oxidized_copper"
+  ]
+}

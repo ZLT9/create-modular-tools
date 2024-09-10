@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#c:zinc_ingots",
+    "#c:raw_zinc_ores",
+    "create:crushed_raw_zinc"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "create_modular_tools:meltable_zinc_ingots"
+    }
+  ],
+  "results": [
+    {
+      "amount": 9000,
+      "fluid": "create_modular_tools:molten_zinc"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "create_modular_tools:meltable_gold_nuggets"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "fluid": "create_modular_tools:molten_gold"
+    }
+  ]
+}

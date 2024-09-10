@@ -1,0 +1,6 @@
+{
+  "parent": "create_modular_tools:item/pickaxe_head",
+  "textures": {
+    "layer0": "create_modular_tools:item/brass_pickaxe_head"
+  }
+}

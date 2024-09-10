@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:create_modular_tools/root",
+  "criteria": {
+    "threw_pickaxe_head": {
+      "conditions": {},
+      "trigger": "create_modular_tools:boomerang_thrown"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "create_modular_tools:textures/block/sand_mold_bottom.png",
+    "description": {
+      "translate": "advancements.create_modular_tools.hidden_potential.description"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "item": "create_modular_tools:wooden_pickaxe_head"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.create_modular_tools.hidden_potential.title"
+    }
+  },
+  "requirements": [
+    [
+      "threw_pickaxe_head"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
