@@ -6,6 +6,8 @@ A Minecraft Create mod addon that adds modular tools.
 > It is not recommended for survival worlds yet, but feel free to test it and report any issues.  
 > Suggestions are also welcome!
 
+If you would like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!
+
 Currently, the mod does not have ponders or custom integration with recipe mods like JEI, REI, or EMI.  
 Refer to the sections below to learn how to use the mod.
 
