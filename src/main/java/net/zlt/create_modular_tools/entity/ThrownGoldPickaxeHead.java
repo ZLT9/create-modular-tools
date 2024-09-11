@@ -18,7 +18,7 @@ public class ThrownGoldPickaxeHead extends ThrownBoomerang {
     }
 
     public ThrownGoldPickaxeHead(Level level, LivingEntity shooter, ItemStack stack) {
-        super(AllToolModules.GOLDEN_PICKAXE_HEAD, AllEntityTypes.GOLD_PICKAXE_HEAD, level, shooter, stack);
+        super(AllToolModules.GOLDEN_PICKAXE_HEAD, AllEntityTypes.GOLDEN_PICKAXE_HEAD, level, shooter, stack);
     }
 
     @Override

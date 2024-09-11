@@ -63,7 +63,7 @@ public final class AllItems {
     public static final Item WOODEN_PICKAXE_HEAD = register("wooden_pickaxe_head", new BoomerangItem(AllToolModules.WOODEN_PICKAXE_HEAD, new Item.Properties()) {
         @Override
         protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
-            return new ThrownWoodPickaxeHead(level, shooter, stack);
+            return new ThrownWoodenPickaxeHead(level, shooter, stack);
         }
     });
     public static final Item STONE_PICKAXE_HEAD = register("stone_pickaxe_head", new BoomerangItem(AllToolModules.STONE_PICKAXE_HEAD, new Item.Properties()) {

@@ -12,13 +12,13 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class ThrownWoodPickaxeHead extends ThrownBoomerang {
-    public ThrownWoodPickaxeHead(EntityType<? extends ThrownBoomerang> entityType, Level level) {
+public class ThrownWoodenPickaxeHead extends ThrownBoomerang {
+    public ThrownWoodenPickaxeHead(EntityType<? extends ThrownBoomerang> entityType, Level level) {
         super(AllToolModules.WOODEN_PICKAXE_HEAD, AllItems.WOODEN_PICKAXE_HEAD, entityType, level);
     }
 
-    public ThrownWoodPickaxeHead(Level level, LivingEntity shooter, ItemStack stack) {
-        super(AllToolModules.WOODEN_PICKAXE_HEAD, AllEntityTypes.WOOD_PICKAXE_HEAD, level, shooter, stack);
+    public ThrownWoodenPickaxeHead(Level level, LivingEntity shooter, ItemStack stack) {
+        super(AllToolModules.WOODEN_PICKAXE_HEAD, AllEntityTypes.WOODEN_PICKAXE_HEAD, level, shooter, stack);
     }
 
     @Override

@@ -13,8 +13,8 @@ public final class AllEntityTypes {
     private AllEntityTypes() {
     }
 
-    public static final EntityType<ThrownWoodPickaxeHead> WOOD_PICKAXE_HEAD = register("wood_pickaxe_head",
-        FabricEntityTypeBuilder.<ThrownWoodPickaxeHead>create(MobCategory.MISC, ThrownWoodPickaxeHead::new)
+    public static final EntityType<ThrownWoodenPickaxeHead> WOODEN_PICKAXE_HEAD = register("wooden_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownWoodenPickaxeHead>create(MobCategory.MISC, ThrownWoodenPickaxeHead::new)
             .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
             .trackRangeChunks(4)
             .trackedUpdateRate(20)
@@ -41,7 +41,7 @@ public final class AllEntityTypes {
             .trackedUpdateRate(20)
             .forceTrackedVelocityUpdates(true));
 
-    public static final EntityType<ThrownGoldPickaxeHead> GOLD_PICKAXE_HEAD = register("gold_pickaxe_head",
+    public static final EntityType<ThrownGoldPickaxeHead> GOLDEN_PICKAXE_HEAD = register("golden_pickaxe_head",
         FabricEntityTypeBuilder.<ThrownGoldPickaxeHead>create(MobCategory.MISC, ThrownGoldPickaxeHead::new)
             .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
             .trackRangeChunks(4)

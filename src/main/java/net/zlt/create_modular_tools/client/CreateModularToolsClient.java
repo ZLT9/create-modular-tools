@@ -49,11 +49,11 @@ import java.util.UUID;
 public class CreateModularToolsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(AllEntityTypes.WOOD_PICKAXE_HEAD, ThrownWoodPickaxeHeadRenderer::new);
+        EntityRendererRegistry.register(AllEntityTypes.WOODEN_PICKAXE_HEAD, ThrownWoodenPickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.STONE_PICKAXE_HEAD, ThrownStonePickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.IRON_PICKAXE_HEAD, ThrownIronPickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.COPPER_PICKAXE_HEAD, ThrownCopperPickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.GOLD_PICKAXE_HEAD, ThrownGoldPickaxeHeadRenderer::new);
+        EntityRendererRegistry.register(AllEntityTypes.GOLDEN_PICKAXE_HEAD, ThrownGoldenPickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.NETHERITE_PICKAXE_HEAD, ThrownNetheritePickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.ZINC_PICKAXE_HEAD, ThrownZincPickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.BRASS_PICKAXE_HEAD, ThrownBrassPickaxeHeadRenderer::new);

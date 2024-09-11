@@ -14,11 +14,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class ThrownGoldPickaxeHeadRenderer extends ThrownBoomerangRenderer {
-    public static final ResourceLocation TEXTURE_LOCATION = CreateModularTools.asResource("textures/item/gold_pickaxe_head.png");
+public class ThrownWoodenPickaxeHeadRenderer extends ThrownBoomerangRenderer {
+    public static final ResourceLocation TEXTURE_LOCATION = CreateModularTools.asResource("textures/item/wooden_pickaxe_head.png");
 
-    public ThrownGoldPickaxeHeadRenderer(EntityRendererProvider.Context context) {
-        super(CreateModularTools.asResource("item/gold_pickaxe_head"), AllItems.GOLDEN_PICKAXE_HEAD, context);
+    public ThrownWoodenPickaxeHeadRenderer(EntityRendererProvider.Context context) {
+        super(CreateModularTools.asResource("item/wooden_pickaxe_head"), AllItems.WOODEN_PICKAXE_HEAD, context);
     }
 
     @Override
