@@ -8,6 +8,8 @@ A Minecraft Create mod addon that adds modular tools.
 
 If you would like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!
 
+<a href='https://ko-fi.com/J3J810251V' target='_blank'><img src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com'></a>
+
 Currently, the mod does not have ponders or custom integration with recipe mods like JEI, REI, or EMI.  
 Refer to the sections below to learn how to use the mod.
 
