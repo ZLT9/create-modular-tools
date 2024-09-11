@@ -15,11 +15,11 @@ Refer to the sections below to learn how to use the mod.
 
 ## Melting Metals
 
-You can melt metals by dropping their corresponding items into a superheated Basin and mixing them using a Mechanical Mixer, similar to how Cobblestone can be melted into Lava in Create.
+You can melt metals by dropping their corresponding items into a super-heated Basin and mixing them using a Mechanical Mixer, similar to how Cobblestone can be melted into Lava in Create.
 
 ![Molten Zinc Mixing Recipe](https://github.com/user-attachments/assets/7c128396-0029-44a6-880e-c075e7eaa3ec)
 
-If you find Blaze Cakes too expensive, you can also superheat Blaze Burners using buckets of molten metal.
+If you find Blaze Cakes too expensive, you can also super-heat Blaze Burners using buckets of molten metal.
 
 ## Disassembling Tools
 
