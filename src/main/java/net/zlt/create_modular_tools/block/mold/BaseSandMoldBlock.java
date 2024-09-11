@@ -60,7 +60,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                     }
 
                     ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModule.getType());
-                    if (moldSlot.state() != ToolUtils.MoldSlotState.EMPTY && moldSlot.state() != ToolUtils.MoldSlotState.SOLID) {
+                    if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
                         return InteractionResult.PASS;
                     }
 
