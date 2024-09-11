@@ -9,9 +9,17 @@ A Minecraft Create mod addon that adds modular tools.
 Currently, the mod does not have ponders or custom integration with recipe mods like JEI, REI, or EMI.  
 Refer to the sections below to learn how to use the mod.
 
+## Melting Metals
+
+You can melt metals by dropping their corresponding items into a superheated Basin and mixing them using a Mechanical Mixer, similar to how Cobblestone can be melted into Lava in Create.
+
+![Molten Zinc Mixing Recipe](https://github.com/user-attachments/assets/7c128396-0029-44a6-880e-c075e7eaa3ec)
+
+If you find Blaze Cakes too expensive, you can also superheat Blaze Burners using buckets of molten metal.
+
 ## Disassembling Tools
 
-You can disassemble tools (both vanilla and modular) into their parts by dropping them onto an up-facing powered Mechanical Saw.
+You can disassemble tools (both vanilla and modular) into their parts by dropping them onto an up-facing Mechanical Saw.
 
 ![Disassembling an Iron Sword](https://github.com/user-attachments/assets/0b2a657b-e0ae-423c-b923-614954d380bc)
 
