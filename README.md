@@ -83,6 +83,8 @@ You can use a Mechanical Press to assemble a modular tool from a completely soli
 
 Modular tools do not disappear when broken. Instead, they remain in your inventory so you can repair them later on.
 
+![Broken Modular Tool Tooltip](https://github.com/user-attachments/assets/83e72cd8-bc6d-4fb0-ab32-1fec667c3607)
+
 > Note: Broken modular tools retain their enchantments, meaning you can use Mending to repair them with XP, even if they are broken.
 > 
 > In the current alpha version of Create: Modular Tools (0.1.0), the only way to repair modular tools that don't have Mending is to disassemble and reassemble them, which removes their enchantments.  
