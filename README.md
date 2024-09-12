@@ -2,6 +2,8 @@
 
 A Minecraft Create mod addon that adds modular tools.
 
+Get it on [Modrinth](https://modrinth.com/mod/create-modular-tools).
+
 > Note: This mod is in alpha, so expect things to break or change in the future.  
 > It is not recommended for survival worlds yet, but feel free to test it and report any issues.  
 > Suggestions are also welcome!
