@@ -2,20 +2,26 @@
 
 A Minecraft Create mod addon that adds modular tools.
 
+Get it on [Modrinth](https://modrinth.com/mod/create-modular-tools).
+
 > Note: This mod is in alpha, so expect things to break or change in the future.  
 > It is not recommended for survival worlds yet, but feel free to test it and report any issues.  
 > Suggestions are also welcome!
 
-Currently, the mod does not have ponders or custom integration with recipe mods like JEI, REI, or EMI.  
+If you would like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!
+
+<a href='https://ko-fi.com/J3J810251V' target='_blank'><img src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com'></a>
+
+Currently, the mod does not have ponders or custom integration with recipe viewer mods like JEI, REI, or EMI.  
 Refer to the sections below to learn how to use the mod.
 
 ## Melting Metals
 
-You can melt metals by dropping their corresponding items into a superheated Basin and mixing them using a Mechanical Mixer, similar to how Cobblestone can be melted into Lava in Create.
+You can melt metals by dropping their corresponding items into a super-heated Basin and mixing them using a Mechanical Mixer, similar to how Cobblestone can be melted into Lava in Create.
 
 ![Molten Zinc Mixing Recipe](https://github.com/user-attachments/assets/7c128396-0029-44a6-880e-c075e7eaa3ec)
 
-If you find Blaze Cakes too expensive, you can also superheat Blaze Burners using buckets of molten metal.
+If you find Blaze Cakes too expensive, you can also super-heat Blaze Burners using buckets of molten metal.
 
 ## Disassembling Tools
 
