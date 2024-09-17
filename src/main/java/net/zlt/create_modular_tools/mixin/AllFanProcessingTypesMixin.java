@@ -1,5 +1,6 @@
 package net.zlt.create_modular_tools.mixin;
 
+import com.google.common.collect.Lists;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.simibubi.create.content.kinetics.fan.processing.AllFanProcessingTypes;
@@ -112,6 +113,6 @@ public abstract class AllFanProcessingTypesMixin {
             }
         }
 
-        cir.setReturnValue(List.of(result));
+        cir.setReturnValue(Lists.newArrayList(result));
     }
 }
