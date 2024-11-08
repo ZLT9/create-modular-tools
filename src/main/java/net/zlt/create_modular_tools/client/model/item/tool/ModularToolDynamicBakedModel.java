@@ -10,7 +10,6 @@ import net.minecraft.client.renderer.block.model.ItemOverrides;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelManager;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -20,9 +19,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -93,24 +91,11 @@ public class ModularToolDynamicBakedModel implements BakedModel {
             return;
         }
 
-        ModelManager modelManager = Minecraft.getInstance().getModelManager();
         for (ToolModuleType toolModuleType : MODULAR_TOOL.getCompatibleByLayer()) {
-            ToolModule toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
-            if (toolModule == null) {
-                continue;
+            BakedModel toolModuleModel = ToolModuleUtils.getToolModuleModel(toolModuleType, MODULAR_TOOL, toolModulesNbt);
+            if (toolModuleModel != null) {
+                toolModuleModel.emitItemQuads(stack, randomSupplier, context);
             }
-
-            ResourceLocation toolModuleModelId = toolModule.getModelId(MODULAR_TOOL, toolModulesNbt);
-            if (toolModuleModelId == null) {
-                continue;
-            }
-
-            BakedModel model = modelManager.getModel(toolModuleModelId);
-            if (model == null) {
-                continue;
-            }
-
-            model.emitItemQuads(stack, randomSupplier, context);
         }
     }
 }

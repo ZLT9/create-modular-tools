@@ -4,7 +4,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.renderer.v1.model.ModelHelper;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.*;
@@ -14,9 +13,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -60,25 +58,12 @@ public class ModularToolUnbakedModel implements UnbakedModel {
         }
 
         RandomSource randomSource = RandomSource.create();
-        ModelManager modelManager = Minecraft.getInstance().getModelManager();
         for (ToolModuleType toolModuleType : MODULAR_TOOL.getCompatibleByLayer()) {
-            ToolModule toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
-            if (toolModule == null) {
-                continue;
-            }
-
-            ResourceLocation toolModuleModelId = toolModule.getModelId(MODULAR_TOOL, toolModulesNbt);
-            if (toolModuleModelId == null) {
-                continue;
-            }
-
-            BakedModel model = modelManager.getModel(toolModuleModelId);
-            if (model == null) {
-                continue;
-            }
-
-            for (int i = 0; i <= ModelHelper.NULL_FACE_ID; i++) {
-                bakedQuads.addAll(model.getQuads(null, ModelHelper.faceFromIndex(i), randomSource));
+            BakedModel toolModuleModel = ToolModuleUtils.getToolModuleModel(toolModuleType, MODULAR_TOOL, toolModulesNbt);
+            if (toolModuleModel != null) {
+                for (int i = 0; i <= ModelHelper.NULL_FACE_ID; i++) {
+                    bakedQuads.addAll(toolModuleModel.getQuads(null, ModelHelper.faceFromIndex(i), randomSource));
+                }
             }
         }
 
