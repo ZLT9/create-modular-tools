@@ -21,9 +21,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.client.MoldModelUtils;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -49,42 +48,9 @@ public abstract class BaseSandMoldRenderer<T extends SandMoldBlockEntity> implem
 
         TOP.render(poseStack, BASE_MATERIAL.buffer(buffer, RenderType::entityCutout), packedLight, packedOverlay);
 
-        List<ResourceLocation> existingToolModuleIds = new ArrayList<>();
-        for (ToolModuleType toolModuleType : getCompatible()) {
-            if (!toolModulesNbt.contains(toolModuleType.getTag())) {
-                continue;
-            }
-
-            String toolModuleId = toolModulesNbt.getString(toolModuleType.getTag());
-            if (toolModuleId.isEmpty()) {
-                ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
-                if (moldTopTexture != null) {
-                    ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(getMoldBlock(), toolModulesNbt);
-                    if (moldTopTextureId != null) {
-                        TOP.render(poseStack, getMaterial(moldTopTextureId).buffer(buffer, RenderType::entityCutout), packedLight, packedOverlay);
-                    }
-                }
-            } else {
-                ToolModule toolModule = ToolModuleRegistry.get(toolModuleId);
-                if (toolModule == null) {
-                    ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
-                    if (moldTopTexture != null) {
-                        ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(getMoldBlock(), toolModulesNbt);
-                        if (moldTopTextureId != null) {
-                            existingToolModuleIds.add(moldTopTextureId);
-                        }
-                    }
-                } else {
-                    ResourceLocation toolModuleModelId = toolModule.getModelId(getModularTool(), toolModulesNbt);
-                    if (toolModuleModelId != null) {
-                        existingToolModuleIds.add(toolModuleModelId);
-                    }
-                }
-            }
-        }
-        for (ResourceLocation toolModuleId : existingToolModuleIds) {
-            TOP.render(poseStack, getMaterial(toolModuleId).buffer(buffer, RenderType::entityCutout), packedLight, packedOverlay);
-        }
+        MoldModelUtils.forEachMoldTopQuad(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id ->
+            TOP.render(poseStack, getMaterial(id).buffer(buffer, RenderType::entityCutout), packedLight, packedOverlay)
+        );
 
         poseStack.popPose();
     }

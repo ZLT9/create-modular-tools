@@ -25,15 +25,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.Utils;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.client.MoldModelUtils;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
@@ -126,45 +124,10 @@ public abstract class BaseSandMoldItemDynamicBakedModel implements BakedModel {
         int[] topQuadVertices = Utils.copyArray(INTERIOR_TOP_QUAD.getVertices());
         BakedQuad topQuad = new BakedQuad(topQuadVertices, INTERIOR_TOP_QUAD.getTintIndex(), Direction.UP, INTERIOR_TOP_QUAD.getSprite(), INTERIOR_TOP_QUAD.isShade());
 
-        List<ResourceLocation> existingToolModuleIds = new ArrayList<>();
-        for (ToolModuleType toolModuleType : getCompatible()) {
-            if (!toolModulesNbt.contains(toolModuleType.getTag())) {
-                continue;
-            }
-
-            String toolModuleId = toolModulesNbt.getString(toolModuleType.getTag());
-            if (toolModuleId.isEmpty()) {
-                ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
-                if (moldTopTexture != null) {
-                    ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(getMoldBlock(), toolModulesNbt);
-                    if (moldTopTextureId != null) {
-                        Utils.setBakedQuadUV(topQuadVertices, SPRITE_GETTER.apply(new Material(InventoryMenu.BLOCK_ATLAS, moldTopTextureId)), Direction.NORTH);
-                        emitter.fromVanilla(topQuad, MATERIAL_CUTOUT_MIPPED, Direction.UP).emit();
-                    }
-                }
-            } else {
-                ToolModule toolModule = ToolModuleRegistry.get(toolModuleId);
-                if (toolModule == null) {
-                    ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
-                    if (moldTopTexture != null) {
-                        ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(getMoldBlock(), toolModulesNbt);
-                        if (moldTopTextureId != null) {
-                            existingToolModuleIds.add(moldTopTextureId);
-                        }
-                    }
-                } else {
-                    ResourceLocation toolModuleModelId = toolModule.getModelId(getModularTool(), toolModulesNbt);
-                    if (toolModuleModelId != null) {
-                        existingToolModuleIds.add(toolModuleModelId);
-                    }
-                }
-            }
-        }
-        for (ResourceLocation toolModuleId : existingToolModuleIds) {
-            Utils.setBakedQuadUV(topQuadVertices, SPRITE_GETTER.apply(new Material(InventoryMenu.BLOCK_ATLAS, toolModuleId)), Direction.NORTH);
-            emitter.fromVanilla(topQuad, MATERIAL_CUTOUT_MIPPED, Direction.UP);
-            emitter.emit();
-        }
+        MoldModelUtils.forEachMoldTopQuad(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
+            Utils.setBakedQuadUV(topQuadVertices, SPRITE_GETTER.apply(new Material(InventoryMenu.BLOCK_ATLAS, id)), Direction.NORTH);
+            emitter.fromVanilla(topQuad, MATERIAL_CUTOUT_MIPPED, Direction.UP).emit();
+        });
     }
 
     protected abstract Collection<ToolModuleType> getCompatible();

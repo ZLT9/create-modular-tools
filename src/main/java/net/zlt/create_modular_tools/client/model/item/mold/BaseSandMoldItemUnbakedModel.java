@@ -15,10 +15,9 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.Utils;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.client.MoldModelUtils;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
 
@@ -77,46 +76,11 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
             return createOverride(quads);
         }
 
-        List<ResourceLocation> existingToolModuleIds = new ArrayList<>();
-        for (ToolModuleType toolModuleType : getCompatible()) {
-            if (!toolModulesNbt.contains(toolModuleType.getTag())) {
-                continue;
-            }
-
-            String toolModuleId = toolModulesNbt.getString(toolModuleType.getTag());
-            if (toolModuleId.isEmpty()) {
-                ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
-                if (moldTopTexture != null) {
-                    int[] topQuadVertices = Utils.copyArray(interiorTopQuad.getVertices());
-                    ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(getMoldBlock(), toolModulesNbt);
-                    if (moldTopTextureId != null) {
-                        Utils.setBakedQuadUV(topQuadVertices, spriteGetter.apply(new Material(InventoryMenu.BLOCK_ATLAS, moldTopTextureId)), Direction.NORTH);
-                        quads.add(new BakedQuad(topQuadVertices, interiorTopQuad.getTintIndex(), Direction.UP, interiorTopQuad.getSprite(), interiorTopQuad.isShade()));
-                    }
-                }
-            } else {
-                ToolModule toolModule = ToolModuleRegistry.get(toolModuleId);
-                if (toolModule == null) {
-                    ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
-                    if (moldTopTexture != null) {
-                        ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(getMoldBlock(), toolModulesNbt);
-                        if (moldTopTextureId != null) {
-                            existingToolModuleIds.add(moldTopTextureId);
-                        }
-                    }
-                } else {
-                    ResourceLocation toolModuleModelId = toolModule.getModelId(getModularTool(), toolModulesNbt);
-                    if (toolModuleModelId != null) {
-                        existingToolModuleIds.add(toolModuleModelId);
-                    }
-                }
-            }
-        }
-        for (ResourceLocation toolModuleId : existingToolModuleIds) {
+        MoldModelUtils.forEachMoldTopQuad(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
             int[] topQuadVertices = Utils.copyArray(interiorTopQuad.getVertices());
-            Utils.setBakedQuadUV(topQuadVertices, spriteGetter.apply(new Material(InventoryMenu.BLOCK_ATLAS, toolModuleId)), Direction.NORTH);
+            Utils.setBakedQuadUV(topQuadVertices, spriteGetter.apply(new Material(InventoryMenu.BLOCK_ATLAS, id)), Direction.NORTH);
             quads.add(new BakedQuad(topQuadVertices, interiorTopQuad.getTintIndex(), Direction.UP, interiorTopQuad.getSprite(), interiorTopQuad.isShade()));
-        }
+        });
 
         return createOverride(quads);
     }
