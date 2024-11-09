@@ -6,9 +6,11 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.zlt.create_modular_tools.CreateModularTools;
+import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -27,27 +29,7 @@ public class ModularAxeItem extends ModularToolItem {
 
     @Override
     public boolean canReplace(Mob mob, ItemStack candidate, ItemStack existing) {
-        Item existingItem = existing.getItem();
-
-        if (existingItem instanceof BlockItem) {
-            return true;
-        }
-
-        float existingAttackDamage;
-        if (existingItem instanceof DiggerItem existingDiggerItem) {
-            existingAttackDamage = existingDiggerItem.getAttackDamage();
-        } else if (existingItem instanceof ModularToolItem existingModularTool && existingModularTool.canBeReplacedByModularTool(candidate)) {
-            existingAttackDamage = existingModularTool.getAttackDamage(existing);
-        } else {
-            return false;
-        }
-
-        float attackDamage = getAttackDamage(candidate);
-        if (attackDamage != existingAttackDamage) {
-            return attackDamage > existingAttackDamage;
-        }
-
-        return mob.canReplaceEqualItem(candidate, existing);
+        return ToolUtils.canReplaceByDiggerModularTool(mob, candidate, existing);
     }
 
     @Override
@@ -58,23 +40,7 @@ public class ModularAxeItem extends ModularToolItem {
 
     @Override
     public boolean canBeReplacedBy(Mob mob, ItemStack candidate, ItemStack existing) {
-        Item candidateItem = candidate.getItem();
-
-        if (candidateItem instanceof SwordItem) {
-            return true;
-        }
-
-        if (candidateItem instanceof DiggerItem candidateDigger) {
-            float attackDamage = getAttackDamage(existing);
-            float candidateAttackDamage = candidateDigger.getAttackDamage();
-            if (candidateAttackDamage != attackDamage) {
-                return candidateAttackDamage > attackDamage;
-            }
-
-            return mob.canReplaceEqualItem(candidate, existing);
-        }
-
-        return false;
+        return ToolUtils.canDiggerModularToolBeReplacedBy(mob, candidate, existing);
     }
 
     @Override

@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
@@ -262,5 +263,49 @@ public final class ToolUtils {
     public static Optional<BlockState> axeGetStripped(BlockState unstrippedState) {
         return Optional.ofNullable(AxeItem.STRIPPABLES.get(unstrippedState.getBlock()))
             .map(block -> block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, unstrippedState.getValue(RotatedPillarBlock.AXIS)));
+    }
+
+    public static boolean canReplaceByDiggerModularTool(Mob mob, ItemStack candidate, ItemStack existing) {
+        Item existingItem = existing.getItem();
+
+        if (existingItem instanceof BlockItem) {
+            return true;
+        }
+
+        float existingAttackDamage;
+        if (existingItem instanceof DiggerItem existingDiggerItem) {
+            existingAttackDamage = existingDiggerItem.getAttackDamage();
+        } else if (existingItem instanceof ModularToolItem existingModularTool && existingModularTool.canBeReplacedByModularTool(candidate)) {
+            existingAttackDamage = existingModularTool.getAttackDamage(existing);
+        } else {
+            return false;
+        }
+
+        float attackDamage = ((ModularToolItem) candidate.getItem()).getAttackDamage(candidate);
+        if (attackDamage != existingAttackDamage) {
+            return attackDamage > existingAttackDamage;
+        }
+
+        return mob.canReplaceEqualItem(candidate, existing);
+    }
+
+    public static boolean canDiggerModularToolBeReplacedBy(Mob mob, ItemStack candidate, ItemStack existing) {
+        Item candidateItem = candidate.getItem();
+
+        if (candidateItem instanceof SwordItem) {
+            return true;
+        }
+
+        if (candidateItem instanceof DiggerItem candidateDigger) {
+            float attackDamage = ((ModularToolItem) existing.getItem()).getAttackDamage(existing);
+            float candidateAttackDamage = candidateDigger.getAttackDamage();
+            if (candidateAttackDamage != attackDamage) {
+                return candidateAttackDamage > attackDamage;
+            }
+
+            return mob.canReplaceEqualItem(candidate, existing);
+        }
+
+        return false;
     }
 }
