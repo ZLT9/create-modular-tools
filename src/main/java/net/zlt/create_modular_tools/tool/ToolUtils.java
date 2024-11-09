@@ -56,7 +56,7 @@ public final class ToolUtils {
         FLUID
     }
 
-    public record MoldSlot(MoldSlotState state, Object contents) {
+    public record MoldSlot(MoldSlotState state, @Nullable Object contents) {
     }
 
     public static MoldSlot getMoldSlot(CompoundTag toolModulesNbt, String toolModuleTypeTag) {
