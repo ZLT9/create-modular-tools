@@ -14,10 +14,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.zlt.create_modular_tools.block.mold.MoldUtils;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.recipe.MoldPressingRecipe;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -57,17 +57,9 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
             return;
         }
 
-        CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(itemEntity.getItem().getTag());
-        if (toolModulesNbt.isEmpty()) {
+        if (!MoldUtils.isMoldSolid(itemEntity.getItem())) {
             cir.setReturnValue(false);
             return;
-        }
-
-        for (String key : toolModulesNbt.getAllKeys()) {
-            if (!ToolModuleRegistry.containsId(toolModulesNbt.getString(key))) {
-                cir.setReturnValue(false);
-                return;
-            }
         }
 
         ItemStack remainder = itemEntity.getItem().copy();
@@ -112,17 +104,9 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
             return;
         }
 
-        CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(input.stack.getTag());
-        if (toolModulesNbt.isEmpty()) {
+        if (!MoldUtils.isMoldSolid(input.stack)) {
             cir.setReturnValue(false);
             return;
-        }
-
-        for (String key : toolModulesNbt.getAllKeys()) {
-            if (!ToolModuleRegistry.containsId(toolModulesNbt.getString(key))) {
-                cir.setReturnValue(false);
-                return;
-            }
         }
 
         pressingBehaviour.particleItems.add(input.stack);

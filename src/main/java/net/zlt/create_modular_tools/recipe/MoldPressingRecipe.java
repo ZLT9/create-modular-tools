@@ -18,6 +18,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
+import net.zlt.create_modular_tools.block.mold.MoldUtils;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 
@@ -98,21 +99,6 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         }
 
         ItemStack input = container.getItem(0);
-        if (!ingredients.get(0).test(input)) {
-            return false;
-        }
-
-        CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(input.getTag());
-        if (toolModulesNbt.isEmpty()) {
-            return false;
-        }
-
-        for (String key : toolModulesNbt.getAllKeys()) {
-            if (!ToolModuleRegistry.containsId(toolModulesNbt.getString(key))) {
-                return false;
-            }
-        }
-
-        return true;
+        return ingredients.get(0).test(input) && MoldUtils.isMoldSolid(input);
     }
 }
