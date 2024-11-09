@@ -53,7 +53,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
     private float customYRot;
     private float customYaw;
     protected final ToolModule TOOL_MODULE;
-    private boolean isValid;
+    private final boolean IS_VALID;
 
     public ThrownBoomerang(ToolModule toolModule, Item item, EntityType<? extends ThrownBoomerang> entityType, Level level) {
         super(entityType, level);
@@ -61,7 +61,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
         entityData.set(ID_FOIL, false);
         setNoGravity(true);
         TOOL_MODULE = toolModule;
-        isValid = false;
+        IS_VALID = false;
     }
 
     public ThrownBoomerang(ToolModule toolModule, EntityType<? extends ThrownBoomerang> entityType, Level level, LivingEntity shooter, ItemStack stack) {
@@ -70,7 +70,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
         entityData.set(ID_FOIL, stack.hasFoil());
         setNoGravity(true);
         TOOL_MODULE = toolModule;
-        isValid = true;
+        IS_VALID = true;
     }
 
     @Override
@@ -133,7 +133,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
 
     @Override
     public void tick() {
-        if (!level().isClientSide && !isValid) {
+        if (!level().isClientSide && !IS_VALID) {
             spawnAtLocation(getPickupItem(), 0.1f);
             discard();
 

@@ -83,7 +83,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture SWORD_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture SWORD_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 0, 13, 3, 3)) {
@@ -96,7 +96,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture POMMEL_SWORD_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture POMMEL_SWORD_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 3, 10, 3, 3)) {
@@ -106,7 +106,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture SHOVEL_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture SHOVEL_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 2, 12, 3, 3)) {
@@ -122,7 +122,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture GRIP_SHOVEL_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture GRIP_SHOVEL_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 5, 9, 3, 3)) {
@@ -169,7 +169,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture AXE_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture AXE_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 2, 12, 3, 3)) {
@@ -188,7 +188,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture GRIP_AXE_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture GRIP_AXE_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 4, 10, 3, 3)) {
@@ -204,7 +204,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture HOE_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture HOE_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 2, 12, 3, 3)) {
@@ -223,7 +223,7 @@ public final class AllMoldTopTextures {
         }
     };
 
-    public static ToolModuleType.MoldTopTexture GRIP_HOE_HANDLE = new ToolModuleType.MoldTopTexture() {
+    public static final ToolModuleType.MoldTopTexture GRIP_HOE_HANDLE = new ToolModuleType.MoldTopTexture() {
         @Override
         public boolean clicked(int x, int y) {
             if (isIn(x, y, 5, 9, 3, 3)) {

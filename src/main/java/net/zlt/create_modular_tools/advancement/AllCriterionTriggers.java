@@ -12,13 +12,13 @@ public final class AllCriterionTriggers {
     private AllCriterionTriggers() {
     }
 
-    public static BoomerangThrowTrigger BOOMERANG_THROWN = register(new BoomerangThrowTrigger());
+    public static final BoomerangThrowTrigger BOOMERANG_THROWN = register(new BoomerangThrowTrigger());
 
-    public static BoomerangCatchTrigger BOOMERANG_CAUGHT = register(new BoomerangCatchTrigger());
+    public static final BoomerangCatchTrigger BOOMERANG_CAUGHT = register(new BoomerangCatchTrigger());
 
-    public static BoomerangStopTrigger BOOMERANG_STOPPED = register(new BoomerangStopTrigger());
+    public static final BoomerangStopTrigger BOOMERANG_STOPPED = register(new BoomerangStopTrigger());
 
-    public static BoomerangHitEntityTrigger BOOMERANG_HIT_ENTITY = register(new BoomerangHitEntityTrigger());
+    public static final BoomerangHitEntityTrigger BOOMERANG_HIT_ENTITY = register(new BoomerangHitEntityTrigger());
 
     private static <T extends CriterionTrigger<?>> T register(T criterionTrigger) {
         return CriteriaTriggers.register(criterionTrigger);
