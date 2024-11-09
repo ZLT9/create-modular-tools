@@ -2,7 +2,6 @@ package net.zlt.create_modular_tools.tool.module.axe_head;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;

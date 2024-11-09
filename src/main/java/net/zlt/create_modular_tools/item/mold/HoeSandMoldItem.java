@@ -7,7 +7,6 @@ import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Collection;
-import java.util.List;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault

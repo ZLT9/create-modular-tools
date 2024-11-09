@@ -18,10 +18,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.AbstractList;
 import java.util.List;
 import java.util.Set;
 

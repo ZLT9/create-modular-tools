@@ -8,7 +8,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.AllBlocks;
-import net.zlt.create_modular_tools.entity.ThrownBoomerang;
 import net.zlt.create_modular_tools.entity.*;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.tool.*;
