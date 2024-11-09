@@ -87,7 +87,7 @@ You can use a Mechanical Press to assemble a modular tool from a completely soli
 
 ## Permanent Tools
 
-Modular tools do not disappear when broken. Instead, they remain in your inventory so you can repair them later on.
+Modular tools do not disappear when broken. Instead, they remain in your inventory, so you can repair them later on.
 
 ![Broken Modular Tool Tooltip](https://github.com/user-attachments/assets/83e72cd8-bc6d-4fb0-ab32-1fec667c3607)
 
