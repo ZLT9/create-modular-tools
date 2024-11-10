@@ -203,10 +203,10 @@ public class CreateModularTools implements ModInitializer {
     }
 
     private static void registerMoldTopTextureGetterForMoldWithModule(ToolModuleType toolModuleType, SandMoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
-        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && nbt.contains(otherToolModuleType.getTag(), Tag.TAG_STRING) ? moldTopTexture : original);
+        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
     }
 
     private static void registerMoldTopTextureGetterForMoldWithoutModule(ToolModuleType toolModuleType, SandMoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
-        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && !nbt.contains(otherToolModuleType.getTag(), Tag.TAG_STRING) ? moldTopTexture : original);
+        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && !nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
     }
 }

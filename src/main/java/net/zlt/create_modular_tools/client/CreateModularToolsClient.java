@@ -585,11 +585,11 @@ public class CreateModularToolsClient implements ClientModInitializer {
     }
 
     private static void registerToolModuleModelIdGetterForToolWithModule(ToolModuleItem toolModule, ModularToolItem tool, ToolModuleType toolModuleType, ResourceLocation modelId) {
-        toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && nbt.contains(toolModuleType.getTag(), Tag.TAG_STRING) ? modelId : original);
+        toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && nbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND) ? modelId : original);
     }
 
     private static void registerToolModuleModelIdGetterForToolWithoutModule(ToolModuleItem toolModule, ModularToolItem tool, ToolModuleType toolModuleType, ResourceLocation modelId) {
-        toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && !nbt.contains(toolModuleType.getTag(), Tag.TAG_STRING) ? modelId : original);
+        toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && !nbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND) ? modelId : original);
     }
 
     private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation textureId) {

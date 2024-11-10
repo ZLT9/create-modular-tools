@@ -226,7 +226,7 @@ public class CreativeModularToolTableMenu extends AbstractContainerMenu {
         }
 
         for (ToolModuleType toolModuleType : selectedModularTool.getRequired()) {
-            if (!newToolModulesNbt.contains(toolModuleType.getTag(), Tag.TAG_STRING)) {
+            if (!newToolModulesNbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND)) {
                 CompoundTag newToolModuleNbt = new CompoundTag();
                 newToolModuleNbt.putString("id", ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
                 newToolModulesNbt.put(toolModuleType.getTag(), newToolModuleNbt);

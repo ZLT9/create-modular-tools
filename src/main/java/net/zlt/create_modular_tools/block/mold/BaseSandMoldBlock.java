@@ -49,7 +49,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                     return InteractionResult.PASS;
                 }
 
-                if (!toolModulesNbt.contains(toolModule.getType().getTag(), Tag.TAG_STRING)) {
+                if (!toolModulesNbt.contains(toolModule.getType().getTag(), Tag.TAG_COMPOUND)) {
                     for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
                         if (ToolUtils.getMoldSlot(toolModulesNbt, toolModuleTypeTag).state() == ToolUtils.MoldSlotState.FLUID) {
                             return InteractionResult.PASS;
