@@ -208,13 +208,13 @@ public class CreativeModularToolTableBlockEntity extends BlockEntity implements 
         CompoundTag toolModulesNbt = new CompoundTag();
         if (toolModulesTag != null && !toolModulesTag.isEmpty()) {
             for (ToolModuleType toolModuleType : modularTool.getCompatible()) {
-                if (toolModulesTag.contains(toolModuleType.getTag())) {
+                if (toolModulesTag.contains(toolModuleType.getTag(), CompoundTag.TAG_COMPOUND)) {
                     toolModulesNbt.put(toolModuleType.getTag(), toolModulesTag.getCompound(toolModuleType.getTag()).copy());
                 }
             }
         }
         for (ToolModuleType toolModuleType : modularTool.getRequired()) {
-            if (!toolModulesNbt.contains(toolModuleType.getTag())) {
+            if (!toolModulesNbt.contains(toolModuleType.getTag(), CompoundTag.TAG_COMPOUND)) {
                 CompoundTag toolModuleNbt = new CompoundTag();
                 toolModuleNbt.putString("id", ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
                 toolModulesNbt.put(toolModuleType.getTag(), toolModuleNbt);

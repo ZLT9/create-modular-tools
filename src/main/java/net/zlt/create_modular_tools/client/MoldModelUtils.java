@@ -29,7 +29,7 @@ public final class MoldModelUtils {
         List<ResourceLocation> existingToolModuleIds = new ArrayList<>();
 
         for (ToolModuleType toolModuleType : compatibleToolModuleTypes) {
-            if (!toolModulesNbt.contains(toolModuleType.getTag())) {
+            if (!toolModulesNbt.contains(toolModuleType.getTag(), CompoundTag.TAG_COMPOUND)) {
                 continue;
             }
 
