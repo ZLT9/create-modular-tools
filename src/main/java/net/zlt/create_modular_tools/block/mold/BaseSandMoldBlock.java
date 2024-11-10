@@ -18,7 +18,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Unmodifiable;
 
@@ -45,48 +44,46 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         if (!stack.isEmpty()) {
             CompoundTag toolModulesNbt = sandMoldBlockEntity.getToolModulesNbt();
 
-            for (ToolModuleItem toolModule : ToolModuleRegistry.getAll()) {
-                if (stack.is(toolModule)) {
-                    if (!sandMoldBlockEntity.isCompatible(toolModule.getType())) {
-                        return InteractionResult.PASS;
-                    }
-
-                    if (!toolModulesNbt.contains(toolModule.getType().getTag(), Tag.TAG_STRING)) {
-                        for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
-                            if (ToolUtils.getMoldSlot(toolModulesNbt, toolModuleTypeTag).state() == ToolUtils.MoldSlotState.FLUID) {
-                                return InteractionResult.PASS;
-                            }
-                        }
-                    }
-
-                    ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModule.getType());
-                    if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
-                        return InteractionResult.PASS;
-                    }
-
-                    if (!level.isClientSide) {
-                        if (!player.isCreative()) {
-                            stack.shrink(1);
-                            if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
-                                player.getInventory().placeItemBackInInventory(((ToolModuleItem) moldSlot.contents()).getDefaultInstance());
-                            }
-                        }
-                        sandMoldBlockEntity.putToolModule(toolModule.getType(), toolModule);
-                    }
-
-                    SoundEvent toolModuleSound = toolModule.getSound();
-                    if (toolModuleSound != null) {
-                        level.playSound(player, pos, toolModuleSound, SoundSource.BLOCKS, 0.5f, 0.8f);
-                    }
-
-                    playMoldSlotSound(level, pos, player, moldSlot.state() == ToolUtils.MoldSlotState.SOLID);
-
-                    return InteractionResult.sidedSuccess(level.isClientSide);
+            if (stack.getItem() instanceof ToolModuleItem toolModule) {
+                if (!sandMoldBlockEntity.isCompatible(toolModule.getType())) {
+                    return InteractionResult.PASS;
                 }
+
+                if (!toolModulesNbt.contains(toolModule.getType().getTag(), Tag.TAG_STRING)) {
+                    for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
+                        if (ToolUtils.getMoldSlot(toolModulesNbt, toolModuleTypeTag).state() == ToolUtils.MoldSlotState.FLUID) {
+                            return InteractionResult.PASS;
+                        }
+                    }
+                }
+
+                ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModule.getType());
+                if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
+                    return InteractionResult.PASS;
+                }
+
+                if (!level.isClientSide) {
+                    if (!player.isCreative()) {
+                        stack.shrink(1);
+                        if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
+                            player.getInventory().placeItemBackInInventory(((ToolModuleItem) moldSlot.contents()).getDefaultInstance());
+                        }
+                    }
+                    sandMoldBlockEntity.putToolModule(toolModule.getType(), toolModule);
+                }
+
+                SoundEvent toolModuleSound = toolModule.getSound();
+                if (toolModuleSound != null) {
+                    level.playSound(player, pos, toolModuleSound, SoundSource.BLOCKS, 0.5f, 0.8f);
+                }
+
+                playMoldSlotSound(level, pos, player, moldSlot.state() == ToolUtils.MoldSlotState.SOLID);
+
+                return InteractionResult.sidedSuccess(level.isClientSide);
             }
 
             for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
-                if (ToolUtils.getMoldSlot(toolModulesNbt, toolModuleTypeTag).state() != ToolUtils.MoldSlotState.EMPTY) {
+                if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(toolModuleTypeTag).getString("state")) != ToolUtils.MoldSlotState.EMPTY) {
                     return InteractionResult.PASS;
                 }
             }
@@ -152,7 +149,6 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         }
 
         return InteractionResult.PASS;
-
     }
 
     protected void playMoldSlotSound(Level level, BlockPos pos, Player player, boolean replacing) {
