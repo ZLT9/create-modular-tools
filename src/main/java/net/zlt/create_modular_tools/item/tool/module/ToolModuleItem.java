@@ -67,11 +67,6 @@ public abstract class ToolModuleItem extends Item {
         return 0;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 0;
-    }
-
     public abstract ToolModuleType getType();
 
     public boolean isSuitableForWhenAttached(BlockState blockState) {
