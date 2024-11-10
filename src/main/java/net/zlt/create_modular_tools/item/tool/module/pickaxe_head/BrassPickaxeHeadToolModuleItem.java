@@ -56,7 +56,8 @@ public class BrassPickaxeHeadToolModuleItem extends PickaxeHeadToolModuleItem {
 
     @Override
     public InteractionResult useOnWhenAttached(BlockState originalBlockState, UseOnContext context, ModularToolItem modularTool) {
-        return ToolUtils.wrenchOnUse(originalBlockState, context);
+        InteractionResult result = super.useOnWhenAttached(originalBlockState, context, modularTool);
+        return result == InteractionResult.PASS ? ToolUtils.wrenchOnUse(originalBlockState, context) : result;
     }
 
     @Override

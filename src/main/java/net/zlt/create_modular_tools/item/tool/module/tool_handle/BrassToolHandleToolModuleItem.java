@@ -53,13 +53,14 @@ public class BrassToolHandleToolModuleItem extends ToolModuleItem {
     }
 
     @Override
-    public ToolModuleType getType() {
-        return AllToolModuleTypes.TOOL_HANDLE;
+    public InteractionResult useOnWhenAttached(BlockState originalBlockState, UseOnContext context, ModularToolItem modularTool) {
+        InteractionResult result = super.useOnWhenAttached(originalBlockState, context, modularTool);
+        return result == InteractionResult.PASS ? ToolUtils.wrenchOnUse(originalBlockState, context) : result;
     }
 
     @Override
-    public InteractionResult useOnWhenAttached(BlockState originalBlockState, UseOnContext context, ModularToolItem modularTool) {
-        return ToolUtils.wrenchOnUse(originalBlockState, context);
+    public ToolModuleType getType() {
+        return AllToolModuleTypes.TOOL_HANDLE;
     }
 
     @Override
