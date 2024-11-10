@@ -15,15 +15,14 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.entity.ThrownBoomerang;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public abstract class BoomerangItem extends ToolModuleItem {
-    public BoomerangItem(ToolModule toolModule, Properties properties) {
-        super(toolModule, properties);
+    public BoomerangItem(Properties properties) {
+        super(properties);
     }
 
     @Override

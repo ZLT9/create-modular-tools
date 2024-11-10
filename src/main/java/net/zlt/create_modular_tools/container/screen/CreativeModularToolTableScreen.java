@@ -19,9 +19,9 @@ import net.minecraft.world.item.Items;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.container.menu.CreativeModularToolTableMenu;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ModularToolRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Unmodifiable;
@@ -116,9 +116,9 @@ public class CreativeModularToolTableScreen extends AbstractContainerScreen<Crea
             boolean isButtonHovered = mouseX >= buttonX && mouseX < buttonX + 18 && mouseY >= buttonY && mouseY < buttonY + 18;
 
             CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(menu.getSlot(0).getItem());
-            ToolModule toolModule = toolModulesNbt.isEmpty() ? null : ToolModuleRegistry.get(toolModulesNbt.getString(selectedToolModuleType.getTag()));
+            ToolModuleItem toolModule = toolModulesNbt.isEmpty() ? null : ToolModuleRegistry.get(toolModulesNbt.getString(selectedToolModuleType.getTag()));
 
-            guiGraphics.blit(BG_LOCATION, buttonX, buttonY, 0, (toolModule == null ? toolModuleStack.is(Items.BARRIER) : toolModuleStack.is(toolModule.getItem())) ? 184 : isButtonHovered ? 202 : 166, 18, 18);
+            guiGraphics.blit(BG_LOCATION, buttonX, buttonY, 0, (toolModule == null ? toolModuleStack.is(Items.BARRIER) : toolModuleStack.is(toolModule)) ? 184 : isButtonHovered ? 202 : 166, 18, 18);
             guiGraphics.renderFakeItem(toolModuleStack, buttonX + 1, buttonY + 1);
 
             if (isButtonHovered) {
@@ -302,7 +302,7 @@ public class CreativeModularToolTableScreen extends AbstractContainerScreen<Crea
 
     private void updateSelectedToolModules() {
         ToolModuleType selectedToolModuleType = menu.getSelectedToolModuleType();
-        List<ItemStack> updatedToolModules = ToolModuleRegistry.getAllOfType(selectedToolModuleType).stream().map(toolModule -> new ItemStack(toolModule.getItem())).toList();
+        List<ItemStack> updatedToolModules = ToolModuleRegistry.getAllOfType(selectedToolModuleType).stream().map(ItemStack::new).toList();
         if (menu.getSelectedModularTool().isRequired(selectedToolModuleType)) {
             toolModules = updatedToolModules;
         } else {

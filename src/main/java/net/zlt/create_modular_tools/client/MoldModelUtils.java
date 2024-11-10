@@ -7,7 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
@@ -47,7 +47,7 @@ public final class MoldModelUtils {
                 continue;
             }
 
-            ToolModule toolModule = ToolModuleRegistry.get(toolModuleId);
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleId);
             if (toolModule == null) {
                 ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(sandMoldBlock, toolModulesNbt);
                 if (moldTopTexture == null) {

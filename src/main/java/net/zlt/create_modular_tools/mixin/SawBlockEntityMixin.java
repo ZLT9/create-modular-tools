@@ -14,10 +14,10 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.recipe.ModularToolCuttingRecipe;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.spongepowered.asm.mixin.Mixin;
@@ -56,9 +56,9 @@ public abstract class SawBlockEntityMixin extends BlockBreakingKineticBlockEntit
 
         List<ItemStack> results = new ArrayList<>();
         for (ToolModuleType toolModuleType : modularToolItem.getCompatible()) {
-            ToolModule toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
             if (toolModule != null) {
-                results.add(toolModule.getItem().getDefaultInstance());
+                results.add(toolModule.getDefaultInstance());
             }
         }
 

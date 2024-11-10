@@ -2,7 +2,9 @@ package net.zlt.create_modular_tools.tool.module;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.zlt.create_modular_tools.CreateModularTools;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
@@ -18,12 +20,12 @@ public final class ToolModuleRegistry {
     private ToolModuleRegistry() {
     }
 
-    private static final Map<String, ToolModule> BY_ID = new HashMap<>();
-    private static final Map<ToolModule, String> BY_TOOL_MODULE = new HashMap<>();
-    private static final List<ToolModule> TOOL_MODULES = new ArrayList<>();
-    private static final Map<ToolModuleType, List<ToolModule>> BY_TOOL_MODULE_TYPE = new HashMap<>();
+    private static final Map<String, ToolModuleItem> BY_ID = new HashMap<>();
+    private static final Map<ToolModuleItem, String> BY_TOOL_MODULE = new HashMap<>();
+    private static final List<ToolModuleItem> TOOL_MODULES = new ArrayList<>();
+    private static final Map<ToolModuleType, List<ToolModuleItem>> BY_TOOL_MODULE_TYPE = new HashMap<>();
 
-    public static <T extends ToolModule> T register(ResourceLocation id, T toolModule) {
+    public static ToolModuleItem register(ResourceLocation id, ToolModuleItem toolModule) {
         String toolModuleId = id.toString();
         if (BY_ID.containsKey(toolModuleId)) {
             CreateModularTools.LOGGER.error("A tool module with the same id is already registered: {}, {}", id, toolModule);
@@ -38,22 +40,31 @@ public final class ToolModuleRegistry {
         return toolModule;
     }
 
+    public static ToolModuleItem register(ResourceLocation id, Item item) {
+        if (item instanceof ToolModuleItem toolModuleItem) {
+            return register(id, toolModuleItem);
+        }
+
+        CreateModularTools.LOGGER.error("The given item is not a tool module item: {}, {}", id, item);
+        throw new IllegalArgumentException();
+    }
+
     @Nullable
-    public static ToolModule get(String id) {
+    public static ToolModuleItem get(String id) {
         return BY_ID.get(id);
     }
 
-    public static String getId(ToolModule toolModule) {
+    public static String getId(ToolModuleItem toolModule) {
         return BY_TOOL_MODULE.get(toolModule);
     }
 
     @Unmodifiable
-    public static List<ToolModule> getAll() {
+    public static List<ToolModuleItem> getAll() {
         return TOOL_MODULES;
     }
 
     @Unmodifiable
-    public static List<ToolModule> getAllOfType(ToolModuleType type) {
+    public static List<ToolModuleItem> getAllOfType(ToolModuleType type) {
         return BY_TOOL_MODULE_TYPE.get(type);
     }
 
@@ -61,7 +72,7 @@ public final class ToolModuleRegistry {
         return BY_ID.containsKey(id);
     }
 
-    public static boolean containsToolModule(ToolModule toolModule) {
+    public static boolean containsToolModule(ToolModuleItem toolModule) {
         return BY_TOOL_MODULE.containsKey(toolModule);
     }
 

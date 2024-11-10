@@ -16,8 +16,8 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Unmodifiable;
@@ -45,8 +45,8 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         if (!stack.isEmpty()) {
             CompoundTag toolModulesNbt = sandMoldBlockEntity.getToolModulesNbt();
 
-            for (ToolModule toolModule : ToolModuleRegistry.getAll()) {
-                if (stack.is(toolModule.getItem())) {
+            for (ToolModuleItem toolModule : ToolModuleRegistry.getAll()) {
+                if (stack.is(toolModule)) {
                     if (!sandMoldBlockEntity.isCompatible(toolModule.getType())) {
                         return InteractionResult.PASS;
                     }
@@ -68,7 +68,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                         if (!player.isCreative()) {
                             stack.shrink(1);
                             if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
-                                player.getInventory().placeItemBackInInventory(((ToolModule) moldSlot.contents()).getItem().getDefaultInstance());
+                                player.getInventory().placeItemBackInInventory(((ToolModuleItem) moldSlot.contents()).getDefaultInstance());
                             }
                         }
                         sandMoldBlockEntity.putToolModule(toolModule.getType(), toolModule);
@@ -141,7 +141,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                     sandMoldBlockEntity.putToolModule(toolModuleType, null);
 
                     if (!player.isCreative()) {
-                        player.getInventory().placeItemBackInInventory(((ToolModule) moldSlot.contents()).getItem().getDefaultInstance());
+                        player.getInventory().placeItemBackInInventory(((ToolModuleItem) moldSlot.contents()).getDefaultInstance());
                     }
                 }
             }

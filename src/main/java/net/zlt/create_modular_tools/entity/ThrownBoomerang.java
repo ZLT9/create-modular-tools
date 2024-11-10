@@ -31,7 +31,7 @@ import net.minecraft.world.phys.Vec3;
 import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 
 import javax.annotation.Nullable;
@@ -51,10 +51,10 @@ public abstract class ThrownBoomerang extends AttackableArrow {
     private float customXRot;
     private float customYRot;
     private float customYaw;
-    protected final ToolModule TOOL_MODULE;
+    protected final ToolModuleItem TOOL_MODULE;
     private final boolean IS_VALID;
 
-    public ThrownBoomerang(ToolModule toolModule, Item item, EntityType<? extends ThrownBoomerang> entityType, Level level) {
+    public ThrownBoomerang(ToolModuleItem toolModule, Item item, EntityType<? extends ThrownBoomerang> entityType, Level level) {
         super(entityType, level);
         boomerangItem = item.getDefaultInstance();
         entityData.set(ID_FOIL, false);
@@ -63,7 +63,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
         IS_VALID = false;
     }
 
-    public ThrownBoomerang(ToolModule toolModule, EntityType<? extends ThrownBoomerang> entityType, Level level, LivingEntity shooter, ItemStack stack) {
+    public ThrownBoomerang(ToolModuleItem toolModule, EntityType<? extends ThrownBoomerang> entityType, Level level, LivingEntity shooter, ItemStack stack) {
         super(entityType, shooter, level);
         boomerangItem = stack.copy();
         entityData.set(ID_FOIL, stack.hasFoil());
@@ -217,11 +217,11 @@ public abstract class ThrownBoomerang extends AttackableArrow {
             }
         }
         String currentToolModuleId = toolModulesNbt.getString(TOOL_MODULE.getType().getTag());
-        ToolModule toolModule = ToolModuleRegistry.get(currentToolModuleId);
+        ToolModuleItem toolModule = ToolModuleRegistry.get(currentToolModuleId);
         if (currentToolModuleId.isEmpty() || toolModule != null) {
             if (!level().isClientSide) {
                 if (toolModule != null) {
-                    Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModule.getItem().getDefaultInstance());
+                    Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModule.getDefaultInstance());
                 }
                 sandMoldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE);
             }

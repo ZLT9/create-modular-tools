@@ -33,10 +33,10 @@ import net.zlt.create_modular_tools.container.screen.CreativeModularToolTableScr
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.AllModularTools;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.AllToolModules;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -571,23 +571,23 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_POMMEL);
     }
 
-    private static void registerToolModuleModelIds(ToolModule toolModule, ResourceLocation... modelIds) {
+    private static void registerToolModuleModelIds(ToolModuleItem toolModule, ResourceLocation... modelIds) {
         toolModule.registerModelIds(() -> List.of(modelIds));
     }
 
-    private static void registerToolModuleBaseModelIdGetter(ToolModule toolModule, ResourceLocation baseModelId) {
+    private static void registerToolModuleBaseModelIdGetter(ToolModuleItem toolModule, ResourceLocation baseModelId) {
         toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null ? baseModelId : original);
     }
 
-    private static void registerToolModuleModelIdGetterForTool(ToolModule toolModule, ModularToolItem tool, ResourceLocation toolModelId) {
+    private static void registerToolModuleModelIdGetterForTool(ToolModuleItem toolModule, ModularToolItem tool, ResourceLocation toolModelId) {
         toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool ? toolModelId : original);
     }
 
-    private static void registerToolModuleModelIdGetterForToolWithModule(ToolModule toolModule, ModularToolItem tool, ToolModuleType toolModuleType, ResourceLocation modelId) {
+    private static void registerToolModuleModelIdGetterForToolWithModule(ToolModuleItem toolModule, ModularToolItem tool, ToolModuleType toolModuleType, ResourceLocation modelId) {
         toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && nbt.contains(toolModuleType.getTag(), Tag.TAG_STRING) ? modelId : original);
     }
 
-    private static void registerToolModuleModelIdGetterForToolWithoutModule(ToolModule toolModule, ModularToolItem tool, ToolModuleType toolModuleType, ResourceLocation modelId) {
+    private static void registerToolModuleModelIdGetterForToolWithoutModule(ToolModuleItem toolModule, ModularToolItem tool, ToolModuleType toolModuleType, ResourceLocation modelId) {
         toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && !nbt.contains(toolModuleType.getTag(), Tag.TAG_STRING) ? modelId : original);
     }
 

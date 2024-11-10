@@ -23,6 +23,6 @@ public class ThrownNetheritePickaxeHead extends ThrownBoomerang {
 
     @Override
     protected float getAttackDamage() {
-        return AllToolModules.NETHERITE_PICKAXE_HEAD.getAttackDamage();
+        return AllToolModules.NETHERITE_PICKAXE_HEAD.getAttackDamageWhenAttached();
     }
 }

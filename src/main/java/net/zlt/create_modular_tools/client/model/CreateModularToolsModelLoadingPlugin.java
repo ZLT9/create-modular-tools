@@ -7,7 +7,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.client.model.item.mold.*;
 import net.zlt.create_modular_tools.client.model.item.tool.*;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -18,7 +18,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public final class CreateModularToolsModelLoadingPlugin implements ModelLoadingPlugin {
     @Override
     public void onInitializeModelLoader(Context pluginContext) {
-        for (ToolModule toolModule : ToolModuleRegistry.getAll()) {
+        for (ToolModuleItem toolModule : ToolModuleRegistry.getAll()) {
             pluginContext.addModels(toolModule.getModelIds());
         }
 

@@ -21,8 +21,8 @@ import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
@@ -87,16 +87,16 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 .forGoggles(tooltip);
 
             if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
-                ToolModule toolModule = (ToolModule) moldSlot.contents();
+                ToolModuleItem toolModule = (ToolModuleItem) moldSlot.contents();
 
                 Lang.builder(CreateModularTools.ID)
                     .space()
-                    .add(toolModule.getDisplayName().plainCopy())
+                    .add(toolModule.getDescription().plainCopy())
                     .style(ChatFormatting.GRAY)
                     .forGoggles(tooltip);
 
                 if (isPlayerSneaking) {
-                    for (MutableComponent component : toolModule.getDescription()) {
+                    for (MutableComponent component : toolModule.getStatsDescription()) {
                         Lang.builder(CreateModularTools.ID)
                             .space()
                             .add(component)
@@ -105,7 +105,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
                 Fluid fluid = (Fluid) moldSlot.contents();
-                ToolModule toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
+                ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
                 if (toolModule != null) {
                     Lang.builder(CreateModularTools.ID)
                         .space()
@@ -114,7 +114,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                         .forGoggles(tooltip);
 
                     if (isPlayerSneaking) {
-                        for (MutableComponent component : toolModule.getDescription()) {
+                        for (MutableComponent component : toolModule.getStatsDescription()) {
                             Lang.builder(CreateModularTools.ID)
                                 .space()
                                 .add(component)
@@ -134,7 +134,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
         return true;
     }
 
-    public void putToolModule(ToolModuleType toolModuleType, @Nullable ToolModule toolModule) {
+    public void putToolModule(ToolModuleType toolModuleType, @Nullable ToolModuleItem toolModule) {
         if (isCompatible(toolModuleType)) {
             toolModulesNbt.putString(toolModuleType.getTag(), toolModule == null ? "" : toolModule.getId());
             fixToolModulesNbt();

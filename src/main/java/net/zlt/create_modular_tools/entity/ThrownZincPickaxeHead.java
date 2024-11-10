@@ -23,6 +23,6 @@ public class ThrownZincPickaxeHead extends ThrownBoomerang {
 
     @Override
     protected float getAttackDamage() {
-        return AllToolModules.ZINC_PICKAXE_HEAD.getAttackDamage();
+        return AllToolModules.ZINC_PICKAXE_HEAD.getAttackDamageWhenAttached();
     }
 }

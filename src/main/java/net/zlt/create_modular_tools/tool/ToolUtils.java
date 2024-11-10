@@ -34,7 +34,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
@@ -67,7 +67,7 @@ public final class ToolUtils {
 
         String contentsId = toolModulesNbt.getString(toolModuleTypeTag);
 
-        ToolModule toolModule = ToolModuleRegistry.get(contentsId);
+        ToolModuleItem toolModule = ToolModuleRegistry.get(contentsId);
         if (toolModule != null) {
             return new MoldSlot(MoldSlotState.SOLID, toolModule);
         }

@@ -23,6 +23,6 @@ public class ThrownStonePickaxeHead extends ThrownBoomerang {
 
     @Override
     protected float getAttackDamage() {
-        return AllToolModules.STONE_PICKAXE_HEAD.getAttackDamage();
+        return AllToolModules.STONE_PICKAXE_HEAD.getAttackDamageWhenAttached();
     }
 }

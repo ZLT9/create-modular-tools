@@ -41,8 +41,8 @@ public final class AllEntityTypes {
             .trackedUpdateRate(20)
             .forceTrackedVelocityUpdates(true));
 
-    public static final EntityType<ThrownGoldPickaxeHead> GOLDEN_PICKAXE_HEAD = register("golden_pickaxe_head",
-        FabricEntityTypeBuilder.<ThrownGoldPickaxeHead>create(MobCategory.MISC, ThrownGoldPickaxeHead::new)
+    public static final EntityType<ThrownGoldenPickaxeHead> GOLDEN_PICKAXE_HEAD = register("golden_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownGoldenPickaxeHead>create(MobCategory.MISC, ThrownGoldenPickaxeHead::new)
             .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
             .trackRangeChunks(4)
             .trackedUpdateRate(20)

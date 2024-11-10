@@ -17,8 +17,8 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.fluid.MoltenMetalFluid;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
@@ -51,24 +51,24 @@ public abstract class BaseSandMoldItem extends BlockItem {
             tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).withStyle(ChatFormatting.GRAY));
 
             if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
-                ToolModule toolModule = (ToolModule) moldSlot.contents();
+                ToolModuleItem toolModule = (ToolModuleItem) moldSlot.contents();
 
-                tooltipComponents.add(CommonComponents.space().append(toolModule.getDisplayName()).withStyle(ChatFormatting.GRAY));
+                tooltipComponents.add(CommonComponents.space().append(toolModule.getDescription()).withStyle(ChatFormatting.GRAY));
 
                 if (Screen.hasShiftDown()) {
-                    for (MutableComponent component : toolModule.getDescription()) {
+                    for (MutableComponent component : toolModule.getStatsDescription()) {
                         tooltipComponents.add(CommonComponents.space().append(component));
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
                 Fluid fluid = (Fluid) moldSlot.contents();
 
-                ToolModule toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
+                ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
                 if (toolModule != null) {
                     tooltipComponents.add(CommonComponents.space().append(Components.translatable(fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId())).withStyle(ChatFormatting.GRAY));
 
                     if (Screen.hasShiftDown()) {
-                        for (MutableComponent component : toolModule.getDescription()) {
+                        for (MutableComponent component : toolModule.getStatsDescription()) {
                             tooltipComponents.add(CommonComponents.space().append(component));
                         }
                     }

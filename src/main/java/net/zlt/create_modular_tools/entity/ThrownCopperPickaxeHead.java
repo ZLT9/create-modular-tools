@@ -23,6 +23,6 @@ public class ThrownCopperPickaxeHead extends ThrownBoomerang {
 
     @Override
     protected float getAttackDamage() {
-        return AllToolModules.COPPER_PICKAXE_HEAD.getAttackDamage();
+        return AllToolModules.COPPER_PICKAXE_HEAD.getAttackDamageWhenAttached();
     }
 }

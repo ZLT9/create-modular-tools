@@ -17,9 +17,9 @@ import net.minecraft.world.item.ItemStack;
 import net.zlt.create_modular_tools.block.entity.CreativeModularToolTableBlockEntity;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ModularToolRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
@@ -155,7 +155,7 @@ public class CreativeModularToolTableMenu extends AbstractContainerMenu {
             return true;
         }
 
-        List<ToolModule> toolModules = ToolModuleRegistry.getAllOfType(selectedToolModuleType);
+        List<ToolModuleItem> toolModules = ToolModuleRegistry.getAllOfType(selectedToolModuleType);
         if (id >= toolModules.size()) {
             return false;
         }
@@ -163,7 +163,7 @@ public class CreativeModularToolTableMenu extends AbstractContainerMenu {
         if (!modularTool.isCompatible(selectedToolModuleType)) {
             CompoundTag newToolModulesNbt = new CompoundTag();
             for (ToolModuleType toolModuleType : selectedModularTool.getCompatible()) {
-                ToolModule toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
                 if (toolModule == null && selectedModularTool.isRequired(toolModuleType)) {
                     toolModule = ToolModuleRegistry.getAllOfType(toolModuleType).get(0);
                 }

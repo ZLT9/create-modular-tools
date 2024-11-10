@@ -10,9 +10,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
+import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import net.zlt.create_modular_tools.tool.module.ToolModuleTypeRegistry;
@@ -103,7 +103,7 @@ public abstract class AllFanProcessingTypesMixin {
             }
 
             if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
-                ToolModule toolModule = ToolModuleRecipeRegistry.get(toolModuleType, (Fluid) moldSlot.contents());
+                ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, (Fluid) moldSlot.contents());
                 if (toolModule == null) {
                     cir.setReturnValue(null);
                     return;

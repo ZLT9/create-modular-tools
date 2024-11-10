@@ -23,6 +23,6 @@ public class ThrownBrassPickaxeHead extends ThrownBoomerang {
 
     @Override
     protected float getAttackDamage() {
-        return AllToolModules.BRASS_PICKAXE_HEAD.getAttackDamage();
+        return AllToolModules.BRASS_PICKAXE_HEAD.getAttackDamageWhenAttached();
     }
 }
