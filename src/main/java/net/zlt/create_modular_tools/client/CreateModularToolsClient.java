@@ -35,6 +35,7 @@ import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.AllModularTools;
+import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.AllToolModules;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
@@ -592,10 +593,13 @@ public class CreateModularToolsClient implements ClientModInitializer {
     }
 
     private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation textureId) {
-        moldTopTexture.registerTextureIdGetter((original, sandMoldBlock, nbt) -> original == null && nbt.getString(toolModuleType.getTag()).isEmpty() ? textureId : original);
+        moldTopTexture.registerTextureIdGetter((original, sandMoldBlock, nbt) -> original == null && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString("state")) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
     }
 
     private static void registerFullMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, FlowingFluid fluid, ResourceLocation textureId) {
-        moldTopTexture.registerTextureIdGetter((original, sandMoldBlock, nbt) -> original == null && nbt.getString(toolModuleType.getTag()).equals(BuiltInRegistries.FLUID.getKey(fluid).toString()) ? textureId : original);
+        moldTopTexture.registerTextureIdGetter((original, sandMoldBlock, nbt) -> {
+            CompoundTag slotNbt = nbt.getCompound(toolModuleType.getTag());
+            return original == null && ToolUtils.MoldSlotState.fromName(slotNbt.getString("state")) == ToolUtils.MoldSlotState.FLUID && slotNbt.getString("id").equals(BuiltInRegistries.FLUID.getKey(fluid).toString()) ? textureId : original;
+        });
     }
 }

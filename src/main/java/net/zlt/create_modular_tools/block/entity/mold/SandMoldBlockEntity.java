@@ -136,7 +136,14 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
 
     public void putToolModule(ToolModuleType toolModuleType, @Nullable ToolModuleItem toolModule) {
         if (isCompatible(toolModuleType)) {
-            toolModulesNbt.putString(toolModuleType.getTag(), toolModule == null ? "" : toolModule.getId());
+            CompoundTag slotNbt = new CompoundTag();
+            if (toolModule == null) {
+                slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+            } else {
+                slotNbt.putString("state", ToolUtils.MoldSlotState.SOLID.toString());
+                slotNbt.putString("id", toolModule.getId());
+            }
+            toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
             fixToolModulesNbt();
             setChanged();
             updateBlockStateLightLevel();
@@ -214,7 +221,9 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     fluidSlots.add(toolModuleTypeTag);
                     fluids.add(fluid);
                 } else {
-                    toolModulesNbt.putString(toolModuleTypeTag, "");
+                    CompoundTag slotNbt = new CompoundTag();
+                    slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+                    toolModulesNbt.put(toolModuleTypeTag, slotNbt);
                     hasEmptySlots = true;
                 }
             }
@@ -222,13 +231,17 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
 
         if (!fluidSlots.isEmpty() && (hasEmptySlots || fluids.size() > 1)) {
             for (String fluid : fluidSlots) {
-                toolModulesNbt.putString(fluid, "");
+                CompoundTag slotNbt = new CompoundTag();
+                slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+                toolModulesNbt.put(fluid, slotNbt);
             }
         }
 
         for (ToolModuleType toolModuleType : getRequired()) {
-            if (!(toolModulesNbt.contains(toolModuleType.getTag(), Tag.TAG_STRING))) {
-                toolModulesNbt.putString(toolModuleType.getTag(), "");
+            if (!(toolModulesNbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND))) {
+                CompoundTag slotNbt = new CompoundTag();
+                slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+                toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
             }
         }
     }

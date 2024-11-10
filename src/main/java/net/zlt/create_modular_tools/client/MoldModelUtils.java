@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
@@ -32,8 +33,9 @@ public final class MoldModelUtils {
                 continue;
             }
 
-            String toolModuleId = toolModulesNbt.getString(toolModuleType.getTag());
-            if (toolModuleId.isEmpty()) {
+            CompoundTag slotNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
+            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString("state"));
+            if (slotState == ToolUtils.MoldSlotState.EMPTY) {
                 ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(sandMoldBlock, toolModulesNbt);
                 if (moldTopTexture == null) {
                     continue;
@@ -47,7 +49,7 @@ public final class MoldModelUtils {
                 continue;
             }
 
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleId);
+            ToolModuleItem toolModule = ToolModuleRegistry.get(slotNbt.getString("id"));
             if (toolModule == null) {
                 ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(sandMoldBlock, toolModulesNbt);
                 if (moldTopTexture == null) {

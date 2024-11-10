@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.block.mold.PickaxeSandMoldBlock;
 import net.zlt.create_modular_tools.tool.AllModularTools;
+import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -43,7 +44,9 @@ public class PickaxeSandMoldBlockEntity extends SandMoldBlockEntity {
     protected CompoundTag getDefaultToolModulesNbt() {
         CompoundTag toolModulesNbt = new CompoundTag();
         for (ToolModuleType toolModuleType : PickaxeSandMoldBlock.s_getRequired()) {
-            toolModulesNbt.putString(toolModuleType.getTag(), "");
+            CompoundTag slotNbt = new CompoundTag();
+            slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+            toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
         }
         return toolModulesNbt;
     }

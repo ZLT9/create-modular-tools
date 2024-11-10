@@ -42,12 +42,18 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         public void generateAdvancement(Consumer<Advancement> consumer) {
-            ItemStack rootStack = new ItemStack(AllItems.MODULAR_PICKAXE, 1);
+            ItemStack rootStack = new ItemStack(AllItems.MODULAR_PICKAXE);
 
             CompoundTag rootStackToolModulesNbt = new CompoundTag();
-            rootStackToolModulesNbt.putString(AllToolModuleTypes.PICKAXE_HEAD.getTag(), AllToolModules.BRASS_PICKAXE_HEAD.getId());
-            rootStackToolModulesNbt.putString(AllToolModuleTypes.TOOL_HANDLE.getTag(), AllToolModules.ZINC_TOOL_HANDLE.getId());
-            rootStackToolModulesNbt.putString(AllToolModuleTypes.TOOL_GRIP.getTag(), AllToolModules.COPPER_TOOL_GRIP.getId());
+            CompoundTag pickaxeHeadNbt = new CompoundTag();
+            pickaxeHeadNbt.putString("id", AllToolModules.BRASS_PICKAXE_HEAD.getId());
+            rootStackToolModulesNbt.put(AllToolModuleTypes.PICKAXE_HEAD.getTag(), pickaxeHeadNbt);
+            CompoundTag toolHandleNbt = new CompoundTag();
+            toolHandleNbt.putString("id", AllToolModules.ZINC_TOOL_HANDLE.getId());
+            rootStackToolModulesNbt.put(AllToolModuleTypes.TOOL_HANDLE.getTag(), toolHandleNbt);
+            CompoundTag toolGripNbt = new CompoundTag();
+            toolGripNbt.putString("id", AllToolModules.COPPER_TOOL_GRIP.getId());
+            rootStackToolModulesNbt.put(AllToolModuleTypes.TOOL_GRIP.getTag(), toolGripNbt);
 
             CompoundTag rootStackNbt = rootStack.getOrCreateTag();
             rootStackNbt.put(SandMoldBlockEntity.TOOL_MODULES_TAG, rootStackToolModulesNbt);

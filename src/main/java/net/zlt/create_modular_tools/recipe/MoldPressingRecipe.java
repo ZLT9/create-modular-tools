@@ -13,14 +13,20 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
+import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MoldUtils;
+import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
+import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import net.zlt.create_modular_tools.tool.module.ToolModuleTypeRegistry;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
@@ -42,6 +48,16 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
     public ItemStack assemble(ItemStack input, RegistryAccess registryAccess) {
         ItemStack result = getResultItem(registryAccess).copy();
 
+        Item item = input.getItem();
+        if (!(item instanceof BaseSandMoldItem moldItem)) {
+            return result;
+        }
+
+        Block block = moldItem.getBlock();
+        if (!(block instanceof BaseSandMoldBlock moldBlock)) {
+            return result;
+        }
+
         CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(input.getTag());
         if (toolModulesNbt.isEmpty()) {
             return result;
@@ -49,9 +65,21 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
 
         CompoundTag resultToolModulesNbt = new CompoundTag();
         for (String key : toolModulesNbt.getAllKeys()) {
-            String toolModuleId = toolModulesNbt.getString(key);
+            ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
+            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType)) {
+                continue;
+            }
+
+            CompoundTag slotNbt = toolModulesNbt.getCompound(key);
+            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString("state")) != ToolUtils.MoldSlotState.SOLID) {
+                continue;
+            }
+
+            String toolModuleId = slotNbt.getString("id");
             if (ToolModuleRegistry.containsId(toolModuleId)) {
-                resultToolModulesNbt.putString(key, toolModuleId);
+                CompoundTag resultToolModuleNbt = new CompoundTag();
+                resultToolModuleNbt.putString("id", toolModuleId);
+                resultToolModulesNbt.put(key, resultToolModuleNbt);
             }
         }
 

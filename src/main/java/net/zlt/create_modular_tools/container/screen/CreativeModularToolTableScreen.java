@@ -116,7 +116,7 @@ public class CreativeModularToolTableScreen extends AbstractContainerScreen<Crea
             boolean isButtonHovered = mouseX >= buttonX && mouseX < buttonX + 18 && mouseY >= buttonY && mouseY < buttonY + 18;
 
             CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(menu.getSlot(0).getItem());
-            ToolModuleItem toolModule = toolModulesNbt.isEmpty() ? null : ToolModuleRegistry.get(toolModulesNbt.getString(selectedToolModuleType.getTag()));
+            ToolModuleItem toolModule = toolModulesNbt.isEmpty() ? null : ToolModuleRegistry.get(toolModulesNbt.getCompound(selectedToolModuleType.getTag()).getString("id"));
 
             guiGraphics.blit(BG_LOCATION, buttonX, buttonY, 0, (toolModule == null ? toolModuleStack.is(Items.BARRIER) : toolModuleStack.is(toolModule)) ? 184 : isButtonHovered ? 202 : 166, 18, 18);
             guiGraphics.renderFakeItem(toolModuleStack, buttonX + 1, buttonY + 1);

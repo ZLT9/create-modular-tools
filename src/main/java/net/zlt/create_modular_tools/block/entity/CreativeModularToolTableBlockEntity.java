@@ -64,9 +64,9 @@ public class CreativeModularToolTableBlockEntity extends BlockEntity implements 
 
         CompoundTag savedToolModulesNbt = new CompoundTag();
         for (ToolModuleType toolModuleType : modularToolItem.getCompatible()) {
-            String toolModuleId = toolModulesNbt.getString(toolModuleType.getTag());
-            if (ToolModuleRegistry.containsId(toolModuleId)) {
-                savedToolModulesNbt.putString(toolModuleType.getTag(), toolModuleId);
+            CompoundTag toolModuleNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
+            if (ToolModuleRegistry.containsId(toolModuleNbt.getString("id"))) {
+                savedToolModulesNbt.put(toolModuleType.getTag(), toolModuleNbt.copy());
             }
         }
         saved.put(SandMoldBlockEntity.TOOL_MODULES_TAG, savedToolModulesNbt);
@@ -206,14 +206,18 @@ public class CreativeModularToolTableBlockEntity extends BlockEntity implements 
         modularToolStack = new ItemStack(modularTool);
 
         CompoundTag toolModulesNbt = new CompoundTag();
-        for (ToolModuleType toolModuleType : modularTool.getRequired()) {
-            toolModulesNbt.putString(toolModuleType.getTag(), ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
-        }
         if (toolModulesTag != null && !toolModulesTag.isEmpty()) {
             for (ToolModuleType toolModuleType : modularTool.getCompatible()) {
                 if (toolModulesTag.contains(toolModuleType.getTag())) {
-                    toolModulesNbt.putString(toolModuleType.getTag(), toolModulesTag.getString(toolModuleType.getTag()));
+                    toolModulesNbt.put(toolModuleType.getTag(), toolModulesTag.getCompound(toolModuleType.getTag()).copy());
                 }
+            }
+        }
+        for (ToolModuleType toolModuleType : modularTool.getRequired()) {
+            if (!toolModulesNbt.contains(toolModuleType.getTag())) {
+                CompoundTag toolModuleNbt = new CompoundTag();
+                toolModuleNbt.putString("id", ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
+                toolModulesNbt.put(toolModuleType.getTag(), toolModuleNbt);
             }
         }
 

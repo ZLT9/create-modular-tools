@@ -76,7 +76,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
         }
 
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null && toolModule.isSuitableForWhenAttached(state)) {
                 return true;
             }
@@ -102,7 +102,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         int durabilityDamage = 0;
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 durabilityDamage += toolModule.getMiningDurabilityDamageWhenAttached();
             }
@@ -129,7 +129,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         InteractionResult result = InteractionResult.PASS;
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 InteractionResult currentResult = toolModule.useOnWhenAttached(blockState, context, this);
                 if (currentResult == InteractionResult.SUCCESS) {
@@ -156,7 +156,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         float destroySpeed = 1.0f;
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 destroySpeed += toolModule.getDestroySpeedBonusWhenAttached(state);
             }
@@ -173,7 +173,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
         }
 
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null && !toolModule.canAttackBlockWhenAttached(state, level, pos, player)) {
                 return false;
             }
@@ -195,7 +195,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         int durabilityDamage = 0;
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 durabilityDamage += toolModule.getAttackDurabilityDamageWhenAttached();
             }
@@ -219,7 +219,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
             }
 
             for (ToolModuleType toolModuleType : COMPATIBLE) {
-                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
                 if (toolModule != null) {
                     tooltipComponents.add(toolModule.getDescription());
                     tooltipComponents.addAll(toolModule.getStatsDescription());
@@ -243,7 +243,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
         float attackSpeed = 0.0f;
 
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 attackDamage += toolModule.getAttackDamageWhenAttached();
                 attackSpeed += toolModule.getAttackSpeedWhenAttached();
@@ -288,7 +288,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         int durability = 0;
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 durability += toolModule.getDurabilityWhenAttached();
             }
@@ -309,7 +309,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
         }
 
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null && toolModule.canPerformActionWhenAttached(toolAction)) {
                 return true;
             }
@@ -326,7 +326,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
         }
 
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null && toolModule.isFireproofWhenAttached()) {
                 return true;
             }
@@ -347,7 +347,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
         }
 
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null && toolModule.isWaterproofWhenAttached()) {
                 return true;
             }
@@ -362,7 +362,9 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         CompoundTag toolModulesNbt = new CompoundTag();
         for (ToolModuleType toolModuleType : REQUIRED) {
-            toolModulesNbt.putString(toolModuleType.getTag(), ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
+            CompoundTag toolModuleNbt = new CompoundTag();
+            toolModuleNbt.putString("id", ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
+            toolModulesNbt.put(toolModuleType.getTag(), toolModuleNbt);
         }
 
         CompoundTag nbt = stack.getOrCreateTag();
@@ -384,7 +386,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         int enchantmentValue = 0;
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 enchantmentValue += toolModule.getEnchantmentValue();
             }
@@ -401,7 +403,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
         float attackDamage = 0.0f;
         for (ToolModuleType toolModuleType : COMPATIBLE) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 attackDamage += toolModule.getAttackDamageWhenAttached();
             }

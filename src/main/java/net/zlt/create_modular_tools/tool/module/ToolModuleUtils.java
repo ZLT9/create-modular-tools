@@ -22,7 +22,7 @@ public final class ToolModuleUtils {
     @Environment(EnvType.CLIENT)
     @Nullable
     public static BakedModel getToolModuleModel(ToolModuleType toolModuleType, ModularToolItem modularTool, CompoundTag toolModulesNbt) {
-        ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+        ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
         if (toolModule == null) {
             return null;
         }

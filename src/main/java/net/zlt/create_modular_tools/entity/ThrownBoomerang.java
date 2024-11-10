@@ -32,6 +32,7 @@ import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 
 import javax.annotation.Nullable;
@@ -208,20 +209,23 @@ public abstract class ThrownBoomerang extends AttackableArrow {
         }
 
         CompoundTag toolModulesNbt = sandMoldBlockEntity.getToolModulesNbt();
-        if (!toolModulesNbt.contains(TOOL_MODULE.getType().getTag(), Tag.TAG_STRING)) {
+        if (!toolModulesNbt.contains(TOOL_MODULE.getType().getTag(), Tag.TAG_COMPOUND)) {
             for (String key : toolModulesNbt.getAllKeys()) {
-                String toolModuleId = toolModulesNbt.getString(key);
-                if (!toolModuleId.isEmpty() && !ToolModuleRegistry.containsId(toolModuleId)) {
+                if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(key).getString("state")) == ToolUtils.MoldSlotState.FLUID) {
                     return;
                 }
             }
         }
-        String currentToolModuleId = toolModulesNbt.getString(TOOL_MODULE.getType().getTag());
-        ToolModuleItem toolModule = ToolModuleRegistry.get(currentToolModuleId);
-        if (currentToolModuleId.isEmpty() || toolModule != null) {
+        CompoundTag slotNbt = toolModulesNbt.getCompound(TOOL_MODULE.getType().getTag());
+        ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString("state"));
+        boolean isSlotSolid = slotState == ToolUtils.MoldSlotState.SOLID;
+        if (slotState == ToolUtils.MoldSlotState.EMPTY || isSlotSolid) {
             if (!level().isClientSide) {
-                if (toolModule != null) {
-                    Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModule.getDefaultInstance());
+                if (isSlotSolid) {
+                    ToolModuleItem toolModule = ToolModuleRegistry.get(slotNbt.getString("id"));
+                    if (toolModule != null) {
+                        Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModule.getDefaultInstance());
+                    }
                 }
                 sandMoldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE);
             }
@@ -230,7 +234,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
                 level().playSound(null, blockPos, toolModuleSound, SoundSource.BLOCKS, 0.5f, 0.8f);
             }
             level().playSound(null, blockPos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 0.25f, 0.8f);
-            if (toolModule != null) {
+            if (isSlotSolid) {
                 level().playSound(null, blockPos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2f, 1.0f + level().random.nextFloat());
             }
         }

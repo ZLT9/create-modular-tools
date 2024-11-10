@@ -56,7 +56,7 @@ public abstract class SawBlockEntityMixin extends BlockBreakingKineticBlockEntit
 
         List<ItemStack> results = new ArrayList<>();
         for (ToolModuleType toolModuleType : modularToolItem.getCompatible()) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
             if (toolModule != null) {
                 results.add(toolModule.getDefaultInstance());
             }

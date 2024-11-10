@@ -5,9 +5,12 @@ import io.github.fabricators_of_create.porting_lib.fluids.FluidStack;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Container;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
+import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -55,7 +58,13 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "getRequiredAmountForItem", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
     private static void createModularTools$getRequiredAmountForItem(Level world, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<Long> cir) {
-        if (!(stack.getItem() instanceof BaseSandMoldItem)) {
+        Item item = stack.getItem();
+        if (!(item instanceof BaseSandMoldItem moldItem)) {
+            return;
+        }
+
+        Block block = moldItem.getBlock();
+        if (!(block instanceof BaseSandMoldBlock moldBlock)) {
             return;
         }
 
@@ -72,11 +81,16 @@ public abstract class FillingBySpoutMixin {
 
         long requiredMoltenMetalAmount = 0L;
         for (String key : toolModulesNbt.getAllKeys()) {
-            if (toolModulesNbt.getString(key).isEmpty()) {
-                ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
-                if (toolModuleType != null) {
-                    requiredMoltenMetalAmount += toolModuleType.getRequiredMoltenMetalAmount();
-                }
+            ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
+            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType)) {
+                continue;
+            }
+
+            CompoundTag slotNbt = toolModulesNbt.getCompound(key);
+            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString("state"));
+
+            if (slotState == ToolUtils.MoldSlotState.EMPTY) {
+                requiredMoltenMetalAmount += toolModuleType.getRequiredMoltenMetalAmount();
             }
         }
         cir.setReturnValue(requiredMoltenMetalAmount);
@@ -84,7 +98,13 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "fillItem", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
     private static void createModularTools$fillItem(Level world, long requiredAmount, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<ItemStack> cir) {
-        if (!(stack.getItem() instanceof BaseSandMoldItem)) {
+        Item item = stack.getItem();
+        if (!(item instanceof BaseSandMoldItem moldItem)) {
+            return;
+        }
+
+        Block block = moldItem.getBlock();
+        if (!(block instanceof BaseSandMoldBlock moldBlock)) {
             return;
         }
 
@@ -104,8 +124,17 @@ public abstract class FillingBySpoutMixin {
 
         String fluidId = BuiltInRegistries.FLUID.getKey(fluid).toString();
         for (String key : toolModulesNbt.getAllKeys()) {
-            if (toolModulesNbt.getString(key).isEmpty()) {
-                toolModulesNbt.putString(key, fluidId);
+            ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
+            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType)) {
+                continue;
+            }
+
+            CompoundTag slotNbt = toolModulesNbt.getCompound(key);
+            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString("state"));
+
+            if (slotState == ToolUtils.MoldSlotState.EMPTY) {
+                slotNbt.putString("state", ToolUtils.MoldSlotState.FLUID.toString());
+                slotNbt.putString("id", fluidId);
             }
         }
 

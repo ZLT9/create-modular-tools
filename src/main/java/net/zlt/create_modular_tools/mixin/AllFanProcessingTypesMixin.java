@@ -109,7 +109,10 @@ public abstract class AllFanProcessingTypesMixin {
                     return;
                 }
 
-                resultToolModulesNbt.putString(toolModuleTypeTag, toolModule.getId());
+                CompoundTag resultToolModuleNbt = new CompoundTag();
+                resultToolModuleNbt.putString("state", ToolUtils.MoldSlotState.SOLID.toString());
+                resultToolModuleNbt.putString("id", toolModule.getId());
+                resultToolModulesNbt.put(toolModuleTypeTag, resultToolModuleNbt);
             }
         }
 

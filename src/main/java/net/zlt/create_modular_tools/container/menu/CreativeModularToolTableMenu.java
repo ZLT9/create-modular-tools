@@ -139,7 +139,7 @@ public class CreativeModularToolTableMenu extends AbstractContainerMenu {
 
         if (!selectedModularTool.isRequired(selectedToolModuleType)) {
             if (id == 0) {
-                if (ToolModuleRegistry.containsId(toolModulesNbt.getString(selectedToolModuleType.getTag()))) {
+                if (ToolModuleRegistry.containsId(toolModulesNbt.getCompound(selectedToolModuleType.getTag()).getString("id"))) {
                     toolModulesNbt.remove(selectedToolModuleType.getTag());
                     CONTAINER.setChanged();
                     broadcastChanges();
@@ -163,12 +163,14 @@ public class CreativeModularToolTableMenu extends AbstractContainerMenu {
         if (!modularTool.isCompatible(selectedToolModuleType)) {
             CompoundTag newToolModulesNbt = new CompoundTag();
             for (ToolModuleType toolModuleType : selectedModularTool.getCompatible()) {
-                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getString(toolModuleType.getTag()));
+                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
                 if (toolModule == null && selectedModularTool.isRequired(toolModuleType)) {
                     toolModule = ToolModuleRegistry.getAllOfType(toolModuleType).get(0);
                 }
                 if (toolModule != null) {
-                    newToolModulesNbt.putString(toolModuleType.getTag(), toolModule.getId());
+                    CompoundTag newToolModuleNbt = new CompoundTag();
+                    newToolModuleNbt.putString("id", toolModule.getId());
+                    newToolModulesNbt.put(toolModuleType.getTag(), newToolModuleNbt);
                 }
             }
 
@@ -182,7 +184,9 @@ public class CreativeModularToolTableMenu extends AbstractContainerMenu {
             toolModulesNbt = newToolModulesNbt;
         }
 
-        toolModulesNbt.putString(selectedToolModuleType.getTag(), toolModules.get(id).getId());
+        CompoundTag toolModuleNbt = new CompoundTag();
+        toolModuleNbt.putString("id", toolModules.get(id).getId());
+        toolModulesNbt.put(selectedToolModuleType.getTag(), toolModuleNbt);
 
         CONTAINER.setChanged();
         broadcastChanges();
@@ -212,16 +216,20 @@ public class CreativeModularToolTableMenu extends AbstractContainerMenu {
 
         if (!oldToolModulesNbt.isEmpty()) {
             for (ToolModuleType toolModuleType : oldModularTool.getCompatible()) {
-                String toolModuleId = oldToolModulesNbt.getString(toolModuleType.getTag());
+                String toolModuleId = oldToolModulesNbt.getCompound(toolModuleType.getTag()).getString("id");
                 if (ToolModuleRegistry.containsId(toolModuleId) && selectedModularTool.isCompatible(toolModuleType)) {
-                    newToolModulesNbt.putString(toolModuleType.getTag(), toolModuleId);
+                    CompoundTag newToolModuleNbt = new CompoundTag();
+                    newToolModuleNbt.putString("id", toolModuleId);
+                    newToolModulesNbt.put(toolModuleType.getTag(), newToolModuleNbt);
                 }
             }
         }
 
         for (ToolModuleType toolModuleType : selectedModularTool.getRequired()) {
             if (!newToolModulesNbt.contains(toolModuleType.getTag(), Tag.TAG_STRING)) {
-                newToolModulesNbt.putString(toolModuleType.getTag(), ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
+                CompoundTag newToolModuleNbt = new CompoundTag();
+                newToolModuleNbt.putString("id", ToolModuleRegistry.getAllOfType(toolModuleType).get(0).getId());
+                newToolModulesNbt.put(toolModuleType.getTag(), newToolModuleNbt);
             }
         }
 

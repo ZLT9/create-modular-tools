@@ -70,7 +70,9 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
             remainderNbt.putUUID("UUID", UUID.randomUUID());
             CompoundTag remainderToolModulesNbt = ToolUtils.getToolModulesNbt(remainderNbt);
             for (String toolModuleTypeTag : remainderToolModulesNbt.getAllKeys()) {
-                remainderToolModulesNbt.putString(toolModuleTypeTag, "");
+                CompoundTag remainderToolModuleNbt = new CompoundTag();
+                remainderToolModuleNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+                remainderToolModulesNbt.put(toolModuleTypeTag, remainderToolModuleNbt);
             }
             itemEntity.setItem(remainder);
         }
@@ -121,7 +123,9 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
         remainderNbt.putUUID("UUID", UUID.randomUUID());
         CompoundTag remainderToolModulesNbt = ToolUtils.getToolModulesNbt(remainderNbt);
         for (String toolModuleTypeTag : remainderToolModulesNbt.getAllKeys()) {
-            remainderToolModulesNbt.putString(toolModuleTypeTag, "");
+            CompoundTag remainderToolModuleNbt = new CompoundTag();
+            remainderToolModuleNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+            remainderToolModulesNbt.put(toolModuleTypeTag, remainderToolModuleNbt);
         }
 
         outputList.add(remainder);

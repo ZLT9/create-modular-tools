@@ -30,11 +30,8 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Fluids;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
-import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
@@ -51,33 +48,47 @@ public final class ToolUtils {
     }
 
     public enum MoldSlotState {
-        ABSENT,
-        EMPTY,
-        SOLID,
-        FLUID
+        ABSENT("absent"),
+        EMPTY("empty"),
+        SOLID("solid"),
+        FLUID("fluid");
+
+        private final String name;
+
+        MoldSlotState(String name) {
+            this.name = name;
+        }
+
+        @Nullable
+        public static MoldSlotState fromName(String name) {
+            for (MoldSlotState state : MoldSlotState.values()) {
+                if (state.name.equals(name)) {
+                    return state;
+                }
+            }
+
+            return null;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
     }
 
     public record MoldSlot(MoldSlotState state, @Nullable Object contents) {
     }
 
     public static MoldSlot getMoldSlot(CompoundTag toolModulesNbt, String toolModuleTypeTag) {
-        if (!toolModulesNbt.contains(toolModuleTypeTag, Tag.TAG_STRING)) {
+        if (!toolModulesNbt.contains(toolModuleTypeTag, Tag.TAG_COMPOUND)) {
             return new MoldSlot(MoldSlotState.ABSENT, null);
         }
 
-        String contentsId = toolModulesNbt.getString(toolModuleTypeTag);
+        CompoundTag slotNbt = toolModulesNbt.getCompound(toolModuleTypeTag);
+        MoldSlotState slotState = MoldSlotState.fromName(slotNbt.getString("state"));
+        String slotContentsId = slotNbt.getString("id");
 
-        ToolModuleItem toolModule = ToolModuleRegistry.get(contentsId);
-        if (toolModule != null) {
-            return new MoldSlot(MoldSlotState.SOLID, toolModule);
-        }
-
-        Fluid fluid = BuiltInRegistries.FLUID.get(new ResourceLocation(contentsId));
-        if (fluid != Fluids.EMPTY) {
-            return new MoldSlot(MoldSlotState.FLUID, fluid);
-        }
-
-        return new MoldSlot(MoldSlotState.EMPTY, null);
+        return new MoldSlot(slotState, slotState == MoldSlotState.EMPTY ? null : slotState == MoldSlotState.SOLID ? ToolModuleRegistry.get(slotContentsId) : BuiltInRegistries.FLUID.get(new ResourceLocation(slotContentsId)));
     }
 
     public static MoldSlot getMoldSlot(CompoundTag toolModulesNbt, ToolModuleType toolModuleType) {

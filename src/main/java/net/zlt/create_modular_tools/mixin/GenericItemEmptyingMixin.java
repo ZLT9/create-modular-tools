@@ -93,7 +93,9 @@ public abstract class GenericItemEmptyingMixin {
             }
 
             if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
-                resultingToolModulesNbt.putString(toolModuleTypeTag, "");
+                CompoundTag resultingToolModuleNbt = new CompoundTag();
+                resultingToolModuleNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+                resultingToolModulesNbt.put(toolModuleTypeTag, resultingToolModuleNbt);
                 resultingFluid = (Fluid) moldSlot.contents();
                 resultingFluidAmount += toolModuleType.getRequiredMoltenMetalAmount();
             }

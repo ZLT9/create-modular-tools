@@ -93,7 +93,9 @@ public abstract class BaseSandMoldItem extends BlockItem {
         blockEntityNbt.put(SandMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
 
         for (ToolModuleType toolModuleType : getRequiredToolModuleTypes()) {
-            toolModulesNbt.putString(toolModuleType.getTag(), "");
+            CompoundTag slotNbt = new CompoundTag();
+            slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+            toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
         }
 
         return stack;
