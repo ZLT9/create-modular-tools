@@ -134,6 +134,7 @@ public final class AllItems {
     public static final Item BRASS_HOE_HEAD = register("brass_hoe_head", new ToolModuleItem(AllToolModules.BRASS_HOE_HEAD, new Item.Properties()));
     public static final Item DIAMOND_HOE_HEAD = register("diamond_hoe_head", new ToolModuleItem(AllToolModules.DIAMOND_HOE_HEAD, new Item.Properties()));
 
+    public static final Item WOODEN_TOOL_HANDLE = register("wooden_tool_handle", new ToolModuleItem(AllToolModules.WOODEN_TOOL_HANDLE, new Item.Properties()));
     public static final Item STONE_TOOL_HANDLE = register("stone_tool_handle", new ToolModuleItem(AllToolModules.STONE_TOOL_HANDLE, new Item.Properties()));
     public static final Item IRON_TOOL_HANDLE = register("iron_tool_handle", new ToolModuleItem(AllToolModules.IRON_TOOL_HANDLE, new Item.Properties()));
     public static final Item COPPER_TOOL_HANDLE = register("copper_tool_handle", new ToolModuleItem(AllToolModules.COPPER_TOOL_HANDLE, new Item.Properties()));

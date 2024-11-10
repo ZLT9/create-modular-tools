@@ -8,7 +8,7 @@
   "processingTime": 50,
   "results": [
     {
-      "item": "minecraft:stick"
+      "item": "create_modular_tools:wooden_tool_handle"
     },
     {
       "item": "create_modular_tools:golden_hoe_head"

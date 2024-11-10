@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.ToolModule;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
@@ -38,7 +39,7 @@ public class WoodenToolHandleToolModule extends ToolModule {
 
     @Override
     public Item getItem() {
-        return Items.STICK;
+        return AllItems.WOODEN_TOOL_HANDLE;
     }
 
     @Override

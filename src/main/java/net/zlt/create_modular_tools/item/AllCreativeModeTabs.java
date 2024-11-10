@@ -44,6 +44,7 @@ public final class AllCreativeModeTabs {
 
             entries.accept(AllMoldItems.SAND_MOLD);
 
+            entries.accept(AllItems.WOODEN_TOOL_HANDLE);
             entries.accept(AllItems.STONE_TOOL_HANDLE);
             entries.accept(AllItems.IRON_TOOL_HANDLE);
             entries.accept(AllItems.COPPER_TOOL_HANDLE);
