@@ -58,13 +58,11 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "getRequiredAmountForItem", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
     private static void createModularTools$getRequiredAmountForItem(Level world, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<Long> cir) {
-        Item item = stack.getItem();
-        if (!(item instanceof BaseSandMoldItem moldItem)) {
+        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem)) {
             return;
         }
 
-        Block block = moldItem.getBlock();
-        if (!(block instanceof BaseSandMoldBlock moldBlock)) {
+        if (!(moldItem.getBlock() instanceof BaseSandMoldBlock moldBlock)) {
             return;
         }
 
@@ -98,8 +96,7 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "fillItem", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
     private static void createModularTools$fillItem(Level world, long requiredAmount, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<ItemStack> cir) {
-        Item item = stack.getItem();
-        if (!(item instanceof BaseSandMoldItem moldItem)) {
+        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem)) {
             return;
         }
 
