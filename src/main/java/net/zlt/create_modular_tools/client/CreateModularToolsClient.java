@@ -9,6 +9,9 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.client.player.ClientPickBlockApplyCallback;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderType;
@@ -16,6 +19,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -50,6 +54,8 @@ import java.util.UUID;
 public class CreateModularToolsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        ResourceManagerHelper.registerBuiltinResourcePack(CreateModularTools.asResource("hindu_arabic_enchantments"), FabricLoader.getInstance().getModContainer(CreateModularTools.ID).orElseThrow(() -> new IllegalStateException("Create: Modular Tools' ModContainer couldn't be found!")), Component.translatable("create_modular_tools.resource_pack.hindu_arabic_enchantments"), ResourcePackActivationType.NORMAL);
+
         EntityRendererRegistry.register(AllEntityTypes.WOODEN_PICKAXE_HEAD, ThrownWoodenPickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.STONE_PICKAXE_HEAD, ThrownStonePickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.IRON_PICKAXE_HEAD, ThrownIronPickaxeHeadRenderer::new);

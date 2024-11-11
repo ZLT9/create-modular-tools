@@ -27,10 +27,7 @@ public final class MoldUtils {
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(key);
-            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString("state")) != ToolUtils.MoldSlotState.SOLID) {
-                return false;
-            }
-            if (!ToolModuleRegistry.containsId(slotNbt.getString("id"))) {
+            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString("state")) != ToolUtils.MoldSlotState.SOLID || !ToolModuleRegistry.containsId(slotNbt.getString("id"))) {
                 return false;
             }
         }

@@ -5,10 +5,8 @@ import io.github.fabricators_of_create.porting_lib.fluids.FluidStack;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Container;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
@@ -96,12 +94,7 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "fillItem", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
     private static void createModularTools$fillItem(Level world, long requiredAmount, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<ItemStack> cir) {
-        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem)) {
-            return;
-        }
-
-        Block block = moldItem.getBlock();
-        if (!(block instanceof BaseSandMoldBlock moldBlock)) {
+        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseSandMoldBlock moldBlock)) {
             return;
         }
 
