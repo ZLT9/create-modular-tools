@@ -11,6 +11,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.Item;
@@ -79,6 +80,9 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
             if (ToolModuleRegistry.containsId(toolModuleId)) {
                 CompoundTag resultToolModuleNbt = new CompoundTag();
                 resultToolModuleNbt.putString("id", toolModuleId);
+                if (slotNbt.contains("tag", Tag.TAG_COMPOUND)) {
+                    resultToolModuleNbt.put("tag", slotNbt.getCompound("tag"));
+                }
                 resultToolModulesNbt.put(key, resultToolModuleNbt);
             }
         }

@@ -134,7 +134,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
         return true;
     }
 
-    public void putToolModule(ToolModuleType toolModuleType, @Nullable ToolModuleItem toolModule) {
+    public void putToolModule(ToolModuleType toolModuleType, @Nullable ToolModuleItem toolModule, @Nullable CompoundTag toolModuleNbt) {
         if (isCompatible(toolModuleType)) {
             CompoundTag slotNbt = new CompoundTag();
             if (toolModule == null) {
@@ -142,6 +142,9 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
             } else {
                 slotNbt.putString("state", ToolUtils.MoldSlotState.SOLID.toString());
                 slotNbt.putString("id", toolModule.getId());
+                if (toolModuleNbt != null) {
+                    slotNbt.put("tag", toolModuleNbt);
+                }
             }
             toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
             fixToolModulesNbt();

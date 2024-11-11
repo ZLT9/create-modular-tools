@@ -103,13 +103,13 @@ public class SandMoldBlock extends HorizontalDirectionalBlock {
                         for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
                             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(toolModuleTypeTag);
                             if (toolModuleType != null) {
-                                sandMoldBlockEntity.putToolModule(toolModuleType, null);
+                                sandMoldBlockEntity.putToolModule(toolModuleType, null, null);
                             }
                         }
                     }
                 }
                 for (ToolModuleType toolModuleType : additionalSlots) {
-                    sandMoldBlockEntity.putToolModule(toolModuleType, null);
+                    sandMoldBlockEntity.putToolModule(toolModuleType, null, null);
                 }
             }
         }

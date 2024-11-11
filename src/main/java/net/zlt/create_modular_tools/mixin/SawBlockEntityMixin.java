@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.transfer.v1.storage.base.SidedStorageBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -56,9 +57,14 @@ public abstract class SawBlockEntityMixin extends BlockBreakingKineticBlockEntit
 
         List<ItemStack> results = new ArrayList<>();
         for (ToolModuleType toolModuleType : modularToolItem.getCompatible()) {
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
+            CompoundTag toolModuleNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleNbt.getString("id"));
             if (toolModule != null) {
-                results.add(toolModule.getDefaultInstance());
+                ItemStack toolModuleStack = toolModule.getDefaultInstance();
+                if (toolModuleNbt.contains("tag", Tag.TAG_COMPOUND)) {
+                    toolModuleStack.setTag(toolModuleNbt.getCompound("tag"));
+                }
+                results.add(toolModuleStack);
             }
         }
 

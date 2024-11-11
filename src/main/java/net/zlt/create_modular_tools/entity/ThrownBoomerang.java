@@ -227,7 +227,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
                         Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModule.getDefaultInstance());
                     }
                 }
-                sandMoldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE);
+                sandMoldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE, boomerangItem.getTag());
             }
             SoundEvent toolModuleSound = TOOL_MODULE.getSound();
             if (toolModuleSound != null) {

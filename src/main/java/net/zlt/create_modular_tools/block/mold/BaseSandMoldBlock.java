@@ -51,7 +51,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
 
                 if (!toolModulesNbt.contains(toolModule.getType().getTag(), Tag.TAG_COMPOUND)) {
                     for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
-                        if (ToolUtils.getMoldSlot(toolModulesNbt, toolModuleTypeTag).state() == ToolUtils.MoldSlotState.FLUID) {
+                        if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(toolModuleTypeTag).getString("state")) == ToolUtils.MoldSlotState.FLUID) {
                             return InteractionResult.PASS;
                         }
                     }
@@ -66,10 +66,12 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                     if (!player.isCreative()) {
                         stack.shrink(1);
                         if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
-                            player.getInventory().placeItemBackInInventory(((ToolModuleItem) moldSlot.contents()).getDefaultInstance());
+                            ItemStack returnedToolModuleStack = ((ToolModuleItem) moldSlot.contents()).getDefaultInstance();
+                            returnedToolModuleStack.setTag(moldSlot.tag());
+                            player.getInventory().placeItemBackInInventory(returnedToolModuleStack);
                         }
                     }
-                    sandMoldBlockEntity.putToolModule(toolModule.getType(), toolModule);
+                    sandMoldBlockEntity.putToolModule(toolModule.getType(), toolModule, stack.getTag());
                 }
 
                 SoundEvent toolModuleSound = toolModule.getSound();
@@ -134,11 +136,13 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
             if (!level.isClientSide) {
                 if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
                     sandMoldBlockEntity.removeToolModule(toolModuleType);
-                } else {
-                    sandMoldBlockEntity.putToolModule(toolModuleType, null);
+                } else if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
+                    sandMoldBlockEntity.putToolModule(toolModuleType, null, null);
 
                     if (!player.isCreative()) {
-                        player.getInventory().placeItemBackInInventory(((ToolModuleItem) moldSlot.contents()).getDefaultInstance());
+                        ItemStack returnedToolModuleStack = ((ToolModuleItem) moldSlot.contents()).getDefaultInstance();
+                        returnedToolModuleStack.setTag(moldSlot.tag());
+                        player.getInventory().placeItemBackInInventory(returnedToolModuleStack);
                     }
                 }
             }

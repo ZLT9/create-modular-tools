@@ -76,19 +76,31 @@ public final class ToolUtils {
         }
     }
 
-    public record MoldSlot(MoldSlotState state, @Nullable Object contents) {
+    public record MoldSlot(MoldSlotState state, @Nullable Object contents, @Nullable CompoundTag tag) {
     }
 
     public static MoldSlot getMoldSlot(CompoundTag toolModulesNbt, String toolModuleTypeTag) {
         if (!toolModulesNbt.contains(toolModuleTypeTag, Tag.TAG_COMPOUND)) {
-            return new MoldSlot(MoldSlotState.ABSENT, null);
+            return new MoldSlot(MoldSlotState.ABSENT, null, null);
         }
 
         CompoundTag slotNbt = toolModulesNbt.getCompound(toolModuleTypeTag);
         MoldSlotState slotState = MoldSlotState.fromName(slotNbt.getString("state"));
         String slotContentsId = slotNbt.getString("id");
 
-        return new MoldSlot(slotState, slotState == MoldSlotState.EMPTY ? null : slotState == MoldSlotState.SOLID ? ToolModuleRegistry.get(slotContentsId) : BuiltInRegistries.FLUID.get(new ResourceLocation(slotContentsId)));
+        if (slotState == MoldSlotState.EMPTY) {
+            return new MoldSlot(MoldSlotState.EMPTY, null, null);
+        }
+
+        if (slotState == MoldSlotState.SOLID) {
+            return new MoldSlot(MoldSlotState.SOLID, ToolModuleRegistry.get(slotContentsId), slotNbt.contains("tag", Tag.TAG_COMPOUND) ? slotNbt.getCompound("tag") : null);
+        }
+
+        if (slotState == MoldSlotState.FLUID) {
+            return new MoldSlot(MoldSlotState.FLUID, BuiltInRegistries.FLUID.get(new ResourceLocation(slotContentsId)), null);
+        }
+
+        return new MoldSlot(null, null, null);
     }
 
     public static MoldSlot getMoldSlot(CompoundTag toolModulesNbt, ToolModuleType toolModuleType) {
