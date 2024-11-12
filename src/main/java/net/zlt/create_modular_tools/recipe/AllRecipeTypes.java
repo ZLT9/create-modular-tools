@@ -42,9 +42,6 @@ public enum AllRecipeTypes implements IRecipeTypeInfo {
         TYPE = () -> TYPE_OBJECT;
     }
 
-    public static void init() {
-    }
-
     @Override
     public ResourceLocation getId() {
         return ID;
@@ -62,5 +59,8 @@ public enum AllRecipeTypes implements IRecipeTypeInfo {
 
     public <C extends Container, T extends Recipe<C>> Optional<T> find(C inv, Level world) {
         return world.getRecipeManager().getRecipeFor(getType(), inv, world);
+    }
+
+    public static void init() {
     }
 }
