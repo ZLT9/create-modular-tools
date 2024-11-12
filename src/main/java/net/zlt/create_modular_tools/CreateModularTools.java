@@ -13,6 +13,7 @@ import net.zlt.create_modular_tools.block.entity.AllBlockEntityTypes;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
 import net.zlt.create_modular_tools.block.mold.*;
 import net.zlt.create_modular_tools.container.menu.AllMenuTypes;
+import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.AllCreativeModeTabs;
@@ -59,6 +60,7 @@ public class CreateModularTools implements ModInitializer {
         AllLootItemFunctionTypes.init();
         AllRecipeTypes.init();
         AllMoldTopTextures.init();
+        AllDamageTypes.init();
         AllEntityTypes.init();
         AllCriterionTriggers.init();
 
