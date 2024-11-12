@@ -58,7 +58,6 @@ public abstract class ThrownBoomerang extends AttackableArrow {
     public ThrownBoomerang(ToolModuleItem toolModule, Item item, EntityType<? extends ThrownBoomerang> entityType, Level level) {
         super(entityType, level);
         boomerangItem = item.getDefaultInstance();
-        entityData.set(ID_FOIL, false);
         setNoGravity(true);
         TOOL_MODULE = toolModule;
         IS_VALID = false;
