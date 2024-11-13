@@ -25,7 +25,7 @@ public final class MoldModelUtils {
     private MoldModelUtils() {
     }
 
-    public static void forEachMoldTopQuad(Collection<ToolModuleType> compatibleToolModuleTypes, CompoundTag toolModulesNbt, SandMoldBlock sandMoldBlock, ModularToolItem modularTool, Consumer<ResourceLocation> action) {
+    public static void forEachMoldTopTexture(Collection<ToolModuleType> compatibleToolModuleTypes, CompoundTag toolModulesNbt, SandMoldBlock sandMoldBlock, ModularToolItem modularTool, Consumer<ResourceLocation> action) {
         List<ResourceLocation> existingToolModuleIds = new ArrayList<>();
 
         for (ToolModuleType toolModuleType : compatibleToolModuleTypes) {

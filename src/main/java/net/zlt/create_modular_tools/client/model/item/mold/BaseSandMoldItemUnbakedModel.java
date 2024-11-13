@@ -76,7 +76,7 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
             return createOverride(quads);
         }
 
-        MoldModelUtils.forEachMoldTopQuad(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
+        MoldModelUtils.forEachMoldTopTexture(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
             int[] topQuadVertices = Utils.copyArray(interiorTopQuad.getVertices());
             Utils.setBakedQuadUV(topQuadVertices, spriteGetter.apply(new Material(InventoryMenu.BLOCK_ATLAS, id)), Direction.NORTH);
             quads.add(new BakedQuad(topQuadVertices, interiorTopQuad.getTintIndex(), Direction.UP, interiorTopQuad.getSprite(), interiorTopQuad.isShade()));

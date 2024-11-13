@@ -5,6 +5,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -16,11 +17,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
+import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.fluid.MoltenMetalFluid;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import net.zlt.create_modular_tools.tool.module.ToolModuleTypeRegistry;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -99,6 +102,36 @@ public abstract class BaseSandMoldItem extends BlockItem {
         }
 
         return stack;
+    }
+
+    @Override
+    public boolean isFoil(ItemStack stack) {
+        if (super.isFoil(stack)) {
+            return true;
+        }
+
+        if (!(getBlock() instanceof BaseSandMoldBlock moldBlock)) {
+            return false;
+        }
+
+        CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(stack.getTag());
+        if (toolModulesNbt.isEmpty()) {
+            return false;
+        }
+
+        for (String key : toolModulesNbt.getAllKeys()) {
+            ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
+            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType)) {
+                continue;
+            }
+
+            CompoundTag slotNbt = toolModulesNbt.getCompound(key);
+            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString("state")) == ToolUtils.MoldSlotState.SOLID && !slotNbt.getCompound("tag").getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND).isEmpty()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     protected abstract Collection<ToolModuleType> getRequiredToolModuleTypes();

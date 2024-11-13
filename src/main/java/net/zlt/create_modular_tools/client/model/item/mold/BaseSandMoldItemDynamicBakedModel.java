@@ -124,7 +124,7 @@ public abstract class BaseSandMoldItemDynamicBakedModel implements BakedModel {
         int[] topQuadVertices = Utils.copyArray(INTERIOR_TOP_QUAD.getVertices());
         BakedQuad topQuad = new BakedQuad(topQuadVertices, INTERIOR_TOP_QUAD.getTintIndex(), Direction.UP, INTERIOR_TOP_QUAD.getSprite(), INTERIOR_TOP_QUAD.isShade());
 
-        MoldModelUtils.forEachMoldTopQuad(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
+        MoldModelUtils.forEachMoldTopTexture(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
             Utils.setBakedQuadUV(topQuadVertices, SPRITE_GETTER.apply(new Material(InventoryMenu.BLOCK_ATLAS, id)), Direction.NORTH);
             emitter.fromVanilla(topQuad, MATERIAL_CUTOUT_MIPPED, Direction.UP).emit();
         });
