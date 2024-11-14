@@ -1,5 +1,6 @@
 package net.zlt.create_modular_tools.item.mold;
 
+import com.google.common.collect.Maps;
 import com.simibubi.create.foundation.utility.Components;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -12,6 +13,8 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
@@ -24,11 +27,13 @@ import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import net.zlt.create_modular_tools.tool.module.ToolModuleTypeRegistry;
+import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @ParametersAreNonnullByDefault
@@ -45,6 +50,9 @@ public abstract class BaseSandMoldItem extends BlockItem {
             return;
         }
 
+        boolean isShiftDown = Screen.hasShiftDown();
+
+        Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         for (ToolModuleType toolModuleType : getCompatibleToolModuleTypes()) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
@@ -58,8 +66,14 @@ public abstract class BaseSandMoldItem extends BlockItem {
 
                 tooltipComponents.add(CommonComponents.space().append(toolModule.getDescription()).withStyle(ChatFormatting.GRAY));
 
-                if (Screen.hasShiftDown()) {
-                    for (MutableComponent component : toolModule.getStatsDescription(moldSlot.tag())) {
+                CompoundTag slotContentsTag = moldSlot.tag();
+
+                if (resultEnchantments != null && slotContentsTag != null) {
+                    resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
+                }
+
+                if (isShiftDown) {
+                    for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
                         tooltipComponents.add(CommonComponents.space().append(component));
                     }
                 }
@@ -79,6 +93,13 @@ public abstract class BaseSandMoldItem extends BlockItem {
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
                 tooltipComponents.add(CommonComponents.space().append(Components.translatable("create_modular_tools.hint.mold.empty_slot")).withStyle(ChatFormatting.GRAY));
             }
+        }
+
+        if (resultEnchantments == null) {
+            tooltipComponents.add(Component.translatable("create_modular_tools.hint.mold.incompatible_enchantments").withStyle(ChatFormatting.RED));
+        } else if (isShiftDown && !resultEnchantments.isEmpty()) {
+            tooltipComponents.add(Component.translatable("create_modular_tools.hint.mold.resulting_enchantments").append(Component.literal(":")).withStyle(ChatFormatting.GRAY));
+            resultEnchantments.forEach((enchantment, levels) -> tooltipComponents.add(CommonComponents.space().append(enchantment.getFullname(levels.get(0))).withStyle(ChatFormatting.GRAY)));
         }
     }
 
