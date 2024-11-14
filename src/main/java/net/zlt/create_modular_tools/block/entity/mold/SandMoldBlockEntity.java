@@ -1,5 +1,6 @@
 package net.zlt.create_modular_tools.block.entity.mold;
 
+import com.google.common.collect.Maps;
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.utility.Components;
 import com.simibubi.create.foundation.utility.Lang;
@@ -14,6 +15,9 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -74,6 +78,8 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
             .add(getName().plainCopy())
             .forGoggles(tooltip);
 
+        Map<Enchantment, Integer> resultEnchantments = Maps.newLinkedHashMap();
+        boolean canAssemble = true;
         for (ToolModuleType toolModuleType : getCompatible()) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
@@ -91,8 +97,31 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     .style(ChatFormatting.GRAY)
                     .forGoggles(tooltip);
 
+                CompoundTag slotContentsTag = moldSlot.tag();
+
+                if (canAssemble && slotContentsTag != null) {
+                    Map<Enchantment, Integer> toolModuleEnchantments = EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND));
+                    toolModuleEnchantmentLoop:
+                    for (Map.Entry<Enchantment, Integer> toolModuleEnchantmentEntry : toolModuleEnchantments.entrySet()) {
+                        boolean isEnchantmentPresent = false;
+                        for (Map.Entry<Enchantment, Integer> resultEnchantmentEntry : resultEnchantments.entrySet()) {
+                            if (toolModuleEnchantmentEntry.getKey() == resultEnchantmentEntry.getKey()) {
+                                resultEnchantmentEntry.setValue(resultEnchantmentEntry.getValue() + toolModuleEnchantmentEntry.getValue());
+                                isEnchantmentPresent = true;
+                                break;
+                            } else if (!toolModuleEnchantmentEntry.getKey().isCompatibleWith(resultEnchantmentEntry.getKey())) {
+                                canAssemble = false;
+                                break toolModuleEnchantmentLoop;
+                            }
+                        }
+                        if (!isEnchantmentPresent) {
+                            resultEnchantments.put(toolModuleEnchantmentEntry.getKey(), toolModuleEnchantmentEntry.getValue());
+                        }
+                    }
+                }
+
                 if (isPlayerSneaking) {
-                    for (MutableComponent component : toolModule.getStatsDescription(moldSlot.tag())) {
+                    for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
                         Lang.builder(CreateModularTools.ID)
                             .add(component)
                             .forGoggles(tooltip);
@@ -127,6 +156,26 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     .style(ChatFormatting.GRAY)
                     .forGoggles(tooltip);
             }
+        }
+
+        if (!canAssemble) {
+            Lang.builder(CreateModularTools.ID)
+                .translate("hint.mold.incompatible_enchantments")
+                .style(ChatFormatting.RED)
+                .forGoggles(tooltip);
+        } else if (isPlayerSneaking && !resultEnchantments.isEmpty()) {
+            Lang.builder(CreateModularTools.ID)
+                .translate("hint.mold.resulting_enchantments")
+                .text(":")
+                .style(ChatFormatting.GRAY)
+                .forGoggles(tooltip);
+
+            resultEnchantments.forEach((enchantment, enchantmentLevel) ->
+                Lang.builder(CreateModularTools.ID)
+                    .add(CommonComponents.space().append(enchantment.getFullname(enchantmentLevel)))
+                    .style(ChatFormatting.GRAY)
+                    .forGoggles(tooltip)
+            );
         }
 
         return true;
