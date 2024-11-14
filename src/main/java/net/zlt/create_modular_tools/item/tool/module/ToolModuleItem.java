@@ -138,11 +138,11 @@ public abstract class ToolModuleItem extends Item {
         }
 
         if (isFireproofWhenAttached()) {
-            description.add(0, CommonComponents.space().append(Component.translatable("feature.create_modular_tools.fireproof")).withStyle(ChatFormatting.GRAY));
+            description.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.fireproof")).withStyle(ChatFormatting.GRAY));
         }
 
         if (isWaterproofWhenAttached()) {
-            description.add(0, CommonComponents.space().append(Component.translatable("feature.create_modular_tools.waterproof")).withStyle(ChatFormatting.GRAY));
+            description.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.waterproof")).withStyle(ChatFormatting.GRAY));
         }
 
         float attackDamage = getAttackDamageWhenAttached();
