@@ -134,13 +134,7 @@ public abstract class ToolModuleItem extends Item {
         List<MutableComponent> description = new ArrayList<>();
 
         if (nbt != null) {
-            Map<Enchantment, Integer> enchantments = EnchantmentHelper.deserializeEnchantments(nbt.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND));
-            for (Map.Entry<Enchantment, Integer> enchantmentEntry : enchantments.entrySet()) {
-                Enchantment enchantment = enchantmentEntry.getKey();
-                Integer enchantmentLevel = enchantmentEntry.getValue();
-
-                description.add(CommonComponents.space().append(enchantment.getFullname(enchantmentLevel)));
-            }
+            EnchantmentHelper.deserializeEnchantments(nbt.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)).forEach((enchantment, enchantmentLevel) -> description.add(CommonComponents.space().append(enchantment.getFullname(enchantmentLevel))));
         }
 
         if (isFireproofWhenAttached()) {
