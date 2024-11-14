@@ -59,12 +59,10 @@ public abstract class BaseSandMoldItem extends BlockItem {
                 continue;
             }
 
-            tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).withStyle(ChatFormatting.GRAY));
-
             if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
                 ToolModuleItem toolModule = (ToolModuleItem) moldSlot.contents();
 
-                tooltipComponents.add(CommonComponents.space().append(toolModule.getDescription()).withStyle(ChatFormatting.GRAY));
+                tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(toolModule.getDescription()).withStyle(ChatFormatting.GRAY));
 
                 CompoundTag slotContentsTag = moldSlot.tag();
 
@@ -82,7 +80,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
 
                 ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
                 if (toolModule != null) {
-                    tooltipComponents.add(CommonComponents.space().append(Components.translatable(fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId())).withStyle(ChatFormatting.GRAY));
+                    tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(Components.translatable(fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId())).withStyle(ChatFormatting.GRAY));
 
                     if (Screen.hasShiftDown()) {
                         for (MutableComponent component : toolModule.getStatsDescription(null)) {
@@ -91,7 +89,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
-                tooltipComponents.add(CommonComponents.space().append(Components.translatable("create_modular_tools.hint.mold.empty_slot")).withStyle(ChatFormatting.GRAY));
+                tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(Components.translatable("create_modular_tools.hint.mold.empty_slot")).withStyle(ChatFormatting.GRAY));
             }
         }
 
