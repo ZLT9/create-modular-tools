@@ -2,6 +2,7 @@ package net.zlt.create_modular_tools.item.tool.module.sword_guard;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -65,8 +66,8 @@ public class BrassSwordGuardToolModuleItem extends ToolModuleItem {
     }
 
     @Override
-    public List<MutableComponent> getStatsDescription() {
-        List<MutableComponent> description = super.getStatsDescription();
+    public List<MutableComponent> getStatsDescription(@Nullable CompoundTag nbt) {
+        List<MutableComponent> description = super.getStatsDescription(nbt);
         description.add(0, CommonComponents.space().append(Component.translatable("feature.create_modular_tools.wrenching")).withStyle(ChatFormatting.GRAY));
         return description;
     }

@@ -96,7 +96,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     .forGoggles(tooltip);
 
                 if (isPlayerSneaking) {
-                    for (MutableComponent component : toolModule.getStatsDescription()) {
+                    for (MutableComponent component : toolModule.getStatsDescription(moldSlot.tag())) {
                         Lang.builder(CreateModularTools.ID)
                             .space()
                             .add(component)
@@ -114,7 +114,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                         .forGoggles(tooltip);
 
                     if (isPlayerSneaking) {
-                        for (MutableComponent component : toolModule.getStatsDescription()) {
+                        for (MutableComponent component : toolModule.getStatsDescription(null)) {
                             Lang.builder(CreateModularTools.ID)
                                 .space()
                                 .add(component)

@@ -219,10 +219,11 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
             }
 
             for (ToolModuleType toolModuleType : COMPATIBLE) {
-                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
+                CompoundTag toolModuleNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
+                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleNbt.getString("id"));
                 if (toolModule != null) {
                     tooltipComponents.add(toolModule.getDescription());
-                    tooltipComponents.addAll(toolModule.getStatsDescription());
+                    tooltipComponents.addAll(toolModule.getStatsDescription(toolModuleNbt.getCompound("tag")));
                 }
             }
         }

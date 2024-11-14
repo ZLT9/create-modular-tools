@@ -59,7 +59,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
                 tooltipComponents.add(CommonComponents.space().append(toolModule.getDescription()).withStyle(ChatFormatting.GRAY));
 
                 if (Screen.hasShiftDown()) {
-                    for (MutableComponent component : toolModule.getStatsDescription()) {
+                    for (MutableComponent component : toolModule.getStatsDescription(moldSlot.tag())) {
                         tooltipComponents.add(CommonComponents.space().append(component));
                     }
                 }
@@ -71,7 +71,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
                     tooltipComponents.add(CommonComponents.space().append(Components.translatable(fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId())).withStyle(ChatFormatting.GRAY));
 
                     if (Screen.hasShiftDown()) {
-                        for (MutableComponent component : toolModule.getStatsDescription()) {
+                        for (MutableComponent component : toolModule.getStatsDescription(null)) {
                             tooltipComponents.add(CommonComponents.space().append(component));
                         }
                     }
