@@ -29,6 +29,7 @@ import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
@@ -78,8 +79,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
             .add(getName().plainCopy())
             .forGoggles(tooltip);
 
-        Map<Enchantment, Integer> resultEnchantments = Maps.newLinkedHashMap();
-        boolean canAssemble = true;
+        Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         for (ToolModuleType toolModuleType : getCompatible()) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
@@ -99,25 +99,8 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
 
                 CompoundTag slotContentsTag = moldSlot.tag();
 
-                if (canAssemble && slotContentsTag != null) {
-                    Map<Enchantment, Integer> toolModuleEnchantments = EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND));
-                    toolModuleEnchantmentLoop:
-                    for (Map.Entry<Enchantment, Integer> toolModuleEnchantmentEntry : toolModuleEnchantments.entrySet()) {
-                        boolean isEnchantmentPresent = false;
-                        for (Map.Entry<Enchantment, Integer> resultEnchantmentEntry : resultEnchantments.entrySet()) {
-                            if (toolModuleEnchantmentEntry.getKey() == resultEnchantmentEntry.getKey()) {
-                                resultEnchantmentEntry.setValue(resultEnchantmentEntry.getValue() + toolModuleEnchantmentEntry.getValue());
-                                isEnchantmentPresent = true;
-                                break;
-                            } else if (!toolModuleEnchantmentEntry.getKey().isCompatibleWith(resultEnchantmentEntry.getKey())) {
-                                canAssemble = false;
-                                break toolModuleEnchantmentLoop;
-                            }
-                        }
-                        if (!isEnchantmentPresent) {
-                            resultEnchantments.put(toolModuleEnchantmentEntry.getKey(), toolModuleEnchantmentEntry.getValue());
-                        }
-                    }
+                if (resultEnchantments != null && slotContentsTag != null) {
+                    resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
                 }
 
                 if (isPlayerSneaking) {
@@ -158,7 +141,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
             }
         }
 
-        if (!canAssemble) {
+        if (resultEnchantments == null) {
             Lang.builder(CreateModularTools.ID)
                 .translate("hint.mold.incompatible_enchantments")
                 .style(ChatFormatting.RED)
@@ -170,9 +153,9 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 .style(ChatFormatting.GRAY)
                 .forGoggles(tooltip);
 
-            resultEnchantments.forEach((enchantment, enchantmentLevel) ->
+            resultEnchantments.forEach((enchantment, levels) ->
                 Lang.builder(CreateModularTools.ID)
-                    .add(CommonComponents.space().append(enchantment.getFullname(enchantmentLevel)))
+                    .add(CommonComponents.space().append(enchantment.getFullname(levels.get(0))))
                     .style(ChatFormatting.GRAY)
                     .forGoggles(tooltip)
             );
