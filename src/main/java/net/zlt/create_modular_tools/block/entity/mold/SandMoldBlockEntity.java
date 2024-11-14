@@ -80,16 +80,12 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 continue;
             }
 
-            Lang.builder(CreateModularTools.ID)
-                .add(toolModuleType.getName().plainCopy())
-                .text(":")
-                .style(ChatFormatting.GRAY)
-                .forGoggles(tooltip);
-
             if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
                 ToolModuleItem toolModule = (ToolModuleItem) moldSlot.contents();
 
                 Lang.builder(CreateModularTools.ID)
+                    .add(toolModuleType.getName().plainCopy())
+                    .text(":")
                     .space()
                     .add(toolModule.getDescription().plainCopy())
                     .style(ChatFormatting.GRAY)
@@ -98,7 +94,6 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 if (isPlayerSneaking) {
                     for (MutableComponent component : toolModule.getStatsDescription(moldSlot.tag())) {
                         Lang.builder(CreateModularTools.ID)
-                            .space()
                             .add(component)
                             .forGoggles(tooltip);
                     }
@@ -108,6 +103,8 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
                 if (toolModule != null) {
                     Lang.builder(CreateModularTools.ID)
+                        .add(toolModuleType.getName().plainCopy())
+                        .text(":")
                         .space()
                         .add(Components.translatable(fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId()))
                         .style(ChatFormatting.GRAY)
@@ -116,7 +113,6 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     if (isPlayerSneaking) {
                         for (MutableComponent component : toolModule.getStatsDescription(null)) {
                             Lang.builder(CreateModularTools.ID)
-                                .space()
                                 .add(component)
                                 .forGoggles(tooltip);
                         }
@@ -124,6 +120,8 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
                 Lang.builder(CreateModularTools.ID)
+                    .add(toolModuleType.getName().plainCopy())
+                    .text(":")
                     .space()
                     .translate("hint.mold.empty_slot")
                     .style(ChatFormatting.GRAY)
