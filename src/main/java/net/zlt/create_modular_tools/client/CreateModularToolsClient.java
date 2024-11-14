@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.client.player.ClientPickBlockApplyCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -32,10 +33,12 @@ import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
 import net.zlt.create_modular_tools.client.model.CreateModularToolsModelLoadingPlugin;
 import net.zlt.create_modular_tools.client.renderer.blockentity.*;
 import net.zlt.create_modular_tools.client.renderer.entity.*;
+import net.zlt.create_modular_tools.client.renderer.item.ModularToolRenderer;
 import net.zlt.create_modular_tools.container.menu.AllMenuTypes;
 import net.zlt.create_modular_tools.container.screen.CreativeModularToolTableScreen;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
+import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.AllModularTools;
@@ -55,6 +58,12 @@ public class CreateModularToolsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ResourceManagerHelper.registerBuiltinResourcePack(CreateModularTools.asResource("hindu_arabic_enchantments"), FabricLoader.getInstance().getModContainer(CreateModularTools.ID).orElseThrow(() -> new IllegalStateException("Create: Modular Tools' ModContainer couldn't be found!")), Component.translatable("create_modular_tools.resource_pack.hindu_arabic_enchantments"), ResourcePackActivationType.NORMAL);
+
+        BuiltinItemRendererRegistry.INSTANCE.register(AllItems.MODULAR_SWORD, new ModularToolRenderer());
+        BuiltinItemRendererRegistry.INSTANCE.register(AllItems.MODULAR_SHOVEL, new ModularToolRenderer());
+        BuiltinItemRendererRegistry.INSTANCE.register(AllItems.MODULAR_PICKAXE, new ModularToolRenderer());
+        BuiltinItemRendererRegistry.INSTANCE.register(AllItems.MODULAR_AXE, new ModularToolRenderer());
+        BuiltinItemRendererRegistry.INSTANCE.register(AllItems.MODULAR_HOE, new ModularToolRenderer());
 
         EntityRendererRegistry.register(AllEntityTypes.WOODEN_PICKAXE_HEAD, ThrownWoodenPickaxeHeadRenderer::new);
         EntityRendererRegistry.register(AllEntityTypes.STONE_PICKAXE_HEAD, ThrownStonePickaxeHeadRenderer::new);

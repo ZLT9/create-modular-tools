@@ -21,6 +21,7 @@
     "WeaponEnchantmentCategoryMixin"
   ],
   "client": [
+    "ItemRendererAccessor",
     "client.LevelRendererMixin"
   ],
   "injectors": {

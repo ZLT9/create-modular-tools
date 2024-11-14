@@ -94,7 +94,7 @@ public class ModularToolBakedModel implements BakedModel {
 
     @Override
     public boolean isCustomRenderer() {
-        return false;
+        return true;
     }
 
     private class Overrides extends ItemOverrides {
