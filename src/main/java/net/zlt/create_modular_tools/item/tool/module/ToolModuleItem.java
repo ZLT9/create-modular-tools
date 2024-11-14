@@ -20,7 +20,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -35,7 +34,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Supplier;
 
 @ParametersAreNonnullByDefault
@@ -133,16 +131,16 @@ public abstract class ToolModuleItem extends Item {
     public List<MutableComponent> getStatsDescription(@Nullable CompoundTag nbt) {
         List<MutableComponent> description = new ArrayList<>();
 
-        if (nbt != null) {
-            EnchantmentHelper.deserializeEnchantments(nbt.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)).forEach((enchantment, enchantmentLevel) -> description.add(CommonComponents.space().append(enchantment.getFullname(enchantmentLevel))));
-        }
-
         if (isFireproofWhenAttached()) {
             description.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.fireproof")).withStyle(ChatFormatting.GRAY));
         }
 
         if (isWaterproofWhenAttached()) {
             description.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.waterproof")).withStyle(ChatFormatting.GRAY));
+        }
+
+        if (nbt != null) {
+            EnchantmentHelper.deserializeEnchantments(nbt.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)).forEach((enchantment, enchantmentLevel) -> description.add(CommonComponents.space().append(enchantment.getFullname(enchantmentLevel))));
         }
 
         float attackDamage = getAttackDamageWhenAttached();
