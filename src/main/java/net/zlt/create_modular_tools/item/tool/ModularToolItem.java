@@ -209,20 +209,46 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(stack);
+        Set<String> presentFeatures = new HashSet<>();
+        boolean hasFeatures = false;
 
-        if (TooltipUtils.addHoldShift("create_modular_tools.tooltip.holdForAttributes", "create.tooltip.keyShift", tooltipComponents) && !toolModulesNbt.isEmpty()) {
-            for (ToolModuleType toolModuleType : COMPATIBLE) {
-                CompoundTag toolModuleNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
-                ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleNbt.getString("id"));
-                if (toolModule != null) {
-                    tooltipComponents.add(toolModule.getDescription());
-                    tooltipComponents.addAll(toolModule.getStatsDescription(toolModuleNbt.getCompound("tag")));
+        if (TooltipUtils.addHoldShift("create_modular_tools.tooltip.holdForAttributes", "create.tooltip.keyShift", tooltipComponents)) {
+            hasFeatures = true;
+            if (!toolModulesNbt.isEmpty()) {
+                for (ToolModuleType toolModuleType : COMPATIBLE) {
+                    CompoundTag toolModuleNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
+                    ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleNbt.getString("id"));
+                    if (toolModule != null) {
+                        tooltipComponents.add(toolModule.getDescription());
+                        tooltipComponents.addAll(toolModule.getStatsDescription(toolModuleNbt.getCompound("tag")));
+                        presentFeatures.addAll(toolModule.getFeatures());
+                    }
                 }
             }
         }
 
         if (isBroken(stack)) {
             tooltipComponents.add(Components.translatable("create_modular_tools.hint.modular_tool.broken").withStyle(ChatFormatting.RED));
+        }
+
+        if (!toolModulesNbt.isEmpty()) {
+            if (hasFeatures) {
+                for (String feature : presentFeatures) {
+                    tooltipComponents.add(Component.translatable(feature).withStyle(ChatFormatting.GRAY));
+                }
+            } else {
+                for (ToolModuleType toolModuleType : COMPATIBLE) {
+                    ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString("id"));
+                    if (toolModule != null) {
+                        for (String feature : toolModule.getFeatures()) {
+                            if (!presentFeatures.contains(feature)) {
+                                tooltipComponents.add(Component.translatable(feature).withStyle(ChatFormatting.GRAY));
+                                presentFeatures.add(feature);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
