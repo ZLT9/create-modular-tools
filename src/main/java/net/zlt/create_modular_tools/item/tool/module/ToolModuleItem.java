@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.item.TooltipUtils;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ModularToolRegistry;
+import net.zlt.create_modular_tools.tool.module.AllToolModuleFeatures;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
@@ -128,15 +129,26 @@ public abstract class ToolModuleItem extends Item {
         return null;
     }
 
-    public List<MutableComponent> getFeaturesDescription() {
-        List<MutableComponent> description = new ArrayList<>();
+    public List<String> getFeatures() {
+        List<String> features = new ArrayList<>();
 
         if (isFireproofWhenAttached()) {
-            description.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.fireproof")).withStyle(ChatFormatting.GRAY));
+            features.add(AllToolModuleFeatures.FIREPROOF);
         }
 
         if (isWaterproofWhenAttached()) {
-            description.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.waterproof")).withStyle(ChatFormatting.GRAY));
+            features.add(AllToolModuleFeatures.WATERPROOF);
+        }
+
+        return features;
+    }
+
+    public List<MutableComponent> getFeaturesDescription() {
+        List<String> features = getFeatures();
+        List<MutableComponent> description = new ArrayList<>();
+
+        for (String feature : features) {
+            description.add(CommonComponents.space().append(Component.translatable(feature)).withStyle(ChatFormatting.GRAY));
         }
 
         return description;

@@ -1,7 +1,6 @@
 package net.zlt.create_modular_tools.item.tool.module.pickaxe_head;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,8 +12,8 @@ import net.zlt.create_modular_tools.entity.ThrownBoomerang;
 import net.zlt.create_modular_tools.entity.ThrownBrassPickaxeHead;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
+import net.zlt.create_modular_tools.tool.module.AllToolModuleFeatures;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
-import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -70,8 +69,10 @@ public class BrassPickaxeHeadToolModuleItem extends PickaxeHeadToolModuleItem {
     }
 
     @Override
-    public List<MutableComponent> getFeaturesDescription() {
-        return ToolModuleUtils.addWrenchingFeatureDescription(super.getFeaturesDescription());
+    public List<String> getFeatures() {
+        List<String> features = super.getFeatures();
+        features.add(AllToolModuleFeatures.WRENCHING);
+        return features;
     }
 
     @Override

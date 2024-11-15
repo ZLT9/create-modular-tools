@@ -1,7 +1,6 @@
 package net.zlt.create_modular_tools.item.tool.module.tool_handle;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
@@ -9,10 +8,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
+import net.zlt.create_modular_tools.tool.module.AllToolModuleFeatures;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
-import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -68,7 +67,9 @@ public class BrassToolHandleToolModuleItem extends ToolModuleItem {
     }
 
     @Override
-    public List<MutableComponent> getFeaturesDescription() {
-        return ToolModuleUtils.addWrenchingFeatureDescription(super.getFeaturesDescription());
+    public List<String> getFeatures() {
+        List<String> features = super.getFeatures();
+        features.add(AllToolModuleFeatures.WRENCHING);
+        return features;
     }
 }

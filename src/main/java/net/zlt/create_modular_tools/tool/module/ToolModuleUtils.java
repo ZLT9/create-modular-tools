@@ -3,14 +3,10 @@ package net.zlt.create_modular_tools.tool.module;
 import com.google.common.collect.Maps;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.CommonComponents;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
@@ -74,10 +70,5 @@ public final class ToolModuleUtils {
         }
 
         return enchantmentMap;
-    }
-
-    public static List<MutableComponent> addWrenchingFeatureDescription(List<MutableComponent> featuresDescription) {
-        featuresDescription.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.wrenching")).withStyle(ChatFormatting.GRAY));
-        return featuresDescription;
     }
 }

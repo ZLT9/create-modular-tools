@@ -23,10 +23,7 @@ import net.zlt.create_modular_tools.item.mold.AllMoldItems;
 import net.zlt.create_modular_tools.loot.function.AllLootItemFunctionTypes;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.tool.AllModularTools;
-import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
-import net.zlt.create_modular_tools.tool.module.AllToolModules;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
-import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import net.zlt.create_modular_tools.tool.module.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +46,7 @@ public class CreateModularTools implements ModInitializer {
         AllBlocks.init();
         AllBlockEntityTypes.init();
         AllToolModuleTypes.init();
+        AllToolModuleFeatures.init();
         AllToolModules.init();
         AllItems.init();
         AllModularTools.init();
