@@ -208,16 +208,9 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        if (isBroken(stack)) {
-            tooltipComponents.add(Components.translatable("create_modular_tools.hint.modular_tool.broken").withStyle(ChatFormatting.RED));
-        }
+        CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(stack);
 
-        if (TooltipUtils.addHoldShift("create_modular_tools.tooltip.holdForAttributes", "create.tooltip.keyShift", tooltipComponents)) {
-            CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(stack);
-            if (toolModulesNbt.isEmpty()) {
-                return;
-            }
-
+        if (TooltipUtils.addHoldShift("create_modular_tools.tooltip.holdForAttributes", "create.tooltip.keyShift", tooltipComponents) && !toolModulesNbt.isEmpty()) {
             for (ToolModuleType toolModuleType : COMPATIBLE) {
                 CompoundTag toolModuleNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
                 ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleNbt.getString("id"));
@@ -226,6 +219,10 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
                     tooltipComponents.addAll(toolModule.getStatsDescription(toolModuleNbt.getCompound("tag")));
                 }
             }
+        }
+
+        if (isBroken(stack)) {
+            tooltipComponents.add(Components.translatable("create_modular_tools.hint.modular_tool.broken").withStyle(ChatFormatting.RED));
         }
     }
 
