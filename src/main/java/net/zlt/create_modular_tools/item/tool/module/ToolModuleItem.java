@@ -128,7 +128,7 @@ public abstract class ToolModuleItem extends Item {
         return null;
     }
 
-    public List<MutableComponent> getStatsDescription(@Nullable CompoundTag nbt) {
+    public List<MutableComponent> getFeaturesDescription() {
         List<MutableComponent> description = new ArrayList<>();
 
         if (isFireproofWhenAttached()) {
@@ -138,6 +138,12 @@ public abstract class ToolModuleItem extends Item {
         if (isWaterproofWhenAttached()) {
             description.add(CommonComponents.space().append(Component.translatable("feature.create_modular_tools.waterproof")).withStyle(ChatFormatting.GRAY));
         }
+
+        return description;
+    }
+
+    public List<MutableComponent> getStatsDescription(@Nullable CompoundTag nbt) {
+        List<MutableComponent> description = getFeaturesDescription();
 
         if (nbt != null) {
             EnchantmentHelper.deserializeEnchantments(nbt.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)).forEach((enchantment, enchantmentLevel) -> description.add(CommonComponents.space().append(enchantment.getFullname(enchantmentLevel))));
