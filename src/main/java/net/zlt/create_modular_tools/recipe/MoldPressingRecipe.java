@@ -30,6 +30,7 @@ import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import net.zlt.create_modular_tools.tool.module.ToolModuleTypeRegistry;
+import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.*;
@@ -59,7 +60,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         }
 
         CompoundTag resultToolModulesNbt = new CompoundTag();
-        Map<Enchantment, Integer> resultEnchantments = Maps.newLinkedHashMap();
+        Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
             if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType) || !modularTool.isCompatible(toolModuleType)) {
@@ -81,7 +82,9 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
             if (slotNbt.contains("tag", Tag.TAG_COMPOUND)) {
                 CompoundTag slotContentsNbt = slotNbt.getCompound("tag");
                 resultToolModuleNbt.put("tag", slotContentsNbt);
-                EnchantmentHelper.deserializeEnchantments(slotContentsNbt.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)).forEach((enchantment, enchantmentLevel) -> resultEnchantments.merge(enchantment, enchantmentLevel, Integer::sum));
+                if (resultEnchantments != null) {
+                    resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotContentsNbt.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
+                }
             }
             resultToolModulesNbt.put(key, resultToolModuleNbt);
         }
@@ -89,7 +92,12 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         CompoundTag nbt = result.getOrCreateTag();
         nbt.putUUID("UUID", UUID.randomUUID());
         nbt.put(SandMoldBlockEntity.TOOL_MODULES_TAG, resultToolModulesNbt);
-        EnchantmentHelper.setEnchantments(resultEnchantments, result);
+
+        Map<Enchantment, Integer> finalResultEnchantments = Maps.newHashMap();
+        if (resultEnchantments != null) {
+            resultEnchantments.forEach((enchantment, levels) -> finalResultEnchantments.put(enchantment, levels.get(0)));
+        }
+        EnchantmentHelper.setEnchantments(finalResultEnchantments, result);
 
         return result;
     }
@@ -144,7 +152,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         }
 
         CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(input.getTag());
-        Set<Enchantment> resultEnchantments = new HashSet<>();
+        Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
             if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType) || !modularTool.isCompatible(toolModuleType)) {
@@ -156,14 +164,9 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
                 return false;
             }
 
-            for (Map.Entry<Enchantment, Integer> entry : EnchantmentHelper.deserializeEnchantments(slotNbt.getCompound("tag").getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)).entrySet()) {
-                Enchantment enchantment = entry.getKey();
-                for (Enchantment otherEnchantment : resultEnchantments) {
-                    if (enchantment != otherEnchantment && !enchantment.isCompatibleWith(otherEnchantment)) {
-                        return false;
-                    }
-                }
-                resultEnchantments.add(enchantment);
+            resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotNbt.getCompound("tag").getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
+            if (resultEnchantments == null) {
+                return false;
             }
         }
 
