@@ -1,5 +1,6 @@
 package net.zlt.create_modular_tools.block.mold;
 
+import com.simibubi.create.content.kinetics.deployer.DeployerFakePlayer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -65,7 +66,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                 if (!level.isClientSide) {
                     if (!player.isCreative()) {
                         stack.shrink(1);
-                        if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
+                        if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID && moldSlot.contents() != null) {
                             ItemStack returnedToolModuleStack = ((ToolModuleItem) moldSlot.contents()).getDefaultInstance();
                             returnedToolModuleStack.setTag(moldSlot.tag());
                             player.getInventory().placeItemBackInInventory(returnedToolModuleStack);
@@ -117,6 +118,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
             existingToolModuleTypes.add(toolModuleType);
         }
 
+        boolean isDeployer = player instanceof DeployerFakePlayer;
         for (ToolModuleType toolModuleType : existingToolModuleTypes) {
             ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(this, toolModulesNbt);
             if (moldTopTexture == null) {
@@ -125,11 +127,11 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
 
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
 
-            if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY && isRequired(toolModuleType)) {
+            if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY && (isDeployer || isRequired(toolModuleType))) {
                 continue;
             }
 
-            if (!moldTopTexture.clicked(hitCoords.X, hitCoords.Y)) {
+            if (!isDeployer && !moldTopTexture.clicked(hitCoords.X, hitCoords.Y)) {
                 continue;
             }
 
