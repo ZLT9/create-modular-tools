@@ -93,7 +93,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     .add(toolModuleType.getName().plainCopy())
                     .text(":")
                     .space()
-                    .add(toolModule.getDescription().plainCopy())
+                    .add(toolModule == null ? Components.translatable("create_modular_tools.hint.mold.unknown") : toolModule.getDescription().plainCopy())
                     .style(ChatFormatting.GRAY)
                     .forGoggles(tooltip);
 
@@ -103,7 +103,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
                 }
 
-                if (isPlayerSneaking) {
+                if (isPlayerSneaking && toolModule != null) {
                     for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
                         Lang.builder(CreateModularTools.ID)
                             .add(component)
@@ -112,22 +112,20 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
                 Fluid fluid = (Fluid) moldSlot.contents();
-                ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
-                if (toolModule != null) {
-                    Lang.builder(CreateModularTools.ID)
-                        .add(toolModuleType.getName().plainCopy())
-                        .text(":")
-                        .space()
-                        .add(Components.translatable(fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId()))
-                        .style(ChatFormatting.GRAY)
-                        .forGoggles(tooltip);
+                Lang.builder(CreateModularTools.ID)
+                    .add(toolModuleType.getName().plainCopy())
+                    .text(":")
+                    .space()
+                    .add(Components.translatable(fluid == null ? "create_modular_tools.hint.mold.unknown" : fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId()))
+                    .style(ChatFormatting.GRAY)
+                    .forGoggles(tooltip);
 
-                    if (isPlayerSneaking) {
-                        for (MutableComponent component : toolModule.getStatsDescription(null)) {
-                            Lang.builder(CreateModularTools.ID)
-                                .add(component)
-                                .forGoggles(tooltip);
-                        }
+                ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
+                if (isPlayerSneaking && toolModule != null) {
+                    for (MutableComponent component : toolModule.getStatsDescription(null)) {
+                        Lang.builder(CreateModularTools.ID)
+                            .add(component)
+                            .forGoggles(tooltip);
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {

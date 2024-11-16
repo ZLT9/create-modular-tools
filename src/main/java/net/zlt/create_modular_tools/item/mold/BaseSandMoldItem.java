@@ -62,7 +62,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
             if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
                 ToolModuleItem toolModule = (ToolModuleItem) moldSlot.contents();
 
-                tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(toolModule.getDescription()).withStyle(ChatFormatting.GRAY));
+                tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(toolModule == null ? Components.translatable("create_modular_tools.hint.mold.unknown") : toolModule.getDescription()).withStyle(ChatFormatting.GRAY));
 
                 CompoundTag slotContentsTag = moldSlot.tag();
 
@@ -70,22 +70,19 @@ public abstract class BaseSandMoldItem extends BlockItem {
                     resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
                 }
 
-                if (isShiftDown) {
+                if (isShiftDown && toolModule != null) {
                     for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
                         tooltipComponents.add(CommonComponents.space().append(component));
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
                 Fluid fluid = (Fluid) moldSlot.contents();
+                tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(Components.translatable(fluid == null ? "create_modular_tools.hint.mold.unknown" : fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId())).withStyle(ChatFormatting.GRAY));
 
                 ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
-                if (toolModule != null) {
-                    tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(Components.translatable(fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId())).withStyle(ChatFormatting.GRAY));
-
-                    if (Screen.hasShiftDown()) {
-                        for (MutableComponent component : toolModule.getStatsDescription(null)) {
-                            tooltipComponents.add(CommonComponents.space().append(component));
-                        }
+                if (isShiftDown && toolModule != null) {
+                    for (MutableComponent component : toolModule.getStatsDescription(null)) {
+                        tooltipComponents.add(CommonComponents.space().append(component));
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
@@ -157,7 +154,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
 
     protected abstract Collection<ToolModuleType> getCompatibleToolModuleTypes();
 
-    public static boolean canBeFilledWith(Fluid fluid) {
+    public static boolean canBeFilledWith(@Nullable Fluid fluid) {
         return fluid instanceof MoltenMetalFluid || fluid == Fluids.LAVA;
     }
 }

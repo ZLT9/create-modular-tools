@@ -4,6 +4,7 @@
   "create_modular_tools.hint.modular_tool.broken": "Broken",
   "create_modular_tools.hint.mold.resulting_enchantments": "Resulting Enchantments",
   "create_modular_tools.hint.mold.incompatible_enchantments": "Incompatible Enchantments!",
+  "create_modular_tools.hint.mold.unknown": "Unknown",
   "create_modular_tools.recipe.assembly.mold_pressing": "Mold Pressing",
   "create_modular_tools.recipe.assembly.mold_filling": "Mold Filling",
   "create_modular_tools.recipe.assembly.modular_tool_cutting": "Modular Tool Cutting",
