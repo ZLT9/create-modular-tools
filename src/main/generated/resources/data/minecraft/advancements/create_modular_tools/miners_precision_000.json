@@ -10,7 +10,7 @@
     "announce_to_chat": false,
     "background": "create_modular_tools:textures/block/sand_mold_bottom.png",
     "description": {
-      "translate": "advancements.create_modular_tools.miners_strike.description"
+      "translate": "advancements.create_modular_tools.miners_precision.description"
     },
     "frame": "task",
     "hidden": false,
@@ -19,7 +19,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.create_modular_tools.miners_strike.title"
+      "translate": "advancements.create_modular_tools.miners_precision.title"
     }
   },
   "requirements": [

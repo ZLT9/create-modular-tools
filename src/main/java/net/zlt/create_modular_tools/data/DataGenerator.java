@@ -117,12 +117,12 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                 .addCriterion("caught_pickaxe_head", new BoomerangCatchTrigger.TriggerInstance(ContextAwarePredicate.ANY))
                 .save(consumer, CreateModularTools.ID + "/miners_reflex_00");
 
-            Advancement minersStrikeAdvancement = Advancement.Builder.advancement()
+            Advancement minersPrecisionAdvancement = Advancement.Builder.advancement()
                 .parent(hiddenPotentialAdvancement)
                 .display(
                     AllItems.COPPER_PICKAXE_HEAD,
-                    Component.translatable("advancements.create_modular_tools.miners_strike.title"),
-                    Component.translatable("advancements.create_modular_tools.miners_strike.description"),
+                    Component.translatable("advancements.create_modular_tools.miners_precision.title"),
+                    Component.translatable("advancements.create_modular_tools.miners_precision.description"),
                     ADVANCEMENTS_BACKGROUND,
                     FrameType.TASK,
                     true,
@@ -130,7 +130,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     false
                 )
                 .addCriterion("hit_entity_with_thrown_pickaxe_head", new BoomerangHitEntityTrigger.TriggerInstance(ContextAwarePredicate.ANY))
-                .save(consumer, CreateModularTools.ID + "/miners_strike_000");
+                .save(consumer, CreateModularTools.ID + "/miners_precision_000");
         }
     }
 }
