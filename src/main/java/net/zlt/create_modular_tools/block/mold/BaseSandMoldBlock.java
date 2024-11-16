@@ -141,7 +141,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                 } else if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
                     sandMoldBlockEntity.putToolModule(toolModuleType, null, null);
 
-                    if (!player.isCreative()) {
+                    if (!player.isCreative() && moldSlot.contents() != null) {
                         ItemStack returnedToolModuleStack = ((ToolModuleItem) moldSlot.contents()).getDefaultInstance();
                         returnedToolModuleStack.setTag(moldSlot.tag());
                         player.getInventory().placeItemBackInInventory(returnedToolModuleStack);
