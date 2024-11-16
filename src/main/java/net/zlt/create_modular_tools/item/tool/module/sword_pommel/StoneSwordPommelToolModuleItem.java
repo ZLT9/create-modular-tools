@@ -31,7 +31,7 @@ public class StoneSwordPommelToolModuleItem extends SwordPommelToolModuleItem {
 
     @Override
     public int getEnchantmentValue() {
-        return 0;
+        return 1;
     }
 
     @Override
