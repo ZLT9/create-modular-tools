@@ -31,10 +31,7 @@ import net.zlt.create_modular_tools.tool.module.ToolModuleUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -53,6 +50,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
         boolean isShiftDown = Screen.hasShiftDown();
 
         Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
+        Set<MutableComponent> resultFeatures = new HashSet<>();
         for (ToolModuleType toolModuleType : getCompatibleToolModuleTypes()) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
@@ -70,9 +68,13 @@ public abstract class BaseSandMoldItem extends BlockItem {
                     resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
                 }
 
-                if (isShiftDown && toolModule != null) {
-                    for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
-                        tooltipComponents.add(CommonComponents.space().append(component));
+                if (toolModule != null) {
+                    resultFeatures.addAll(toolModule.getFeaturesDescription());
+
+                    if (isShiftDown) {
+                        for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
+                            tooltipComponents.add(CommonComponents.space().append(component));
+                        }
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
@@ -80,13 +82,25 @@ public abstract class BaseSandMoldItem extends BlockItem {
                 tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(Components.translatable(fluid == null ? "create_modular_tools.hint.mold.unknown" : fluid.defaultFluidState().createLegacyBlock().getBlock().getDescriptionId())).withStyle(ChatFormatting.GRAY));
 
                 ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
-                if (isShiftDown && toolModule != null) {
-                    for (MutableComponent component : toolModule.getStatsDescription(null)) {
-                        tooltipComponents.add(CommonComponents.space().append(component));
+                if (toolModule != null) {
+                    resultFeatures.addAll(toolModule.getFeaturesDescription());
+
+                    if (isShiftDown) {
+                        for (MutableComponent component : toolModule.getStatsDescription(null)) {
+                            tooltipComponents.add(CommonComponents.space().append(component));
+                        }
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
                 tooltipComponents.add(toolModuleType.getName().plainCopy().append(Component.literal(":")).append(CommonComponents.space()).append(Components.translatable("create_modular_tools.hint.mold.empty_slot")).withStyle(ChatFormatting.GRAY));
+            }
+        }
+
+        if (isShiftDown && !resultFeatures.isEmpty()) {
+            tooltipComponents.add(Components.translatable("create_modular_tools.hint.mold.resulting_features").append(Components.literal(":")).withStyle(ChatFormatting.GRAY));
+
+            for (MutableComponent feature : resultFeatures) {
+                tooltipComponents.add(feature.withStyle(ChatFormatting.GRAY));
             }
         }
 

@@ -2,6 +2,7 @@
   "create_modular_tools.hint.mold.modular_tool_type": "Tool:",
   "create_modular_tools.hint.mold.empty_slot": "Empty",
   "create_modular_tools.hint.modular_tool.broken": "Broken",
+  "create_modular_tools.hint.mold.resulting_features": "Resulting Features",
   "create_modular_tools.hint.mold.resulting_enchantments": "Resulting Enchantments",
   "create_modular_tools.hint.mold.incompatible_enchantments": "Incompatible Enchantments!",
   "create_modular_tools.hint.mold.unknown": "Unknown",

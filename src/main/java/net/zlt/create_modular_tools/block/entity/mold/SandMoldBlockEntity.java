@@ -80,6 +80,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
             .forGoggles(tooltip);
 
         Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
+        Set<MutableComponent> resultFeatures = new HashSet<>();
         for (ToolModuleType toolModuleType : getCompatible()) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
@@ -103,11 +104,15 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     resultEnchantments = ToolModuleUtils.mergeEnchantments(resultEnchantments, EnchantmentHelper.deserializeEnchantments(slotContentsTag.getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND)));
                 }
 
-                if (isPlayerSneaking && toolModule != null) {
-                    for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
-                        Lang.builder(CreateModularTools.ID)
-                            .add(component)
-                            .forGoggles(tooltip);
+                if (toolModule != null) {
+                    resultFeatures.addAll(toolModule.getFeaturesDescription());
+
+                    if (isPlayerSneaking) {
+                        for (MutableComponent component : toolModule.getStatsDescription(slotContentsTag)) {
+                            Lang.builder(CreateModularTools.ID)
+                                .add(component)
+                                .forGoggles(tooltip);
+                        }
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
@@ -121,11 +126,15 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     .forGoggles(tooltip);
 
                 ToolModuleItem toolModule = ToolModuleRecipeRegistry.get(toolModuleType, fluid);
-                if (isPlayerSneaking && toolModule != null) {
-                    for (MutableComponent component : toolModule.getStatsDescription(null)) {
-                        Lang.builder(CreateModularTools.ID)
-                            .add(component)
-                            .forGoggles(tooltip);
+                if (toolModule != null) {
+                    resultFeatures.addAll(toolModule.getFeaturesDescription());
+
+                    if (isPlayerSneaking) {
+                        for (MutableComponent component : toolModule.getStatsDescription(null)) {
+                            Lang.builder(CreateModularTools.ID)
+                                .add(component)
+                                .forGoggles(tooltip);
+                        }
                     }
                 }
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
@@ -134,6 +143,21 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
                     .text(":")
                     .space()
                     .translate("hint.mold.empty_slot")
+                    .style(ChatFormatting.GRAY)
+                    .forGoggles(tooltip);
+            }
+        }
+
+        if (isPlayerSneaking && !resultFeatures.isEmpty()) {
+            Lang.builder(CreateModularTools.ID)
+                .translate("hint.mold.resulting_features")
+                .text(":")
+                .style(ChatFormatting.GRAY)
+                .forGoggles(tooltip);
+
+            for (MutableComponent feature : resultFeatures) {
+                Lang.builder(CreateModularTools.ID)
+                    .add(feature)
                     .style(ChatFormatting.GRAY)
                     .forGoggles(tooltip);
             }
