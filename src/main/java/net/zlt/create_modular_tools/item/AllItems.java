@@ -3,10 +3,14 @@ package net.zlt.create_modular_tools.item;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.fluid.AllFluids;
+import net.zlt.create_modular_tools.item.molten_metal.MoltenMetalBucketItem;
 import net.zlt.create_modular_tools.item.tool.*;
 import net.zlt.create_modular_tools.item.tool.module.axe_head.*;
 import net.zlt.create_modular_tools.item.tool.module.hoe_head.*;
@@ -26,13 +30,13 @@ public final class AllItems {
     private AllItems() {
     }
 
-    public static final Item MOLTEN_IRON_BUCKET = register("molten_iron_bucket", new BucketItem(AllFluids.MOLTEN_IRON, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final Item MOLTEN_COPPER_BUCKET = register("molten_copper_bucket", new BucketItem(AllFluids.MOLTEN_COPPER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final Item MOLTEN_GOLD_BUCKET = register("molten_gold_bucket", new BucketItem(AllFluids.MOLTEN_GOLD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final Item MOLTEN_NETHERITE_BUCKET = register("molten_netherite_bucket", new BucketItem(AllFluids.MOLTEN_NETHERITE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final Item MOLTEN_ZINC_BUCKET = register("molten_zinc_bucket", new BucketItem(AllFluids.MOLTEN_ZINC, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final Item MOLTEN_BRASS_BUCKET = register("molten_brass_bucket", new BucketItem(AllFluids.MOLTEN_BRASS, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final Item MOLTEN_DIAMOND_BUCKET = register("molten_diamond_bucket", new BucketItem(AllFluids.MOLTEN_DIAMOND, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final Item MOLTEN_IRON_BUCKET = register("molten_iron_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_IRON, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final Item MOLTEN_COPPER_BUCKET = register("molten_copper_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_COPPER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final Item MOLTEN_GOLD_BUCKET = register("molten_gold_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_GOLD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final Item MOLTEN_NETHERITE_BUCKET = register("molten_netherite_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_NETHERITE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final Item MOLTEN_ZINC_BUCKET = register("molten_zinc_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_ZINC, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final Item MOLTEN_BRASS_BUCKET = register("molten_brass_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_BRASS, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final Item MOLTEN_DIAMOND_BUCKET = register("molten_diamond_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_DIAMOND, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static final Item CREATIVE_MODULAR_TOOL_TABLE = register("creative_modular_tool_table", new BlockItem(AllBlocks.CREATIVE_MODULAR_TOOL_TABLE, new Item.Properties().rarity(Rarity.EPIC)));
 
