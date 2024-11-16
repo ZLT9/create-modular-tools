@@ -1,6 +1,7 @@
 package net.zlt.create_modular_tools.item.tool.module;
 
 import com.tterrag.registrate.fabric.TriFunction;
+import io.github.fabricators_of_create.porting_lib.enchant.CustomEnchantingBehaviorItem;
 import io.github.fabricators_of_create.porting_lib.tool.ToolAction;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -16,10 +17,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -35,11 +38,12 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class ToolModuleItem extends Item {
+public abstract class ToolModuleItem extends Item implements CustomEnchantingBehaviorItem {
     private final List<TriFunction<@Nullable ResourceLocation, ModularToolItem, CompoundTag, @Nullable ResourceLocation>> MODEL_ID_GETTERS = new ArrayList<>();
     private final List<Supplier<List<ResourceLocation>>> MODEL_IDS = new ArrayList<>();
 
@@ -60,6 +64,36 @@ public abstract class ToolModuleItem extends Item {
             tooltipComponents.add(Component.translatable("item.tool_module.create_modular_tools.modifiers.tool").withStyle(ChatFormatting.GRAY));
             tooltipComponents.addAll(getStatsDescription(stack.getTag()));
         }
+    }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    public boolean canApplyEnchantment(Enchantment enchantment) {
+        return false;
+    }
+
+    @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        Map<Enchantment, Integer> enchantmentMap = EnchantmentHelper.deserializeEnchantments(EnchantedBookItem.getEnchantments(book));
+        if (enchantmentMap.isEmpty()) {
+            return false;
+        }
+
+        for (Map.Entry<Enchantment, Integer> enchantmentEntry : enchantmentMap.entrySet()) {
+            if (!canApplyEnchantment(enchantmentEntry.getKey())) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return canApplyEnchantment(enchantment);
     }
 
     public String getId() {

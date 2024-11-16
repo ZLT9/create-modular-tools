@@ -7,6 +7,8 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -56,5 +58,18 @@ public abstract class AxeHeadToolModuleItem extends ToolModuleItem {
     @Override
     public InteractionResult useOnWhenAttached(BlockState originalBlockState, UseOnContext context, ModularToolItem modularTool) {
         return ToolUtils.axeOnUse(originalBlockState, context, modularTool);
+    }
+
+    @Override
+    public boolean canApplyEnchantment(Enchantment enchantment) {
+        return enchantment == Enchantments.SHARPNESS ||
+            enchantment == Enchantments.SMITE ||
+            enchantment == Enchantments.BANE_OF_ARTHROPODS ||
+            enchantment == Enchantments.BLOCK_EFFICIENCY ||
+            enchantment == Enchantments.SILK_TOUCH ||
+            enchantment == Enchantments.UNBREAKING ||
+            enchantment == Enchantments.BLOCK_FORTUNE ||
+            enchantment == Enchantments.MENDING ||
+            enchantment == Enchantments.VANISHING_CURSE;
     }
 }

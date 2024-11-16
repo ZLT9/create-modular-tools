@@ -2,17 +2,14 @@ package net.zlt.create_modular_tools.item.tool.module.tool_grip;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.sounds.SoundEvent;
-import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
-import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
-import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class CopperToolGripToolModuleItem extends ToolModuleItem {
+public class CopperToolGripToolModuleItem extends ToolGripToolModuleItem {
     public CopperToolGripToolModuleItem(Properties properties) {
         super(properties);
     }
@@ -45,11 +42,6 @@ public class CopperToolGripToolModuleItem extends ToolModuleItem {
     @Override
     public int getEnchantmentValue() {
         return 1;
-    }
-
-    @Override
-    public ToolModuleType getType() {
-        return AllToolModuleTypes.TOOL_GRIP;
     }
 
     @Override

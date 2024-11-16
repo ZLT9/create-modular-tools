@@ -6,12 +6,9 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
-import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleFeatures;
-import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
-import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -19,7 +16,7 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class BrassSwordPommelToolModuleItem extends ToolModuleItem {
+public class BrassSwordPommelToolModuleItem extends SwordPommelToolModuleItem {
     public BrassSwordPommelToolModuleItem(Properties properties) {
         super(properties);
     }
@@ -48,11 +45,6 @@ public class BrassSwordPommelToolModuleItem extends ToolModuleItem {
     public InteractionResult useOnWhenAttached(BlockState originalBlockState, UseOnContext context, ModularToolItem modularTool) {
         InteractionResult result = super.useOnWhenAttached(originalBlockState, context, modularTool);
         return result == InteractionResult.PASS ? ToolUtils.wrenchOnUse(originalBlockState, context) : result;
-    }
-
-    @Override
-    public ToolModuleType getType() {
-        return AllToolModuleTypes.SWORD_POMMEL;
     }
 
     @Override
