@@ -34,7 +34,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
-import net.zlt.create_modular_tools.item.CustomEnchantableItem;
+import net.zlt.create_modular_tools.item.CustomEnchantabilityItem;
 import net.zlt.create_modular_tools.item.FireproofItem;
 import net.zlt.create_modular_tools.item.TooltipUtils;
 import net.zlt.create_modular_tools.item.WaterproofItem;
@@ -51,7 +51,7 @@ import java.util.*;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class ModularToolItem extends Item implements DamageableItem, ToolActionItem, FireproofItem, WaterproofItem, CustomEnchantableItem {
+public abstract class ModularToolItem extends Item implements DamageableItem, ToolActionItem, FireproofItem, WaterproofItem, CustomEnchantabilityItem {
     protected final List<ToolModuleType> COMPATIBLE;
     protected final List<ToolModuleType> REQUIRED;
     protected final TreeSet<ToolModuleType> COMPATIBLE_BY_LAYER;
