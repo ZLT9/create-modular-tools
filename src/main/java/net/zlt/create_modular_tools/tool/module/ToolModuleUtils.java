@@ -55,6 +55,10 @@ public final class ToolModuleUtils {
                 }
             }
             List<Integer> levels = entry.getValue();
+            if (enchantment1.isCurse()) {
+                levels.set(0, 1);
+                continue;
+            }
             levels.sort(Collections.reverseOrder());
             int i = 0;
             while (i < levels.size() - 1) {
