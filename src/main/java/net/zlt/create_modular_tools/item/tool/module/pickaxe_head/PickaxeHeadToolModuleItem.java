@@ -5,6 +5,7 @@ import io.github.fabricators_of_create.porting_lib.tool.ToolActions;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.state.BlockState;
@@ -52,8 +53,9 @@ public abstract class PickaxeHeadToolModuleItem extends BoomerangItem {
     }
 
     @Override
-    public boolean canApplyEnchantment(Enchantment enchantment) {
-        return enchantment == Enchantments.BLOCK_EFFICIENCY ||
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return super.canApplyAtEnchantingTable(stack, enchantment) ||
+            enchantment == Enchantments.BLOCK_EFFICIENCY ||
             enchantment == Enchantments.SILK_TOUCH ||
             enchantment == Enchantments.UNBREAKING ||
             enchantment == Enchantments.BLOCK_FORTUNE ||

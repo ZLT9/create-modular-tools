@@ -1,6 +1,7 @@
 package net.zlt.create_modular_tools.item.tool.module.sword_guard;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -22,8 +23,9 @@ public abstract class SwordGuardToolModuleItem extends ToolModuleItem {
     }
 
     @Override
-    public boolean canApplyEnchantment(Enchantment enchantment) {
-        return enchantment == Enchantments.UNBREAKING ||
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return super.canApplyAtEnchantingTable(stack, enchantment) ||
+            enchantment == Enchantments.UNBREAKING ||
             enchantment == Enchantments.MENDING ||
             enchantment == Enchantments.VANISHING_CURSE;
     }

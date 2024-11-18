@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -61,8 +62,9 @@ public abstract class HoeHeadToolModuleItem extends ToolModuleItem {
     }
 
     @Override
-    public boolean canApplyEnchantment(Enchantment enchantment) {
-        return enchantment == Enchantments.BLOCK_EFFICIENCY ||
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return super.canApplyAtEnchantingTable(stack, enchantment) ||
+            enchantment == Enchantments.BLOCK_EFFICIENCY ||
             enchantment == Enchantments.SILK_TOUCH ||
             enchantment == Enchantments.UNBREAKING ||
             enchantment == Enchantments.BLOCK_FORTUNE ||

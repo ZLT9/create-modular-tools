@@ -71,10 +71,6 @@ public abstract class ToolModuleItem extends Item implements CustomEnchantingBeh
         return true;
     }
 
-    public boolean canApplyEnchantment(Enchantment enchantment) {
-        return false;
-    }
-
     @Override
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
         Map<Enchantment, Integer> enchantmentMap = EnchantmentHelper.deserializeEnchantments(EnchantedBookItem.getEnchantments(book));
@@ -83,17 +79,12 @@ public abstract class ToolModuleItem extends Item implements CustomEnchantingBeh
         }
 
         for (Map.Entry<Enchantment, Integer> enchantmentEntry : enchantmentMap.entrySet()) {
-            if (!canApplyEnchantment(enchantmentEntry.getKey())) {
+            if (!canApplyAtEnchantingTable(stack, enchantmentEntry.getKey())) {
                 return false;
             }
         }
 
         return true;
-    }
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return canApplyEnchantment(enchantment);
     }
 
     public String getId() {

@@ -8,6 +8,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -67,8 +68,9 @@ public abstract class SwordBladeToolModuleItem extends ToolModuleItem {
     }
 
     @Override
-    public boolean canApplyEnchantment(Enchantment enchantment) {
-        return enchantment == Enchantments.SHARPNESS ||
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return super.canApplyAtEnchantingTable(stack, enchantment) ||
+            enchantment == Enchantments.SHARPNESS ||
             enchantment == Enchantments.SMITE ||
             enchantment == Enchantments.BANE_OF_ARTHROPODS ||
             enchantment == Enchantments.KNOCKBACK ||
