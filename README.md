@@ -83,7 +83,7 @@ Modular tools do not disappear when broken. Instead, they remain in your invento
 
 > **Note**: Broken modular tools retain their enchantments, meaning you can use Mending to repair them with XP, even if they are broken.
 > 
-> In the current alpha version of Create: Modular Tools, the only way to repair modular tools that don't have Mending is to disassemble and reassemble them, which doesn't remove their enchantments.  
+> In the current alpha version of Create: Modular Tools, the only way to repair modular tools that don't have Mending is disassembling and reassembling them, which doesn't remove their enchantments.  
 > A more robust repair system may be added in a future version.
 
 ## Enchanting Modules
