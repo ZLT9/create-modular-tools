@@ -25,7 +25,7 @@ If you find Blaze Cakes too expensive, you can also super-heat Blaze Burners usi
 
 ## Disassembling Tools
 
-You can disassemble tools (both vanilla and modular) into their parts by dropping them onto an up-facing Mechanical Saw.
+You can disassemble tools (both Vanilla and modular) into their parts by dropping them onto an up-facing Mechanical Saw.
 
 ![Disassembling an Iron Sword](https://github.com/user-attachments/assets/0b2a657b-e0ae-423c-b923-614954d380bc)
 
@@ -55,7 +55,7 @@ To craft a mold, deploy Sand onto a Bowl using a Deployer. Once created, you can
 
 ![Sand Mold Recipe](https://github.com/user-attachments/assets/a99acce7-7d25-48a5-b318-9d0b861150d3)
 
-Initially, molds have no shape. You can interact with them while holding a tool (either vanilla or modular) to imprint the shape of that tool onto the mold.
+Initially, molds have no shape. You can interact with them while holding a tool (either Vanilla or modular) to imprint the shape of that tool onto the mold.
 
 ![Hoe Sand Mold Recipe](https://github.com/user-attachments/assets/4e023ef9-b425-46da-a14b-0faddc193ccb)
 
