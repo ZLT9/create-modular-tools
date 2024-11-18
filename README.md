@@ -4,7 +4,7 @@ A Minecraft Create mod addon that adds modular tools.
 
 Get it on [Modrinth](https://modrinth.com/mod/create-modular-tools).
 
-> Note: This mod is in alpha, so expect things to break or change in the future.  
+> **Note**: This mod is in alpha, so expect things to break or change in the future.  
 > It is not recommended for survival worlds yet, but feel free to test it and report any issues.  
 > Suggestions are also welcome!
 
@@ -35,7 +35,7 @@ Each part of a tool is referred to as a 'tool module'.
 
 A tool module is a component of a tool that can be used to assemble modular tools.
 
-Each tool module has its own stats that affect the overall performance of the modular tool. These stats include durability, attack speed, mining speed, attack damage, among others. Some tool modules also add special properties. For instance:
+Each tool module has its own stats that affect the overall performance of the modular tool. These stats include durability, attack speed, mining speed, attack damage, among others. Some tool modules also add special features. For instance:
 
 - Netherite tool modules are fireproof, preventing the modular tool from despawning when it falls into lava or fire.
 - Copper tool modules are waterproof, allowing the modular tool to mine at the same speed underwater (as long as you're standing on a block).
@@ -45,15 +45,7 @@ You can view the stats of each tool module in its tooltip, while holding Shift.
 
 Not all tool modules are compatible with all types of tools. For example, pickaxe heads are only compatible with pickaxes. Compatibility details for each tool module can be found in its tooltip, by holding Shift.
 
-![Brass Pickaxe Head](https://github.com/user-attachments/assets/f6b7c02f-0163-42a9-9df2-1381dceb647b)
-
 Once you have a modular tool, you can view its full stats in its tooltip, while holding Shift.
-
-![Modular Axe](https://github.com/user-attachments/assets/8e0dea2f-a8d7-453c-b158-3eff9920c618)
-
-> Note: Some tool modules use vanilla items (e.g., the Wooden Handle uses the vanilla Stick item), so they won't display custom information in their tooltips.  
-> However, modular tools will display their complete stats, regardless of the items used for their tool modules.  
-> A more detailed system may be added in a future version.
 
 ## Assembling Tools
 
@@ -83,15 +75,44 @@ You can use a Mechanical Press to assemble a modular tool from a completely soli
 
 ![Modular Hoe Recipe](https://github.com/user-attachments/assets/f60031fd-80de-407e-957c-639f032af633)
 
-> Note: If molten metal is present in a mold, you cannot add or remove tool modules, but you can still replace existing tool modules.
+> **Note**: If molten metal is present in a mold, you cannot add or remove tool modules, but you can still replace existing tool modules.
 
 ## Permanent Tools
 
 Modular tools do not disappear when broken. Instead, they remain in your inventory, so you can repair them later on.
 
-![Broken Modular Tool Tooltip](https://github.com/user-attachments/assets/83e72cd8-bc6d-4fb0-ab32-1fec667c3607)
-
-> Note: Broken modular tools retain their enchantments, meaning you can use Mending to repair them with XP, even if they are broken.
+> **Note**: Broken modular tools retain their enchantments, meaning you can use Mending to repair them with XP, even if they are broken.
 > 
-> In the current alpha version of Create: Modular Tools, the only way to repair modular tools that don't have Mending is to disassemble and reassemble them, which removes their enchantments.  
+> In the current alpha version of Create: Modular Tools, the only way to repair modular tools that don't have Mending is to disassemble and reassemble them, which doesn't remove their enchantments.  
 > A more robust repair system may be added in a future version.
+
+## Enchanting Modules
+
+Tool modules can be enchanted individually before being assembled into a modular tool. Each module supports a specific set of enchantments based on its type. For example, sword blades can have Sweeping Edge, but pickaxe heads cannot.
+
+When assembling a modular tool using a mold with enchanted tool modules, the resulting tool combines the enchantments of its modules following Vanilla rules. For example:
+
+- Two modules with Unbreaking 2 will result in a tool with Unbreaking 3.
+- A module with Unbreaking 2 and another with Unbreaking 1 will result in a tool with Unbreaking 2.
+
+This behavior mirrors the process of combining enchantments on an anvil in Vanilla Minecraft.
+
+Enchanted tool modules also allow modular tools to surpass Vanilla enchantment level limits. For instance, two modules that each have Unbreaking 3 will result in Unbreaking 4. This even applies to enchantments with a maximum level of 1, such as Mending, allowing modular tools to have Mending 2. However, curses are the exception, so a modular tool cannot have Curse of Vanishing 2, for instance.
+
+This system allows you to create powerful tools by strategically combining enchantments and features. For example, assembling a Modular Sword with a Netherite Sword Blade with Sweeping Edge 3 and Unbreaking 3, a Copper Tool Handle with Mending and Unbreaking 3, and a Golden Sword Guard with Unbreaking 3, results in a sword that is Fireproof (thanks to the netherite blade) and Waterproof (thanks to the copper handle), and has Sweeping Edge 3, Mending, and Unbreaking 4. Adding a Brass Sword Pommel with Unbreaking 3 and Mending further enhances the sword, making it Fireproof, Waterproof, and adding Wrenching, while improving the enchantments to Sweeping Edge 3, Mending 2, and Unbreaking 5.
+
+> **Quick explanation**: When combining enchanted books in Vanilla Minecraft, the resulting book depends on the levels of the input books:
+> - If the levels differ, the resulting enchantment matches the higher level. For example, Unbreaking 2 + Unbreaking 1 = Unbreaking 2.
+> - If the levels are the same, the resulting enchantment is one level higher. For example, Unbreaking 2 + Unbreaking 2 = Unbreaking 3.
+>
+> **Create: Modular Tools** uses the same system when assembling tools with enchanted modules, but with one key difference: molds can accept more than two inputs. The combined enchantments are calculated iteratively:
+> - Three modules with Unbreaking 3 + one module with Unbreaking 2 = Unbreaking 4 (3 and 3 makes 4, then 4, 3, and 2 cannot combine further).
+> - Four modules with Unbreaking 3 = Unbreaking 5 (3 and 3 makes 4, 3 and 3 makes another 4, and 4 and 4 makes 5).
+
+Unlike enchantments, features don't have levels. For example, combining two Fireproof modules will not result in Fireproof 2; the tool will simply retain the Fireproof feature.
+
+You can preview the enchantments and features your tool will have by checking the mold's tooltip or placing it down and inspecting it with Engineer's Goggles from Create.
+
+Once assembled, you can continue enchanting your modular tools directly, without needing to worry about the individual modules, just like with Vanilla tools. However, surpassing Vanilla enchantment level limits is only possible by enchanting the modules individually before assembling the tool.
+
+Disassembling an enchanted modular tool will return all of its modules with their enchantments intact. If you enchanted the tool directly after assembly, you'll also receive an enchanted book with all the added enchantments, ensuring you don't lose any.
