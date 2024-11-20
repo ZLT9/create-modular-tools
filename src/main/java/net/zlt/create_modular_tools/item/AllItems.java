@@ -1,5 +1,6 @@
 package net.zlt.create_modular_tools.item;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -141,5 +142,14 @@ public final class AllItems {
     }
 
     public static void init() {
+        FuelRegistry.INSTANCE.add(WOODEN_SWORD_BLADE, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_SHOVEL_HEAD, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_PICKAXE_HEAD, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_AXE_HEAD, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_HOE_HEAD, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_TOOL_GRIP, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_SWORD_GUARD, 100);
+        FuelRegistry.INSTANCE.add(WOODEN_SWORD_POMMEL, 100);
     }
 }
