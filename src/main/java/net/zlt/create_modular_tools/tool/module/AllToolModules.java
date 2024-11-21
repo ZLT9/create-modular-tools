@@ -60,6 +60,17 @@ public final class AllToolModules {
     public static final ToolModuleItem DIAMOND_HOE_HEAD = register(AllItems.DIAMOND_HOE_HEAD);
 
     public static final ToolModuleItem WOODEN_TOOL_HANDLE = register(AllItems.WOODEN_TOOL_HANDLE);
+    public static final ToolModuleItem OAK_TOOL_HANDLE = register(AllItems.OAK_TOOL_HANDLE);
+    public static final ToolModuleItem SPRUCE_TOOL_HANDLE = register(AllItems.SPRUCE_TOOL_HANDLE);
+    public static final ToolModuleItem BIRCH_TOOL_HANDLE = register(AllItems.BIRCH_TOOL_HANDLE);
+    public static final ToolModuleItem JUNGLE_TOOL_HANDLE = register(AllItems.JUNGLE_TOOL_HANDLE);
+    public static final ToolModuleItem ACACIA_TOOL_HANDLE = register(AllItems.ACACIA_TOOL_HANDLE);
+    public static final ToolModuleItem DARK_OAK_TOOL_HANDLE = register(AllItems.DARK_OAK_TOOL_HANDLE);
+    public static final ToolModuleItem MANGROVE_TOOL_HANDLE = register(AllItems.MANGROVE_TOOL_HANDLE);
+    public static final ToolModuleItem CHERRY_TOOL_HANDLE = register(AllItems.CHERRY_TOOL_HANDLE);
+    public static final ToolModuleItem BAMBOO_TOOL_HANDLE = register(AllItems.BAMBOO_TOOL_HANDLE);
+    public static final ToolModuleItem CRIMSON_TOOL_HANDLE = register(AllItems.CRIMSON_TOOL_HANDLE);
+    public static final ToolModuleItem WARPED_TOOL_HANDLE = register(AllItems.WARPED_TOOL_HANDLE);
     public static final ToolModuleItem STONE_TOOL_HANDLE = register(AllItems.STONE_TOOL_HANDLE);
     public static final ToolModuleItem IRON_TOOL_HANDLE = register(AllItems.IRON_TOOL_HANDLE);
     public static final ToolModuleItem COPPER_TOOL_HANDLE = register(AllItems.COPPER_TOOL_HANDLE);

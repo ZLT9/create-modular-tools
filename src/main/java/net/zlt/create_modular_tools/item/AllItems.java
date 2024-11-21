@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -98,6 +100,37 @@ public final class AllItems {
     public static final Item DIAMOND_HOE_HEAD = register("diamond_hoe_head", new DiamondHoeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
 
     public static final Item WOODEN_TOOL_HANDLE = register("wooden_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item OAK_TOOL_HANDLE = register("oak_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item SPRUCE_TOOL_HANDLE = register("spruce_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item BIRCH_TOOL_HANDLE = register("birch_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item JUNGLE_TOOL_HANDLE = register("jungle_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item ACACIA_TOOL_HANDLE = register("acacia_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item DARK_OAK_TOOL_HANDLE = register("dark_oak_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item MANGROVE_TOOL_HANDLE = register("mangrove_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item CHERRY_TOOL_HANDLE = register("cherry_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        public SoundEvent getSound() {
+            return SoundEvents.CHERRY_WOOD_PLACE;
+        }
+    });
+    public static final Item BAMBOO_TOOL_HANDLE = register("bamboo_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        public SoundEvent getSound() {
+            return SoundEvents.BAMBOO_WOOD_PLACE;
+        }
+    });
+    public static final Item CRIMSON_TOOL_HANDLE = register("crimson_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        public SoundEvent getSound() {
+            return SoundEvents.NETHER_WOOD_PLACE;
+        }
+    });
+    public static final Item WARPED_TOOL_HANDLE = register("warped_tool_handle", new WoodenToolHandleToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        public SoundEvent getSound() {
+            return SoundEvents.NETHER_WOOD_PLACE;
+        }
+    });
     public static final Item STONE_TOOL_HANDLE = register("stone_tool_handle", new StoneToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
     public static final Item IRON_TOOL_HANDLE = register("iron_tool_handle", new IronToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
     public static final Item COPPER_TOOL_HANDLE = register("copper_tool_handle", new CopperToolHandleToolModuleItem(new Item.Properties().stacksTo(1)));
@@ -147,7 +180,18 @@ public final class AllItems {
         FuelRegistry.INSTANCE.add(WOODEN_PICKAXE_HEAD, 100);
         FuelRegistry.INSTANCE.add(WOODEN_AXE_HEAD, 100);
         FuelRegistry.INSTANCE.add(WOODEN_HOE_HEAD, 100);
+
         FuelRegistry.INSTANCE.add(WOODEN_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(OAK_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(SPRUCE_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(BIRCH_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(JUNGLE_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(ACACIA_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(DARK_OAK_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(MANGROVE_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(CHERRY_TOOL_HANDLE, 100);
+        FuelRegistry.INSTANCE.add(BAMBOO_TOOL_HANDLE, 100);
+
         FuelRegistry.INSTANCE.add(WOODEN_TOOL_GRIP, 100);
         FuelRegistry.INSTANCE.add(WOODEN_SWORD_GUARD, 100);
         FuelRegistry.INSTANCE.add(WOODEN_SWORD_POMMEL, 100);

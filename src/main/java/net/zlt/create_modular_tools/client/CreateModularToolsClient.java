@@ -122,469 +122,344 @@ public class CreateModularToolsClient implements ClientModInitializer {
         AllToolModuleTypes.SWORD_GUARD.putIcon(AllModularTools.SWORD, CreateModularTools.asResource("textures/gui/container/guard.png"));
         AllToolModuleTypes.SWORD_POMMEL.putIcon(AllModularTools.SWORD, CreateModularTools.asResource("textures/gui/container/pommel.png"));
 
-        AllToolModuleModelIds.init();
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_SWORD_BLADE, AllToolModuleModelIds.WOODEN_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.STONE_SWORD_BLADE, AllToolModuleModelIds.STONE_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.IRON_SWORD_BLADE, AllToolModuleModelIds.IRON_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.COPPER_SWORD_BLADE, AllToolModuleModelIds.COPPER_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_SWORD_BLADE, AllToolModuleModelIds.GOLDEN_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_SWORD_BLADE, AllToolModuleModelIds.NETHERITE_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.ZINC_SWORD_BLADE, AllToolModuleModelIds.ZINC_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.BRASS_SWORD_BLADE, AllToolModuleModelIds.BRASS_SWORD_BLADE);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_SWORD_BLADE, AllToolModuleModelIds.DIAMOND_SWORD_BLADE);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_SHOVEL_HEAD, AllToolModuleModelIds.WOODEN_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.STONE_SHOVEL_HEAD, AllToolModuleModelIds.STONE_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.IRON_SHOVEL_HEAD, AllToolModuleModelIds.IRON_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.COPPER_SHOVEL_HEAD, AllToolModuleModelIds.COPPER_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_SHOVEL_HEAD, AllToolModuleModelIds.GOLDEN_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_SHOVEL_HEAD, AllToolModuleModelIds.NETHERITE_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.ZINC_SHOVEL_HEAD, AllToolModuleModelIds.ZINC_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.BRASS_SHOVEL_HEAD, AllToolModuleModelIds.BRASS_SHOVEL_HEAD);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_SHOVEL_HEAD, AllToolModuleModelIds.DIAMOND_SHOVEL_HEAD);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_PICKAXE_HEAD, AllToolModuleModelIds.WOODEN_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.STONE_PICKAXE_HEAD, AllToolModuleModelIds.STONE_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.IRON_PICKAXE_HEAD, AllToolModuleModelIds.IRON_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.COPPER_PICKAXE_HEAD, AllToolModuleModelIds.COPPER_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_PICKAXE_HEAD, AllToolModuleModelIds.GOLDEN_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_PICKAXE_HEAD, AllToolModuleModelIds.NETHERITE_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.ZINC_PICKAXE_HEAD, AllToolModuleModelIds.ZINC_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.BRASS_PICKAXE_HEAD, AllToolModuleModelIds.BRASS_PICKAXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_PICKAXE_HEAD, AllToolModuleModelIds.DIAMOND_PICKAXE_HEAD);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_PICKAXE_HEAD, AllToolModuleModelIds.WOODEN_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.STONE_PICKAXE_HEAD, AllToolModuleModelIds.STONE_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.IRON_PICKAXE_HEAD, AllToolModuleModelIds.IRON_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.COPPER_PICKAXE_HEAD, AllToolModuleModelIds.COPPER_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_PICKAXE_HEAD, AllToolModuleModelIds.GOLDEN_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_PICKAXE_HEAD, AllToolModuleModelIds.NETHERITE_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.ZINC_PICKAXE_HEAD, AllToolModuleModelIds.ZINC_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.BRASS_PICKAXE_HEAD, AllToolModuleModelIds.BRASS_PICKAXE_HEAD_ITEM);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_PICKAXE_HEAD, AllToolModuleModelIds.DIAMOND_PICKAXE_HEAD_ITEM);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_AXE_HEAD, AllToolModuleModelIds.WOODEN_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.STONE_AXE_HEAD, AllToolModuleModelIds.STONE_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.IRON_AXE_HEAD, AllToolModuleModelIds.IRON_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.COPPER_AXE_HEAD, AllToolModuleModelIds.COPPER_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_AXE_HEAD, AllToolModuleModelIds.GOLDEN_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_AXE_HEAD, AllToolModuleModelIds.NETHERITE_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.ZINC_AXE_HEAD, AllToolModuleModelIds.ZINC_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.BRASS_AXE_HEAD, AllToolModuleModelIds.BRASS_AXE_HEAD);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_AXE_HEAD, AllToolModuleModelIds.DIAMOND_AXE_HEAD);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_HOE_HEAD, AllToolModuleModelIds.WOODEN_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.STONE_HOE_HEAD, AllToolModuleModelIds.STONE_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.IRON_HOE_HEAD, AllToolModuleModelIds.IRON_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.COPPER_HOE_HEAD, AllToolModuleModelIds.COPPER_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_HOE_HEAD, AllToolModuleModelIds.GOLDEN_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_HOE_HEAD, AllToolModuleModelIds.NETHERITE_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.ZINC_HOE_HEAD, AllToolModuleModelIds.ZINC_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.BRASS_HOE_HEAD, AllToolModuleModelIds.BRASS_HOE_HEAD);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_HOE_HEAD, AllToolModuleModelIds.DIAMOND_HOE_HEAD);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_TOOL_HANDLE, AllToolModuleModelIds.WOODEN_SWORD_HANDLE, AllToolModuleModelIds.WOODEN_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.WOODEN_SHOVEL_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.WOODEN_PICKAXE_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.WOODEN_AXE_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_AXE_HANDLE, AllToolModuleModelIds.WOODEN_HOE_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.STONE_TOOL_HANDLE, AllToolModuleModelIds.STONE_SWORD_HANDLE, AllToolModuleModelIds.STONE_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.STONE_SHOVEL_HANDLE, AllToolModuleModelIds.STONE_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.STONE_PICKAXE_HANDLE, AllToolModuleModelIds.STONE_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.STONE_AXE_HANDLE, AllToolModuleModelIds.STONE_GRIP_AXE_HANDLE, AllToolModuleModelIds.STONE_HOE_HANDLE, AllToolModuleModelIds.STONE_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.IRON_TOOL_HANDLE, AllToolModuleModelIds.IRON_SWORD_HANDLE, AllToolModuleModelIds.IRON_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.IRON_SHOVEL_HANDLE, AllToolModuleModelIds.IRON_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.IRON_PICKAXE_HANDLE, AllToolModuleModelIds.IRON_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.IRON_AXE_HANDLE, AllToolModuleModelIds.IRON_GRIP_AXE_HANDLE, AllToolModuleModelIds.IRON_HOE_HANDLE, AllToolModuleModelIds.IRON_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.COPPER_TOOL_HANDLE, AllToolModuleModelIds.COPPER_SWORD_HANDLE, AllToolModuleModelIds.COPPER_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.COPPER_SHOVEL_HANDLE, AllToolModuleModelIds.COPPER_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.COPPER_PICKAXE_HANDLE, AllToolModuleModelIds.COPPER_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.COPPER_AXE_HANDLE, AllToolModuleModelIds.COPPER_GRIP_AXE_HANDLE, AllToolModuleModelIds.COPPER_HOE_HANDLE, AllToolModuleModelIds.COPPER_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_TOOL_HANDLE, AllToolModuleModelIds.GOLDEN_SWORD_HANDLE, AllToolModuleModelIds.GOLDEN_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.GOLDEN_SHOVEL_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.GOLDEN_PICKAXE_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.GOLDEN_AXE_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_AXE_HANDLE, AllToolModuleModelIds.GOLDEN_HOE_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_TOOL_HANDLE, AllToolModuleModelIds.NETHERITE_SWORD_HANDLE, AllToolModuleModelIds.NETHERITE_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.NETHERITE_SHOVEL_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.NETHERITE_PICKAXE_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.NETHERITE_AXE_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_AXE_HANDLE, AllToolModuleModelIds.NETHERITE_HOE_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.ZINC_TOOL_HANDLE, AllToolModuleModelIds.ZINC_SWORD_HANDLE, AllToolModuleModelIds.ZINC_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.ZINC_SHOVEL_HANDLE, AllToolModuleModelIds.ZINC_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.ZINC_PICKAXE_HANDLE, AllToolModuleModelIds.ZINC_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.ZINC_AXE_HANDLE, AllToolModuleModelIds.ZINC_GRIP_AXE_HANDLE, AllToolModuleModelIds.ZINC_HOE_HANDLE, AllToolModuleModelIds.ZINC_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.BRASS_TOOL_HANDLE, AllToolModuleModelIds.BRASS_SWORD_HANDLE, AllToolModuleModelIds.BRASS_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.BRASS_SHOVEL_HANDLE, AllToolModuleModelIds.BRASS_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.BRASS_PICKAXE_HANDLE, AllToolModuleModelIds.BRASS_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.BRASS_AXE_HANDLE, AllToolModuleModelIds.BRASS_GRIP_AXE_HANDLE, AllToolModuleModelIds.BRASS_HOE_HANDLE, AllToolModuleModelIds.BRASS_GRIP_HOE_HANDLE);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_TOOL_HANDLE, AllToolModuleModelIds.DIAMOND_SWORD_HANDLE, AllToolModuleModelIds.DIAMOND_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.DIAMOND_SHOVEL_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.DIAMOND_PICKAXE_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.DIAMOND_AXE_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_AXE_HANDLE, AllToolModuleModelIds.DIAMOND_HOE_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_HOE_HANDLE);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP);
-        registerToolModuleModelIds(AllToolModules.STONE_TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP);
-        registerToolModuleModelIds(AllToolModules.IRON_TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP);
-        registerToolModuleModelIds(AllToolModules.COPPER_TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_TOOL_GRIP, AllToolModuleModelIds.GOLDEN_GRIP);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_TOOL_GRIP, AllToolModuleModelIds.NETHERITE_GRIP);
-        registerToolModuleModelIds(AllToolModules.ZINC_TOOL_GRIP, AllToolModuleModelIds.ZINC_GRIP);
-        registerToolModuleModelIds(AllToolModules.BRASS_TOOL_GRIP, AllToolModuleModelIds.BRASS_GRIP);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_TOOL_GRIP, AllToolModuleModelIds.DIAMOND_GRIP);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_SWORD_GUARD, AllToolModuleModelIds.WOODEN_GUARD);
-        registerToolModuleModelIds(AllToolModules.STONE_SWORD_GUARD, AllToolModuleModelIds.STONE_GUARD);
-        registerToolModuleModelIds(AllToolModules.IRON_SWORD_GUARD, AllToolModuleModelIds.IRON_GUARD);
-        registerToolModuleModelIds(AllToolModules.COPPER_SWORD_GUARD, AllToolModuleModelIds.COPPER_GUARD);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_SWORD_GUARD, AllToolModuleModelIds.GOLDEN_GUARD);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_SWORD_GUARD, AllToolModuleModelIds.NETHERITE_GUARD);
-        registerToolModuleModelIds(AllToolModules.ZINC_SWORD_GUARD, AllToolModuleModelIds.ZINC_GUARD);
-        registerToolModuleModelIds(AllToolModules.BRASS_SWORD_GUARD, AllToolModuleModelIds.BRASS_GUARD);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_SWORD_GUARD, AllToolModuleModelIds.DIAMOND_GUARD);
-
-        registerToolModuleModelIds(AllToolModules.WOODEN_SWORD_POMMEL, AllToolModuleModelIds.WOODEN_POMMEL);
-        registerToolModuleModelIds(AllToolModules.STONE_SWORD_POMMEL, AllToolModuleModelIds.STONE_POMMEL);
-        registerToolModuleModelIds(AllToolModules.IRON_SWORD_POMMEL, AllToolModuleModelIds.IRON_POMMEL);
-        registerToolModuleModelIds(AllToolModules.COPPER_SWORD_POMMEL, AllToolModuleModelIds.COPPER_POMMEL);
-        registerToolModuleModelIds(AllToolModules.GOLDEN_SWORD_POMMEL, AllToolModuleModelIds.GOLDEN_POMMEL);
-        registerToolModuleModelIds(AllToolModules.NETHERITE_SWORD_POMMEL, AllToolModuleModelIds.NETHERITE_POMMEL);
-        registerToolModuleModelIds(AllToolModules.ZINC_SWORD_POMMEL, AllToolModuleModelIds.ZINC_POMMEL);
-        registerToolModuleModelIds(AllToolModules.BRASS_SWORD_POMMEL, AllToolModuleModelIds.BRASS_POMMEL);
-        registerToolModuleModelIds(AllToolModules.DIAMOND_SWORD_POMMEL, AllToolModuleModelIds.DIAMOND_POMMEL);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_SWORD_BLADE, AllToolModuleModelIds.WOODEN_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_SWORD_BLADE, AllToolModuleModelIds.STONE_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_SWORD_BLADE, AllToolModuleModelIds.IRON_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_SWORD_BLADE, AllToolModuleModelIds.COPPER_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_SWORD_BLADE, AllToolModuleModelIds.GOLDEN_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_SWORD_BLADE, AllToolModuleModelIds.NETHERITE_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_SWORD_BLADE, AllToolModuleModelIds.ZINC_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_SWORD_BLADE, AllToolModuleModelIds.BRASS_SWORD_BLADE);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_SWORD_BLADE, AllToolModuleModelIds.DIAMOND_SWORD_BLADE);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_SHOVEL_HEAD, AllToolModuleModelIds.WOODEN_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_SHOVEL_HEAD, AllToolModuleModelIds.STONE_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_SHOVEL_HEAD, AllToolModuleModelIds.IRON_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_SHOVEL_HEAD, AllToolModuleModelIds.COPPER_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_SHOVEL_HEAD, AllToolModuleModelIds.GOLDEN_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_SHOVEL_HEAD, AllToolModuleModelIds.NETHERITE_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_SHOVEL_HEAD, AllToolModuleModelIds.ZINC_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_SHOVEL_HEAD, AllToolModuleModelIds.BRASS_SHOVEL_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_SHOVEL_HEAD, AllToolModuleModelIds.DIAMOND_SHOVEL_HEAD);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_PICKAXE_HEAD, AllToolModuleModelIds.WOODEN_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_PICKAXE_HEAD, AllToolModuleModelIds.STONE_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_PICKAXE_HEAD, AllToolModuleModelIds.IRON_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_PICKAXE_HEAD, AllToolModuleModelIds.COPPER_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_PICKAXE_HEAD, AllToolModuleModelIds.GOLDEN_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_PICKAXE_HEAD, AllToolModuleModelIds.NETHERITE_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_PICKAXE_HEAD, AllToolModuleModelIds.ZINC_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_PICKAXE_HEAD, AllToolModuleModelIds.BRASS_PICKAXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_PICKAXE_HEAD, AllToolModuleModelIds.DIAMOND_PICKAXE_HEAD);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_AXE_HEAD, AllToolModuleModelIds.WOODEN_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_AXE_HEAD, AllToolModuleModelIds.STONE_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_AXE_HEAD, AllToolModuleModelIds.IRON_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_AXE_HEAD, AllToolModuleModelIds.COPPER_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_AXE_HEAD, AllToolModuleModelIds.GOLDEN_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_AXE_HEAD, AllToolModuleModelIds.NETHERITE_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_AXE_HEAD, AllToolModuleModelIds.ZINC_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_AXE_HEAD, AllToolModuleModelIds.BRASS_AXE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_AXE_HEAD, AllToolModuleModelIds.DIAMOND_AXE_HEAD);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_HOE_HEAD, AllToolModuleModelIds.WOODEN_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_HOE_HEAD, AllToolModuleModelIds.STONE_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_HOE_HEAD, AllToolModuleModelIds.IRON_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_HOE_HEAD, AllToolModuleModelIds.COPPER_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_HOE_HEAD, AllToolModuleModelIds.GOLDEN_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_HOE_HEAD, AllToolModuleModelIds.NETHERITE_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_HOE_HEAD, AllToolModuleModelIds.ZINC_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_HOE_HEAD, AllToolModuleModelIds.BRASS_HOE_HEAD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_HOE_HEAD, AllToolModuleModelIds.DIAMOND_HOE_HEAD);
-
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.WOODEN_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.STONE_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.IRON_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.COPPER_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.GOLDEN_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.NETHERITE_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.ZINC_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.BRASS_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.DIAMOND_SWORD_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_SHOVEL_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_PICKAXE_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_AXE_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithoutModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_HOE_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.WOODEN_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.STONE_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.IRON_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.COPPER_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.GOLDEN_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.NETHERITE_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.ZINC_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.BRASS_POMMEL_SWORD_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleModelIds.DIAMOND_POMMEL_SWORD_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_GRIP_SHOVEL_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_GRIP_SHOVEL_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_GRIP_PICKAXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_GRIP_PICKAXE_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_GRIP_AXE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_GRIP_AXE_HANDLE);
-
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.WOODEN_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.STONE_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.IRON_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.COPPER_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.GOLDEN_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.GOLDEN_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.NETHERITE_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.NETHERITE_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.ZINC_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.ZINC_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.BRASS_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.BRASS_GRIP_HOE_HANDLE);
-        registerToolModuleModelIdGetterForToolWithModule(AllToolModules.DIAMOND_TOOL_HANDLE, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, AllToolModuleModelIds.DIAMOND_GRIP_HOE_HANDLE);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_TOOL_GRIP, AllToolModuleModelIds.GOLDEN_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_TOOL_GRIP, AllToolModuleModelIds.NETHERITE_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_TOOL_GRIP, AllToolModuleModelIds.ZINC_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_TOOL_GRIP, AllToolModuleModelIds.BRASS_GRIP);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_TOOL_GRIP, AllToolModuleModelIds.DIAMOND_GRIP);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_SWORD_GUARD, AllToolModuleModelIds.WOODEN_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_SWORD_GUARD, AllToolModuleModelIds.STONE_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_SWORD_GUARD, AllToolModuleModelIds.IRON_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_SWORD_GUARD, AllToolModuleModelIds.COPPER_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_SWORD_GUARD, AllToolModuleModelIds.GOLDEN_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_SWORD_GUARD, AllToolModuleModelIds.NETHERITE_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_SWORD_GUARD, AllToolModuleModelIds.ZINC_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_SWORD_GUARD, AllToolModuleModelIds.BRASS_GUARD);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_SWORD_GUARD, AllToolModuleModelIds.DIAMOND_GUARD);
-
-        registerToolModuleBaseModelIdGetter(AllToolModules.WOODEN_SWORD_POMMEL, AllToolModuleModelIds.WOODEN_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.STONE_SWORD_POMMEL, AllToolModuleModelIds.STONE_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.IRON_SWORD_POMMEL, AllToolModuleModelIds.IRON_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.COPPER_SWORD_POMMEL, AllToolModuleModelIds.COPPER_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.GOLDEN_SWORD_POMMEL, AllToolModuleModelIds.GOLDEN_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.NETHERITE_SWORD_POMMEL, AllToolModuleModelIds.NETHERITE_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.ZINC_SWORD_POMMEL, AllToolModuleModelIds.ZINC_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.BRASS_SWORD_POMMEL, AllToolModuleModelIds.BRASS_POMMEL);
-        registerToolModuleBaseModelIdGetter(AllToolModules.DIAMOND_SWORD_POMMEL, AllToolModuleModelIds.DIAMOND_POMMEL);
-
         AllMoldTopTextureIds.init();
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllMoldTopTextureIds.EMPTY_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_SWORD_BLADE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_SWORD_BLADE);
+        registerForNonSolidSlot(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_SWORD_BLADE,
+            AllMoldTopTextureIds.LAVA_SWORD_BLADE,
+            AllMoldTopTextureIds.MOLTEN_IRON_SWORD_BLADE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_BLADE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_SWORD_BLADE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_SWORD_BLADE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_SWORD_BLADE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_SWORD_BLADE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_SWORD_BLADE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllMoldTopTextureIds.EMPTY_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, Fluids.LAVA, AllMoldTopTextureIds.LAVA_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_SHOVEL_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_SHOVEL_HEAD);
+        registerForNonSolidSlot(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_SHOVEL_HEAD,
+            AllMoldTopTextureIds.LAVA_SHOVEL_HEAD,
+            AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HEAD,
+            AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.MOLTEN_GOLD_SHOVEL_HEAD,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_SHOVEL_HEAD,
+            AllMoldTopTextureIds.MOLTEN_ZINC_SHOVEL_HEAD,
+            AllMoldTopTextureIds.MOLTEN_BRASS_SHOVEL_HEAD,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_SHOVEL_HEAD
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllMoldTopTextureIds.EMPTY_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, Fluids.LAVA, AllMoldTopTextureIds.LAVA_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_PICKAXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_PICKAXE_HEAD);
+        registerForNonSolidSlot(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_PICKAXE_HEAD,
+            AllMoldTopTextureIds.LAVA_PICKAXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_GOLD_PICKAXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_PICKAXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_ZINC_PICKAXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_BRASS_PICKAXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_PICKAXE_HEAD
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllMoldTopTextureIds.EMPTY_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, Fluids.LAVA, AllMoldTopTextureIds.LAVA_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_AXE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_AXE_HEAD);
+        registerForNonSolidSlot(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_AXE_HEAD,
+            AllMoldTopTextureIds.LAVA_AXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_IRON_AXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_GOLD_AXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_AXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_ZINC_AXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_BRASS_AXE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_AXE_HEAD
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllMoldTopTextureIds.EMPTY_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, Fluids.LAVA, AllMoldTopTextureIds.LAVA_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_HOE_HEAD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_HOE_HEAD);
+        registerForNonSolidSlot(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_HOE_HEAD,
+            AllMoldTopTextureIds.LAVA_HOE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_IRON_HOE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_GOLD_HOE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_HOE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_ZINC_HOE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_BRASS_HOE_HEAD,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_HOE_HEAD
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_SWORD_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SWORD_HANDLE,
+            AllMoldTopTextureIds.LAVA_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_SWORD_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_POMMEL_SWORD_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_POMMEL_SWORD_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.LAVA_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_POMMEL_SWORD_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_SHOVEL_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.LAVA_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_SHOVEL_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_SHOVEL_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_SHOVEL_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.LAVA_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_SHOVEL_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_PICKAXE_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.LAVA_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_PICKAXE_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_PICKAXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_PICKAXE_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.LAVA_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_PICKAXE_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_AXE_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_AXE_HANDLE,
+            AllMoldTopTextureIds.LAVA_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_AXE_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_AXE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_AXE_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.LAVA_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_AXE_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_HOE_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_HOE_HANDLE,
+            AllMoldTopTextureIds.LAVA_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_HOE_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllMoldTopTextureIds.EMPTY_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, Fluids.LAVA, AllMoldTopTextureIds.LAVA_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_HOE_HANDLE);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_HOE_HANDLE);
+        registerForNonSolidSlot(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.LAVA_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_IRON_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_GOLD_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_ZINC_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_BRASS_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP_HOE_HANDLE
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextureIds.EMPTY_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, Fluids.LAVA, AllMoldTopTextureIds.LAVA_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_GRIP);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP);
+        registerForNonSolidSlot(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP,
+            AllMoldTopTextureIds.EMPTY_GRIP,
+            AllMoldTopTextureIds.LAVA_GRIP,
+            AllMoldTopTextureIds.MOLTEN_IRON_GRIP,
+            AllMoldTopTextureIds.MOLTEN_COPPER_GRIP,
+            AllMoldTopTextureIds.MOLTEN_GOLD_GRIP,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_GRIP,
+            AllMoldTopTextureIds.MOLTEN_ZINC_GRIP,
+            AllMoldTopTextureIds.MOLTEN_BRASS_GRIP,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_GRIP
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllMoldTopTextureIds.EMPTY_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, Fluids.LAVA, AllMoldTopTextureIds.LAVA_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_GUARD);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_GUARD);
+        registerForNonSolidSlot(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD,
+            AllMoldTopTextureIds.EMPTY_GUARD,
+            AllMoldTopTextureIds.LAVA_GUARD,
+            AllMoldTopTextureIds.MOLTEN_IRON_GUARD,
+            AllMoldTopTextureIds.MOLTEN_COPPER_GUARD,
+            AllMoldTopTextureIds.MOLTEN_GOLD_GUARD,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_GUARD,
+            AllMoldTopTextureIds.MOLTEN_ZINC_GUARD,
+            AllMoldTopTextureIds.MOLTEN_BRASS_GUARD,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_GUARD
+        );
 
-        registerEmptyMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllMoldTopTextureIds.EMPTY_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, Fluids.LAVA, AllMoldTopTextureIds.LAVA_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_IRON, AllMoldTopTextureIds.MOLTEN_IRON_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_COPPER, AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_GOLD, AllMoldTopTextureIds.MOLTEN_GOLD_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_NETHERITE, AllMoldTopTextureIds.MOLTEN_NETHERITE_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_ZINC, AllMoldTopTextureIds.MOLTEN_ZINC_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_BRASS, AllMoldTopTextureIds.MOLTEN_BRASS_POMMEL);
-        registerFullMoldTopTextureIdGetter(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL, AllFluids.MOLTEN_DIAMOND, AllMoldTopTextureIds.MOLTEN_DIAMOND_POMMEL);
+        registerForNonSolidSlot(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL,
+            AllMoldTopTextureIds.EMPTY_POMMEL,
+            AllMoldTopTextureIds.LAVA_POMMEL,
+            AllMoldTopTextureIds.MOLTEN_IRON_POMMEL,
+            AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL,
+            AllMoldTopTextureIds.MOLTEN_GOLD_POMMEL,
+            AllMoldTopTextureIds.MOLTEN_NETHERITE_POMMEL,
+            AllMoldTopTextureIds.MOLTEN_ZINC_POMMEL,
+            AllMoldTopTextureIds.MOLTEN_BRASS_POMMEL,
+            AllMoldTopTextureIds.MOLTEN_DIAMOND_POMMEL
+        );
+
+        AllToolModuleModelIds.init();
+
+        // Sword Blades
+
+        registerForBasicToolModule(AllToolModules.WOODEN_SWORD_BLADE, AllToolModuleModelIds.WOODEN_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.STONE_SWORD_BLADE, AllToolModuleModelIds.STONE_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.IRON_SWORD_BLADE, AllToolModuleModelIds.IRON_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.COPPER_SWORD_BLADE, AllToolModuleModelIds.COPPER_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.GOLDEN_SWORD_BLADE, AllToolModuleModelIds.GOLDEN_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.NETHERITE_SWORD_BLADE, AllToolModuleModelIds.NETHERITE_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.ZINC_SWORD_BLADE, AllToolModuleModelIds.ZINC_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.BRASS_SWORD_BLADE, AllToolModuleModelIds.BRASS_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.DIAMOND_SWORD_BLADE, AllToolModuleModelIds.DIAMOND_SWORD_BLADE);
+
+        // Shovel Heads
+
+        registerForBasicToolModule(AllToolModules.WOODEN_SHOVEL_HEAD, AllToolModuleModelIds.WOODEN_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.STONE_SHOVEL_HEAD, AllToolModuleModelIds.STONE_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.IRON_SHOVEL_HEAD, AllToolModuleModelIds.IRON_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.COPPER_SHOVEL_HEAD, AllToolModuleModelIds.COPPER_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.GOLDEN_SHOVEL_HEAD, AllToolModuleModelIds.GOLDEN_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.NETHERITE_SHOVEL_HEAD, AllToolModuleModelIds.NETHERITE_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.ZINC_SHOVEL_HEAD, AllToolModuleModelIds.ZINC_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.BRASS_SHOVEL_HEAD, AllToolModuleModelIds.BRASS_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.DIAMOND_SHOVEL_HEAD, AllToolModuleModelIds.DIAMOND_SHOVEL_HEAD);
+
+        // Pickaxe Heads
+
+        registerForPickaxeHead(AllToolModules.WOODEN_PICKAXE_HEAD, AllToolModuleModelIds.WOODEN_PICKAXE_HEAD, AllToolModuleModelIds.WOODEN_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.STONE_PICKAXE_HEAD, AllToolModuleModelIds.STONE_PICKAXE_HEAD, AllToolModuleModelIds.STONE_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.IRON_PICKAXE_HEAD, AllToolModuleModelIds.IRON_PICKAXE_HEAD, AllToolModuleModelIds.IRON_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.COPPER_PICKAXE_HEAD, AllToolModuleModelIds.COPPER_PICKAXE_HEAD, AllToolModuleModelIds.COPPER_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.GOLDEN_PICKAXE_HEAD, AllToolModuleModelIds.GOLDEN_PICKAXE_HEAD, AllToolModuleModelIds.GOLDEN_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.NETHERITE_PICKAXE_HEAD, AllToolModuleModelIds.NETHERITE_PICKAXE_HEAD, AllToolModuleModelIds.NETHERITE_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.ZINC_PICKAXE_HEAD, AllToolModuleModelIds.ZINC_PICKAXE_HEAD, AllToolModuleModelIds.ZINC_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.BRASS_PICKAXE_HEAD, AllToolModuleModelIds.BRASS_PICKAXE_HEAD, AllToolModuleModelIds.BRASS_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.DIAMOND_PICKAXE_HEAD, AllToolModuleModelIds.DIAMOND_PICKAXE_HEAD, AllToolModuleModelIds.DIAMOND_PICKAXE_HEAD_ITEM);
+
+        // Axe Heads
+
+        registerForBasicToolModule(AllToolModules.WOODEN_AXE_HEAD, AllToolModuleModelIds.WOODEN_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.STONE_AXE_HEAD, AllToolModuleModelIds.STONE_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.IRON_AXE_HEAD, AllToolModuleModelIds.IRON_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.COPPER_AXE_HEAD, AllToolModuleModelIds.COPPER_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.GOLDEN_AXE_HEAD, AllToolModuleModelIds.GOLDEN_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.NETHERITE_AXE_HEAD, AllToolModuleModelIds.NETHERITE_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.ZINC_AXE_HEAD, AllToolModuleModelIds.ZINC_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.BRASS_AXE_HEAD, AllToolModuleModelIds.BRASS_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.DIAMOND_AXE_HEAD, AllToolModuleModelIds.DIAMOND_AXE_HEAD);
+
+        // Hoe Heads
+
+        registerForBasicToolModule(AllToolModules.WOODEN_HOE_HEAD, AllToolModuleModelIds.WOODEN_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.STONE_HOE_HEAD, AllToolModuleModelIds.STONE_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.IRON_HOE_HEAD, AllToolModuleModelIds.IRON_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.COPPER_HOE_HEAD, AllToolModuleModelIds.COPPER_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.GOLDEN_HOE_HEAD, AllToolModuleModelIds.GOLDEN_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.NETHERITE_HOE_HEAD, AllToolModuleModelIds.NETHERITE_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.ZINC_HOE_HEAD, AllToolModuleModelIds.ZINC_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.BRASS_HOE_HEAD, AllToolModuleModelIds.BRASS_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.DIAMOND_HOE_HEAD, AllToolModuleModelIds.DIAMOND_HOE_HEAD);
+
+        // Tool Handles
+
+        registerForToolHandle(AllToolModules.WOODEN_TOOL_HANDLE, AllToolModuleModelIds.WOODEN_SWORD_HANDLE, AllToolModuleModelIds.WOODEN_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.WOODEN_SHOVEL_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.WOODEN_PICKAXE_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.WOODEN_AXE_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_AXE_HANDLE, AllToolModuleModelIds.WOODEN_HOE_HANDLE, AllToolModuleModelIds.WOODEN_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.OAK_TOOL_HANDLE, AllToolModuleModelIds.OAK_SWORD_HANDLE, AllToolModuleModelIds.OAK_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.OAK_SHOVEL_HANDLE, AllToolModuleModelIds.OAK_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.OAK_PICKAXE_HANDLE, AllToolModuleModelIds.OAK_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.OAK_AXE_HANDLE, AllToolModuleModelIds.OAK_GRIP_AXE_HANDLE, AllToolModuleModelIds.OAK_HOE_HANDLE, AllToolModuleModelIds.OAK_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.SPRUCE_TOOL_HANDLE, AllToolModuleModelIds.SPRUCE_SWORD_HANDLE, AllToolModuleModelIds.SPRUCE_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.SPRUCE_SHOVEL_HANDLE, AllToolModuleModelIds.SPRUCE_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.SPRUCE_PICKAXE_HANDLE, AllToolModuleModelIds.SPRUCE_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.SPRUCE_AXE_HANDLE, AllToolModuleModelIds.SPRUCE_GRIP_AXE_HANDLE, AllToolModuleModelIds.SPRUCE_HOE_HANDLE, AllToolModuleModelIds.SPRUCE_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.BIRCH_TOOL_HANDLE, AllToolModuleModelIds.BIRCH_SWORD_HANDLE, AllToolModuleModelIds.BIRCH_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.BIRCH_SHOVEL_HANDLE, AllToolModuleModelIds.BIRCH_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.BIRCH_PICKAXE_HANDLE, AllToolModuleModelIds.BIRCH_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.BIRCH_AXE_HANDLE, AllToolModuleModelIds.BIRCH_GRIP_AXE_HANDLE, AllToolModuleModelIds.BIRCH_HOE_HANDLE, AllToolModuleModelIds.BIRCH_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.JUNGLE_TOOL_HANDLE, AllToolModuleModelIds.JUNGLE_SWORD_HANDLE, AllToolModuleModelIds.JUNGLE_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.JUNGLE_SHOVEL_HANDLE, AllToolModuleModelIds.JUNGLE_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.JUNGLE_PICKAXE_HANDLE, AllToolModuleModelIds.JUNGLE_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.JUNGLE_AXE_HANDLE, AllToolModuleModelIds.JUNGLE_GRIP_AXE_HANDLE, AllToolModuleModelIds.JUNGLE_HOE_HANDLE, AllToolModuleModelIds.JUNGLE_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.ACACIA_TOOL_HANDLE, AllToolModuleModelIds.ACACIA_SWORD_HANDLE, AllToolModuleModelIds.ACACIA_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.ACACIA_SHOVEL_HANDLE, AllToolModuleModelIds.ACACIA_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.ACACIA_PICKAXE_HANDLE, AllToolModuleModelIds.ACACIA_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.ACACIA_AXE_HANDLE, AllToolModuleModelIds.ACACIA_GRIP_AXE_HANDLE, AllToolModuleModelIds.ACACIA_HOE_HANDLE, AllToolModuleModelIds.ACACIA_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.DARK_OAK_TOOL_HANDLE, AllToolModuleModelIds.DARK_OAK_SWORD_HANDLE, AllToolModuleModelIds.DARK_OAK_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.DARK_OAK_SHOVEL_HANDLE, AllToolModuleModelIds.DARK_OAK_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.DARK_OAK_PICKAXE_HANDLE, AllToolModuleModelIds.DARK_OAK_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.DARK_OAK_AXE_HANDLE, AllToolModuleModelIds.DARK_OAK_GRIP_AXE_HANDLE, AllToolModuleModelIds.DARK_OAK_HOE_HANDLE, AllToolModuleModelIds.DARK_OAK_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.MANGROVE_TOOL_HANDLE, AllToolModuleModelIds.MANGROVE_SWORD_HANDLE, AllToolModuleModelIds.MANGROVE_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.MANGROVE_SHOVEL_HANDLE, AllToolModuleModelIds.MANGROVE_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.MANGROVE_PICKAXE_HANDLE, AllToolModuleModelIds.MANGROVE_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.MANGROVE_AXE_HANDLE, AllToolModuleModelIds.MANGROVE_GRIP_AXE_HANDLE, AllToolModuleModelIds.MANGROVE_HOE_HANDLE, AllToolModuleModelIds.MANGROVE_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.CHERRY_TOOL_HANDLE, AllToolModuleModelIds.CHERRY_SWORD_HANDLE, AllToolModuleModelIds.CHERRY_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.CHERRY_SHOVEL_HANDLE, AllToolModuleModelIds.CHERRY_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.CHERRY_PICKAXE_HANDLE, AllToolModuleModelIds.CHERRY_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.CHERRY_AXE_HANDLE, AllToolModuleModelIds.CHERRY_GRIP_AXE_HANDLE, AllToolModuleModelIds.CHERRY_HOE_HANDLE, AllToolModuleModelIds.CHERRY_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.BAMBOO_TOOL_HANDLE, AllToolModuleModelIds.BAMBOO_SWORD_HANDLE, AllToolModuleModelIds.BAMBOO_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.BAMBOO_SHOVEL_HANDLE, AllToolModuleModelIds.BAMBOO_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.BAMBOO_PICKAXE_HANDLE, AllToolModuleModelIds.BAMBOO_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.BAMBOO_AXE_HANDLE, AllToolModuleModelIds.BAMBOO_GRIP_AXE_HANDLE, AllToolModuleModelIds.BAMBOO_HOE_HANDLE, AllToolModuleModelIds.BAMBOO_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.CRIMSON_TOOL_HANDLE, AllToolModuleModelIds.CRIMSON_SWORD_HANDLE, AllToolModuleModelIds.CRIMSON_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.CRIMSON_SHOVEL_HANDLE, AllToolModuleModelIds.CRIMSON_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.CRIMSON_PICKAXE_HANDLE, AllToolModuleModelIds.CRIMSON_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.CRIMSON_AXE_HANDLE, AllToolModuleModelIds.CRIMSON_GRIP_AXE_HANDLE, AllToolModuleModelIds.CRIMSON_HOE_HANDLE, AllToolModuleModelIds.CRIMSON_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.WARPED_TOOL_HANDLE, AllToolModuleModelIds.WARPED_SWORD_HANDLE, AllToolModuleModelIds.WARPED_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.WARPED_SHOVEL_HANDLE, AllToolModuleModelIds.WARPED_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.WARPED_PICKAXE_HANDLE, AllToolModuleModelIds.WARPED_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.WARPED_AXE_HANDLE, AllToolModuleModelIds.WARPED_GRIP_AXE_HANDLE, AllToolModuleModelIds.WARPED_HOE_HANDLE, AllToolModuleModelIds.WARPED_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.STONE_TOOL_HANDLE, AllToolModuleModelIds.STONE_SWORD_HANDLE, AllToolModuleModelIds.STONE_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.STONE_SHOVEL_HANDLE, AllToolModuleModelIds.STONE_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.STONE_PICKAXE_HANDLE, AllToolModuleModelIds.STONE_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.STONE_AXE_HANDLE, AllToolModuleModelIds.STONE_GRIP_AXE_HANDLE, AllToolModuleModelIds.STONE_HOE_HANDLE, AllToolModuleModelIds.STONE_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.IRON_TOOL_HANDLE, AllToolModuleModelIds.IRON_SWORD_HANDLE, AllToolModuleModelIds.IRON_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.IRON_SHOVEL_HANDLE, AllToolModuleModelIds.IRON_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.IRON_PICKAXE_HANDLE, AllToolModuleModelIds.IRON_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.IRON_AXE_HANDLE, AllToolModuleModelIds.IRON_GRIP_AXE_HANDLE, AllToolModuleModelIds.IRON_HOE_HANDLE, AllToolModuleModelIds.IRON_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.COPPER_TOOL_HANDLE, AllToolModuleModelIds.COPPER_SWORD_HANDLE, AllToolModuleModelIds.COPPER_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.COPPER_SHOVEL_HANDLE, AllToolModuleModelIds.COPPER_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.COPPER_PICKAXE_HANDLE, AllToolModuleModelIds.COPPER_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.COPPER_AXE_HANDLE, AllToolModuleModelIds.COPPER_GRIP_AXE_HANDLE, AllToolModuleModelIds.COPPER_HOE_HANDLE, AllToolModuleModelIds.COPPER_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.GOLDEN_TOOL_HANDLE, AllToolModuleModelIds.GOLDEN_SWORD_HANDLE, AllToolModuleModelIds.GOLDEN_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.GOLDEN_SHOVEL_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.GOLDEN_PICKAXE_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.GOLDEN_AXE_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_AXE_HANDLE, AllToolModuleModelIds.GOLDEN_HOE_HANDLE, AllToolModuleModelIds.GOLDEN_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.NETHERITE_TOOL_HANDLE, AllToolModuleModelIds.NETHERITE_SWORD_HANDLE, AllToolModuleModelIds.NETHERITE_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.NETHERITE_SHOVEL_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.NETHERITE_PICKAXE_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.NETHERITE_AXE_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_AXE_HANDLE, AllToolModuleModelIds.NETHERITE_HOE_HANDLE, AllToolModuleModelIds.NETHERITE_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.ZINC_TOOL_HANDLE, AllToolModuleModelIds.ZINC_SWORD_HANDLE, AllToolModuleModelIds.ZINC_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.ZINC_SHOVEL_HANDLE, AllToolModuleModelIds.ZINC_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.ZINC_PICKAXE_HANDLE, AllToolModuleModelIds.ZINC_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.ZINC_AXE_HANDLE, AllToolModuleModelIds.ZINC_GRIP_AXE_HANDLE, AllToolModuleModelIds.ZINC_HOE_HANDLE, AllToolModuleModelIds.ZINC_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.BRASS_TOOL_HANDLE, AllToolModuleModelIds.BRASS_SWORD_HANDLE, AllToolModuleModelIds.BRASS_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.BRASS_SHOVEL_HANDLE, AllToolModuleModelIds.BRASS_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.BRASS_PICKAXE_HANDLE, AllToolModuleModelIds.BRASS_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.BRASS_AXE_HANDLE, AllToolModuleModelIds.BRASS_GRIP_AXE_HANDLE, AllToolModuleModelIds.BRASS_HOE_HANDLE, AllToolModuleModelIds.BRASS_GRIP_HOE_HANDLE);
+        registerForToolHandle(AllToolModules.DIAMOND_TOOL_HANDLE, AllToolModuleModelIds.DIAMOND_SWORD_HANDLE, AllToolModuleModelIds.DIAMOND_POMMEL_SWORD_HANDLE, AllToolModuleModelIds.DIAMOND_SHOVEL_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_SHOVEL_HANDLE, AllToolModuleModelIds.DIAMOND_PICKAXE_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_PICKAXE_HANDLE, AllToolModuleModelIds.DIAMOND_AXE_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_AXE_HANDLE, AllToolModuleModelIds.DIAMOND_HOE_HANDLE, AllToolModuleModelIds.DIAMOND_GRIP_HOE_HANDLE);
+
+        // Tool Grips
+
+        registerForBasicToolModule(AllToolModules.WOODEN_TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP);
+        registerForBasicToolModule(AllToolModules.STONE_TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP);
+        registerForBasicToolModule(AllToolModules.IRON_TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP);
+        registerForBasicToolModule(AllToolModules.COPPER_TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP);
+        registerForBasicToolModule(AllToolModules.GOLDEN_TOOL_GRIP, AllToolModuleModelIds.GOLDEN_GRIP);
+        registerForBasicToolModule(AllToolModules.NETHERITE_TOOL_GRIP, AllToolModuleModelIds.NETHERITE_GRIP);
+        registerForBasicToolModule(AllToolModules.ZINC_TOOL_GRIP, AllToolModuleModelIds.ZINC_GRIP);
+        registerForBasicToolModule(AllToolModules.BRASS_TOOL_GRIP, AllToolModuleModelIds.BRASS_GRIP);
+        registerForBasicToolModule(AllToolModules.DIAMOND_TOOL_GRIP, AllToolModuleModelIds.DIAMOND_GRIP);
+
+        // Sword Guards
+
+        registerForBasicToolModule(AllToolModules.WOODEN_SWORD_GUARD, AllToolModuleModelIds.WOODEN_GUARD);
+        registerForBasicToolModule(AllToolModules.STONE_SWORD_GUARD, AllToolModuleModelIds.STONE_GUARD);
+        registerForBasicToolModule(AllToolModules.IRON_SWORD_GUARD, AllToolModuleModelIds.IRON_GUARD);
+        registerForBasicToolModule(AllToolModules.COPPER_SWORD_GUARD, AllToolModuleModelIds.COPPER_GUARD);
+        registerForBasicToolModule(AllToolModules.GOLDEN_SWORD_GUARD, AllToolModuleModelIds.GOLDEN_GUARD);
+        registerForBasicToolModule(AllToolModules.NETHERITE_SWORD_GUARD, AllToolModuleModelIds.NETHERITE_GUARD);
+        registerForBasicToolModule(AllToolModules.ZINC_SWORD_GUARD, AllToolModuleModelIds.ZINC_GUARD);
+        registerForBasicToolModule(AllToolModules.BRASS_SWORD_GUARD, AllToolModuleModelIds.BRASS_GUARD);
+        registerForBasicToolModule(AllToolModules.DIAMOND_SWORD_GUARD, AllToolModuleModelIds.DIAMOND_GUARD);
+
+        // Sword Pommels
+
+        registerForBasicToolModule(AllToolModules.WOODEN_SWORD_POMMEL, AllToolModuleModelIds.WOODEN_POMMEL);
+        registerForBasicToolModule(AllToolModules.STONE_SWORD_POMMEL, AllToolModuleModelIds.STONE_POMMEL);
+        registerForBasicToolModule(AllToolModules.IRON_SWORD_POMMEL, AllToolModuleModelIds.IRON_POMMEL);
+        registerForBasicToolModule(AllToolModules.COPPER_SWORD_POMMEL, AllToolModuleModelIds.COPPER_POMMEL);
+        registerForBasicToolModule(AllToolModules.GOLDEN_SWORD_POMMEL, AllToolModuleModelIds.GOLDEN_POMMEL);
+        registerForBasicToolModule(AllToolModules.NETHERITE_SWORD_POMMEL, AllToolModuleModelIds.NETHERITE_POMMEL);
+        registerForBasicToolModule(AllToolModules.ZINC_SWORD_POMMEL, AllToolModuleModelIds.ZINC_POMMEL);
+        registerForBasicToolModule(AllToolModules.BRASS_SWORD_POMMEL, AllToolModuleModelIds.BRASS_POMMEL);
+        registerForBasicToolModule(AllToolModules.DIAMOND_SWORD_POMMEL, AllToolModuleModelIds.DIAMOND_POMMEL);
     }
 
     private static void registerToolModuleModelIds(ToolModuleItem toolModule, ResourceLocation... modelIds) {
@@ -616,5 +491,45 @@ public class CreateModularToolsClient implements ClientModInitializer {
             CompoundTag slotNbt = nbt.getCompound(toolModuleType.getTag());
             return original == null && ToolUtils.MoldSlotState.fromName(slotNbt.getString("state")) == ToolUtils.MoldSlotState.FLUID && slotNbt.getString("id").equals(BuiltInRegistries.FLUID.getKey(fluid).toString()) ? textureId : original;
         });
+    }
+
+    private static void registerForBasicToolModule(ToolModuleItem toolModule, ResourceLocation id) {
+        registerToolModuleModelIds(toolModule, id);
+
+        registerToolModuleBaseModelIdGetter(toolModule, id);
+    }
+
+    private static void registerForPickaxeHead(ToolModuleItem pickaxeHead, ResourceLocation id, ResourceLocation itemId) {
+        registerToolModuleModelIds(pickaxeHead, id, itemId);
+
+        registerToolModuleBaseModelIdGetter(pickaxeHead, id);
+    }
+
+    private static void registerForToolHandle(ToolModuleItem toolHandle, ResourceLocation idSword, ResourceLocation idPommelSword, ResourceLocation idShovel, ResourceLocation idGripShovel, ResourceLocation idPickaxe, ResourceLocation idGripPickaxe, ResourceLocation idAxe, ResourceLocation idGripAxe, ResourceLocation idHoe, ResourceLocation idGripHoe) {
+        registerToolModuleModelIds(toolHandle, idSword, idPommelSword, idShovel, idGripShovel, idPickaxe, idGripPickaxe, idAxe, idGripAxe, idHoe, idGripHoe);
+
+        registerToolModuleModelIdGetterForToolWithoutModule(toolHandle, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, idSword);
+        registerToolModuleModelIdGetterForToolWithoutModule(toolHandle, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, idShovel);
+        registerToolModuleModelIdGetterForToolWithoutModule(toolHandle, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, idPickaxe);
+        registerToolModuleModelIdGetterForToolWithoutModule(toolHandle, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, idAxe);
+        registerToolModuleModelIdGetterForToolWithoutModule(toolHandle, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, idHoe);
+
+        registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, idPommelSword);
+        registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP, idGripShovel);
+        registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, idGripPickaxe);
+        registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, idGripAxe);
+        registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, idGripHoe);
+    }
+
+    private static void registerForNonSolidSlot(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation idEmpty, ResourceLocation idLava, ResourceLocation idMoltenIron, ResourceLocation idMoltenCopper, ResourceLocation idMoltenGold, ResourceLocation idMoltenNetherite, ResourceLocation idMoltenZinc, ResourceLocation idMoltenBrass, ResourceLocation idMoltenDiamond) {
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, toolModuleType, idEmpty);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, Fluids.LAVA, idLava);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_IRON, idMoltenIron);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_COPPER, idMoltenCopper);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_GOLD, idMoltenGold);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_NETHERITE, idMoltenNetherite);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_ZINC, idMoltenZinc);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_BRASS, idMoltenBrass);
+        registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_DIAMOND, idMoltenDiamond);
     }
 }

@@ -45,6 +45,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllMoldItems.SAND_MOLD);
 
             entries.accept(AllItems.WOODEN_TOOL_HANDLE);
+            entries.accept(AllItems.OAK_TOOL_HANDLE);
+            entries.accept(AllItems.SPRUCE_TOOL_HANDLE);
+            entries.accept(AllItems.BIRCH_TOOL_HANDLE);
+            entries.accept(AllItems.JUNGLE_TOOL_HANDLE);
+            entries.accept(AllItems.ACACIA_TOOL_HANDLE);
+            entries.accept(AllItems.DARK_OAK_TOOL_HANDLE);
+            entries.accept(AllItems.MANGROVE_TOOL_HANDLE);
+            entries.accept(AllItems.CHERRY_TOOL_HANDLE);
+            entries.accept(AllItems.BAMBOO_TOOL_HANDLE);
+            entries.accept(AllItems.CRIMSON_TOOL_HANDLE);
+            entries.accept(AllItems.WARPED_TOOL_HANDLE);
             entries.accept(AllItems.STONE_TOOL_HANDLE);
             entries.accept(AllItems.IRON_TOOL_HANDLE);
             entries.accept(AllItems.COPPER_TOOL_HANDLE);
