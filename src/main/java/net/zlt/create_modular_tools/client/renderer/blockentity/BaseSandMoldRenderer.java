@@ -43,13 +43,6 @@ public abstract class BaseSandMoldRenderer<T extends SandMoldBlockEntity> implem
     @Override
     public void render(T blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
         CompoundTag toolModulesNbt = blockEntity.getToolModulesNbt();
-
-        poseStack.pushPose();
-
-        poseStack.translate(0.5, 0.0, 0.5);
-        poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValue(SandMoldBlock.FACING).toYRot()));
-        poseStack.translate(-0.5, 0.1875f, -0.5);
-
         boolean isEnchanted = false;
         List<ResourceLocation> absentToolModuleIds = new ArrayList<>();
         List<ResourceLocation> presentToolModuleIds = new ArrayList<>();
@@ -100,7 +93,13 @@ public abstract class BaseSandMoldRenderer<T extends SandMoldBlockEntity> implem
             }
         }
 
-        TOP.render(poseStack, BASE_MATERIAL.buffer(buffer, resourceLocation -> RenderType.solid(), isEnchanted), packedLight, packedOverlay);
+        poseStack.pushPose();
+
+        poseStack.translate(0.5, 0.0, 0.5);
+        poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValue(SandMoldBlock.FACING).toYRot()));
+        poseStack.translate(-0.5, 0.1875, -0.5);
+
+        TOP.render(poseStack, BASE_MATERIAL.buffer(buffer, resourceLocation -> RenderType.cutout(), isEnchanted), packedLight, packedOverlay);
 
         for (ResourceLocation toolModuleId : absentToolModuleIds) {
             TOP.render(poseStack, getMaterial(toolModuleId).buffer(buffer, resourceLocation -> RenderType.cutout()), packedLight, packedOverlay);
