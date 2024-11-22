@@ -29,6 +29,9 @@ public final class ToolModuleConstants {
     public static final int DIAMOND_DURABILITY = 1570;
 
     public static final SoundEvent WOOD_SOUND = SoundEvents.WOOD_PLACE;
+    public static final SoundEvent CHERRY_WOOD_SOUND = SoundEvents.CHERRY_WOOD_PLACE;
+    public static final SoundEvent BAMBOO_WOOD_SOUND = SoundEvents.BAMBOO_WOOD_PLACE;
+    public static final SoundEvent NETHER_WOOD_SOUND = SoundEvents.NETHER_WOOD_PLACE;
     public static final SoundEvent STONE_SOUND = SoundEvents.STONE_PLACE;
     public static final SoundEvent IRON_SOUND = SoundEvents.METAL_PLACE;
     public static final SoundEvent COPPER_SOUND = SoundEvents.COPPER_PLACE;

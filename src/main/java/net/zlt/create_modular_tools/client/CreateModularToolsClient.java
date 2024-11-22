@@ -345,6 +345,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Sword Blades
 
         registerForBasicToolModule(AllToolModules.WOODEN_SWORD_BLADE, AllToolModuleModelIds.WOODEN_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.OAK_SWORD_BLADE, AllToolModuleModelIds.OAK_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.SPRUCE_SWORD_BLADE, AllToolModuleModelIds.SPRUCE_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.BIRCH_SWORD_BLADE, AllToolModuleModelIds.BIRCH_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.JUNGLE_SWORD_BLADE, AllToolModuleModelIds.JUNGLE_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.ACACIA_SWORD_BLADE, AllToolModuleModelIds.ACACIA_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.DARK_OAK_SWORD_BLADE, AllToolModuleModelIds.DARK_OAK_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.MANGROVE_SWORD_BLADE, AllToolModuleModelIds.MANGROVE_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.CHERRY_SWORD_BLADE, AllToolModuleModelIds.CHERRY_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.BAMBOO_SWORD_BLADE, AllToolModuleModelIds.BAMBOO_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.CRIMSON_SWORD_BLADE, AllToolModuleModelIds.CRIMSON_SWORD_BLADE);
+        registerForBasicToolModule(AllToolModules.WARPED_SWORD_BLADE, AllToolModuleModelIds.WARPED_SWORD_BLADE);
         registerForBasicToolModule(AllToolModules.STONE_SWORD_BLADE, AllToolModuleModelIds.STONE_SWORD_BLADE);
         registerForBasicToolModule(AllToolModules.IRON_SWORD_BLADE, AllToolModuleModelIds.IRON_SWORD_BLADE);
         registerForBasicToolModule(AllToolModules.COPPER_SWORD_BLADE, AllToolModuleModelIds.COPPER_SWORD_BLADE);
@@ -357,6 +368,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Shovel Heads
 
         registerForBasicToolModule(AllToolModules.WOODEN_SHOVEL_HEAD, AllToolModuleModelIds.WOODEN_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.OAK_SHOVEL_HEAD, AllToolModuleModelIds.OAK_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.SPRUCE_SHOVEL_HEAD, AllToolModuleModelIds.SPRUCE_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.BIRCH_SHOVEL_HEAD, AllToolModuleModelIds.BIRCH_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.JUNGLE_SHOVEL_HEAD, AllToolModuleModelIds.JUNGLE_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.ACACIA_SHOVEL_HEAD, AllToolModuleModelIds.ACACIA_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.DARK_OAK_SHOVEL_HEAD, AllToolModuleModelIds.DARK_OAK_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.MANGROVE_SHOVEL_HEAD, AllToolModuleModelIds.MANGROVE_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.CHERRY_SHOVEL_HEAD, AllToolModuleModelIds.CHERRY_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.BAMBOO_SHOVEL_HEAD, AllToolModuleModelIds.BAMBOO_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.CRIMSON_SHOVEL_HEAD, AllToolModuleModelIds.CRIMSON_SHOVEL_HEAD);
+        registerForBasicToolModule(AllToolModules.WARPED_SHOVEL_HEAD, AllToolModuleModelIds.WARPED_SHOVEL_HEAD);
         registerForBasicToolModule(AllToolModules.STONE_SHOVEL_HEAD, AllToolModuleModelIds.STONE_SHOVEL_HEAD);
         registerForBasicToolModule(AllToolModules.IRON_SHOVEL_HEAD, AllToolModuleModelIds.IRON_SHOVEL_HEAD);
         registerForBasicToolModule(AllToolModules.COPPER_SHOVEL_HEAD, AllToolModuleModelIds.COPPER_SHOVEL_HEAD);
@@ -369,6 +391,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Pickaxe Heads
 
         registerForPickaxeHead(AllToolModules.WOODEN_PICKAXE_HEAD, AllToolModuleModelIds.WOODEN_PICKAXE_HEAD, AllToolModuleModelIds.WOODEN_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.OAK_PICKAXE_HEAD, AllToolModuleModelIds.OAK_PICKAXE_HEAD, AllToolModuleModelIds.OAK_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.SPRUCE_PICKAXE_HEAD, AllToolModuleModelIds.SPRUCE_PICKAXE_HEAD, AllToolModuleModelIds.SPRUCE_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.BIRCH_PICKAXE_HEAD, AllToolModuleModelIds.BIRCH_PICKAXE_HEAD, AllToolModuleModelIds.BIRCH_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.JUNGLE_PICKAXE_HEAD, AllToolModuleModelIds.JUNGLE_PICKAXE_HEAD, AllToolModuleModelIds.JUNGLE_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.ACACIA_PICKAXE_HEAD, AllToolModuleModelIds.ACACIA_PICKAXE_HEAD, AllToolModuleModelIds.ACACIA_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.DARK_OAK_PICKAXE_HEAD, AllToolModuleModelIds.DARK_OAK_PICKAXE_HEAD, AllToolModuleModelIds.DARK_OAK_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.MANGROVE_PICKAXE_HEAD, AllToolModuleModelIds.MANGROVE_PICKAXE_HEAD, AllToolModuleModelIds.MANGROVE_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.CHERRY_PICKAXE_HEAD, AllToolModuleModelIds.CHERRY_PICKAXE_HEAD, AllToolModuleModelIds.CHERRY_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.BAMBOO_PICKAXE_HEAD, AllToolModuleModelIds.BAMBOO_PICKAXE_HEAD, AllToolModuleModelIds.BAMBOO_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.CRIMSON_PICKAXE_HEAD, AllToolModuleModelIds.CRIMSON_PICKAXE_HEAD, AllToolModuleModelIds.CRIMSON_PICKAXE_HEAD_ITEM);
+        registerForPickaxeHead(AllToolModules.WARPED_PICKAXE_HEAD, AllToolModuleModelIds.WARPED_PICKAXE_HEAD, AllToolModuleModelIds.WARPED_PICKAXE_HEAD_ITEM);
         registerForPickaxeHead(AllToolModules.STONE_PICKAXE_HEAD, AllToolModuleModelIds.STONE_PICKAXE_HEAD, AllToolModuleModelIds.STONE_PICKAXE_HEAD_ITEM);
         registerForPickaxeHead(AllToolModules.IRON_PICKAXE_HEAD, AllToolModuleModelIds.IRON_PICKAXE_HEAD, AllToolModuleModelIds.IRON_PICKAXE_HEAD_ITEM);
         registerForPickaxeHead(AllToolModules.COPPER_PICKAXE_HEAD, AllToolModuleModelIds.COPPER_PICKAXE_HEAD, AllToolModuleModelIds.COPPER_PICKAXE_HEAD_ITEM);
@@ -381,6 +414,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Axe Heads
 
         registerForBasicToolModule(AllToolModules.WOODEN_AXE_HEAD, AllToolModuleModelIds.WOODEN_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.OAK_AXE_HEAD, AllToolModuleModelIds.OAK_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.SPRUCE_AXE_HEAD, AllToolModuleModelIds.SPRUCE_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.BIRCH_AXE_HEAD, AllToolModuleModelIds.BIRCH_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.JUNGLE_AXE_HEAD, AllToolModuleModelIds.JUNGLE_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.ACACIA_AXE_HEAD, AllToolModuleModelIds.ACACIA_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.DARK_OAK_AXE_HEAD, AllToolModuleModelIds.DARK_OAK_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.MANGROVE_AXE_HEAD, AllToolModuleModelIds.MANGROVE_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.CHERRY_AXE_HEAD, AllToolModuleModelIds.CHERRY_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.BAMBOO_AXE_HEAD, AllToolModuleModelIds.BAMBOO_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.CRIMSON_AXE_HEAD, AllToolModuleModelIds.CRIMSON_AXE_HEAD);
+        registerForBasicToolModule(AllToolModules.WARPED_AXE_HEAD, AllToolModuleModelIds.WARPED_AXE_HEAD);
         registerForBasicToolModule(AllToolModules.STONE_AXE_HEAD, AllToolModuleModelIds.STONE_AXE_HEAD);
         registerForBasicToolModule(AllToolModules.IRON_AXE_HEAD, AllToolModuleModelIds.IRON_AXE_HEAD);
         registerForBasicToolModule(AllToolModules.COPPER_AXE_HEAD, AllToolModuleModelIds.COPPER_AXE_HEAD);
@@ -393,6 +437,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Hoe Heads
 
         registerForBasicToolModule(AllToolModules.WOODEN_HOE_HEAD, AllToolModuleModelIds.WOODEN_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.OAK_HOE_HEAD, AllToolModuleModelIds.OAK_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.SPRUCE_HOE_HEAD, AllToolModuleModelIds.SPRUCE_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.BIRCH_HOE_HEAD, AllToolModuleModelIds.BIRCH_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.JUNGLE_HOE_HEAD, AllToolModuleModelIds.JUNGLE_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.ACACIA_HOE_HEAD, AllToolModuleModelIds.ACACIA_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.DARK_OAK_HOE_HEAD, AllToolModuleModelIds.DARK_OAK_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.MANGROVE_HOE_HEAD, AllToolModuleModelIds.MANGROVE_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.CHERRY_HOE_HEAD, AllToolModuleModelIds.CHERRY_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.BAMBOO_HOE_HEAD, AllToolModuleModelIds.BAMBOO_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.CRIMSON_HOE_HEAD, AllToolModuleModelIds.CRIMSON_HOE_HEAD);
+        registerForBasicToolModule(AllToolModules.WARPED_HOE_HEAD, AllToolModuleModelIds.WARPED_HOE_HEAD);
         registerForBasicToolModule(AllToolModules.STONE_HOE_HEAD, AllToolModuleModelIds.STONE_HOE_HEAD);
         registerForBasicToolModule(AllToolModules.IRON_HOE_HEAD, AllToolModuleModelIds.IRON_HOE_HEAD);
         registerForBasicToolModule(AllToolModules.COPPER_HOE_HEAD, AllToolModuleModelIds.COPPER_HOE_HEAD);
@@ -428,6 +483,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Tool Grips
 
         registerForBasicToolModule(AllToolModules.WOODEN_TOOL_GRIP, AllToolModuleModelIds.WOODEN_GRIP);
+        registerForBasicToolModule(AllToolModules.OAK_TOOL_GRIP, AllToolModuleModelIds.OAK_GRIP);
+        registerForBasicToolModule(AllToolModules.SPRUCE_TOOL_GRIP, AllToolModuleModelIds.SPRUCE_GRIP);
+        registerForBasicToolModule(AllToolModules.BIRCH_TOOL_GRIP, AllToolModuleModelIds.BIRCH_GRIP);
+        registerForBasicToolModule(AllToolModules.JUNGLE_TOOL_GRIP, AllToolModuleModelIds.JUNGLE_GRIP);
+        registerForBasicToolModule(AllToolModules.ACACIA_TOOL_GRIP, AllToolModuleModelIds.ACACIA_GRIP);
+        registerForBasicToolModule(AllToolModules.DARK_OAK_TOOL_GRIP, AllToolModuleModelIds.DARK_OAK_GRIP);
+        registerForBasicToolModule(AllToolModules.MANGROVE_TOOL_GRIP, AllToolModuleModelIds.MANGROVE_GRIP);
+        registerForBasicToolModule(AllToolModules.CHERRY_TOOL_GRIP, AllToolModuleModelIds.CHERRY_GRIP);
+        registerForBasicToolModule(AllToolModules.BAMBOO_TOOL_GRIP, AllToolModuleModelIds.BAMBOO_GRIP);
+        registerForBasicToolModule(AllToolModules.CRIMSON_TOOL_GRIP, AllToolModuleModelIds.CRIMSON_GRIP);
+        registerForBasicToolModule(AllToolModules.WARPED_TOOL_GRIP, AllToolModuleModelIds.WARPED_GRIP);
         registerForBasicToolModule(AllToolModules.STONE_TOOL_GRIP, AllToolModuleModelIds.STONE_GRIP);
         registerForBasicToolModule(AllToolModules.IRON_TOOL_GRIP, AllToolModuleModelIds.IRON_GRIP);
         registerForBasicToolModule(AllToolModules.COPPER_TOOL_GRIP, AllToolModuleModelIds.COPPER_GRIP);
@@ -440,6 +506,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Sword Guards
 
         registerForBasicToolModule(AllToolModules.WOODEN_SWORD_GUARD, AllToolModuleModelIds.WOODEN_GUARD);
+        registerForBasicToolModule(AllToolModules.OAK_SWORD_GUARD, AllToolModuleModelIds.OAK_GUARD);
+        registerForBasicToolModule(AllToolModules.SPRUCE_SWORD_GUARD, AllToolModuleModelIds.SPRUCE_GUARD);
+        registerForBasicToolModule(AllToolModules.BIRCH_SWORD_GUARD, AllToolModuleModelIds.BIRCH_GUARD);
+        registerForBasicToolModule(AllToolModules.JUNGLE_SWORD_GUARD, AllToolModuleModelIds.JUNGLE_GUARD);
+        registerForBasicToolModule(AllToolModules.ACACIA_SWORD_GUARD, AllToolModuleModelIds.ACACIA_GUARD);
+        registerForBasicToolModule(AllToolModules.DARK_OAK_SWORD_GUARD, AllToolModuleModelIds.DARK_OAK_GUARD);
+        registerForBasicToolModule(AllToolModules.MANGROVE_SWORD_GUARD, AllToolModuleModelIds.MANGROVE_GUARD);
+        registerForBasicToolModule(AllToolModules.CHERRY_SWORD_GUARD, AllToolModuleModelIds.CHERRY_GUARD);
+        registerForBasicToolModule(AllToolModules.BAMBOO_SWORD_GUARD, AllToolModuleModelIds.BAMBOO_GUARD);
+        registerForBasicToolModule(AllToolModules.CRIMSON_SWORD_GUARD, AllToolModuleModelIds.CRIMSON_GUARD);
+        registerForBasicToolModule(AllToolModules.WARPED_SWORD_GUARD, AllToolModuleModelIds.WARPED_GUARD);
         registerForBasicToolModule(AllToolModules.STONE_SWORD_GUARD, AllToolModuleModelIds.STONE_GUARD);
         registerForBasicToolModule(AllToolModules.IRON_SWORD_GUARD, AllToolModuleModelIds.IRON_GUARD);
         registerForBasicToolModule(AllToolModules.COPPER_SWORD_GUARD, AllToolModuleModelIds.COPPER_GUARD);
@@ -452,6 +529,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         // Sword Pommels
 
         registerForBasicToolModule(AllToolModules.WOODEN_SWORD_POMMEL, AllToolModuleModelIds.WOODEN_POMMEL);
+        registerForBasicToolModule(AllToolModules.OAK_SWORD_POMMEL, AllToolModuleModelIds.OAK_POMMEL);
+        registerForBasicToolModule(AllToolModules.SPRUCE_SWORD_POMMEL, AllToolModuleModelIds.SPRUCE_POMMEL);
+        registerForBasicToolModule(AllToolModules.BIRCH_SWORD_POMMEL, AllToolModuleModelIds.BIRCH_POMMEL);
+        registerForBasicToolModule(AllToolModules.JUNGLE_SWORD_POMMEL, AllToolModuleModelIds.JUNGLE_POMMEL);
+        registerForBasicToolModule(AllToolModules.ACACIA_SWORD_POMMEL, AllToolModuleModelIds.ACACIA_POMMEL);
+        registerForBasicToolModule(AllToolModules.DARK_OAK_SWORD_POMMEL, AllToolModuleModelIds.DARK_OAK_POMMEL);
+        registerForBasicToolModule(AllToolModules.MANGROVE_SWORD_POMMEL, AllToolModuleModelIds.MANGROVE_POMMEL);
+        registerForBasicToolModule(AllToolModules.CHERRY_SWORD_POMMEL, AllToolModuleModelIds.CHERRY_POMMEL);
+        registerForBasicToolModule(AllToolModules.BAMBOO_SWORD_POMMEL, AllToolModuleModelIds.BAMBOO_POMMEL);
+        registerForBasicToolModule(AllToolModules.CRIMSON_SWORD_POMMEL, AllToolModuleModelIds.CRIMSON_POMMEL);
+        registerForBasicToolModule(AllToolModules.WARPED_SWORD_POMMEL, AllToolModuleModelIds.WARPED_POMMEL);
         registerForBasicToolModule(AllToolModules.STONE_SWORD_POMMEL, AllToolModuleModelIds.STONE_POMMEL);
         registerForBasicToolModule(AllToolModules.IRON_SWORD_POMMEL, AllToolModuleModelIds.IRON_POMMEL);
         registerForBasicToolModule(AllToolModules.COPPER_SWORD_POMMEL, AllToolModuleModelIds.COPPER_POMMEL);

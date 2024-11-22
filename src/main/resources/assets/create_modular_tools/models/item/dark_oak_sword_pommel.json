@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "create_modular_tools:item/dark_oak_sword_pommel"
+  }
+}

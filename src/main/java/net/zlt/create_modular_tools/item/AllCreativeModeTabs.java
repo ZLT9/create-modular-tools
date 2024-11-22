@@ -66,6 +66,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_TOOL_HANDLE);
 
             entries.accept(AllItems.WOODEN_SWORD_BLADE);
+            entries.accept(AllItems.OAK_SWORD_BLADE);
+            entries.accept(AllItems.SPRUCE_SWORD_BLADE);
+            entries.accept(AllItems.BIRCH_SWORD_BLADE);
+            entries.accept(AllItems.JUNGLE_SWORD_BLADE);
+            entries.accept(AllItems.ACACIA_SWORD_BLADE);
+            entries.accept(AllItems.DARK_OAK_SWORD_BLADE);
+            entries.accept(AllItems.MANGROVE_SWORD_BLADE);
+            entries.accept(AllItems.CHERRY_SWORD_BLADE);
+            entries.accept(AllItems.BAMBOO_SWORD_BLADE);
+            entries.accept(AllItems.CRIMSON_SWORD_BLADE);
+            entries.accept(AllItems.WARPED_SWORD_BLADE);
             entries.accept(AllItems.STONE_SWORD_BLADE);
             entries.accept(AllItems.IRON_SWORD_BLADE);
             entries.accept(AllItems.COPPER_SWORD_BLADE);
@@ -76,6 +87,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_SWORD_BLADE);
 
             entries.accept(AllItems.WOODEN_SHOVEL_HEAD);
+            entries.accept(AllItems.OAK_SHOVEL_HEAD);
+            entries.accept(AllItems.SPRUCE_SHOVEL_HEAD);
+            entries.accept(AllItems.BIRCH_SHOVEL_HEAD);
+            entries.accept(AllItems.JUNGLE_SHOVEL_HEAD);
+            entries.accept(AllItems.ACACIA_SHOVEL_HEAD);
+            entries.accept(AllItems.DARK_OAK_SHOVEL_HEAD);
+            entries.accept(AllItems.MANGROVE_SHOVEL_HEAD);
+            entries.accept(AllItems.CHERRY_SHOVEL_HEAD);
+            entries.accept(AllItems.BAMBOO_SHOVEL_HEAD);
+            entries.accept(AllItems.CRIMSON_SHOVEL_HEAD);
+            entries.accept(AllItems.WARPED_SHOVEL_HEAD);
             entries.accept(AllItems.STONE_SHOVEL_HEAD);
             entries.accept(AllItems.IRON_SHOVEL_HEAD);
             entries.accept(AllItems.COPPER_SHOVEL_HEAD);
@@ -86,6 +108,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_SHOVEL_HEAD);
 
             entries.accept(AllItems.WOODEN_PICKAXE_HEAD);
+            entries.accept(AllItems.OAK_PICKAXE_HEAD);
+            entries.accept(AllItems.SPRUCE_PICKAXE_HEAD);
+            entries.accept(AllItems.BIRCH_PICKAXE_HEAD);
+            entries.accept(AllItems.JUNGLE_PICKAXE_HEAD);
+            entries.accept(AllItems.ACACIA_PICKAXE_HEAD);
+            entries.accept(AllItems.DARK_OAK_PICKAXE_HEAD);
+            entries.accept(AllItems.MANGROVE_PICKAXE_HEAD);
+            entries.accept(AllItems.CHERRY_PICKAXE_HEAD);
+            entries.accept(AllItems.BAMBOO_PICKAXE_HEAD);
+            entries.accept(AllItems.CRIMSON_PICKAXE_HEAD);
+            entries.accept(AllItems.WARPED_PICKAXE_HEAD);
             entries.accept(AllItems.STONE_PICKAXE_HEAD);
             entries.accept(AllItems.IRON_PICKAXE_HEAD);
             entries.accept(AllItems.COPPER_PICKAXE_HEAD);
@@ -96,6 +129,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_PICKAXE_HEAD);
 
             entries.accept(AllItems.WOODEN_AXE_HEAD);
+            entries.accept(AllItems.OAK_AXE_HEAD);
+            entries.accept(AllItems.SPRUCE_AXE_HEAD);
+            entries.accept(AllItems.BIRCH_AXE_HEAD);
+            entries.accept(AllItems.JUNGLE_AXE_HEAD);
+            entries.accept(AllItems.ACACIA_AXE_HEAD);
+            entries.accept(AllItems.DARK_OAK_AXE_HEAD);
+            entries.accept(AllItems.MANGROVE_AXE_HEAD);
+            entries.accept(AllItems.CHERRY_AXE_HEAD);
+            entries.accept(AllItems.BAMBOO_AXE_HEAD);
+            entries.accept(AllItems.CRIMSON_AXE_HEAD);
+            entries.accept(AllItems.WARPED_AXE_HEAD);
             entries.accept(AllItems.STONE_AXE_HEAD);
             entries.accept(AllItems.IRON_AXE_HEAD);
             entries.accept(AllItems.COPPER_AXE_HEAD);
@@ -106,6 +150,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_AXE_HEAD);
 
             entries.accept(AllItems.WOODEN_HOE_HEAD);
+            entries.accept(AllItems.OAK_HOE_HEAD);
+            entries.accept(AllItems.SPRUCE_HOE_HEAD);
+            entries.accept(AllItems.BIRCH_HOE_HEAD);
+            entries.accept(AllItems.JUNGLE_HOE_HEAD);
+            entries.accept(AllItems.ACACIA_HOE_HEAD);
+            entries.accept(AllItems.DARK_OAK_HOE_HEAD);
+            entries.accept(AllItems.MANGROVE_HOE_HEAD);
+            entries.accept(AllItems.CHERRY_HOE_HEAD);
+            entries.accept(AllItems.BAMBOO_HOE_HEAD);
+            entries.accept(AllItems.CRIMSON_HOE_HEAD);
+            entries.accept(AllItems.WARPED_HOE_HEAD);
             entries.accept(AllItems.STONE_HOE_HEAD);
             entries.accept(AllItems.IRON_HOE_HEAD);
             entries.accept(AllItems.COPPER_HOE_HEAD);
@@ -116,6 +171,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_HOE_HEAD);
 
             entries.accept(AllItems.WOODEN_TOOL_GRIP);
+            entries.accept(AllItems.OAK_TOOL_GRIP);
+            entries.accept(AllItems.SPRUCE_TOOL_GRIP);
+            entries.accept(AllItems.BIRCH_TOOL_GRIP);
+            entries.accept(AllItems.JUNGLE_TOOL_GRIP);
+            entries.accept(AllItems.ACACIA_TOOL_GRIP);
+            entries.accept(AllItems.DARK_OAK_TOOL_GRIP);
+            entries.accept(AllItems.MANGROVE_TOOL_GRIP);
+            entries.accept(AllItems.CHERRY_TOOL_GRIP);
+            entries.accept(AllItems.BAMBOO_TOOL_GRIP);
+            entries.accept(AllItems.CRIMSON_TOOL_GRIP);
+            entries.accept(AllItems.WARPED_TOOL_GRIP);
             entries.accept(AllItems.STONE_TOOL_GRIP);
             entries.accept(AllItems.IRON_TOOL_GRIP);
             entries.accept(AllItems.COPPER_TOOL_GRIP);
@@ -126,6 +192,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_TOOL_GRIP);
 
             entries.accept(AllItems.WOODEN_SWORD_GUARD);
+            entries.accept(AllItems.OAK_SWORD_GUARD);
+            entries.accept(AllItems.SPRUCE_SWORD_GUARD);
+            entries.accept(AllItems.BIRCH_SWORD_GUARD);
+            entries.accept(AllItems.JUNGLE_SWORD_GUARD);
+            entries.accept(AllItems.ACACIA_SWORD_GUARD);
+            entries.accept(AllItems.DARK_OAK_SWORD_GUARD);
+            entries.accept(AllItems.MANGROVE_SWORD_GUARD);
+            entries.accept(AllItems.CHERRY_SWORD_GUARD);
+            entries.accept(AllItems.BAMBOO_SWORD_GUARD);
+            entries.accept(AllItems.CRIMSON_SWORD_GUARD);
+            entries.accept(AllItems.WARPED_SWORD_GUARD);
             entries.accept(AllItems.STONE_SWORD_GUARD);
             entries.accept(AllItems.IRON_SWORD_GUARD);
             entries.accept(AllItems.COPPER_SWORD_GUARD);
@@ -136,6 +213,17 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_SWORD_GUARD);
 
             entries.accept(AllItems.WOODEN_SWORD_POMMEL);
+            entries.accept(AllItems.OAK_SWORD_POMMEL);
+            entries.accept(AllItems.SPRUCE_SWORD_POMMEL);
+            entries.accept(AllItems.BIRCH_SWORD_POMMEL);
+            entries.accept(AllItems.JUNGLE_SWORD_POMMEL);
+            entries.accept(AllItems.ACACIA_SWORD_POMMEL);
+            entries.accept(AllItems.DARK_OAK_SWORD_POMMEL);
+            entries.accept(AllItems.MANGROVE_SWORD_POMMEL);
+            entries.accept(AllItems.CHERRY_SWORD_POMMEL);
+            entries.accept(AllItems.BAMBOO_SWORD_POMMEL);
+            entries.accept(AllItems.CRIMSON_SWORD_POMMEL);
+            entries.accept(AllItems.WARPED_SWORD_POMMEL);
             entries.accept(AllItems.STONE_SWORD_POMMEL);
             entries.accept(AllItems.IRON_SWORD_POMMEL);
             entries.accept(AllItems.COPPER_SWORD_POMMEL);

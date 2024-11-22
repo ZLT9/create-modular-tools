@@ -16,6 +16,17 @@ public final class AllToolModuleModelIds {
     }
 
     public static final ResourceLocation WOODEN_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/wood");
+    public static final ResourceLocation OAK_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/oak");
+    public static final ResourceLocation SPRUCE_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/spruce");
+    public static final ResourceLocation BIRCH_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/birch");
+    public static final ResourceLocation JUNGLE_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/jungle");
+    public static final ResourceLocation ACACIA_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/acacia");
+    public static final ResourceLocation DARK_OAK_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/dark_oak");
+    public static final ResourceLocation MANGROVE_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/mangrove");
+    public static final ResourceLocation CHERRY_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/cherry");
+    public static final ResourceLocation BAMBOO_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/bamboo");
+    public static final ResourceLocation CRIMSON_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/crimson");
+    public static final ResourceLocation WARPED_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/warped");
     public static final ResourceLocation STONE_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/stone");
     public static final ResourceLocation IRON_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/iron");
     public static final ResourceLocation COPPER_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/copper");
@@ -26,6 +37,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_SWORD_BLADE = CreateModularTools.asResource("item/tool_module/sword_blade/diamond");
 
     public static final ResourceLocation WOODEN_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/wood");
+    public static final ResourceLocation OAK_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/oak");
+    public static final ResourceLocation SPRUCE_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/spruce");
+    public static final ResourceLocation BIRCH_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/birch");
+    public static final ResourceLocation JUNGLE_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/jungle");
+    public static final ResourceLocation ACACIA_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/acacia");
+    public static final ResourceLocation DARK_OAK_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/dark_oak");
+    public static final ResourceLocation MANGROVE_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/mangrove");
+    public static final ResourceLocation CHERRY_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/cherry");
+    public static final ResourceLocation BAMBOO_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/bamboo");
+    public static final ResourceLocation CRIMSON_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/crimson");
+    public static final ResourceLocation WARPED_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/warped");
     public static final ResourceLocation STONE_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/stone");
     public static final ResourceLocation IRON_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/iron");
     public static final ResourceLocation COPPER_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/copper");
@@ -36,6 +58,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_SHOVEL_HEAD = CreateModularTools.asResource("item/tool_module/shovel_head/diamond");
 
     public static final ResourceLocation WOODEN_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/wood");
+    public static final ResourceLocation OAK_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/oak");
+    public static final ResourceLocation SPRUCE_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/spruce");
+    public static final ResourceLocation BIRCH_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/birch");
+    public static final ResourceLocation JUNGLE_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/jungle");
+    public static final ResourceLocation ACACIA_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/acacia");
+    public static final ResourceLocation DARK_OAK_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/dark_oak");
+    public static final ResourceLocation MANGROVE_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/mangrove");
+    public static final ResourceLocation CHERRY_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/cherry");
+    public static final ResourceLocation BAMBOO_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/bamboo");
+    public static final ResourceLocation CRIMSON_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/crimson");
+    public static final ResourceLocation WARPED_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/warped");
     public static final ResourceLocation STONE_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/stone");
     public static final ResourceLocation IRON_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/iron");
     public static final ResourceLocation COPPER_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/copper");
@@ -46,6 +79,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_PICKAXE_HEAD = CreateModularTools.asResource("item/tool_module/pickaxe_head/diamond");
 
     public static final ResourceLocation WOODEN_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/wooden_pickaxe_head");
+    public static final ResourceLocation OAK_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/oak_pickaxe_head");
+    public static final ResourceLocation SPRUCE_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/spruce_pickaxe_head");
+    public static final ResourceLocation BIRCH_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/birch_pickaxe_head");
+    public static final ResourceLocation JUNGLE_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/jungle_pickaxe_head");
+    public static final ResourceLocation ACACIA_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/acacia_pickaxe_head");
+    public static final ResourceLocation DARK_OAK_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/dark_oak_pickaxe_head");
+    public static final ResourceLocation MANGROVE_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/mangrove_pickaxe_head");
+    public static final ResourceLocation CHERRY_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/cherry_pickaxe_head");
+    public static final ResourceLocation BAMBOO_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/bamboo_pickaxe_head");
+    public static final ResourceLocation CRIMSON_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/crimson_pickaxe_head");
+    public static final ResourceLocation WARPED_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/warped_pickaxe_head");
     public static final ResourceLocation STONE_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/stone_pickaxe_head");
     public static final ResourceLocation IRON_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/iron_pickaxe_head");
     public static final ResourceLocation COPPER_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/copper_pickaxe_head");
@@ -56,6 +100,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_PICKAXE_HEAD_ITEM = CreateModularTools.asResource("item/diamond_pickaxe_head");
 
     public static final ResourceLocation WOODEN_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/wood");
+    public static final ResourceLocation OAK_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/oak");
+    public static final ResourceLocation SPRUCE_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/spruce");
+    public static final ResourceLocation BIRCH_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/birch");
+    public static final ResourceLocation JUNGLE_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/jungle");
+    public static final ResourceLocation ACACIA_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/acacia");
+    public static final ResourceLocation DARK_OAK_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/dark_oak");
+    public static final ResourceLocation MANGROVE_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/mangrove");
+    public static final ResourceLocation CHERRY_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/cherry");
+    public static final ResourceLocation BAMBOO_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/bamboo");
+    public static final ResourceLocation CRIMSON_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/crimson");
+    public static final ResourceLocation WARPED_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/warped");
     public static final ResourceLocation STONE_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/stone");
     public static final ResourceLocation IRON_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/iron");
     public static final ResourceLocation COPPER_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/copper");
@@ -66,6 +121,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_AXE_HEAD = CreateModularTools.asResource("item/tool_module/axe_head/diamond");
 
     public static final ResourceLocation WOODEN_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/wood");
+    public static final ResourceLocation OAK_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/oak");
+    public static final ResourceLocation SPRUCE_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/spruce");
+    public static final ResourceLocation BIRCH_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/birch");
+    public static final ResourceLocation JUNGLE_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/jungle");
+    public static final ResourceLocation ACACIA_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/acacia");
+    public static final ResourceLocation DARK_OAK_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/dark_oak");
+    public static final ResourceLocation MANGROVE_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/mangrove");
+    public static final ResourceLocation CHERRY_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/cherry");
+    public static final ResourceLocation BAMBOO_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/bamboo");
+    public static final ResourceLocation CRIMSON_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/crimson");
+    public static final ResourceLocation WARPED_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/warped");
     public static final ResourceLocation STONE_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/stone");
     public static final ResourceLocation IRON_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/iron");
     public static final ResourceLocation COPPER_HOE_HEAD = CreateModularTools.asResource("item/tool_module/hoe_head/copper");
@@ -286,6 +352,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_GRIP_HOE_HANDLE = CreateModularTools.asResource("item/tool_module/tool_handle/hoe/grip/diamond");
 
     public static final ResourceLocation WOODEN_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/wood");
+    public static final ResourceLocation OAK_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/oak");
+    public static final ResourceLocation SPRUCE_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/spruce");
+    public static final ResourceLocation BIRCH_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/birch");
+    public static final ResourceLocation JUNGLE_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/jungle");
+    public static final ResourceLocation ACACIA_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/acacia");
+    public static final ResourceLocation DARK_OAK_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/dark_oak");
+    public static final ResourceLocation MANGROVE_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/mangrove");
+    public static final ResourceLocation CHERRY_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/cherry");
+    public static final ResourceLocation BAMBOO_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/bamboo");
+    public static final ResourceLocation CRIMSON_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/crimson");
+    public static final ResourceLocation WARPED_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/warped");
     public static final ResourceLocation STONE_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/stone");
     public static final ResourceLocation IRON_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/iron");
     public static final ResourceLocation COPPER_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/copper");
@@ -296,6 +373,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_GRIP = CreateModularTools.asResource("item/tool_module/tool_grip/diamond");
 
     public static final ResourceLocation WOODEN_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/wood");
+    public static final ResourceLocation OAK_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/oak");
+    public static final ResourceLocation SPRUCE_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/spruce");
+    public static final ResourceLocation BIRCH_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/birch");
+    public static final ResourceLocation JUNGLE_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/jungle");
+    public static final ResourceLocation ACACIA_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/acacia");
+    public static final ResourceLocation DARK_OAK_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/dark_oak");
+    public static final ResourceLocation MANGROVE_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/mangrove");
+    public static final ResourceLocation CHERRY_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/cherry");
+    public static final ResourceLocation BAMBOO_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/bamboo");
+    public static final ResourceLocation CRIMSON_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/crimson");
+    public static final ResourceLocation WARPED_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/warped");
     public static final ResourceLocation STONE_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/stone");
     public static final ResourceLocation IRON_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/iron");
     public static final ResourceLocation COPPER_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/copper");
@@ -306,6 +394,17 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation DIAMOND_GUARD = CreateModularTools.asResource("item/tool_module/sword_guard/diamond");
 
     public static final ResourceLocation WOODEN_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/wood");
+    public static final ResourceLocation OAK_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/oak");
+    public static final ResourceLocation SPRUCE_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/spruce");
+    public static final ResourceLocation BIRCH_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/birch");
+    public static final ResourceLocation JUNGLE_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/jungle");
+    public static final ResourceLocation ACACIA_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/acacia");
+    public static final ResourceLocation DARK_OAK_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/dark_oak");
+    public static final ResourceLocation MANGROVE_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/mangrove");
+    public static final ResourceLocation CHERRY_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/cherry");
+    public static final ResourceLocation BAMBOO_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/bamboo");
+    public static final ResourceLocation CRIMSON_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/crimson");
+    public static final ResourceLocation WARPED_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/warped");
     public static final ResourceLocation STONE_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/stone");
     public static final ResourceLocation IRON_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/iron");
     public static final ResourceLocation COPPER_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/copper");
