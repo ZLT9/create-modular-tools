@@ -20,7 +20,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
     }
 
     @ModifyExpressionValue(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 0))
-    private boolean createModularTools$createResult(boolean original, @Local(ordinal = 0) ItemStack itemStack) {
+    private boolean createModularTools$ignoreSecondModularTool(boolean original, @Local(ordinal = 0) ItemStack itemStack) {
         return original || inputSlots.getItem(1).getItem() instanceof ModularToolItem;
     }
 }
