@@ -22,6 +22,7 @@ import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.item.mold.AllMoldItems;
 import net.zlt.create_modular_tools.loot.function.AllLootItemFunctionTypes;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
+import net.zlt.create_modular_tools.sound.AllSoundEvents;
 import net.zlt.create_modular_tools.tool.AllModularTools;
 import net.zlt.create_modular_tools.tool.module.*;
 import org.slf4j.Logger;
@@ -41,6 +42,7 @@ public class CreateModularTools implements ModInitializer {
         ), NAME);
 
         AllItemTags.init();
+        AllSoundEvents.init();
         AllSoundTypes.init();
         AllFluids.init();
         AllBlocks.init();

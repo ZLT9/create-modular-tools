@@ -30,10 +30,11 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
+import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.sound.AllSoundEvents;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -215,15 +216,15 @@ public abstract class ThrownBoomerang extends AttackableArrow {
                 }
             }
         }
-        CompoundTag slotNbt = toolModulesNbt.getCompound(TOOL_MODULE.getType().getTag());
-        ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString("state"));
-        boolean isSlotSolid = slotState == ToolUtils.MoldSlotState.SOLID;
-        if (slotState == ToolUtils.MoldSlotState.EMPTY || isSlotSolid) {
+        ToolUtils.MoldSlot slot = ToolUtils.getMoldSlot(toolModulesNbt, TOOL_MODULE.getType().getTag());
+        if (slot.state() == ToolUtils.MoldSlotState.EMPTY || slot.state() == ToolUtils.MoldSlotState.SOLID) {
             if (!level().isClientSide) {
-                if (isSlotSolid) {
-                    ToolModuleItem toolModule = ToolModuleRegistry.get(slotNbt.getString("id"));
+                if (slot.state() == ToolUtils.MoldSlotState.SOLID) {
+                    ToolModuleItem toolModule = (ToolModuleItem) slot.contents();
                     if (toolModule != null) {
-                        Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModule.getDefaultInstance());
+                        ItemStack toolModuleStack = toolModule.getDefaultInstance();
+                        toolModuleStack.setTag(slot.tag());
+                        Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModuleStack);
                     }
                 }
                 sandMoldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE, boomerangItem.getTag());
@@ -232,13 +233,14 @@ public abstract class ThrownBoomerang extends AttackableArrow {
             if (toolModuleSound != null) {
                 level().playSound(null, blockPos, toolModuleSound, SoundSource.BLOCKS, 0.5f, 0.8f);
             }
-            level().playSound(null, blockPos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 0.25f, 0.8f);
-            if (isSlotSolid) {
-                level().playSound(null, blockPos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2f, 1.0f + level().random.nextFloat());
+            boolean isNewToolModuleEnchanted = boomerangItem.isEnchanted();
+            if (isNewToolModuleEnchanted) {
+                level().playSound(null, blockPos, AllSoundEvents.ENCHANTED_TOOL_MODULE, SoundSource.BLOCKS, 0.5f, 0.8f);
             }
-        }
+            BaseSandMoldBlock.playMoldSlotSound(level(), blockPos, null, slot.state() == ToolUtils.MoldSlotState.SOLID, isNewToolModuleEnchanted ? null : slot.tag());
 
-        discard();
+            discard();
+        }
     }
 
     @Override

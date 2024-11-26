@@ -18,8 +18,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.sound.AllSoundEvents;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -80,7 +82,12 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                     level.playSound(player, pos, toolModuleSound, SoundSource.BLOCKS, 0.5f, 0.8f);
                 }
 
-                playMoldSlotSound(level, pos, player, moldSlot.state() == ToolUtils.MoldSlotState.SOLID);
+                boolean isNewToolModuleEnchanted = stack.isEnchanted();
+                if (isNewToolModuleEnchanted) {
+                    level.playSound(player, pos, AllSoundEvents.ENCHANTED_TOOL_MODULE, SoundSource.BLOCKS, 0.5f, 0.8f);
+                }
+
+                playMoldSlotSound(level, pos, player, moldSlot.state() == ToolUtils.MoldSlotState.SOLID, isNewToolModuleEnchanted ? null : moldSlot.tag());
 
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }
@@ -149,7 +156,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
                 }
             }
 
-            playMoldSlotSound(level, pos, player, moldSlot.state() == ToolUtils.MoldSlotState.SOLID);
+            playMoldSlotSound(level, pos, player, moldSlot.state() == ToolUtils.MoldSlotState.SOLID, moldSlot.tag());
 
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
@@ -157,11 +164,15 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         return InteractionResult.PASS;
     }
 
-    protected void playMoldSlotSound(Level level, BlockPos pos, Player player, boolean replacing) {
+    public static void playMoldSlotSound(Level level, BlockPos pos, @Nullable Player player, boolean isReplacing, @Nullable CompoundTag previousContentsNbt) {
         level.playSound(player, pos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 0.25f, 0.8f);
 
-        if (replacing) {
+        if (isReplacing) {
             level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2f, 1.0f + level.random.nextFloat());
+
+            if (previousContentsNbt != null && !previousContentsNbt.getList(ItemStack.TAG_ENCH, CompoundTag.TAG_COMPOUND).isEmpty()) {
+                level.playSound(player, pos, AllSoundEvents.ENCHANTED_TOOL_MODULE, SoundSource.BLOCKS, 0.5f, 0.8f);
+            }
         }
     }
 

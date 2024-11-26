@@ -277,5 +277,6 @@
   "entity.create_modular_tools.zinc_pickaxe_head": "Cabeza de pico de zinc",
   "entity.create_modular_tools.brass_pickaxe_head": "Cabeza de pico de latón",
   "entity.create_modular_tools.diamond_pickaxe_head": "Cabeza de pico de diamante",
-  "create_modular_tools.resource_pack.hindu_arabic_enchantments": "Encantamientos indo-arábigos"
+  "create_modular_tools.resource_pack.hindu_arabic_enchantments": "Encantamientos indo-arábigos",
+  "sound.create_modular_tools.enchanted_tool_module": "Módulo de herramienta encantado"
 }

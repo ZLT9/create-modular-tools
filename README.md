@@ -99,9 +99,7 @@ This behavior mirrors the process of combining enchantments on an anvil in Vanil
 
 Enchanted tool modules also allow modular tools to surpass Vanilla enchantment level limits. For instance, two modules that each have Unbreaking 3 will result in Unbreaking 4. This even applies to enchantments with a maximum level of 1, such as Mending, allowing modular tools to have Mending 2. However, curses are the exception, so a modular tool cannot have Curse of Vanishing 2, for instance.
 
-This system allows you to create powerful tools by strategically combining enchantments and features. For example, assembling a Modular Sword with a Netherite Sword Blade with Sweeping Edge 3 and Unbreaking 3, a Copper Tool Handle with Mending and Unbreaking 3, and a Golden Sword Guard with Unbreaking 3, results in a sword that is Fireproof (thanks to the netherite blade) and Waterproof (thanks to the copper handle), and has Sweeping Edge 3, Mending, and Unbreaking 4. Adding a Brass Sword Pommel with Unbreaking 3 and Mending further enhances the sword, making it Fireproof, Waterproof, and adding Wrenching, while improving the enchantments to Sweeping Edge 3, Mending 2, and Unbreaking 5.
-
-> **Quick explanation**: When combining enchanted books in Vanilla Minecraft, the resulting book depends on the levels of the input books:
+> **Note**: When combining enchanted books in Vanilla Minecraft, the resulting book depends on the levels of the input books:
 > - If the levels differ, the resulting enchantment matches the higher level. For example, Unbreaking 2 + Unbreaking 1 = Unbreaking 2.
 > - If the levels are the same, the resulting enchantment is one level higher. For example, Unbreaking 2 + Unbreaking 2 = Unbreaking 3.
 >
