@@ -1,0 +1,10 @@
+{
+  "enchanted_tool_module": {
+    "subtitle": "sound.create_modular_tools.enchanted_tool_module",
+    "sounds": [
+      "create_modular_tools:enchanted_tool_module1",
+      "create_modular_tools:enchanted_tool_module2",
+      "create_modular_tools:enchanted_tool_module3"
+    ]
+  }
+}
