@@ -164,7 +164,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         return InteractionResult.PASS;
     }
 
-    protected void playMoldSlotSound(Level level, BlockPos pos, Player player, boolean isReplacing, @Nullable CompoundTag previousContentsNbt) {
+    public static void playMoldSlotSound(Level level, BlockPos pos, @Nullable Player player, boolean isReplacing, @Nullable CompoundTag previousContentsNbt) {
         level.playSound(player, pos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 0.25f, 0.8f);
 
         if (isReplacing) {
