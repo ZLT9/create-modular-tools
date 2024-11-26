@@ -238,9 +238,9 @@ public abstract class ThrownBoomerang extends AttackableArrow {
                 level().playSound(null, blockPos, AllSoundEvents.ENCHANTED_TOOL_MODULE, SoundSource.BLOCKS, 0.5f, 0.8f);
             }
             BaseSandMoldBlock.playMoldSlotSound(level(), blockPos, null, slot.state() == ToolUtils.MoldSlotState.SOLID, isNewToolModuleEnchanted ? null : slot.tag());
-        }
 
-        discard();
+            discard();
+        }
     }
 
     @Override
