@@ -30,7 +30,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
     }
 
     @Inject(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/ResultContainer;setItem(ILnet/minecraft/world/item/ItemStack;)V", ordinal = 4))
-    private void createModularTools$storeDirectEnchantments(CallbackInfo ci, @Local(ordinal = 1) ItemStack itemStack2) {
+    private void createModularTools$storeAnvilDirectEnchantments(CallbackInfo ci, @Local(ordinal = 1) ItemStack itemStack2) {
         if (!(itemStack2.getItem() instanceof ModularToolItem)) {
             return;
         }
