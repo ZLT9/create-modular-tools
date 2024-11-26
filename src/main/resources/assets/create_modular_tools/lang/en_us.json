@@ -167,5 +167,6 @@
   "entity.create_modular_tools.zinc_pickaxe_head": "Zinc Pickaxe Head",
   "entity.create_modular_tools.brass_pickaxe_head": "Brass Pickaxe Head",
   "entity.create_modular_tools.diamond_pickaxe_head": "Diamond Pickaxe Head",
-  "create_modular_tools.resource_pack.hindu_arabic_enchantments": "Hindu-Arabic Enchantments"
+  "create_modular_tools.resource_pack.hindu_arabic_enchantments": "Hindu-Arabic Enchantments",
+  "sound.create_modular_tools.enchanted_tool_module": "Enchanted tool module"
 }
