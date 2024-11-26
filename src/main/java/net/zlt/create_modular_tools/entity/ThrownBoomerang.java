@@ -222,7 +222,9 @@ public abstract class ThrownBoomerang extends AttackableArrow {
                 if (slot.state() == ToolUtils.MoldSlotState.SOLID) {
                     ToolModuleItem toolModule = (ToolModuleItem) slot.contents();
                     if (toolModule != null) {
-                        Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModule.getDefaultInstance());
+                        ItemStack toolModuleStack = toolModule.getDefaultInstance();
+                        toolModuleStack.setTag(slot.tag());
+                        Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModuleStack);
                     }
                 }
                 sandMoldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE, boomerangItem.getTag());
