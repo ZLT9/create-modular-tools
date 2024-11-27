@@ -17,6 +17,7 @@ public final class AllToolModuleTypes {
     public static final ToolModuleType TOOL_GRIP = ToolModuleTypeRegistry.register(new ToolModuleType(Component.translatable("tool_module_type.create_modular_tools.tool_grip"), "ToolGrip", 1, FluidConstants.NUGGET));
     public static final ToolModuleType SWORD_GUARD = ToolModuleTypeRegistry.register(new ToolModuleType(Component.translatable("tool_module_type.create_modular_tools.sword_guard"), "SwordGuard", 2, FluidConstants.INGOT / 2));
     public static final ToolModuleType SWORD_POMMEL = ToolModuleTypeRegistry.register(new ToolModuleType(Component.translatable("tool_module_type.create_modular_tools.sword_pommel"), "SwordPommel", 1, FluidConstants.NUGGET));
+    public static final ToolModuleType TOOL_WRAP = ToolModuleTypeRegistry.register(new ToolModuleType(Component.translatable("tool_module_type.create_modular_tools.tool_wrap"), "ToolWrap", 1, 0));
 
     public static void init() {
     }

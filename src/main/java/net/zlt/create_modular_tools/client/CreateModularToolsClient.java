@@ -548,6 +548,10 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForBasicToolModule(AllToolModules.ZINC_SWORD_POMMEL, AllToolModuleModelIds.ZINC_POMMEL);
         registerForBasicToolModule(AllToolModules.BRASS_SWORD_POMMEL, AllToolModuleModelIds.BRASS_POMMEL);
         registerForBasicToolModule(AllToolModules.DIAMOND_SWORD_POMMEL, AllToolModuleModelIds.DIAMOND_POMMEL);
+
+        // Tool Wraps
+
+        registerForToolWrap(AllToolModules.WHITE_WOOL_TOOL_WRAP, AllToolModuleModelIds.WHITE_WOOL_SWORD_WRAP, AllToolModuleModelIds.WHITE_WOOL_POMMEL_SWORD_WRAP, AllToolModuleModelIds.WHITE_WOOL_SHOVEL_WRAP, AllToolModuleModelIds.WHITE_WOOL_PICKAXE_WRAP, AllToolModuleModelIds.WHITE_WOOL_AXE_WRAP, AllToolModuleModelIds.WHITE_WOOL_HOE_WRAP);
     }
 
     private static void registerToolModuleModelIds(ToolModuleItem toolModule, ResourceLocation... modelIds) {
@@ -607,6 +611,19 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP, idGripPickaxe);
         registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP, idGripAxe);
         registerToolModuleModelIdGetterForToolWithModule(toolHandle, AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP, idGripHoe);
+    }
+
+    private static void registerForToolWrap(ToolModuleItem toolWrap, ResourceLocation idSword, ResourceLocation idPommelSword, ResourceLocation idShovel, ResourceLocation idPickaxe, ResourceLocation idAxe, ResourceLocation idHoe) {
+        registerToolModuleModelIds(toolWrap, idSword, idPommelSword, idShovel, idPickaxe, idAxe, idHoe);
+
+        registerToolModuleModelIdGetterForToolWithoutModule(toolWrap, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, idSword);
+
+        registerToolModuleModelIdGetterForToolWithModule(toolWrap, AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, idPommelSword);
+
+        registerToolModuleModelIdGetterForTool(toolWrap, AllModularTools.SHOVEL, idShovel);
+        registerToolModuleModelIdGetterForTool(toolWrap, AllModularTools.PICKAXE, idPickaxe);
+        registerToolModuleModelIdGetterForTool(toolWrap, AllModularTools.AXE, idAxe);
+        registerToolModuleModelIdGetterForTool(toolWrap, AllModularTools.HOE, idHoe);
     }
 
     private static void registerForNonSolidSlot(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation idEmpty, ResourceLocation idLava, ResourceLocation idMoltenIron, ResourceLocation idMoltenCopper, ResourceLocation idMoltenGold, ResourceLocation idMoltenNetherite, ResourceLocation idMoltenZinc, ResourceLocation idMoltenBrass, ResourceLocation idMoltenDiamond) {

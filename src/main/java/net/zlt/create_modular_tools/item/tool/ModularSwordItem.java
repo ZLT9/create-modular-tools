@@ -22,7 +22,7 @@ public class ModularSwordItem extends ModularToolItem {
         super(properties);
 
         addRequired(AllToolModuleTypes.SWORD_BLADE, AllToolModuleTypes.TOOL_HANDLE);
-        addCompatible(AllToolModuleTypes.SWORD_GUARD, AllToolModuleTypes.SWORD_POMMEL);
+        addCompatible(AllToolModuleTypes.SWORD_GUARD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleTypes.TOOL_WRAP);
     }
 
     @Override

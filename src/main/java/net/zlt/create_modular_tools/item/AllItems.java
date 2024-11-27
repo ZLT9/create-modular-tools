@@ -23,6 +23,7 @@ import net.zlt.create_modular_tools.item.tool.module.sword_guard.*;
 import net.zlt.create_modular_tools.item.tool.module.sword_pommel.*;
 import net.zlt.create_modular_tools.item.tool.module.tool_grip.*;
 import net.zlt.create_modular_tools.item.tool.module.tool_handle.*;
+import net.zlt.create_modular_tools.item.tool.module.tool_wrap.WhiteWoolToolWrapToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -40,8 +41,6 @@ public final class AllItems {
     public static final Item MOLTEN_ZINC_BUCKET = register("molten_zinc_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_ZINC, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final Item MOLTEN_BRASS_BUCKET = register("molten_brass_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_BRASS, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final Item MOLTEN_DIAMOND_BUCKET = register("molten_diamond_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_DIAMOND, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-
-    public static final Item CREATIVE_MODULAR_TOOL_TABLE = register("creative_modular_tool_table", new BlockItem(AllBlocks.CREATIVE_MODULAR_TOOL_TABLE, new Item.Properties().rarity(Rarity.EPIC)));
 
     public static final Item MODULAR_SWORD = register("modular_sword", new ModularSwordItem(new Item.Properties()));
     public static final Item MODULAR_SHOVEL = register("modular_shovel", new ModularShovelItem(new Item.Properties()));
@@ -417,6 +416,8 @@ public final class AllItems {
     public static final Item ZINC_SWORD_POMMEL = register("zinc_sword_pommel", new ZincSwordPommelToolModuleItem(new Item.Properties().stacksTo(1)));
     public static final Item BRASS_SWORD_POMMEL = register("brass_sword_pommel", new BrassSwordPommelToolModuleItem(new Item.Properties().stacksTo(1)));
     public static final Item DIAMOND_SWORD_POMMEL = register("diamond_sword_pommel", new DiamondSwordPommelToolModuleItem(new Item.Properties().stacksTo(1)));
+
+    public static final Item WHITE_WOOL_TOOL_WRAP = register("white_wool_tool_wrap", new WhiteWoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
 
     private static Item register(String path, Item item) {
         return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(path), item);

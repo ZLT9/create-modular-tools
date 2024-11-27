@@ -198,6 +198,8 @@ public final class AllToolModules {
     public static final ToolModuleItem BRASS_SWORD_POMMEL = register(AllItems.BRASS_SWORD_POMMEL);
     public static final ToolModuleItem DIAMOND_SWORD_POMMEL = register(AllItems.DIAMOND_SWORD_POMMEL);
 
+    public static final ToolModuleItem WHITE_WOOL_TOOL_WRAP = register(AllItems.WHITE_WOOL_TOOL_WRAP);
+
     private static ToolModuleItem register(Item toolModule) {
         return ToolModuleRegistry.register(BuiltInRegistries.ITEM.getKey(toolModule), toolModule);
     }

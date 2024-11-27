@@ -414,6 +414,13 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation BRASS_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/brass");
     public static final ResourceLocation DIAMOND_POMMEL = CreateModularTools.asResource("item/tool_module/sword_pommel/diamond");
 
+    public static final ResourceLocation WHITE_WOOL_SWORD_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/sword/white_wool");
+    public static final ResourceLocation WHITE_WOOL_POMMEL_SWORD_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/sword/pommel/white_wool");
+    public static final ResourceLocation WHITE_WOOL_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/white_wool");
+    public static final ResourceLocation WHITE_WOOL_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/white_wool");
+    public static final ResourceLocation WHITE_WOOL_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/white_wool");
+    public static final ResourceLocation WHITE_WOOL_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/white_wool");
+
     public static void init() {
     }
 }

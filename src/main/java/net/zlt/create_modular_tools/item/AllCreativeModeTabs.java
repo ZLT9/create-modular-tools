@@ -232,6 +232,8 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.ZINC_SWORD_POMMEL);
             entries.accept(AllItems.BRASS_SWORD_POMMEL);
             entries.accept(AllItems.DIAMOND_SWORD_POMMEL);
+
+            entries.accept(AllItems.WHITE_WOOL_TOOL_WRAP);
         });
     }
 }

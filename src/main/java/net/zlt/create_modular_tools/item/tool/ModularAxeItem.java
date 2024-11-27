@@ -24,7 +24,7 @@ public class ModularAxeItem extends ModularToolItem {
         super(properties);
 
         addRequired(AllToolModuleTypes.AXE_HEAD, AllToolModuleTypes.TOOL_HANDLE);
-        addCompatible(AllToolModuleTypes.TOOL_GRIP);
+        addCompatible(AllToolModuleTypes.TOOL_GRIP, AllToolModuleTypes.TOOL_WRAP);
     }
 
     @Override
