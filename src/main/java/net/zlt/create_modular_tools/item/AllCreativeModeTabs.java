@@ -32,8 +32,6 @@ public final class AllCreativeModeTabs {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BASE_KEY).register(entries -> {
-            entries.accept(AllItems.CREATIVE_MODULAR_TOOL_TABLE);
-
             entries.accept(AllItems.MOLTEN_IRON_BUCKET);
             entries.accept(AllItems.MOLTEN_COPPER_BUCKET);
             entries.accept(AllItems.MOLTEN_GOLD_BUCKET);
