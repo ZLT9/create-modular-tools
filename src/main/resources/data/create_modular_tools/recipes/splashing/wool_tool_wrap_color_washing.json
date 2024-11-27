@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "create_modular_tools:wool_tool_wraps"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:white_wool_tool_wrap"
+    }
+  ]
+}

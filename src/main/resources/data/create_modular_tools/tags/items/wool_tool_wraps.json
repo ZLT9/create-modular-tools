@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:white_wool_tool_wrap",
+    "create_modular_tools:light_gray_wool_tool_wrap",
+    "create_modular_tools:gray_wool_tool_wrap",
+    "create_modular_tools:black_wool_tool_wrap",
+    "create_modular_tools:brown_wool_tool_wrap",
+    "create_modular_tools:red_wool_tool_wrap",
+    "create_modular_tools:orange_wool_tool_wrap",
+    "create_modular_tools:yellow_wool_tool_wrap",
+    "create_modular_tools:lime_wool_tool_wrap",
+    "create_modular_tools:green_wool_tool_wrap",
+    "create_modular_tools:cyan_wool_tool_wrap",
+    "create_modular_tools:light_blue_wool_tool_wrap",
+    "create_modular_tools:blue_wool_tool_wrap",
+    "create_modular_tools:purple_wool_tool_wrap",
+    "create_modular_tools:magenta_wool_tool_wrap",
+    "create_modular_tools:pink_wool_tool_wrap"
+  ]
+}
