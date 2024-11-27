@@ -7,10 +7,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.CreateModularTools;
+import net.zlt.create_modular_tools.fluid.AllFluids;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -27,8 +25,6 @@ public final class AllBlocks {
     public static final Block MOLTEN_ZINC = register("molten_zinc", new LiquidBlock(AllFluids.MOLTEN_ZINC, FabricBlockSettings.copy(Blocks.LAVA)));
     public static final Block MOLTEN_BRASS = register("molten_brass", new LiquidBlock(AllFluids.MOLTEN_BRASS, FabricBlockSettings.copy(Blocks.LAVA)));
     public static final Block MOLTEN_DIAMOND = register("molten_diamond", new LiquidBlock(AllFluids.MOLTEN_DIAMOND, FabricBlockSettings.copy(Blocks.LAVA)));
-
-    public static final Block CREATIVE_MODULAR_TOOL_TABLE = register("creative_modular_tool_table", new CreativeModularToolTableBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE).mapColor(MapColor.COLOR_PURPLE)));
 
     private static Block register(String path, Block block) {
         return Registry.register(BuiltInRegistries.BLOCK, CreateModularTools.asResource(path), block);

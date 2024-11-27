@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "front": "create_modular_tools:block/creative_modular_tool_table_front",
-    "side": "create_modular_tools:block/creative_modular_tool_table_side",
-    "top": "create_modular_tools:block/creative_modular_tool_table_top",
-    "bottom": "create_modular_tools:block/creative_modular_tool_table_bottom"
-  }
-}

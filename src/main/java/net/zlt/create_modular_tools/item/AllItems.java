@@ -5,12 +5,9 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Rarity;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.molten_metal.MoltenMetalBucketItem;
 import net.zlt.create_modular_tools.item.tool.*;
@@ -40,8 +37,6 @@ public final class AllItems {
     public static final Item MOLTEN_ZINC_BUCKET = register("molten_zinc_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_ZINC, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final Item MOLTEN_BRASS_BUCKET = register("molten_brass_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_BRASS, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final Item MOLTEN_DIAMOND_BUCKET = register("molten_diamond_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_DIAMOND, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-
-    public static final Item CREATIVE_MODULAR_TOOL_TABLE = register("creative_modular_tool_table", new BlockItem(AllBlocks.CREATIVE_MODULAR_TOOL_TABLE, new Item.Properties().rarity(Rarity.EPIC)));
 
     public static final Item MODULAR_SWORD = register("modular_sword", new ModularSwordItem(new Item.Properties()));
     public static final Item MODULAR_SHOVEL = register("modular_shovel", new ModularShovelItem(new Item.Properties()));

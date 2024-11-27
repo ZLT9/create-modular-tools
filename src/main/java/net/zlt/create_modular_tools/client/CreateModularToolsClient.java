@@ -14,7 +14,6 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -34,8 +33,6 @@ import net.zlt.create_modular_tools.client.model.CreateModularToolsModelLoadingP
 import net.zlt.create_modular_tools.client.renderer.blockentity.*;
 import net.zlt.create_modular_tools.client.renderer.entity.*;
 import net.zlt.create_modular_tools.client.renderer.item.ModularToolRenderer;
-import net.zlt.create_modular_tools.container.menu.AllMenuTypes;
-import net.zlt.create_modular_tools.container.screen.CreativeModularToolTableScreen;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.AllItems;
@@ -92,8 +89,6 @@ public class CreateModularToolsClient implements ClientModInitializer {
         FluidRenderHandlerRegistry.INSTANCE.register(AllFluids.MOLTEN_DIAMOND, AllFluids.FLOWING_MOLTEN_DIAMOND, new SimpleFluidRenderHandler(CreateModularTools.asResource("block/molten_diamond_still"), CreateModularTools.asResource("block/molten_diamond_flow")));
 
         ModelLoadingPlugin.register(new CreateModularToolsModelLoadingPlugin());
-
-        MenuScreens.register(AllMenuTypes.CREATIVE_MODULAR_TOOL_TABLE, CreativeModularToolTableScreen::new);
 
         ClientPickBlockApplyCallback.EVENT.register((player, hit, stack) -> {
             if (stack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof SandMoldBlock) {
