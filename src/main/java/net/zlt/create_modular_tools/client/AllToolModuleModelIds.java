@@ -465,6 +465,23 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation MAGENTA_WOOL_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/magenta_wool");
     public static final ResourceLocation PINK_WOOL_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/pink_wool");
 
+    public static final ResourceLocation WHITE_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/white_wool");
+    public static final ResourceLocation LIGHT_GRAY_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/light_gray_wool");
+    public static final ResourceLocation GRAY_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/gray_wool");
+    public static final ResourceLocation BLACK_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/black_wool");
+    public static final ResourceLocation BROWN_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/brown_wool");
+    public static final ResourceLocation RED_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/red_wool");
+    public static final ResourceLocation ORANGE_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/orange_wool");
+    public static final ResourceLocation YELLOW_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/yellow_wool");
+    public static final ResourceLocation LIME_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/lime_wool");
+    public static final ResourceLocation GREEN_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/green_wool");
+    public static final ResourceLocation CYAN_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/cyan_wool");
+    public static final ResourceLocation LIGHT_BLUE_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/light_blue_wool");
+    public static final ResourceLocation BLUE_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/blue_wool");
+    public static final ResourceLocation PURPLE_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/purple_wool");
+    public static final ResourceLocation MAGENTA_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/magenta_wool");
+    public static final ResourceLocation PINK_WOOL_GRIP_SHOVEL_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/shovel/grip/pink_wool");
+
     public static final ResourceLocation WHITE_WOOL_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/white_wool");
     public static final ResourceLocation LIGHT_GRAY_WOOL_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/light_gray_wool");
     public static final ResourceLocation GRAY_WOOL_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/gray_wool");
@@ -481,6 +498,23 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation PURPLE_WOOL_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/purple_wool");
     public static final ResourceLocation MAGENTA_WOOL_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/magenta_wool");
     public static final ResourceLocation PINK_WOOL_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/pink_wool");
+
+    public static final ResourceLocation WHITE_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/white_wool");
+    public static final ResourceLocation LIGHT_GRAY_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/light_gray_wool");
+    public static final ResourceLocation GRAY_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/gray_wool");
+    public static final ResourceLocation BLACK_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/black_wool");
+    public static final ResourceLocation BROWN_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/brown_wool");
+    public static final ResourceLocation RED_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/red_wool");
+    public static final ResourceLocation ORANGE_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/orange_wool");
+    public static final ResourceLocation YELLOW_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/yellow_wool");
+    public static final ResourceLocation LIME_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/lime_wool");
+    public static final ResourceLocation GREEN_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/green_wool");
+    public static final ResourceLocation CYAN_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/cyan_wool");
+    public static final ResourceLocation LIGHT_BLUE_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/light_blue_wool");
+    public static final ResourceLocation BLUE_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/blue_wool");
+    public static final ResourceLocation PURPLE_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/purple_wool");
+    public static final ResourceLocation MAGENTA_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/magenta_wool");
+    public static final ResourceLocation PINK_WOOL_GRIP_PICKAXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/pickaxe/grip/pink_wool");
 
     public static final ResourceLocation WHITE_WOOL_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/white_wool");
     public static final ResourceLocation LIGHT_GRAY_WOOL_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/light_gray_wool");
@@ -499,6 +533,23 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation MAGENTA_WOOL_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/magenta_wool");
     public static final ResourceLocation PINK_WOOL_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/pink_wool");
 
+    public static final ResourceLocation WHITE_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/white_wool");
+    public static final ResourceLocation LIGHT_GRAY_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/light_gray_wool");
+    public static final ResourceLocation GRAY_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/gray_wool");
+    public static final ResourceLocation BLACK_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/black_wool");
+    public static final ResourceLocation BROWN_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/brown_wool");
+    public static final ResourceLocation RED_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/red_wool");
+    public static final ResourceLocation ORANGE_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/orange_wool");
+    public static final ResourceLocation YELLOW_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/yellow_wool");
+    public static final ResourceLocation LIME_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/lime_wool");
+    public static final ResourceLocation GREEN_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/green_wool");
+    public static final ResourceLocation CYAN_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/cyan_wool");
+    public static final ResourceLocation LIGHT_BLUE_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/light_blue_wool");
+    public static final ResourceLocation BLUE_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/blue_wool");
+    public static final ResourceLocation PURPLE_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/purple_wool");
+    public static final ResourceLocation MAGENTA_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/magenta_wool");
+    public static final ResourceLocation PINK_WOOL_GRIP_AXE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/axe/grip/pink_wool");
+
     public static final ResourceLocation WHITE_WOOL_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/white_wool");
     public static final ResourceLocation LIGHT_GRAY_WOOL_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/light_gray_wool");
     public static final ResourceLocation GRAY_WOOL_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/gray_wool");
@@ -515,6 +566,23 @@ public final class AllToolModuleModelIds {
     public static final ResourceLocation PURPLE_WOOL_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/purple_wool");
     public static final ResourceLocation MAGENTA_WOOL_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/magenta_wool");
     public static final ResourceLocation PINK_WOOL_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/pink_wool");
+
+    public static final ResourceLocation WHITE_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/white_wool");
+    public static final ResourceLocation LIGHT_GRAY_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/light_gray_wool");
+    public static final ResourceLocation GRAY_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/gray_wool");
+    public static final ResourceLocation BLACK_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/black_wool");
+    public static final ResourceLocation BROWN_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/brown_wool");
+    public static final ResourceLocation RED_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/red_wool");
+    public static final ResourceLocation ORANGE_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/orange_wool");
+    public static final ResourceLocation YELLOW_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/yellow_wool");
+    public static final ResourceLocation LIME_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/lime_wool");
+    public static final ResourceLocation GREEN_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/green_wool");
+    public static final ResourceLocation CYAN_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/cyan_wool");
+    public static final ResourceLocation LIGHT_BLUE_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/light_blue_wool");
+    public static final ResourceLocation BLUE_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/blue_wool");
+    public static final ResourceLocation PURPLE_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/purple_wool");
+    public static final ResourceLocation MAGENTA_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/magenta_wool");
+    public static final ResourceLocation PINK_WOOL_GRIP_HOE_WRAP = CreateModularTools.asResource("item/tool_module/tool_wrap/hoe/grip/pink_wool");
 
     public static void init() {
     }
