@@ -9,10 +9,8 @@ import net.minecraft.world.level.material.Fluids;
 import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.block.AllSoundTypes;
-import net.zlt.create_modular_tools.block.entity.AllBlockEntityTypes;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
 import net.zlt.create_modular_tools.block.mold.*;
-import net.zlt.create_modular_tools.container.menu.AllMenuTypes;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
@@ -46,7 +44,6 @@ public class CreateModularTools implements ModInitializer {
         AllSoundTypes.init();
         AllFluids.init();
         AllBlocks.init();
-        AllBlockEntityTypes.init();
         AllToolModuleTypes.init();
         AllToolModuleFeatures.init();
         AllToolModules.init();
@@ -56,7 +53,6 @@ public class CreateModularTools implements ModInitializer {
         AllMoldBlockEntityTypes.init();
         AllMoldItems.init();
         AllCreativeModeTabs.init();
-        AllMenuTypes.init();
         AllLootItemFunctionTypes.init();
         AllRecipeTypes.init();
         AllMoldTopTextures.init();
