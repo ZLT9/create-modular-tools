@@ -6,6 +6,8 @@
   "mixins": [
     "AllFanProcessingTypesMixin",
     "AnvilMenuMixin",
+    "BeltDeployerCallbacksMixin",
+    "DeployerBlockEntityMixin",
     "DiggerEnchantmentCategoryMixin",
     "EnchantmentHelperMixin",
     "EnchantmentMenuMixin",

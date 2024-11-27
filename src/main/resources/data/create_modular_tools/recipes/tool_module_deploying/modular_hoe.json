@@ -1,0 +1,16 @@
+{
+  "type": "create_modular_tools:tool_module_deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:modular_hoe"
+    },
+    {
+      "tag": "create_modular_tools:wool_tool_wraps"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:modular_hoe"
+    }
+  ]
+}

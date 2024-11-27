@@ -9,6 +9,7 @@
   "create_modular_tools.recipe.assembly.mold_pressing": "Prensado de moldes",
   "create_modular_tools.recipe.assembly.mold_filling": "Llenado de moldes",
   "create_modular_tools.recipe.assembly.modular_tool_cutting": "Cortado de herramientas modulares",
+  "create_modular_tools.recipe.assembly.tool_module_deploying": "Despliegue de módulos de herramientas",
   "itemGroup.create_modular_tools.base": "Create: Modular Tools",
   "block.create_modular_tools.molten_iron": "Hierro fundido",
   "block.create_modular_tools.molten_copper": "Cobre fundido",

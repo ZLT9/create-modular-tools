@@ -9,6 +9,7 @@
   "create_modular_tools.recipe.assembly.mold_pressing": "Mold Pressing",
   "create_modular_tools.recipe.assembly.mold_filling": "Mold Filling",
   "create_modular_tools.recipe.assembly.modular_tool_cutting": "Modular Tool Cutting",
+  "create_modular_tools.recipe.assembly.tool_module_deploying": "Tool Module Deploying",
   "itemGroup.create_modular_tools.base": "Create: Modular Tools",
   "block.create_modular_tools.molten_iron": "Molten Iron",
   "block.create_modular_tools.molten_copper": "Molten Copper",

@@ -26,7 +26,8 @@ public enum AllRecipeTypes implements IRecipeTypeInfo {
     MOLD_FILLING(MoldFillingRecipe::new),
     MOLD_EMPTYING(MoldEmptyingRecipe::new),
     MOLD_SPLASHING(MoldSplashingRecipe::new),
-    MODULAR_TOOL_CUTTING(ModularToolCuttingRecipe::new);
+    MODULAR_TOOL_CUTTING(ModularToolCuttingRecipe::new),
+    TOOL_MODULE_DEPLOYING(ToolModuleDeployingRecipe::new);
 
     private final ResourceLocation ID;
     private final RecipeSerializer<?> SERIALIZER_OBJECT;
