@@ -20,7 +20,7 @@ import net.zlt.create_modular_tools.item.tool.module.sword_guard.*;
 import net.zlt.create_modular_tools.item.tool.module.sword_pommel.*;
 import net.zlt.create_modular_tools.item.tool.module.tool_grip.*;
 import net.zlt.create_modular_tools.item.tool.module.tool_handle.*;
-import net.zlt.create_modular_tools.item.tool.module.tool_wrap.WhiteWoolToolWrapToolModuleItem;
+import net.zlt.create_modular_tools.item.tool.module.tool_wrap.WoolToolWrapToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -414,7 +414,22 @@ public final class AllItems {
     public static final Item BRASS_SWORD_POMMEL = register("brass_sword_pommel", new BrassSwordPommelToolModuleItem(new Item.Properties().stacksTo(1)));
     public static final Item DIAMOND_SWORD_POMMEL = register("diamond_sword_pommel", new DiamondSwordPommelToolModuleItem(new Item.Properties().stacksTo(1)));
 
-    public static final Item WHITE_WOOL_TOOL_WRAP = register("white_wool_tool_wrap", new WhiteWoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item WHITE_WOOL_TOOL_WRAP = register("white_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item LIGHT_GRAY_WOOL_TOOL_WRAP = register("light_gray_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item GRAY_WOOL_TOOL_WRAP = register("gray_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item BLACK_WOOL_TOOL_WRAP = register("black_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item BROWN_WOOL_TOOL_WRAP = register("brown_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item RED_WOOL_TOOL_WRAP = register("red_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item ORANGE_WOOL_TOOL_WRAP = register("orange_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item YELLOW_WOOL_TOOL_WRAP = register("yellow_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item LIME_WOOL_TOOL_WRAP = register("lime_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item GREEN_WOOL_TOOL_WRAP = register("green_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item CYAN_WOOL_TOOL_WRAP = register("cyan_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item LIGHT_BLUE_WOOL_TOOL_WRAP = register("light_blue_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item BLUE_WOOL_TOOL_WRAP = register("blue_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item PURPLE_WOOL_TOOL_WRAP = register("purple_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item MAGENTA_WOOL_TOOL_WRAP = register("magenta_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item PINK_WOOL_TOOL_WRAP = register("pink_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
 
     private static Item register(String path, Item item) {
         return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(path), item);

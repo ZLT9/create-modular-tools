@@ -1,10 +1,9 @@
 package net.zlt.create_modular_tools.item.tool.module.tool_wrap;
 
-import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleConstants;
 
-public class WhiteWoolToolWrapToolModuleItem extends ToolWrapToolModuleItem {
-    public WhiteWoolToolWrapToolModuleItem(Properties properties) {
+public class WoolToolWrapToolModuleItem extends ToolWrapToolModuleItem {
+    public WoolToolWrapToolModuleItem(Properties properties) {
         super(properties);
     }
 

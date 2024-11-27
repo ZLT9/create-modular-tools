@@ -232,6 +232,21 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.DIAMOND_SWORD_POMMEL);
 
             entries.accept(AllItems.WHITE_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.LIGHT_GRAY_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.GRAY_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.BLACK_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.BROWN_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.RED_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.ORANGE_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.YELLOW_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.LIME_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.GREEN_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.CYAN_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.LIGHT_BLUE_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.BLUE_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.PURPLE_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.MAGENTA_WOOL_TOOL_WRAP);
+            entries.accept(AllItems.PINK_WOOL_TOOL_WRAP);
         });
     }
 }

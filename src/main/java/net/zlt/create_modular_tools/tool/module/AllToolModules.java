@@ -199,6 +199,21 @@ public final class AllToolModules {
     public static final ToolModuleItem DIAMOND_SWORD_POMMEL = register(AllItems.DIAMOND_SWORD_POMMEL);
 
     public static final ToolModuleItem WHITE_WOOL_TOOL_WRAP = register(AllItems.WHITE_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem LIGHT_GRAY_WOOL_TOOL_WRAP = register(AllItems.LIGHT_GRAY_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem GRAY_WOOL_TOOL_WRAP = register(AllItems.GRAY_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem BLACK_WOOL_TOOL_WRAP = register(AllItems.BLACK_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem BROWN_WOOL_TOOL_WRAP = register(AllItems.BROWN_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem RED_WOOL_TOOL_WRAP = register(AllItems.RED_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem ORANGE_WOOL_TOOL_WRAP = register(AllItems.ORANGE_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem YELLOW_WOOL_TOOL_WRAP = register(AllItems.YELLOW_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem LIME_WOOL_TOOL_WRAP = register(AllItems.LIME_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem GREEN_WOOL_TOOL_WRAP = register(AllItems.GREEN_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem CYAN_WOOL_TOOL_WRAP = register(AllItems.CYAN_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem LIGHT_BLUE_WOOL_TOOL_WRAP = register(AllItems.LIGHT_BLUE_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem BLUE_WOOL_TOOL_WRAP = register(AllItems.BLUE_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem PURPLE_WOOL_TOOL_WRAP = register(AllItems.PURPLE_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem MAGENTA_WOOL_TOOL_WRAP = register(AllItems.MAGENTA_WOOL_TOOL_WRAP);
+    public static final ToolModuleItem PINK_WOOL_TOOL_WRAP = register(AllItems.PINK_WOOL_TOOL_WRAP);
 
     private static ToolModuleItem register(Item toolModule) {
         return ToolModuleRegistry.register(BuiltInRegistries.ITEM.getKey(toolModule), toolModule);
