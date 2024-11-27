@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "create_modular_tools:item/tool_module/tool_handle/sword/pommel/cherry"
-  }
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "create_modular_tools:item/tool_module/tool_handle/sword/pommel/cherry"
+    }
 }
