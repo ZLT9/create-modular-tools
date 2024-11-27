@@ -100,23 +100,6 @@ public class CreateModularToolsClient implements ClientModInitializer {
             return stack;
         });
 
-        AllToolModuleTypes.SWORD_BLADE.putIcon(AllModularTools.SWORD, CreateModularTools.asResource("textures/gui/container/sword_blade.png"));
-        AllToolModuleTypes.SHOVEL_HEAD.putIcon(AllModularTools.SHOVEL, CreateModularTools.asResource("textures/gui/container/shovel_head.png"));
-        AllToolModuleTypes.PICKAXE_HEAD.putIcon(AllModularTools.PICKAXE, CreateModularTools.asResource("textures/gui/container/pickaxe_head.png"));
-        AllToolModuleTypes.AXE_HEAD.putIcon(AllModularTools.AXE, CreateModularTools.asResource("textures/gui/container/axe_head.png"));
-        AllToolModuleTypes.HOE_HEAD.putIcon(AllModularTools.HOE, CreateModularTools.asResource("textures/gui/container/hoe_head.png"));
-        AllToolModuleTypes.TOOL_HANDLE.putIcon(AllModularTools.SWORD, CreateModularTools.asResource("textures/gui/container/sword_handle.png"));
-        AllToolModuleTypes.TOOL_HANDLE.putIcon(AllModularTools.SHOVEL, CreateModularTools.asResource("textures/gui/container/shovel_handle.png"));
-        AllToolModuleTypes.TOOL_HANDLE.putIcon(AllModularTools.PICKAXE, CreateModularTools.asResource("textures/gui/container/pickaxe_handle.png"));
-        AllToolModuleTypes.TOOL_HANDLE.putIcon(AllModularTools.AXE, CreateModularTools.asResource("textures/gui/container/axe_handle.png"));
-        AllToolModuleTypes.TOOL_HANDLE.putIcon(AllModularTools.HOE, CreateModularTools.asResource("textures/gui/container/hoe_handle.png"));
-        AllToolModuleTypes.TOOL_GRIP.putIcon(AllModularTools.SHOVEL, CreateModularTools.asResource("textures/gui/container/shovel_grip.png"));
-        AllToolModuleTypes.TOOL_GRIP.putIcon(AllModularTools.PICKAXE, CreateModularTools.asResource("textures/gui/container/pickaxe_grip.png"));
-        AllToolModuleTypes.TOOL_GRIP.putIcon(AllModularTools.AXE, CreateModularTools.asResource("textures/gui/container/axe_grip.png"));
-        AllToolModuleTypes.TOOL_GRIP.putIcon(AllModularTools.HOE, CreateModularTools.asResource("textures/gui/container/hoe_grip.png"));
-        AllToolModuleTypes.SWORD_GUARD.putIcon(AllModularTools.SWORD, CreateModularTools.asResource("textures/gui/container/guard.png"));
-        AllToolModuleTypes.SWORD_POMMEL.putIcon(AllModularTools.SWORD, CreateModularTools.asResource("textures/gui/container/pommel.png"));
-
         AllMoldTopTextureIds.init();
 
         registerForNonSolidSlot(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE,

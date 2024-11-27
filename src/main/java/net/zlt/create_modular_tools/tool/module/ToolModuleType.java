@@ -8,14 +8,11 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
-import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -25,7 +22,6 @@ public class ToolModuleType {
     private final int LAYER;
     private final long REQUIRED_MOLTEN_METAL_AMOUNT;
     private final List<TriFunction<@Nullable MoldTopTexture, SandMoldBlock, CompoundTag, @Nullable MoldTopTexture>> MOLD_TOP_TEXTURE_GETTERS = new ArrayList<>();
-    private final Map<ModularToolItem, ResourceLocation> ICONS = new HashMap<>();
 
     public ToolModuleType(Component name, String tag, int layer, long requiredMoltenMetalAmount) {
         NAME = name;
@@ -44,16 +40,6 @@ public class ToolModuleType {
 
     public int getLayer() {
         return LAYER;
-    }
-
-    @Environment(EnvType.CLIENT)
-    public ResourceLocation getIcon(ModularToolItem modularTool) {
-        return ICONS.get(modularTool);
-    }
-
-    @Environment(EnvType.CLIENT)
-    public void putIcon(ModularToolItem modularTool, ResourceLocation icon) {
-        ICONS.put(modularTool, icon);
     }
 
     public void registerMoldTopTextureGetter(TriFunction<@Nullable MoldTopTexture, SandMoldBlock, CompoundTag, MoldTopTexture> moldTopTextureGetter) {
