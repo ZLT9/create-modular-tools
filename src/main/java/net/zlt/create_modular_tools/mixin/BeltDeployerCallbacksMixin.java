@@ -16,11 +16,13 @@ import net.minecraft.world.phys.Vec3;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.recipe.ToolModuleDeployingRecipe;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -39,6 +41,11 @@ public abstract class BeltDeployerCallbacksMixin {
     @Inject(method = "activate", at = @At("TAIL"))
     private static void createModularTools$clearBlockEntity(TransportedItemStack transported, TransportedItemStackHandlerBehaviour handler, DeployerBlockEntity blockEntity, Recipe<?> recipe, CallbackInfo ci) {
         BeltDeployerCallbacksMixin.blockEntity = null;
+    }
+
+    @ModifyVariable(method = "activate", at = @At(value = "STORE", ordinal = 0), name = "keepHeld")
+    private static boolean createModularTools$setKeepHeldToolModule(boolean original, @Local(argsOnly = true) Recipe<?> recipe) {
+        return original || recipe instanceof ToolModuleDeployingRecipe toolModuleDeployingRecipe && toolModuleDeployingRecipe.shouldKeepHeldItem();
     }
 
     @Inject(method = "lambda$activate$0", at = @At("RETURN"))
