@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
-import net.minecraft.resources.ResourceLocation;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 
@@ -17,7 +16,7 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class HoeSandMoldItemDynamicBakedModel extends BaseMoldItemDynamicBakedModel {
+public class HoeSandMoldItemDynamicBakedModel extends BaseSandMoldItemDynamicBakedModel {
     public HoeSandMoldItemDynamicBakedModel(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
         super(baseSandMoldModel, interiorTopQuad, spriteGetter);
     }
@@ -25,10 +24,5 @@ public class HoeSandMoldItemDynamicBakedModel extends BaseMoldItemDynamicBakedMo
     @Override
     protected BaseMoldBlock getMoldBlock() {
         return AllMoldBlocks.HOE_SAND_MOLD;
-    }
-
-    @Override
-    protected ResourceLocation getTopTextureId() {
-        return new ResourceLocation("minecraft", "block/sand");
     }
 }
