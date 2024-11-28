@@ -28,4 +28,9 @@ public class HoeSandMoldBlock extends BaseMoldBlock {
     public ModularToolItem getModularTool() {
         return AllModularTools.HOE;
     }
+
+    @Override
+    protected MoldBlock getMoldBlock() {
+        return AllMoldBlocks.SAND_MOLD;
+    }
 }

@@ -28,4 +28,9 @@ public class PickaxeSandMoldBlock extends BaseMoldBlock {
     public ModularToolItem getModularTool() {
         return AllModularTools.PICKAXE;
     }
+
+    @Override
+    protected MoldBlock getMoldBlock() {
+        return AllMoldBlocks.SAND_MOLD;
+    }
 }

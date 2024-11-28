@@ -28,4 +28,9 @@ public class SwordSandMoldBlock extends BaseMoldBlock {
     public ModularToolItem getModularTool() {
         return AllModularTools.SWORD;
     }
+
+    @Override
+    protected MoldBlock getMoldBlock() {
+        return AllMoldBlocks.SAND_MOLD;
+    }
 }

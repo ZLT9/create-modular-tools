@@ -28,4 +28,9 @@ public class AxeSandMoldBlock extends BaseMoldBlock {
     public ModularToolItem getModularTool() {
         return AllModularTools.AXE;
     }
+
+    @Override
+    protected MoldBlock getMoldBlock() {
+        return AllMoldBlocks.SAND_MOLD;
+    }
 }

@@ -28,4 +28,9 @@ public class ShovelSandMoldBlock extends BaseMoldBlock {
     public ModularToolItem getModularTool() {
         return AllModularTools.SHOVEL;
     }
+
+    @Override
+    protected MoldBlock getMoldBlock() {
+        return AllMoldBlocks.SAND_MOLD;
+    }
 }
