@@ -16,7 +16,7 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SwordSandMoldItemUnbakedModel extends BaseSandMoldItemUnbakedModel {
+public class SwordSandMoldItemUnbakedModel extends BaseMoldItemUnbakedModel {
     @Override
     protected BakedModel createDynamic(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
         return new SwordSandMoldItemDynamicBakedModel(baseSandMoldModel, interiorTopQuad, spriteGetter);

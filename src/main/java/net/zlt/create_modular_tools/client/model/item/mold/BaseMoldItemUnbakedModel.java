@@ -12,7 +12,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.inventory.InventoryMenu;
-import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.Utils;
 import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.client.MoldModelUtils;
@@ -29,7 +28,7 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
+public abstract class BaseMoldItemUnbakedModel implements UnbakedModel {
     @Override
     public Collection<ResourceLocation> getDependencies() {
         return List.of();
@@ -42,7 +41,7 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
     @Override
     @Nullable
     public BakedModel bake(ModelBaker baker, Function<Material, TextureAtlasSprite> spriteGetter, ModelState state, ResourceLocation location) {
-        BakedModel baseSandMoldModel = baker.getModel(CreateModularTools.asResource("block/sand_mold")).bake(baker, spriteGetter, state, location);
+        BakedModel baseSandMoldModel = baker.getModel(getMoldModelId()).bake(baker, spriteGetter, state, location);
         if (baseSandMoldModel == null) {
             return null;
         }
@@ -88,7 +87,7 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
         return createDynamic(baseSandMoldModel, interiorTopQuad, spriteGetter);
     }
 
-    protected BakedModel createBaked(BaseSandMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
+    protected BakedModel createBaked(BaseMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
         return new BaseSandMoldItemBakedModel(unbakedModel, baseSandMoldModel, interiorTopQuad, spriteGetter);
     }
 
@@ -99,4 +98,6 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
     protected abstract BakedModel createDynamic(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter);
 
     protected abstract BaseMoldBlock getMoldBlock();
+    
+    protected abstract ResourceLocation getMoldModelId();
 }

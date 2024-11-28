@@ -39,7 +39,7 @@ public class BaseSandMoldItemBakedModel implements BakedModel {
     private final ItemOverrides OVERRIDES;
     private final List<BakedQuad> QUADS;
 
-    public BaseSandMoldItemBakedModel(BaseSandMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
+    public BaseSandMoldItemBakedModel(BaseMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
         DYNAMIC_MODEL = unbakedModel.bakeDynamic(baseSandMoldModel, interiorTopQuad, spriteGetter);
         OVERRIDES = new Overrides(unbakedModel, baseSandMoldModel, interiorTopQuad, spriteGetter);
         QUADS = List.of();
@@ -103,12 +103,12 @@ public class BaseSandMoldItemBakedModel implements BakedModel {
             .expireAfterWrite(5, TimeUnit.MINUTES)
             .build();
 
-        private final BaseSandMoldItemUnbakedModel UNBAKED_MODEL;
+        private final BaseMoldItemUnbakedModel UNBAKED_MODEL;
         private final BakedModel BASE_SAND_MOLD_MODEL;
         private final BakedQuad INTERIOR_TOP_QUAD;
         private final Function<Material, TextureAtlasSprite> SPRITE_GETTER;
 
-        public Overrides(BaseSandMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
+        public Overrides(BaseMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
             super();
             UNBAKED_MODEL = unbakedModel;
             BASE_SAND_MOLD_MODEL = baseSandMoldModel;
