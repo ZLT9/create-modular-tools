@@ -5,9 +5,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.block.entity.mold.PickaxeSandMoldBlockEntity;
-import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
-import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.AllModularTools;
 import org.jetbrains.annotations.Nullable;
@@ -16,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class PickaxeSandMoldBlock extends BaseMoldBlock {
+public class PickaxeSandMoldBlock extends BaseSandMoldBlock {
     public PickaxeSandMoldBlock(Properties properties) {
         super(properties);
     }
@@ -30,10 +27,5 @@ public class PickaxeSandMoldBlock extends BaseMoldBlock {
     @Override
     public ModularToolItem getModularTool() {
         return AllModularTools.PICKAXE;
-    }
-
-    @Override
-    protected MoldBlock getMoldBlock() {
-        return AllMoldBlocks.SAND_MOLD;
     }
 }
