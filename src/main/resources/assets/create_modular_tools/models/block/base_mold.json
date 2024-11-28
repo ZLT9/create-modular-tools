@@ -1,0 +1,37 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+    "side": "create_modular_tools:block/sand_mold_side",
+    "top": "create_modular_tools:block/sand_mold_top",
+    "bottom": "create_modular_tools:block/sand_mold_bottom",
+    "particle": "#interior"
+  },
+  "elements": [
+    {
+      "name": "Body",
+      "from": [0, 0, 0],
+      "to": [16, 4, 16],
+      "faces": {
+        "north": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "north"},
+        "east": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "east"},
+        "south": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "south"},
+        "west": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "west"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "up"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#bottom", "cullface": "down"}
+      }
+    },
+    {
+      "name": "Interior",
+      "from": [0, 4, 0],
+      "to": [16, 2, 16],
+      "faces": {
+        "north": {"uv": [0, 12, 16, 13], "texture": "#side"},
+        "east": {"uv": [0, 12, 16, 13], "texture": "#side"},
+        "south": {"uv": [0, 12, 16, 13], "texture": "#side"},
+        "west": {"uv": [0, 12, 16, 13], "texture": "#side"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#interior", "cullface": "up"}
+      }
+    }
+  ]
+}
