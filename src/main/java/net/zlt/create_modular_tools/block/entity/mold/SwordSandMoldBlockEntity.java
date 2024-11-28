@@ -16,7 +16,7 @@ public class SwordSandMoldBlockEntity extends SandMoldBlockEntity {
     }
 
     @Override
-    protected ModularToolItem getModularTool() {
+    public ModularToolItem getModularTool() {
         return AllModularTools.SWORD;
     }
 }

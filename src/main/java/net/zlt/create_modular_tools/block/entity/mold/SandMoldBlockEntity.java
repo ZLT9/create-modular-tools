@@ -242,7 +242,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
         return toolModulesNbt;
     }
 
-    protected abstract ModularToolItem getModularTool();
+    public abstract ModularToolItem getModularTool();
 
     protected void updateBlockStateLightLevel() {
         if (level == null || level.isClientSide) {

@@ -16,7 +16,7 @@ public class HoeSandMoldBlockEntity extends SandMoldBlockEntity {
     }
 
     @Override
-    protected ModularToolItem getModularTool() {
+    public ModularToolItem getModularTool() {
         return AllModularTools.HOE;
     }
 }

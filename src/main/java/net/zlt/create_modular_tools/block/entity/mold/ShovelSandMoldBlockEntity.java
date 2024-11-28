@@ -16,7 +16,7 @@ public class ShovelSandMoldBlockEntity extends SandMoldBlockEntity {
     }
 
     @Override
-    protected ModularToolItem getModularTool() {
+    public ModularToolItem getModularTool() {
         return AllModularTools.SHOVEL;
     }
 }
