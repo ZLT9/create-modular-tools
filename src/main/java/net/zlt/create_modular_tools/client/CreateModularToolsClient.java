@@ -85,7 +85,12 @@ public class CreateModularToolsClient implements ClientModInitializer {
             AllMoldBlocks.SHOVEL_SAND_MOLD,
             AllMoldBlocks.PICKAXE_SAND_MOLD,
             AllMoldBlocks.AXE_SAND_MOLD,
-            AllMoldBlocks.HOE_SAND_MOLD
+            AllMoldBlocks.HOE_SAND_MOLD,
+            AllMoldBlocks.SWORD_RED_SAND_MOLD,
+            AllMoldBlocks.SHOVEL_RED_SAND_MOLD,
+            AllMoldBlocks.PICKAXE_RED_SAND_MOLD,
+            AllMoldBlocks.AXE_RED_SAND_MOLD,
+            AllMoldBlocks.HOE_RED_SAND_MOLD
         );
 
         FluidRenderHandlerRegistry.INSTANCE.register(AllFluids.MOLTEN_IRON, AllFluids.FLOWING_MOLTEN_IRON, new SimpleFluidRenderHandler(CreateModularTools.asResource("block/molten_iron_still"), CreateModularTools.asResource("block/molten_iron_flow")));
