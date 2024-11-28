@@ -8,14 +8,9 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.PickaxeSandMoldBlock;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
-import net.zlt.create_modular_tools.item.tool.ModularToolItem;
-import net.zlt.create_modular_tools.tool.AllModularTools;
-import net.zlt.create_modular_tools.tool.module.ToolModuleType;
+import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Collection;
 import java.util.function.Function;
 
 @Environment(EnvType.CLIENT)
@@ -28,17 +23,7 @@ public class PickaxeSandMoldItemUnbakedModel extends BaseSandMoldItemUnbakedMode
     }
 
     @Override
-    protected Collection<ToolModuleType> getCompatible() {
-        return PickaxeSandMoldBlock.s_getCompatible();
-    }
-
-    @Override
-    protected SandMoldBlock getMoldBlock() {
+    protected BaseSandMoldBlock getMoldBlock() {
         return AllMoldBlocks.PICKAXE_SAND_MOLD;
-    }
-
-    @Override
-    protected ModularToolItem getModularTool() {
-        return AllModularTools.PICKAXE;
     }
 }
