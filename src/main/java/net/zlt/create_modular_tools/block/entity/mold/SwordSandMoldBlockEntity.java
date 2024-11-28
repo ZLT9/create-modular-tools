@@ -10,7 +10,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SwordSandMoldBlockEntity extends SandMoldBlockEntity {
+public class SwordSandMoldBlockEntity extends MoldBlockEntity {
     public SwordSandMoldBlockEntity(BlockPos pos, BlockState blockState) {
         super(AllMoldBlockEntityTypes.SWORD_SAND_MOLD, pos, blockState);
     }

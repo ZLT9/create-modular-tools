@@ -10,7 +10,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class HoeSandMoldBlockEntity extends SandMoldBlockEntity {
+public class HoeSandMoldBlockEntity extends MoldBlockEntity {
     public HoeSandMoldBlockEntity(BlockPos pos, BlockState blockState) {
         super(AllMoldBlockEntityTypes.HOE_SAND_MOLD, pos, blockState);
     }

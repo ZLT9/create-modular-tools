@@ -10,7 +10,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class PickaxeSandMoldBlockEntity extends SandMoldBlockEntity {
+public class PickaxeSandMoldBlockEntity extends MoldBlockEntity {
     public PickaxeSandMoldBlockEntity(BlockPos pos, BlockState blockState) {
         super(AllMoldBlockEntityTypes.PICKAXE_SAND_MOLD, pos, blockState);
     }

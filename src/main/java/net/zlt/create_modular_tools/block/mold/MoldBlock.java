@@ -28,7 +28,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.zlt.create_modular_tools.block.AllSoundTypes;
-import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
 import net.zlt.create_modular_tools.item.AllItemTags;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -94,21 +94,21 @@ public abstract class MoldBlock extends HorizontalDirectionalBlock {
             }
             level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
             level.setBlock(pos, result.defaultBlockState().setValue(FACING, player.getDirection().getOpposite()), 3);
-            if (level.getBlockEntity(pos) instanceof SandMoldBlockEntity sandMoldBlockEntity) {
-                sandMoldBlockEntity.clearToolModules();
+            if (level.getBlockEntity(pos) instanceof MoldBlockEntity moldBlockEntity) {
+                moldBlockEntity.clearToolModules();
                 if (isModularTool) {
                     CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(stack);
                     if (!toolModulesNbt.isEmpty()) {
                         for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
                             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(toolModuleTypeTag);
                             if (toolModuleType != null) {
-                                sandMoldBlockEntity.putToolModule(toolModuleType, null, null);
+                                moldBlockEntity.putToolModule(toolModuleType, null, null);
                             }
                         }
                     }
                 }
                 for (ToolModuleType toolModuleType : additionalSlots) {
-                    sandMoldBlockEntity.putToolModule(toolModuleType, null, null);
+                    moldBlockEntity.putToolModule(toolModuleType, null, null);
                 }
             }
         }
@@ -141,8 +141,8 @@ public abstract class MoldBlock extends HorizontalDirectionalBlock {
             return;
         }
 
-        if (blockEntity instanceof SandMoldBlockEntity sandMoldBlockEntity) {
-            player.getInventory().placeItemBackInInventory(getStack(sandMoldBlockEntity));
+        if (blockEntity instanceof MoldBlockEntity moldBlockEntity) {
+            player.getInventory().placeItemBackInInventory(getStack(moldBlockEntity));
         } else {
             player.getInventory().placeItemBackInInventory(getStack());
         }
@@ -150,7 +150,7 @@ public abstract class MoldBlock extends HorizontalDirectionalBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
-        return level.getBlockEntity(pos) instanceof SandMoldBlockEntity sandMoldBlockEntity ? getStack(sandMoldBlockEntity) : new ItemStack(this);
+        return level.getBlockEntity(pos) instanceof MoldBlockEntity moldBlockEntity ? getStack(moldBlockEntity) : new ItemStack(this);
     }
 
     @Override
@@ -211,13 +211,13 @@ public abstract class MoldBlock extends HorizontalDirectionalBlock {
         return new ItemStack(this);
     }
 
-    protected ItemStack getStack(SandMoldBlockEntity sandMoldBlockEntity) {
+    protected ItemStack getStack(MoldBlockEntity moldBlockEntity) {
         ItemStack stack = new ItemStack(this);
         CompoundTag nbt = stack.getOrCreateTag();
         nbt.putUUID("UUID", UUID.randomUUID());
         CompoundTag blockEntityNbt = new CompoundTag();
         nbt.put(BlockItem.BLOCK_ENTITY_TAG, blockEntityNbt);
-        blockEntityNbt.put(SandMoldBlockEntity.TOOL_MODULES_TAG, sandMoldBlockEntity.getToolModulesNbt().copy());
+        blockEntityNbt.put(MoldBlockEntity.TOOL_MODULES_TAG, moldBlockEntity.getToolModulesNbt().copy());
         return stack;
     }
 
