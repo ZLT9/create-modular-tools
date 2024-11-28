@@ -185,5 +185,5 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         }
     }
 
-    protected abstract ModularToolItem getModularTool();
+    public abstract ModularToolItem getModularTool();
 }
