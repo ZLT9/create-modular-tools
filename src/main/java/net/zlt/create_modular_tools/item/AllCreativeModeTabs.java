@@ -41,6 +41,7 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.MOLTEN_DIAMOND_BUCKET);
 
             entries.accept(AllMoldItems.SAND_MOLD);
+            entries.accept(AllMoldItems.RED_SAND_MOLD);
 
             entries.accept(AllItems.WOODEN_TOOL_HANDLE);
             entries.accept(AllItems.OAK_TOOL_HANDLE);

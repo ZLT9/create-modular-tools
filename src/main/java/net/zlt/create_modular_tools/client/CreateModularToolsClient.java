@@ -78,7 +78,15 @@ public class CreateModularToolsClient implements ClientModInitializer {
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_SAND_MOLD, AxeSandMoldRenderer::new);
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_SAND_MOLD, HoeSandMoldRenderer::new);
 
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutoutMipped(), AllMoldBlocks.SAND_MOLD, AllMoldBlocks.SWORD_SAND_MOLD, AllMoldBlocks.SHOVEL_SAND_MOLD, AllMoldBlocks.PICKAXE_SAND_MOLD, AllMoldBlocks.AXE_SAND_MOLD, AllMoldBlocks.HOE_SAND_MOLD);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutoutMipped(),
+            AllMoldBlocks.SAND_MOLD,
+            AllMoldBlocks.RED_SAND_MOLD,
+            AllMoldBlocks.SWORD_SAND_MOLD,
+            AllMoldBlocks.SHOVEL_SAND_MOLD,
+            AllMoldBlocks.PICKAXE_SAND_MOLD,
+            AllMoldBlocks.AXE_SAND_MOLD,
+            AllMoldBlocks.HOE_SAND_MOLD
+        );
 
         FluidRenderHandlerRegistry.INSTANCE.register(AllFluids.MOLTEN_IRON, AllFluids.FLOWING_MOLTEN_IRON, new SimpleFluidRenderHandler(CreateModularTools.asResource("block/molten_iron_still"), CreateModularTools.asResource("block/molten_iron_flow")));
         FluidRenderHandlerRegistry.INSTANCE.register(AllFluids.MOLTEN_COPPER, AllFluids.FLOWING_MOLTEN_COPPER, new SimpleFluidRenderHandler(CreateModularTools.asResource("block/molten_copper_still"), CreateModularTools.asResource("block/molten_copper_flow")));

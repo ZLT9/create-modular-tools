@@ -12,6 +12,7 @@ public final class AllMoldItems {
     }
 
     public static final Item SAND_MOLD = register("sand_mold", new BlockItem(AllMoldBlocks.SAND_MOLD, new Item.Properties()));
+    public static final Item RED_SAND_MOLD = register("red_sand_mold", new BlockItem(AllMoldBlocks.RED_SAND_MOLD, new Item.Properties()));
 
     public static final Item SWORD_SAND_MOLD = register("sword_sand_mold", new SwordSandMoldItem(AllMoldBlocks.SWORD_SAND_MOLD, new Item.Properties().stacksTo(1)));
     public static final Item SHOVEL_SAND_MOLD = register("shovel_sand_mold", new ShovelSandMoldItem(AllMoldBlocks.SHOVEL_SAND_MOLD, new Item.Properties().stacksTo(1)));
