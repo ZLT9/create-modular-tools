@@ -36,7 +36,7 @@ import java.util.*;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseSandMoldItem extends BlockItem {
+public class BaseSandMoldItem extends BlockItem {
     public BaseSandMoldItem(Block block, Properties properties) {
         super(block, properties);
     }
