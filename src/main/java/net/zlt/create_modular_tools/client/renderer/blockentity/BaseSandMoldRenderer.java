@@ -38,7 +38,6 @@ import java.util.*;
 @MethodsReturnNonnullByDefault
 public abstract class BaseSandMoldRenderer<T extends SandMoldBlockEntity> implements BlockEntityRenderer<T> {
     private static final ModelPart TOP = createInteriorLayer().bakeRoot();
-    private static final Material BASE_MATERIAL = new Material(InventoryMenu.BLOCK_ATLAS, new ResourceLocation("minecraft", "block/sand"));
     private static final Map<ResourceLocation, Material> MATERIALS = new HashMap<>();
 
     @Override
@@ -100,7 +99,7 @@ public abstract class BaseSandMoldRenderer<T extends SandMoldBlockEntity> implem
         poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValue(MoldBlock.FACING).toYRot()));
         poseStack.translate(-0.5, 0.1875, -0.5);
 
-        TOP.render(poseStack, BASE_MATERIAL.buffer(buffer, resourceLocation -> RenderType.cutout(), isEnchanted), packedLight, packedOverlay);
+        TOP.render(poseStack, getBaseMaterial().buffer(buffer, resourceLocation -> RenderType.cutout(), isEnchanted), packedLight, packedOverlay);
 
         for (ResourceLocation toolModuleId : absentToolModuleIds) {
             TOP.render(poseStack, getMaterial(toolModuleId).buffer(buffer, resourceLocation -> RenderType.cutout()), packedLight, packedOverlay);
@@ -126,4 +125,6 @@ public abstract class BaseSandMoldRenderer<T extends SandMoldBlockEntity> implem
     }
 
     protected abstract BaseMoldBlock getMoldBlock();
+
+    protected abstract Material getBaseMaterial();
 }
