@@ -34,7 +34,7 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseMoldBlock extends SandMoldBlock implements EntityBlock {
+public abstract class BaseMoldBlock extends MoldBlock implements EntityBlock {
     public BaseMoldBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState().setValue(LIGHT_LEVEL, 0));
@@ -173,6 +173,31 @@ public abstract class BaseMoldBlock extends SandMoldBlock implements EntityBlock
         return InteractionResult.PASS;
     }
 
+    @Override
+    protected MoldBlock getSwordMoldBlock() {
+        return getMoldBlock().getSwordMoldBlock();
+    }
+
+    @Override
+    protected MoldBlock getShovelMoldBlock() {
+        return getMoldBlock().getShovelMoldBlock();
+    }
+
+    @Override
+    protected MoldBlock getPickaxeMoldBlock() {
+        return getMoldBlock().getPickaxeMoldBlock();
+    }
+
+    @Override
+    protected MoldBlock getAxeMoldBlock() {
+        return getMoldBlock().getAxeMoldBlock();
+    }
+
+    @Override
+    protected MoldBlock getHoeMoldBlock() {
+        return getMoldBlock().getHoeMoldBlock();
+    }
+
     public static void playMoldSlotSound(Level level, BlockPos pos, @Nullable Player player, boolean isReplacing, @Nullable CompoundTag previousContentsNbt) {
         level.playSound(player, pos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 0.25f, 0.8f);
 
@@ -186,4 +211,6 @@ public abstract class BaseMoldBlock extends SandMoldBlock implements EntityBlock
     }
 
     public abstract ModularToolItem getModularTool();
+
+    protected abstract MoldBlock getMoldBlock();
 }
