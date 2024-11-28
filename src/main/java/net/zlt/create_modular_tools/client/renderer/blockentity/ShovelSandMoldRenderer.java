@@ -13,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class ShovelSandMoldRenderer extends BaseMoldRenderer<ShovelSandMoldBlockEntity> {
+public class ShovelSandMoldRenderer extends BaseSandMoldRenderer<ShovelSandMoldBlockEntity> {
     public ShovelSandMoldRenderer(BlockEntityRendererProvider.Context context) {
     }
 

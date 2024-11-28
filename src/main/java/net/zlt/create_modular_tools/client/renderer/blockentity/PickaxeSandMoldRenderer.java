@@ -13,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class PickaxeSandMoldRenderer extends BaseMoldRenderer<PickaxeSandMoldBlockEntity> {
+public class PickaxeSandMoldRenderer extends BaseSandMoldRenderer<PickaxeSandMoldBlockEntity> {
     public PickaxeSandMoldRenderer(BlockEntityRendererProvider.Context context) {
     }
 
