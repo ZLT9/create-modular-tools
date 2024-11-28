@@ -24,15 +24,13 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.Utils;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.client.MoldModelUtils;
-import net.zlt.create_modular_tools.item.tool.ModularToolItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -124,15 +122,11 @@ public abstract class BaseSandMoldItemDynamicBakedModel implements BakedModel {
         int[] topQuadVertices = Utils.copyArray(INTERIOR_TOP_QUAD.getVertices());
         BakedQuad topQuad = new BakedQuad(topQuadVertices, INTERIOR_TOP_QUAD.getTintIndex(), Direction.UP, INTERIOR_TOP_QUAD.getSprite(), INTERIOR_TOP_QUAD.isShade());
 
-        MoldModelUtils.forEachMoldTopTexture(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
+        MoldModelUtils.forEachMoldTopTexture(MoldRegistry.getCompatible(getMoldBlock().getModularTool()), toolModulesNbt, getMoldBlock(), getMoldBlock().getModularTool(), id -> {
             Utils.setBakedQuadUV(topQuadVertices, SPRITE_GETTER.apply(new Material(InventoryMenu.BLOCK_ATLAS, id)), Direction.NORTH);
             emitter.fromVanilla(topQuad, MATERIAL_CUTOUT_MIPPED, Direction.UP).emit();
         });
     }
 
-    protected abstract Collection<ToolModuleType> getCompatible();
-
-    protected abstract SandMoldBlock getMoldBlock();
-
-    protected abstract ModularToolItem getModularTool();
+    protected abstract BaseSandMoldBlock getMoldBlock();
 }
