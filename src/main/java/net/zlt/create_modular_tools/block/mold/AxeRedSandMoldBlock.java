@@ -4,7 +4,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.zlt.create_modular_tools.block.entity.mold.AxeSandMoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.AxeRedSandMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.AllModularTools;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +21,7 @@ public class AxeRedSandMoldBlock extends BaseMoldBlock {
     @Override
     @Nullable
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new AxeSandMoldBlockEntity(pos, state);
+        return new AxeRedSandMoldBlockEntity(pos, state);
     }
 
     @Override
