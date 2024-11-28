@@ -20,6 +20,12 @@ public final class AllMoldItems {
     public static final Item AXE_SAND_MOLD = register("axe_sand_mold", new BaseSandMoldItem(AllMoldBlocks.AXE_SAND_MOLD, new Item.Properties().stacksTo(1)));
     public static final Item HOE_SAND_MOLD = register("hoe_sand_mold", new BaseSandMoldItem(AllMoldBlocks.HOE_SAND_MOLD, new Item.Properties().stacksTo(1)));
 
+    public static final Item SWORD_RED_SAND_MOLD = register("sword_red_sand_mold", new BaseSandMoldItem(AllMoldBlocks.SWORD_RED_SAND_MOLD, new Item.Properties().stacksTo(1)));
+    public static final Item SHOVEL_RED_SAND_MOLD = register("shovel_red_sand_mold", new BaseSandMoldItem(AllMoldBlocks.SHOVEL_RED_SAND_MOLD, new Item.Properties().stacksTo(1)));
+    public static final Item PICKAXE_RED_SAND_MOLD = register("pickaxe_red_sand_mold", new BaseSandMoldItem(AllMoldBlocks.PICKAXE_RED_SAND_MOLD, new Item.Properties().stacksTo(1)));
+    public static final Item AXE_RED_SAND_MOLD = register("axe_red_sand_mold", new BaseSandMoldItem(AllMoldBlocks.AXE_RED_SAND_MOLD, new Item.Properties().stacksTo(1)));
+    public static final Item HOE_RED_SAND_MOLD = register("hoe_red_sand_mold", new BaseSandMoldItem(AllMoldBlocks.HOE_RED_SAND_MOLD, new Item.Properties().stacksTo(1)));
+
     private static Item register(String path, Item item) {
         return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(path), item);
     }
