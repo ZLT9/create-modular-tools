@@ -14,11 +14,10 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.Utils;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.client.MoldModelUtils;
-import net.zlt.create_modular_tools.item.tool.ModularToolItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
-import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -76,7 +75,7 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
             return createOverride(quads);
         }
 
-        MoldModelUtils.forEachMoldTopTexture(getCompatible(), toolModulesNbt, getMoldBlock(), getModularTool(), id -> {
+        MoldModelUtils.forEachMoldTopTexture(MoldRegistry.getCompatible(getMoldBlock().getModularTool()), toolModulesNbt, getMoldBlock(), getMoldBlock().getModularTool(), id -> {
             int[] topQuadVertices = Utils.copyArray(interiorTopQuad.getVertices());
             Utils.setBakedQuadUV(topQuadVertices, spriteGetter.apply(new Material(InventoryMenu.BLOCK_ATLAS, id)), Direction.NORTH);
             quads.add(new BakedQuad(topQuadVertices, interiorTopQuad.getTintIndex(), Direction.UP, interiorTopQuad.getSprite(), interiorTopQuad.isShade()));
@@ -99,9 +98,5 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
 
     protected abstract BakedModel createDynamic(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter);
 
-    protected abstract Collection<ToolModuleType> getCompatible();
-
-    protected abstract SandMoldBlock getMoldBlock();
-
-    protected abstract ModularToolItem getModularTool();
+    protected abstract BaseSandMoldBlock getMoldBlock();
 }
