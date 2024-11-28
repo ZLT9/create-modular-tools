@@ -23,6 +23,7 @@ import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.fluid.MoltenMetalFluid;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
@@ -151,7 +152,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
 
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
-            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType)) {
+            if (toolModuleType == null || !MoldRegistry.isCompatible(moldBlock.getModularTool(), toolModuleType)) {
                 continue;
             }
 
