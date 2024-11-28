@@ -52,7 +52,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
 
         Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         Set<MutableComponent> resultFeatures = new HashSet<>();
-        for (ToolModuleType toolModuleType : getCompatibleToolModuleTypes()) {
+        for (ToolModuleType toolModuleType : MoldRegistry.getCompatible(((BaseSandMoldBlock) getBlock()).getModularTool())) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
                 continue;
@@ -126,7 +126,7 @@ public abstract class BaseSandMoldItem extends BlockItem {
         CompoundTag toolModulesNbt = new CompoundTag();
         blockEntityNbt.put(SandMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
 
-        for (ToolModuleType toolModuleType : getRequiredToolModuleTypes()) {
+        for (ToolModuleType toolModuleType : MoldRegistry.getRequired(((BaseSandMoldBlock) getBlock()).getModularTool())) {
             CompoundTag slotNbt = new CompoundTag();
             slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
             toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
@@ -164,10 +164,6 @@ public abstract class BaseSandMoldItem extends BlockItem {
 
         return false;
     }
-
-    protected abstract Collection<ToolModuleType> getRequiredToolModuleTypes();
-
-    protected abstract Collection<ToolModuleType> getCompatibleToolModuleTypes();
 
     public static boolean canBeFilledWith(@Nullable Fluid fluid) {
         return fluid instanceof MoltenMetalFluid || fluid == Fluids.LAVA;
