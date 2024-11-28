@@ -57,7 +57,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
             CompoundTag toolModulesNbt = sandMoldBlockEntity.getToolModulesNbt();
 
             if (stack.getItem() instanceof ToolModuleItem toolModule) {
-                if (!sandMoldBlockEntity.isCompatible(toolModule.getType())) {
+                if (!MoldRegistry.isCompatible(getModularTool(), toolModule.getType())) {
                     return InteractionResult.PASS;
                 }
 
