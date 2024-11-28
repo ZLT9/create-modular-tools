@@ -611,7 +611,7 @@ public class CreateModularToolsClient implements ClientModInitializer {
     }
 
     private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, Set<BaseMoldBlock> moldBlocks, ToolModuleType toolModuleType, ResourceLocation textureId) {
-        moldTopTexture.registerTextureIdGetter((original, moldBlock, nbt) -> original == null && moldBlocks.contains(moldBlock) && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString("state")) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
+        moldTopTexture.registerTextureIdGetter((original, baseMoldBlock, nbt) -> original == null && moldBlocks.contains(baseMoldBlock) && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString("state")) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
     }
 
     private static void registerFullMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, FlowingFluid fluid, ResourceLocation textureId) {
