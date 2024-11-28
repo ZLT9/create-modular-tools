@@ -15,6 +15,7 @@ public final class MoldRegistry {
 
     public static void addRequired(ModularToolItem modularTool, ToolModuleType... toolModuleTypes) {
         Collections.addAll(REQUIRED_TOOL_MODULE_TYPES.computeIfAbsent(modularTool, modularToolItem -> new HashSet<>()), toolModuleTypes);
+        addCompatible(modularTool, toolModuleTypes);
     }
 
     public static void addCompatible(ModularToolItem modularTool, ToolModuleType... toolModuleTypes) {
