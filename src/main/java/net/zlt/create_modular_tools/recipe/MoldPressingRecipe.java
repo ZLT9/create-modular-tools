@@ -26,6 +26,7 @@ import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
@@ -63,7 +64,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
-            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType) || !modularTool.isCompatible(toolModuleType)) {
+            if (toolModuleType == null || !MoldRegistry.isCompatible(moldBlock.getModularTool(), toolModuleType) || !modularTool.isCompatible(toolModuleType)) {
                 continue;
             }
 
@@ -155,7 +156,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
-            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType) || !modularTool.isCompatible(toolModuleType)) {
+            if (toolModuleType == null || !MoldRegistry.isCompatible(moldBlock.getModularTool(), toolModuleType) || !modularTool.isCompatible(toolModuleType)) {
                 continue;
             }
 
