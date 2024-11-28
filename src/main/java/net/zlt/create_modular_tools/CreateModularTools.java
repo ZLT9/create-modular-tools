@@ -12,7 +12,7 @@ import net.zlt.create_modular_tools.block.AllSoundTypes;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.block.mold.AllMoldTopTextures;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
@@ -199,15 +199,15 @@ public class CreateModularTools implements ModInitializer {
         toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null ? moldTopTexture : original);
     }
 
-    private static void registerMoldTopTextureGetterForMold(ToolModuleType toolModuleType, SandMoldBlock moldBlock, ToolModuleType.MoldTopTexture moldTopTexture) {
+    private static void registerMoldTopTextureGetterForMold(ToolModuleType toolModuleType, MoldBlock moldBlock, ToolModuleType.MoldTopTexture moldTopTexture) {
         toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock ? moldTopTexture : original);
     }
 
-    private static void registerMoldTopTextureGetterForMoldWithModule(ToolModuleType toolModuleType, SandMoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
+    private static void registerMoldTopTextureGetterForMoldWithModule(ToolModuleType toolModuleType, MoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
         toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
     }
 
-    private static void registerMoldTopTextureGetterForMoldWithoutModule(ToolModuleType toolModuleType, SandMoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
+    private static void registerMoldTopTextureGetterForMoldWithoutModule(ToolModuleType toolModuleType, MoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
         toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && !nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
     }
 }

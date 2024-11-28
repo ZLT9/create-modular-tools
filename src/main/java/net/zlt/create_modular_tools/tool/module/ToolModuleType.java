@@ -7,7 +7,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -21,7 +21,7 @@ public class ToolModuleType {
     private final String TAG;
     private final int LAYER;
     private final long REQUIRED_MOLTEN_METAL_AMOUNT;
-    private final List<TriFunction<@Nullable MoldTopTexture, SandMoldBlock, CompoundTag, @Nullable MoldTopTexture>> MOLD_TOP_TEXTURE_GETTERS = new ArrayList<>();
+    private final List<TriFunction<@Nullable MoldTopTexture, MoldBlock, CompoundTag, @Nullable MoldTopTexture>> MOLD_TOP_TEXTURE_GETTERS = new ArrayList<>();
 
     public ToolModuleType(Component name, String tag, int layer, long requiredMoltenMetalAmount) {
         NAME = name;
@@ -42,14 +42,14 @@ public class ToolModuleType {
         return LAYER;
     }
 
-    public void registerMoldTopTextureGetter(TriFunction<@Nullable MoldTopTexture, SandMoldBlock, CompoundTag, MoldTopTexture> moldTopTextureGetter) {
+    public void registerMoldTopTextureGetter(TriFunction<@Nullable MoldTopTexture, MoldBlock, CompoundTag, MoldTopTexture> moldTopTextureGetter) {
         MOLD_TOP_TEXTURE_GETTERS.add(moldTopTextureGetter);
     }
 
     @Nullable
-    public MoldTopTexture getMoldTopTexture(SandMoldBlock moldBlock, CompoundTag moldNbt) {
+    public MoldTopTexture getMoldTopTexture(MoldBlock moldBlock, CompoundTag moldNbt) {
         MoldTopTexture moldTopTexture = null;
-        for (TriFunction<@Nullable MoldTopTexture, SandMoldBlock, CompoundTag, @Nullable MoldTopTexture> moldTopTextureGetter : MOLD_TOP_TEXTURE_GETTERS) {
+        for (TriFunction<@Nullable MoldTopTexture, MoldBlock, CompoundTag, @Nullable MoldTopTexture> moldTopTextureGetter : MOLD_TOP_TEXTURE_GETTERS) {
             moldTopTexture = moldTopTextureGetter.apply(moldTopTexture, moldBlock, moldNbt);
         }
         return moldTopTexture;
@@ -60,22 +60,22 @@ public class ToolModuleType {
     }
 
     public static class MoldTopTexture {
-        private final List<TriFunction<@Nullable ResourceLocation, SandMoldBlock, CompoundTag, @Nullable ResourceLocation>> TEXTURE_ID_GETTERS = new ArrayList<>();
+        private final List<TriFunction<@Nullable ResourceLocation, MoldBlock, CompoundTag, @Nullable ResourceLocation>> TEXTURE_ID_GETTERS = new ArrayList<>();
 
         public boolean clicked(int x, int y) {
             return false;
         }
 
         @Environment(EnvType.CLIENT)
-        public void registerTextureIdGetter(TriFunction<@Nullable ResourceLocation, SandMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter) {
+        public void registerTextureIdGetter(TriFunction<@Nullable ResourceLocation, MoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter) {
             TEXTURE_ID_GETTERS.add(textureIdGetter);
         }
 
         @Environment(EnvType.CLIENT)
         @Nullable
-        public ResourceLocation getTextureId(SandMoldBlock sandMoldBlock, CompoundTag moldNbt) {
+        public ResourceLocation getTextureId(MoldBlock sandMoldBlock, CompoundTag moldNbt) {
             ResourceLocation id = null;
-            for (TriFunction<@Nullable ResourceLocation, SandMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter : TEXTURE_ID_GETTERS) {
+            for (TriFunction<@Nullable ResourceLocation, MoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter : TEXTURE_ID_GETTERS) {
                 id = textureIdGetter.apply(id, sandMoldBlock, moldNbt);
             }
             return id;

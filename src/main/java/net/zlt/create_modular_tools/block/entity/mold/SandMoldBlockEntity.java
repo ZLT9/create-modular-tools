@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -263,8 +263,8 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
         lightLevel = Math.min(15, lightLevel);
 
         BlockState blockState = getBlockState();
-        if (blockState.getValue(SandMoldBlock.LIGHT_LEVEL) != lightLevel) {
-            level.setBlock(getBlockPos(), getBlockState().setValue(SandMoldBlock.LIGHT_LEVEL, lightLevel), 23);
+        if (blockState.getValue(MoldBlock.LIGHT_LEVEL) != lightLevel) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(MoldBlock.LIGHT_LEVEL, lightLevel), 23);
         }
     }
 

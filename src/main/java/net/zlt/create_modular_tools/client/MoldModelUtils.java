@@ -5,7 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -25,7 +25,7 @@ public final class MoldModelUtils {
     private MoldModelUtils() {
     }
 
-    public static void forEachMoldTopTexture(Collection<ToolModuleType> compatibleToolModuleTypes, CompoundTag toolModulesNbt, SandMoldBlock sandMoldBlock, ModularToolItem modularTool, Consumer<ResourceLocation> action) {
+    public static void forEachMoldTopTexture(Collection<ToolModuleType> compatibleToolModuleTypes, CompoundTag toolModulesNbt, MoldBlock sandMoldBlock, ModularToolItem modularTool, Consumer<ResourceLocation> action) {
         List<ResourceLocation> existingToolModuleIds = new ArrayList<>();
 
         for (ToolModuleType toolModuleType : compatibleToolModuleTypes) {
