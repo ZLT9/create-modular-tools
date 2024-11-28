@@ -10,7 +10,9 @@ import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.block.AllSoundTypes;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
-import net.zlt.create_modular_tools.block.mold.*;
+import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
+import net.zlt.create_modular_tools.block.mold.AllMoldTopTextures;
+import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
@@ -19,6 +21,7 @@ import net.zlt.create_modular_tools.item.AllItemTags;
 import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.item.mold.AllMoldItems;
 import net.zlt.create_modular_tools.loot.function.AllLootItemFunctionTypes;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.sound.AllSoundEvents;
 import net.zlt.create_modular_tools.tool.AllModularTools;
@@ -60,20 +63,20 @@ public class CreateModularTools implements ModInitializer {
         AllEntityTypes.init();
         AllCriterionTriggers.init();
 
-        SwordSandMoldBlock.addRequired(AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.SWORD_BLADE);
-        SwordSandMoldBlock.addCompatible(AllToolModuleTypes.SWORD_POMMEL, AllToolModuleTypes.SWORD_GUARD);
+        MoldRegistry.addRequired(AllModularTools.SWORD, AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.SWORD_BLADE);
+        MoldRegistry.addCompatible(AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleTypes.SWORD_GUARD);
 
-        ShovelSandMoldBlock.addRequired(AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.SHOVEL_HEAD);
-        ShovelSandMoldBlock.addCompatible(AllToolModuleTypes.TOOL_GRIP);
+        MoldRegistry.addRequired(AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.SHOVEL_HEAD);
+        MoldRegistry.addCompatible(AllModularTools.SHOVEL, AllToolModuleTypes.TOOL_GRIP);
 
-        PickaxeSandMoldBlock.addRequired(AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.PICKAXE_HEAD);
-        PickaxeSandMoldBlock.addCompatible(AllToolModuleTypes.TOOL_GRIP);
+        MoldRegistry.addRequired(AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.PICKAXE_HEAD);
+        MoldRegistry.addCompatible(AllModularTools.PICKAXE, AllToolModuleTypes.TOOL_GRIP);
 
-        AxeSandMoldBlock.addRequired(AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.AXE_HEAD);
-        AxeSandMoldBlock.addCompatible(AllToolModuleTypes.TOOL_GRIP);
+        MoldRegistry.addRequired(AllModularTools.AXE, AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.AXE_HEAD);
+        MoldRegistry.addCompatible(AllModularTools.AXE, AllToolModuleTypes.TOOL_GRIP);
 
-        HoeSandMoldBlock.addRequired(AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.HOE_HEAD);
-        HoeSandMoldBlock.addCompatible(AllToolModuleTypes.TOOL_GRIP);
+        MoldRegistry.addRequired(AllModularTools.HOE, AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.HOE_HEAD);
+        MoldRegistry.addCompatible(AllModularTools.HOE, AllToolModuleTypes.TOOL_GRIP);
 
         ToolModuleRecipeRegistry.register(AllToolModuleTypes.SWORD_BLADE, Fluids.LAVA, AllToolModules.STONE_SWORD_BLADE);
         ToolModuleRecipeRegistry.register(AllToolModuleTypes.SWORD_BLADE, AllFluids.MOLTEN_IRON, AllToolModules.IRON_SWORD_BLADE);
