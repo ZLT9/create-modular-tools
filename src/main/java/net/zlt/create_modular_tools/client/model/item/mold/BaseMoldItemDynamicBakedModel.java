@@ -38,14 +38,14 @@ import java.util.function.Supplier;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseSandMoldItemDynamicBakedModel implements BakedModel {
+public abstract class BaseMoldItemDynamicBakedModel implements BakedModel {
     private static final RenderMaterial MATERIAL_CUTOUT_MIPPED = RendererAccess.INSTANCE.getRenderer().materialFinder().blendMode(BlendMode.CUTOUT_MIPPED).find();
 
     private final BakedModel BASE_SAND_MOLD_MODEL;
     private final BakedQuad INTERIOR_TOP_QUAD;
     private final Function<Material, TextureAtlasSprite> SPRITE_GETTER;
 
-    public BaseSandMoldItemDynamicBakedModel(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
+    public BaseMoldItemDynamicBakedModel(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
         BASE_SAND_MOLD_MODEL = baseSandMoldModel;
         INTERIOR_TOP_QUAD = interiorTopQuad;
         SPRITE_GETTER = spriteGetter;
@@ -78,7 +78,7 @@ public abstract class BaseSandMoldItemDynamicBakedModel implements BakedModel {
 
     @Override
     public TextureAtlasSprite getParticleIcon() {
-        return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(new ResourceLocation("minecraft", "block/sand"));
+        return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(getTopTextureId());
     }
 
     @Override
@@ -129,4 +129,6 @@ public abstract class BaseSandMoldItemDynamicBakedModel implements BakedModel {
     }
 
     protected abstract BaseMoldBlock getMoldBlock();
+
+    protected abstract ResourceLocation getTopTextureId();
 }

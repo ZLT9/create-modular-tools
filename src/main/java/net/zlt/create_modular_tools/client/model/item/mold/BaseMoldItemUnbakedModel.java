@@ -88,11 +88,11 @@ public abstract class BaseMoldItemUnbakedModel implements UnbakedModel {
     }
 
     protected BakedModel createBaked(BaseMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
-        return new BaseSandMoldItemBakedModel(unbakedModel, baseSandMoldModel, interiorTopQuad, spriteGetter);
+        return new BaseMoldItemBakedModel(unbakedModel, baseSandMoldModel, interiorTopQuad, spriteGetter);
     }
 
     protected BakedModel createOverride(List<BakedQuad> quads) {
-        return new BaseSandMoldItemBakedModel(quads);
+        return new BaseMoldItemBakedModel(quads);
     }
 
     protected abstract BakedModel createDynamic(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter);
