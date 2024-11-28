@@ -33,6 +33,7 @@ import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.sound.AllSoundEvents;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 
@@ -204,7 +205,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
 
         BlockPos blockPos = result.getBlockPos();
         BlockEntity blockEntity = level().getBlockEntity(blockPos);
-        if (!(blockEntity instanceof SandMoldBlockEntity sandMoldBlockEntity) || !sandMoldBlockEntity.isCompatible(TOOL_MODULE.getType())) {
+        if (!(blockEntity instanceof SandMoldBlockEntity sandMoldBlockEntity) || !MoldRegistry.isCompatible(sandMoldBlockEntity.getModularTool(), TOOL_MODULE.getType())) {
             return;
         }
 
