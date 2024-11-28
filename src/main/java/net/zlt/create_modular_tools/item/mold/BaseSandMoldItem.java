@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.fluid.MoltenMetalFluid;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
@@ -52,7 +52,7 @@ public class BaseSandMoldItem extends BlockItem {
 
         Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         Set<MutableComponent> resultFeatures = new HashSet<>();
-        for (ToolModuleType toolModuleType : MoldRegistry.getCompatible(((BaseSandMoldBlock) getBlock()).getModularTool())) {
+        for (ToolModuleType toolModuleType : MoldRegistry.getCompatible(((BaseMoldBlock) getBlock()).getModularTool())) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
                 continue;
@@ -126,7 +126,7 @@ public class BaseSandMoldItem extends BlockItem {
         CompoundTag toolModulesNbt = new CompoundTag();
         blockEntityNbt.put(SandMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
 
-        for (ToolModuleType toolModuleType : MoldRegistry.getRequired(((BaseSandMoldBlock) getBlock()).getModularTool())) {
+        for (ToolModuleType toolModuleType : MoldRegistry.getRequired(((BaseMoldBlock) getBlock()).getModularTool())) {
             CompoundTag slotNbt = new CompoundTag();
             slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
             toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
@@ -141,7 +141,7 @@ public class BaseSandMoldItem extends BlockItem {
             return true;
         }
 
-        if (!(getBlock() instanceof BaseSandMoldBlock moldBlock)) {
+        if (!(getBlock() instanceof BaseMoldBlock moldBlock)) {
             return false;
         }
 

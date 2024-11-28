@@ -12,24 +12,24 @@ public final class AllMoldBlocks {
     public static final MoldBlock SAND_MOLD = register("sand_mold", new SandMoldBlock(BlockBehaviour.Properties.of()));
     public static final MoldBlock RED_SAND_MOLD = register("red_sand_mold", new RedSandMoldBlock(BlockBehaviour.Properties.of()));
 
-    public static final BaseSandMoldBlock SWORD_SAND_MOLD = register("sword_sand_mold", new SwordSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock SHOVEL_SAND_MOLD = register("shovel_sand_mold", new ShovelSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock PICKAXE_SAND_MOLD = register("pickaxe_sand_mold", new PickaxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock AXE_SAND_MOLD = register("axe_sand_mold", new AxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock HOE_SAND_MOLD = register("hoe_sand_mold", new HoeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock SWORD_SAND_MOLD = register("sword_sand_mold", new SwordSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock SHOVEL_SAND_MOLD = register("shovel_sand_mold", new ShovelSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock PICKAXE_SAND_MOLD = register("pickaxe_sand_mold", new PickaxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock AXE_SAND_MOLD = register("axe_sand_mold", new AxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock HOE_SAND_MOLD = register("hoe_sand_mold", new HoeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
 
-    public static final BaseSandMoldBlock SWORD_RED_SAND_MOLD = register("sword_red_sand_mold", new SwordSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock SHOVEL_RED_SAND_MOLD = register("shovel_red_sand_mold", new ShovelSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock PICKAXE_RED_SAND_MOLD = register("pickaxe_red_sand_mold", new PickaxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock AXE_RED_SAND_MOLD = register("axe_red_sand_mold", new AxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
-    public static final BaseSandMoldBlock HOE_RED_SAND_MOLD = register("hoe_red_sand_mold", new HoeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock SWORD_RED_SAND_MOLD = register("sword_red_sand_mold", new SwordSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock SHOVEL_RED_SAND_MOLD = register("shovel_red_sand_mold", new ShovelSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock PICKAXE_RED_SAND_MOLD = register("pickaxe_red_sand_mold", new PickaxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock AXE_RED_SAND_MOLD = register("axe_red_sand_mold", new AxeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
+    public static final BaseMoldBlock HOE_RED_SAND_MOLD = register("hoe_red_sand_mold", new HoeSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
 
     private static MoldBlock register(String path, MoldBlock block) {
         return Registry.register(BuiltInRegistries.BLOCK, CreateModularTools.asResource(path), block);
     }
 
-    private static BaseSandMoldBlock register(String path, BaseSandMoldBlock block) {
-        return (BaseSandMoldBlock) register(path, (MoldBlock) block);
+    private static BaseMoldBlock register(String path, BaseMoldBlock block) {
+        return (BaseMoldBlock) register(path, (MoldBlock) block);
     }
 
     public static void init() {

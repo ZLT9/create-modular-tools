@@ -6,7 +6,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.zlt.create_modular_tools.block.entity.mold.HoeSandMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -18,7 +18,7 @@ public class HoeSandMoldRenderer extends BaseSandMoldRenderer<HoeSandMoldBlockEn
     }
 
     @Override
-    protected BaseSandMoldBlock getMoldBlock() {
+    protected BaseMoldBlock getMoldBlock() {
         return AllMoldBlocks.HOE_SAND_MOLD;
     }
 }

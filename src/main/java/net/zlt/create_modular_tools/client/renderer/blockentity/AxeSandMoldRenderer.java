@@ -6,7 +6,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.zlt.create_modular_tools.block.entity.mold.AxeSandMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -18,7 +18,7 @@ public class AxeSandMoldRenderer extends BaseSandMoldRenderer<AxeSandMoldBlockEn
     }
 
     @Override
-    protected BaseSandMoldBlock getMoldBlock() {
+    protected BaseMoldBlock getMoldBlock() {
         return AllMoldBlocks.AXE_SAND_MOLD;
     }
 }

@@ -24,7 +24,7 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.Utils;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.client.MoldModelUtils;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -128,5 +128,5 @@ public abstract class BaseSandMoldItemDynamicBakedModel implements BakedModel {
         });
     }
 
-    protected abstract BaseSandMoldBlock getMoldBlock();
+    protected abstract BaseMoldBlock getMoldBlock();
 }

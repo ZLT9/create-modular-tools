@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Function;
@@ -23,7 +23,7 @@ public class ShovelSandMoldItemUnbakedModel extends BaseSandMoldItemUnbakedModel
     }
 
     @Override
-    protected BaseSandMoldBlock getMoldBlock() {
+    protected BaseMoldBlock getMoldBlock() {
         return AllMoldBlocks.SHOVEL_SAND_MOLD;
     }
 }

@@ -23,7 +23,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
@@ -51,7 +51,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
     public ItemStack assemble(ItemStack input, RegistryAccess registryAccess) {
         ItemStack result = getResultItem(registryAccess).copy();
 
-        if (!(result.getItem() instanceof ModularToolItem modularTool) || !(input.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseSandMoldBlock moldBlock)) {
+        if (!(result.getItem() instanceof ModularToolItem modularTool) || !(input.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseMoldBlock moldBlock)) {
             return result;
         }
 
@@ -141,7 +141,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
 
         ItemStack input = container.getItem(0);
 
-        if (!(input.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseSandMoldBlock moldBlock) || !ingredients.get(0).test(input)) {
+        if (!(input.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseMoldBlock moldBlock) || !ingredients.get(0).test(input)) {
             return false;
         }
 

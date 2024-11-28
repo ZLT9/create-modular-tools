@@ -34,8 +34,8 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityBlock {
-    public BaseSandMoldBlock(Properties properties) {
+public abstract class BaseMoldBlock extends SandMoldBlock implements EntityBlock {
+    public BaseMoldBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState().setValue(LIGHT_LEVEL, 0));
     }

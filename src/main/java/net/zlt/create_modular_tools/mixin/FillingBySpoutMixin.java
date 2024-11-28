@@ -8,7 +8,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
@@ -61,7 +61,7 @@ public abstract class FillingBySpoutMixin {
             return;
         }
 
-        if (!(moldItem.getBlock() instanceof BaseSandMoldBlock moldBlock)) {
+        if (!(moldItem.getBlock() instanceof BaseMoldBlock moldBlock)) {
             return;
         }
 
@@ -95,7 +95,7 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "fillItem", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
     private static void createModularTools$fillItem(Level world, long requiredAmount, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<ItemStack> cir) {
-        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseSandMoldBlock moldBlock)) {
+        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseMoldBlock moldBlock)) {
             return;
         }
 

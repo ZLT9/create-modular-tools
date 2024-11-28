@@ -19,7 +19,7 @@ public final class MoldUtils {
             return false;
         }
 
-        BaseSandMoldBlock moldBlock = ((BaseSandMoldBlock) ((BaseSandMoldItem) moldStack.getItem()).getBlock());
+        BaseMoldBlock moldBlock = ((BaseMoldBlock) ((BaseSandMoldItem) moldStack.getItem()).getBlock());
 
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);

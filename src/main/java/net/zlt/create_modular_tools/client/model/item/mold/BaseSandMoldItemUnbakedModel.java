@@ -14,7 +14,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.Utils;
-import net.zlt.create_modular_tools.block.mold.BaseSandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.client.MoldModelUtils;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -98,5 +98,5 @@ public abstract class BaseSandMoldItemUnbakedModel implements UnbakedModel {
 
     protected abstract BakedModel createDynamic(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter);
 
-    protected abstract BaseSandMoldBlock getMoldBlock();
+    protected abstract BaseMoldBlock getMoldBlock();
 }
