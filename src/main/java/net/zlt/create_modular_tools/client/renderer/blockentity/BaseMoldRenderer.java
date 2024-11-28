@@ -36,7 +36,7 @@ import java.util.*;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseSandMoldRenderer<T extends SandMoldBlockEntity> implements BlockEntityRenderer<T> {
+public abstract class BaseMoldRenderer<T extends SandMoldBlockEntity> implements BlockEntityRenderer<T> {
     private static final ModelPart TOP = createInteriorLayer().bakeRoot();
     private static final Map<ResourceLocation, Material> MATERIALS = new HashMap<>();
 
