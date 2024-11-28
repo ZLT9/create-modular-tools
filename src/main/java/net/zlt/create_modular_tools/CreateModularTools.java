@@ -29,6 +29,8 @@ import net.zlt.create_modular_tools.tool.module.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Set;
+
 public class CreateModularTools implements ModInitializer {
     public static final String ID = "create_modular_tools";
     public static final String NAME = "Create: Modular Tools";
@@ -169,20 +171,25 @@ public class CreateModularTools implements ModInitializer {
 
         registerMoldTopTextureGetter(AllToolModuleTypes.HOE_HEAD, AllMoldTopTextures.HOE_HEAD);
 
-        registerMoldTopTextureGetterForMoldWithoutModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.SWORD_SAND_MOLD, AllToolModuleTypes.SWORD_POMMEL, AllMoldTopTextures.SWORD_HANDLE);
-        registerMoldTopTextureGetterForMoldWithModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.SWORD_SAND_MOLD, AllToolModuleTypes.SWORD_POMMEL, AllMoldTopTextures.POMMEL_SWORD_HANDLE);
+        Set<MoldBlock> swordMolds = Set.of(AllMoldBlocks.SWORD_SAND_MOLD, AllMoldBlocks.SWORD_RED_SAND_MOLD);
+        registerMoldTopTextureGetterForMoldsWithoutModule(AllToolModuleTypes.TOOL_HANDLE, swordMolds, AllToolModuleTypes.SWORD_POMMEL, AllMoldTopTextures.SWORD_HANDLE);
+        registerMoldTopTextureGetterForMoldsWithModule(AllToolModuleTypes.TOOL_HANDLE, swordMolds, AllToolModuleTypes.SWORD_POMMEL, AllMoldTopTextures.POMMEL_SWORD_HANDLE);
 
-        registerMoldTopTextureGetterForMoldWithoutModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.SHOVEL_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.SHOVEL_HANDLE);
-        registerMoldTopTextureGetterForMoldWithModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.SHOVEL_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_SHOVEL_HANDLE);
+        Set<MoldBlock> shovelMolds = Set.of(AllMoldBlocks.SHOVEL_SAND_MOLD, AllMoldBlocks.SHOVEL_RED_SAND_MOLD);
+        registerMoldTopTextureGetterForMoldsWithoutModule(AllToolModuleTypes.TOOL_HANDLE, shovelMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.SHOVEL_HANDLE);
+        registerMoldTopTextureGetterForMoldsWithModule(AllToolModuleTypes.TOOL_HANDLE, shovelMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_SHOVEL_HANDLE);
 
-        registerMoldTopTextureGetterForMoldWithoutModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.PICKAXE_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.PICKAXE_HANDLE);
-        registerMoldTopTextureGetterForMoldWithModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.PICKAXE_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_PICKAXE_HANDLE);
+        Set<MoldBlock> pickaxeMolds = Set.of(AllMoldBlocks.PICKAXE_SAND_MOLD, AllMoldBlocks.PICKAXE_RED_SAND_MOLD);
+        registerMoldTopTextureGetterForMoldsWithoutModule(AllToolModuleTypes.TOOL_HANDLE, pickaxeMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.PICKAXE_HANDLE);
+        registerMoldTopTextureGetterForMoldsWithModule(AllToolModuleTypes.TOOL_HANDLE, pickaxeMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_PICKAXE_HANDLE);
 
-        registerMoldTopTextureGetterForMoldWithoutModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.AXE_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.AXE_HANDLE);
-        registerMoldTopTextureGetterForMoldWithModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.AXE_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_AXE_HANDLE);
+        Set<MoldBlock> axeMolds = Set.of(AllMoldBlocks.AXE_SAND_MOLD, AllMoldBlocks.AXE_RED_SAND_MOLD);
+        registerMoldTopTextureGetterForMoldsWithoutModule(AllToolModuleTypes.TOOL_HANDLE, axeMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.AXE_HANDLE);
+        registerMoldTopTextureGetterForMoldsWithModule(AllToolModuleTypes.TOOL_HANDLE, axeMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_AXE_HANDLE);
 
-        registerMoldTopTextureGetterForMoldWithoutModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.HOE_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.HOE_HANDLE);
-        registerMoldTopTextureGetterForMoldWithModule(AllToolModuleTypes.TOOL_HANDLE, AllMoldBlocks.HOE_SAND_MOLD, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_HOE_HANDLE);
+        Set<MoldBlock> hoeMolds = Set.of(AllMoldBlocks.HOE_SAND_MOLD, AllMoldBlocks.HOE_RED_SAND_MOLD);
+        registerMoldTopTextureGetterForMoldsWithoutModule(AllToolModuleTypes.TOOL_HANDLE, hoeMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.HOE_HANDLE);
+        registerMoldTopTextureGetterForMoldsWithModule(AllToolModuleTypes.TOOL_HANDLE, hoeMolds, AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP_HOE_HANDLE);
 
         registerMoldTopTextureGetter(AllToolModuleTypes.TOOL_GRIP, AllMoldTopTextures.GRIP);
 
@@ -203,11 +210,11 @@ public class CreateModularTools implements ModInitializer {
         toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock ? moldTopTexture : original);
     }
 
-    private static void registerMoldTopTextureGetterForMoldWithModule(ToolModuleType toolModuleType, MoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
-        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
+    private static void registerMoldTopTextureGetterForMoldsWithModule(ToolModuleType toolModuleType, Set<MoldBlock> moldBlocks, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
+        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && moldBlocks.contains(sandMoldBlock) && nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
     }
 
-    private static void registerMoldTopTextureGetterForMoldWithoutModule(ToolModuleType toolModuleType, MoldBlock moldBlock, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
-        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && sandMoldBlock == moldBlock && !nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
+    private static void registerMoldTopTextureGetterForMoldsWithoutModule(ToolModuleType toolModuleType, Set<MoldBlock> moldBlocks, ToolModuleType otherToolModuleType, ToolModuleType.MoldTopTexture moldTopTexture) {
+        toolModuleType.registerMoldTopTextureGetter((original, sandMoldBlock, nbt) -> original == null && moldBlocks.contains(sandMoldBlock) && !nbt.contains(otherToolModuleType.getTag(), Tag.TAG_COMPOUND) ? moldTopTexture : original);
     }
 }
