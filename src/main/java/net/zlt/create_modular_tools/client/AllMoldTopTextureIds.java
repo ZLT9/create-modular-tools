@@ -15,7 +15,9 @@ public final class AllMoldTopTextureIds {
     private AllMoldTopTextureIds() {
     }
 
-    public static final ResourceLocation EMPTY_SWORD_BLADE = CreateModularTools.asResource("block/sand_mold_top/sword_blade/empty");
+    public static final ResourceLocation EMPTY_SAND_SWORD_BLADE = CreateModularTools.asResource("block/sand_mold_top/sword_blade/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_SWORD_BLADE = CreateModularTools.asResource("block/sand_mold_top/sword_blade/empty_red_sand");
 
     public static final ResourceLocation LAVA_SWORD_BLADE = CreateModularTools.asResource("block/sand_mold_top/sword_blade/lava");
 
@@ -33,7 +35,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_SWORD_BLADE = CreateModularTools.asResource("block/sand_mold_top/sword_blade/molten_diamond");
 
-    public static final ResourceLocation EMPTY_SHOVEL_HEAD = CreateModularTools.asResource("block/sand_mold_top/shovel_head/empty");
+    public static final ResourceLocation EMPTY_SAND_SHOVEL_HEAD = CreateModularTools.asResource("block/sand_mold_top/shovel_head/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_SHOVEL_HEAD = CreateModularTools.asResource("block/sand_mold_top/shovel_head/empty_red_sand");
 
     public static final ResourceLocation LAVA_SHOVEL_HEAD = CreateModularTools.asResource("block/sand_mold_top/shovel_head/lava");
 
@@ -51,7 +55,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_SHOVEL_HEAD = CreateModularTools.asResource("block/sand_mold_top/shovel_head/molten_diamond");
 
-    public static final ResourceLocation EMPTY_PICKAXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/pickaxe_head/empty");
+    public static final ResourceLocation EMPTY_SAND_PICKAXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/pickaxe_head/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_PICKAXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/pickaxe_head/empty_red_sand");
 
     public static final ResourceLocation LAVA_PICKAXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/pickaxe_head/lava");
 
@@ -69,7 +75,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_PICKAXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/pickaxe_head/molten_diamond");
 
-    public static final ResourceLocation EMPTY_AXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/axe_head/empty");
+    public static final ResourceLocation EMPTY_SAND_AXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/axe_head/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_AXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/axe_head/empty_red_sand");
 
     public static final ResourceLocation LAVA_AXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/axe_head/lava");
 
@@ -87,7 +95,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_AXE_HEAD = CreateModularTools.asResource("block/sand_mold_top/axe_head/molten_diamond");
 
-    public static final ResourceLocation EMPTY_HOE_HEAD = CreateModularTools.asResource("block/sand_mold_top/hoe_head/empty");
+    public static final ResourceLocation EMPTY_SAND_HOE_HEAD = CreateModularTools.asResource("block/sand_mold_top/hoe_head/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_HOE_HEAD = CreateModularTools.asResource("block/sand_mold_top/hoe_head/empty_red_sand");
 
     public static final ResourceLocation LAVA_HOE_HEAD = CreateModularTools.asResource("block/sand_mold_top/hoe_head/lava");
 
@@ -105,7 +115,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_HOE_HEAD = CreateModularTools.asResource("block/sand_mold_top/hoe_head/molten_diamond");
 
-    public static final ResourceLocation EMPTY_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/empty");
+    public static final ResourceLocation EMPTY_SAND_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/empty_red_sand");
 
     public static final ResourceLocation LAVA_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/lava");
 
@@ -123,7 +135,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/molten_diamond");
 
-    public static final ResourceLocation EMPTY_POMMEL_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/pommel/empty");
+    public static final ResourceLocation EMPTY_SAND_POMMEL_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/pommel/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_POMMEL_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/pommel/empty_red_sand");
 
     public static final ResourceLocation LAVA_POMMEL_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/pommel/lava");
 
@@ -141,7 +155,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_POMMEL_SWORD_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/sword/pommel/molten_diamond");
 
-    public static final ResourceLocation EMPTY_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/empty");
+    public static final ResourceLocation EMPTY_SAND_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/empty_red_sand");
 
     public static final ResourceLocation LAVA_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/lava");
 
@@ -159,7 +175,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/molten_diamond");
 
-    public static final ResourceLocation EMPTY_GRIP_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/grip/empty");
+    public static final ResourceLocation EMPTY_SAND_GRIP_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/grip/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_GRIP_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/grip/empty_red_sand");
 
     public static final ResourceLocation LAVA_GRIP_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/grip/lava");
 
@@ -177,7 +195,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_GRIP_SHOVEL_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/shovel/grip/molten_diamond");
 
-    public static final ResourceLocation EMPTY_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/empty");
+    public static final ResourceLocation EMPTY_SAND_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/empty_red_sand");
 
     public static final ResourceLocation LAVA_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/lava");
 
@@ -195,7 +215,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/molten_diamond");
 
-    public static final ResourceLocation EMPTY_GRIP_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/grip/empty");
+    public static final ResourceLocation EMPTY_SAND_GRIP_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/grip/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_GRIP_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/grip/empty_red_sand");
 
     public static final ResourceLocation LAVA_GRIP_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/grip/lava");
 
@@ -213,7 +235,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_GRIP_PICKAXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/pickaxe/grip/molten_diamond");
 
-    public static final ResourceLocation EMPTY_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/empty");
+    public static final ResourceLocation EMPTY_SAND_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/empty_red_sand");
 
     public static final ResourceLocation LAVA_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/lava");
 
@@ -231,7 +255,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/molten_diamond");
 
-    public static final ResourceLocation EMPTY_GRIP_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/grip/empty");
+    public static final ResourceLocation EMPTY_SAND_GRIP_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/grip/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_GRIP_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/grip/empty_red_sand");
 
     public static final ResourceLocation LAVA_GRIP_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/grip/lava");
 
@@ -249,7 +275,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_GRIP_AXE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/axe/grip/molten_diamond");
 
-    public static final ResourceLocation EMPTY_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/empty");
+    public static final ResourceLocation EMPTY_SAND_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/empty_red_sand");
 
     public static final ResourceLocation LAVA_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/lava");
 
@@ -267,7 +295,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/molten_diamond");
 
-    public static final ResourceLocation EMPTY_GRIP_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/grip/empty");
+    public static final ResourceLocation EMPTY_SAND_GRIP_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/grip/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_GRIP_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/grip/empty_red_sand");
 
     public static final ResourceLocation LAVA_GRIP_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/grip/lava");
 
@@ -285,7 +315,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_GRIP_HOE_HANDLE = CreateModularTools.asResource("block/sand_mold_top/handle/hoe/grip/molten_diamond");
 
-    public static final ResourceLocation EMPTY_GRIP = CreateModularTools.asResource("block/sand_mold_top/grip/empty");
+    public static final ResourceLocation EMPTY_SAND_GRIP = CreateModularTools.asResource("block/sand_mold_top/grip/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_GRIP = CreateModularTools.asResource("block/sand_mold_top/grip/empty_red_sand");
 
     public static final ResourceLocation LAVA_GRIP = CreateModularTools.asResource("block/sand_mold_top/grip/lava");
 
@@ -303,7 +335,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_GRIP = CreateModularTools.asResource("block/sand_mold_top/grip/molten_diamond");
 
-    public static final ResourceLocation EMPTY_GUARD = CreateModularTools.asResource("block/sand_mold_top/guard/empty");
+    public static final ResourceLocation EMPTY_SAND_GUARD = CreateModularTools.asResource("block/sand_mold_top/guard/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_GUARD = CreateModularTools.asResource("block/sand_mold_top/guard/empty_red_sand");
 
     public static final ResourceLocation LAVA_GUARD = CreateModularTools.asResource("block/sand_mold_top/guard/lava");
 
@@ -321,7 +355,9 @@ public final class AllMoldTopTextureIds {
 
     public static final ResourceLocation MOLTEN_DIAMOND_GUARD = CreateModularTools.asResource("block/sand_mold_top/guard/molten_diamond");
 
-    public static final ResourceLocation EMPTY_POMMEL = CreateModularTools.asResource("block/sand_mold_top/pommel/empty");
+    public static final ResourceLocation EMPTY_SAND_POMMEL = CreateModularTools.asResource("block/sand_mold_top/pommel/empty_sand");
+
+    public static final ResourceLocation EMPTY_RED_SAND_POMMEL = CreateModularTools.asResource("block/sand_mold_top/pommel/empty_red_sand");
 
     public static final ResourceLocation LAVA_POMMEL = CreateModularTools.asResource("block/sand_mold_top/pommel/lava");
 
