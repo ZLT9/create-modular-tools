@@ -4,6 +4,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.zlt.create_modular_tools.CreateModularTools;
+import net.zlt.create_modular_tools.block.mold.red_sand.*;
+import net.zlt.create_modular_tools.block.mold.sand.*;
 
 import java.util.Set;
 
