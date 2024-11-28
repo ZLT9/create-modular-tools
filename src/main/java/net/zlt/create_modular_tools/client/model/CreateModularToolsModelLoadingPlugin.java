@@ -34,5 +34,12 @@ public final class CreateModularToolsModelLoadingPlugin implements ModelLoadingP
         pluginContext.resolveModel().register(new PickaxeSandMoldItemModelResolver());
         pluginContext.resolveModel().register(new AxeSandMoldItemModelResolver());
         pluginContext.resolveModel().register(new HoeSandMoldItemModelResolver());
+
+        pluginContext.addModels(CreateModularTools.asResource("block/red_sand_mold"));
+        pluginContext.resolveModel().register(new SwordRedSandMoldItemModelResolver());
+        pluginContext.resolveModel().register(new ShovelRedSandMoldItemModelResolver());
+        pluginContext.resolveModel().register(new PickaxeRedSandMoldItemModelResolver());
+        pluginContext.resolveModel().register(new AxeRedSandMoldItemModelResolver());
+        pluginContext.resolveModel().register(new HoeRedSandMoldItemModelResolver());
     }
 }
