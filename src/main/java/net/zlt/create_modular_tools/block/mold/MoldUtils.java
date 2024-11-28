@@ -3,6 +3,7 @@ package net.zlt.create_modular_tools.block.mold;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
@@ -22,7 +23,7 @@ public final class MoldUtils {
 
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);
-            if (toolModuleType == null || !moldBlock.isCompatible(toolModuleType)) {
+            if (toolModuleType == null || !MoldRegistry.isCompatible(moldBlock.getModularTool(), toolModuleType)) {
                 continue;
             }
 
