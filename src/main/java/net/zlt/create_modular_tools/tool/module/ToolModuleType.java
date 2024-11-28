@@ -73,10 +73,10 @@ public class ToolModuleType {
 
         @Environment(EnvType.CLIENT)
         @Nullable
-        public ResourceLocation getTextureId(MoldBlock sandMoldBlock, CompoundTag moldNbt) {
+        public ResourceLocation getTextureId(MoldBlock moldBlock, CompoundTag moldNbt) {
             ResourceLocation id = null;
             for (TriFunction<@Nullable ResourceLocation, MoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter : TEXTURE_ID_GETTERS) {
-                id = textureIdGetter.apply(id, sandMoldBlock, moldNbt);
+                id = textureIdGetter.apply(id, moldBlock, moldNbt);
             }
             return id;
         }
