@@ -24,7 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.mold.MoldBlock;
-import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
+import net.zlt.create_modular_tools.item.mold.BaseMoldItem;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
@@ -280,7 +280,7 @@ public abstract class MoldBlockEntity extends BlockEntity implements IHaveGoggle
             } else if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
                 Fluid fluid = (Fluid) moldSlot.contents();
 
-                if (BaseSandMoldItem.canBeFilledWith(fluid)) {
+                if (BaseMoldItem.canBeFilledWith(fluid)) {
                     fluidSlots.add(toolModuleTypeTag);
                     fluids.add(fluid);
                 } else {

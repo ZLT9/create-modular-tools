@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
-import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
+import net.zlt.create_modular_tools.item.mold.BaseMoldItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -32,7 +32,7 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "canItemBeFilled", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
     private static void createModularTools$canItemBeFilled(Level world, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (!(stack.getItem() instanceof BaseSandMoldItem) || AllRecipeTypes.MOLD_FILLING.find(WRAPPER, world).isEmpty()) {
+        if (!(stack.getItem() instanceof BaseMoldItem) || AllRecipeTypes.MOLD_FILLING.find(WRAPPER, world).isEmpty()) {
             return;
         }
 
@@ -57,7 +57,7 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "getRequiredAmountForItem", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
     private static void createModularTools$getRequiredAmountForItem(Level world, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<Long> cir) {
-        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem)) {
+        if (!(stack.getItem() instanceof BaseMoldItem moldItem)) {
             return;
         }
 
@@ -65,7 +65,7 @@ public abstract class FillingBySpoutMixin {
             return;
         }
 
-        if (!BaseSandMoldItem.canBeFilledWith(availableFluid.getFluid())) {
+        if (!BaseMoldItem.canBeFilledWith(availableFluid.getFluid())) {
             cir.setReturnValue(-1L);
             return;
         }
@@ -95,12 +95,12 @@ public abstract class FillingBySpoutMixin {
 
     @Inject(method = "fillItem", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
     private static void createModularTools$fillItem(Level world, long requiredAmount, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<ItemStack> cir) {
-        if (!(stack.getItem() instanceof BaseSandMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseMoldBlock moldBlock)) {
+        if (!(stack.getItem() instanceof BaseMoldItem moldItem) || !(moldItem.getBlock() instanceof BaseMoldBlock moldBlock)) {
             return;
         }
 
         Fluid fluid = availableFluid.getFluid();
-        if (!BaseSandMoldItem.canBeFilledWith(fluid)) {
+        if (!BaseMoldItem.canBeFilledWith(fluid)) {
             cir.setReturnValue(ItemStack.EMPTY);
             return;
         }

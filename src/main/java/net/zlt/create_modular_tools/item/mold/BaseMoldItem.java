@@ -36,8 +36,8 @@ import java.util.*;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class BaseSandMoldItem extends BlockItem {
-    public BaseSandMoldItem(Block block, Properties properties) {
+public class BaseMoldItem extends BlockItem {
+    public BaseMoldItem(Block block, Properties properties) {
         super(block, properties);
     }
 
