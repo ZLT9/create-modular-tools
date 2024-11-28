@@ -25,7 +25,9 @@ import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseSandMoldItem;
+import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRecipeRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
@@ -81,7 +83,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
 
         Map<Enchantment, List<Integer>> resultEnchantments = Maps.newHashMap();
         Set<MutableComponent> resultFeatures = new HashSet<>();
-        for (ToolModuleType toolModuleType : getCompatible()) {
+        for (ToolModuleType toolModuleType : MoldRegistry.getCompatible(getModularTool())) {
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
             if (moldSlot.state() == ToolUtils.MoldSlotState.ABSENT) {
                 continue;
@@ -187,7 +189,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
     }
 
     public void putToolModule(ToolModuleType toolModuleType, @Nullable ToolModuleItem toolModule, @Nullable CompoundTag toolModuleNbt) {
-        if (isCompatible(toolModuleType)) {
+        if (MoldRegistry.isCompatible(getModularTool(), toolModuleType)) {
             CompoundTag slotNbt = new CompoundTag();
             if (toolModule == null) {
                 slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
@@ -206,7 +208,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
     }
 
     public void removeToolModule(ToolModuleType toolModuleType) {
-        if (isCompatible(toolModuleType)) {
+        if (MoldRegistry.isCompatible(getModularTool(), toolModuleType)) {
             toolModulesNbt.remove(toolModuleType.getTag());
             fixToolModulesNbt();
             setChanged();
@@ -226,15 +228,21 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
         return toolModulesNbt;
     }
 
-    public abstract Component getName();
+    public Component getName() {
+        return getModularTool().getToolCategorySingularName();
+    }
 
-    public abstract Collection<ToolModuleType> getCompatible();
+    protected CompoundTag getDefaultToolModulesNbt() {
+        CompoundTag toolModulesNbt = new CompoundTag();
+        for (ToolModuleType toolModuleType : MoldRegistry.getRequired(getModularTool())) {
+            CompoundTag slotNbt = new CompoundTag();
+            slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+            toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
+        }
+        return toolModulesNbt;
+    }
 
-    public abstract Collection<ToolModuleType> getRequired();
-
-    public abstract boolean isCompatible(ToolModuleType toolModuleType);
-
-    protected abstract CompoundTag getDefaultToolModulesNbt();
+    protected abstract ModularToolItem getModularTool();
 
     protected void updateBlockStateLightLevel() {
         if (level == null || level.isClientSide) {
@@ -292,7 +300,7 @@ public abstract class SandMoldBlockEntity extends BlockEntity implements IHaveGo
             }
         }
 
-        for (ToolModuleType toolModuleType : getRequired()) {
+        for (ToolModuleType toolModuleType : MoldRegistry.getRequired(getModularTool())) {
             if (!(toolModulesNbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND))) {
                 CompoundTag slotNbt = new CompoundTag();
                 slotNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
