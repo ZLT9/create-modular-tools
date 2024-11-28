@@ -11,7 +11,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -26,6 +26,6 @@ public abstract class LevelRendererMixin {
 
     @ModifyExpressionValue(method = "renderHitOutline", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getShape(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;"))
     private VoxelShape createModularTools$renderHitOutline(VoxelShape original, @Local(argsOnly = true) Entity entity, @Local(argsOnly = true) BlockPos pos, @Local(argsOnly = true) BlockState state) {
-        return state.getBlock() instanceof SandMoldBlock ? state.getVisualShape(level, pos, CollisionContext.of(entity)) : original;
+        return state.getBlock() instanceof MoldBlock ? state.getVisualShape(level, pos, CollisionContext.of(entity)) : original;
     }
 }

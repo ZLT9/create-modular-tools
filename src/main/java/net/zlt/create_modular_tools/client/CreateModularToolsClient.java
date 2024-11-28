@@ -28,7 +28,7 @@ import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.block.mold.AllMoldTopTextures;
-import net.zlt.create_modular_tools.block.mold.SandMoldBlock;
+import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import net.zlt.create_modular_tools.client.model.CreateModularToolsModelLoadingPlugin;
 import net.zlt.create_modular_tools.client.renderer.blockentity.*;
 import net.zlt.create_modular_tools.client.renderer.entity.*;
@@ -104,7 +104,7 @@ public class CreateModularToolsClient implements ClientModInitializer {
         ModelLoadingPlugin.register(new CreateModularToolsModelLoadingPlugin());
 
         ClientPickBlockApplyCallback.EVENT.register((player, hit, stack) -> {
-            if (stack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof SandMoldBlock) {
+            if (stack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof MoldBlock) {
                 CompoundTag nbt = stack.getTag();
                 if (nbt != null && !nbt.contains("UUID", Tag.TAG_INT_ARRAY)) {
                     nbt.putUUID("UUID", UUID.randomUUID());
