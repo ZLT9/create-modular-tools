@@ -17,18 +17,18 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.zlt.create_modular_tools.block.entity.mold.SandMoldBlockEntity;
+import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
+import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.sound.AllSoundEvents;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.Unmodifiable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.TreeSet;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -109,7 +109,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         CompoundTag toolModulesNbt = sandMoldBlockEntity.getToolModulesNbt();
 
         List<ToolModuleType> existingToolModuleTypes = new ArrayList<>();
-        Iterator<ToolModuleType> it = getCompatible().descendingIterator();
+        Iterator<ToolModuleType> it = MoldRegistry.getCompatible(getModularTool()).descendingIterator();
         while (it.hasNext()) {
             ToolModuleType toolModuleType = it.next();
 
@@ -134,7 +134,7 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
 
             ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
 
-            if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY && (isDeployer || isRequired(toolModuleType))) {
+            if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY && (isDeployer || MoldRegistry.isRequired(getModularTool(), toolModuleType))) {
                 continue;
             }
 
@@ -176,17 +176,5 @@ public abstract class BaseSandMoldBlock extends SandMoldBlock implements EntityB
         }
     }
 
-    public boolean isCompatible(ToolModuleType toolModuleType) {
-        return getCompatible().contains(toolModuleType);
-    }
-
-    public boolean isRequired(ToolModuleType toolModuleType) {
-        return getRequired().contains(toolModuleType);
-    }
-
-    @Unmodifiable
-    public abstract TreeSet<ToolModuleType> getCompatible();
-
-    @Unmodifiable
-    public abstract List<ToolModuleType> getRequired();
+    protected abstract ModularToolItem getModularTool();
 }
