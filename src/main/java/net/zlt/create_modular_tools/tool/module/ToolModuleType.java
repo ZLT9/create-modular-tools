@@ -7,6 +7,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import org.jetbrains.annotations.Nullable;
 
@@ -60,23 +61,23 @@ public class ToolModuleType {
     }
 
     public static class MoldTopTexture {
-        private final List<TriFunction<@Nullable ResourceLocation, MoldBlock, CompoundTag, @Nullable ResourceLocation>> TEXTURE_ID_GETTERS = new ArrayList<>();
+        private final List<TriFunction<@Nullable ResourceLocation, BaseMoldBlock, CompoundTag, @Nullable ResourceLocation>> TEXTURE_ID_GETTERS = new ArrayList<>();
 
         public boolean clicked(int x, int y) {
             return false;
         }
 
         @Environment(EnvType.CLIENT)
-        public void registerTextureIdGetter(TriFunction<@Nullable ResourceLocation, MoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter) {
+        public void registerTextureIdGetter(TriFunction<@Nullable ResourceLocation, BaseMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter) {
             TEXTURE_ID_GETTERS.add(textureIdGetter);
         }
 
         @Environment(EnvType.CLIENT)
         @Nullable
-        public ResourceLocation getTextureId(MoldBlock moldBlock, CompoundTag moldNbt) {
+        public ResourceLocation getTextureId(BaseMoldBlock baseMoldBlock, CompoundTag moldNbt) {
             ResourceLocation id = null;
-            for (TriFunction<@Nullable ResourceLocation, MoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter : TEXTURE_ID_GETTERS) {
-                id = textureIdGetter.apply(id, moldBlock, moldNbt);
+            for (TriFunction<@Nullable ResourceLocation, BaseMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter : TEXTURE_ID_GETTERS) {
+                id = textureIdGetter.apply(id, baseMoldBlock, moldNbt);
             }
             return id;
         }
