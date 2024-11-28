@@ -28,6 +28,7 @@ import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.block.mold.AllMoldTopTextures;
+import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import net.zlt.create_modular_tools.client.model.CreateModularToolsModelLoadingPlugin;
 import net.zlt.create_modular_tools.client.renderer.blockentity.*;
@@ -46,6 +47,7 @@ import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Environment(EnvType.CLIENT)
@@ -122,7 +124,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         AllMoldTopTextureIds.init();
 
         registerForNonSolidSlot(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE,
-            AllMoldTopTextureIds.EMPTY_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_SAND_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_SWORD_BLADE,
             AllMoldTopTextureIds.LAVA_SWORD_BLADE,
             AllMoldTopTextureIds.MOLTEN_IRON_SWORD_BLADE,
             AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_BLADE,
@@ -134,7 +137,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD,
-            AllMoldTopTextureIds.EMPTY_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_SAND_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_SHOVEL_HEAD,
             AllMoldTopTextureIds.LAVA_SHOVEL_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HEAD,
@@ -146,7 +150,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD,
-            AllMoldTopTextureIds.EMPTY_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_SAND_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_PICKAXE_HEAD,
             AllMoldTopTextureIds.LAVA_PICKAXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HEAD,
@@ -158,7 +163,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD,
-            AllMoldTopTextureIds.EMPTY_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_SAND_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_AXE_HEAD,
             AllMoldTopTextureIds.LAVA_AXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_AXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HEAD,
@@ -170,7 +176,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD,
-            AllMoldTopTextureIds.EMPTY_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_SAND_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_HOE_HEAD,
             AllMoldTopTextureIds.LAVA_HOE_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_HOE_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HEAD,
@@ -182,7 +189,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_SWORD_HANDLE,
             AllMoldTopTextureIds.LAVA_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_HANDLE,
@@ -194,7 +202,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_POMMEL_SWORD_HANDLE,
             AllMoldTopTextureIds.LAVA_POMMEL_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_POMMEL_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL_SWORD_HANDLE,
@@ -206,7 +215,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_SHOVEL_HANDLE,
             AllMoldTopTextureIds.LAVA_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HANDLE,
@@ -218,7 +228,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_SHOVEL_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_SHOVEL_HANDLE,
@@ -230,7 +241,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_PICKAXE_HANDLE,
             AllMoldTopTextureIds.LAVA_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HANDLE,
@@ -242,7 +254,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_PICKAXE_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_PICKAXE_HANDLE,
@@ -254,7 +267,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_AXE_HANDLE,
             AllMoldTopTextureIds.LAVA_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HANDLE,
@@ -266,7 +280,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_AXE_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_AXE_HANDLE,
@@ -278,7 +293,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_HOE_HANDLE,
             AllMoldTopTextureIds.LAVA_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HANDLE,
@@ -290,7 +306,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
-            AllMoldTopTextureIds.EMPTY_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_SAND_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_HOE_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_HOE_HANDLE,
@@ -302,7 +319,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP,
-            AllMoldTopTextureIds.EMPTY_GRIP,
+            AllMoldTopTextureIds.EMPTY_SAND_GRIP,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP,
             AllMoldTopTextureIds.LAVA_GRIP,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP,
@@ -314,7 +332,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD,
-            AllMoldTopTextureIds.EMPTY_GUARD,
+            AllMoldTopTextureIds.EMPTY_SAND_GUARD,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_GUARD,
             AllMoldTopTextureIds.LAVA_GUARD,
             AllMoldTopTextureIds.MOLTEN_IRON_GUARD,
             AllMoldTopTextureIds.MOLTEN_COPPER_GUARD,
@@ -326,7 +345,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         );
 
         registerForNonSolidSlot(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL,
-            AllMoldTopTextureIds.EMPTY_POMMEL,
+            AllMoldTopTextureIds.EMPTY_SAND_POMMEL,
+            AllMoldTopTextureIds.EMPTY_RED_SAND_POMMEL,
             AllMoldTopTextureIds.LAVA_POMMEL,
             AllMoldTopTextureIds.MOLTEN_IRON_POMMEL,
             AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL,
@@ -590,8 +610,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && includedToolModuleTypes.stream().allMatch(toolModuleType -> nbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND)) && excludedToolModuleTypes.stream().noneMatch(toolModuleType -> nbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND)) ? modelId : original);
     }
 
-    private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation textureId) {
-        moldTopTexture.registerTextureIdGetter((original, sandMoldBlock, nbt) -> original == null && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString("state")) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
+    private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, Set<BaseMoldBlock> moldBlocks, ToolModuleType toolModuleType, ResourceLocation textureId) {
+        moldTopTexture.registerTextureIdGetter((original, moldBlock, nbt) -> original == null && moldBlocks.contains(moldBlock) && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString("state")) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
     }
 
     private static void registerFullMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, FlowingFluid fluid, ResourceLocation textureId) {
@@ -657,8 +677,9 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerToolModuleModelIdGetterForToolWithModules(toolWrap, AllModularTools.HOE, List.of(AllToolModuleTypes.TOOL_GRIP), idGripHoe);
     }
 
-    private static void registerForNonSolidSlot(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation idEmpty, ResourceLocation idLava, ResourceLocation idMoltenIron, ResourceLocation idMoltenCopper, ResourceLocation idMoltenGold, ResourceLocation idMoltenNetherite, ResourceLocation idMoltenZinc, ResourceLocation idMoltenBrass, ResourceLocation idMoltenDiamond) {
-        registerEmptyMoldTopTextureIdGetter(moldTopTexture, toolModuleType, idEmpty);
+    private static void registerForNonSolidSlot(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation idEmptySand, ResourceLocation idEmptyRedSand, ResourceLocation idLava, ResourceLocation idMoltenIron, ResourceLocation idMoltenCopper, ResourceLocation idMoltenGold, ResourceLocation idMoltenNetherite, ResourceLocation idMoltenZinc, ResourceLocation idMoltenBrass, ResourceLocation idMoltenDiamond) {
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.SAND_MOLDS, toolModuleType, idEmptySand);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.RED_SAND_MOLDS, toolModuleType, idEmptyRedSand);
         registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, Fluids.LAVA, idLava);
         registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_IRON, idMoltenIron);
         registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_COPPER, idMoltenCopper);
