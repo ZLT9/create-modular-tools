@@ -10,7 +10,7 @@ public final class AllMoldBlocks {
     }
 
     public static final MoldBlock SAND_MOLD = register("sand_mold", new SandMoldBlock(BlockBehaviour.Properties.of()));
-    public static final MoldBlock RED_SAND_MOLD = register("red_sand_mold", new SandMoldBlock(BlockBehaviour.Properties.of()));
+    public static final MoldBlock RED_SAND_MOLD = register("red_sand_mold", new RedSandMoldBlock(BlockBehaviour.Properties.of()));
 
     public static final BaseSandMoldBlock SWORD_SAND_MOLD = register("sword_sand_mold", new SwordSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
     public static final BaseSandMoldBlock SHOVEL_SAND_MOLD = register("shovel_sand_mold", new ShovelSandMoldBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PickaxeSandMoldBlock.LIGHT_LEVEL))));
