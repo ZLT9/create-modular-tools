@@ -78,6 +78,12 @@ public class CreateModularToolsClient implements ClientModInitializer {
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_SAND_MOLD, AxeSandMoldRenderer::new);
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_SAND_MOLD, HoeSandMoldRenderer::new);
 
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_RED_SAND_MOLD, SwordRedSandMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_RED_SAND_MOLD, ShovelRedSandMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_RED_SAND_MOLD, PickaxeRedSandMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_RED_SAND_MOLD, AxeRedSandMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_RED_SAND_MOLD, HoeRedSandMoldRenderer::new);
+
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutoutMipped(),
             AllMoldBlocks.SAND_MOLD,
             AllMoldBlocks.RED_SAND_MOLD,
