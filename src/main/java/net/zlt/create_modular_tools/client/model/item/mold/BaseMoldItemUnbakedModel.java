@@ -88,11 +88,11 @@ public abstract class BaseMoldItemUnbakedModel implements UnbakedModel {
     }
 
     protected BakedModel createBaked(BaseMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
-        return new BaseMoldItemBakedModel(unbakedModel, baseSandMoldModel, interiorTopQuad, spriteGetter);
+        return new BaseMoldItemBakedModel(unbakedModel, baseSandMoldModel, interiorTopQuad, spriteGetter, getTopTextureId());
     }
 
     protected BakedModel createOverride(List<BakedQuad> quads) {
-        return new BaseMoldItemBakedModel(quads);
+        return new BaseMoldItemBakedModel(quads, getTopTextureId());
     }
 
     protected abstract BakedModel createDynamic(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter);
@@ -100,4 +100,6 @@ public abstract class BaseMoldItemUnbakedModel implements UnbakedModel {
     protected abstract BaseMoldBlock getMoldBlock();
     
     protected abstract ResourceLocation getMoldModelId();
+
+    protected abstract ResourceLocation getTopTextureId();
 }

@@ -34,21 +34,24 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseMoldItemBakedModel implements BakedModel {
+public class BaseMoldItemBakedModel implements BakedModel {
     private final BakedModel DYNAMIC_MODEL;
     private final ItemOverrides OVERRIDES;
     private final List<BakedQuad> QUADS;
+    private final ResourceLocation TOP_TEXTURE_ID;
 
-    public BaseMoldItemBakedModel(BaseMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
+    public BaseMoldItemBakedModel(BaseMoldItemUnbakedModel unbakedModel, BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter, ResourceLocation topTextureId) {
         DYNAMIC_MODEL = unbakedModel.bakeDynamic(baseSandMoldModel, interiorTopQuad, spriteGetter);
         OVERRIDES = new Overrides(unbakedModel, baseSandMoldModel, interiorTopQuad, spriteGetter);
         QUADS = List.of();
+        TOP_TEXTURE_ID = topTextureId;
     }
 
-    public BaseMoldItemBakedModel(List<BakedQuad> quads) {
+    public BaseMoldItemBakedModel(List<BakedQuad> quads, ResourceLocation topTextureId) {
         DYNAMIC_MODEL = null;
         OVERRIDES = ItemOverrides.EMPTY;
         QUADS = quads;
+        TOP_TEXTURE_ID = topTextureId;
     }
 
     @Override
@@ -84,7 +87,7 @@ public abstract class BaseMoldItemBakedModel implements BakedModel {
 
     @Override
     public TextureAtlasSprite getParticleIcon() {
-        return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(getTopTextureId());
+        return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(TOP_TEXTURE_ID);
     }
 
     @Override
@@ -96,8 +99,6 @@ public abstract class BaseMoldItemBakedModel implements BakedModel {
     public ItemOverrides getOverrides() {
         return OVERRIDES;
     }
-
-    protected abstract ResourceLocation getTopTextureId();
 
     private class Overrides extends ItemOverrides {
         private static final Cache<UUID, BakedModel> MODEL_CACHE = CacheBuilder.newBuilder()

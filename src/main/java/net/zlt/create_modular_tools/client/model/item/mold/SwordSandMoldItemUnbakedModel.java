@@ -33,4 +33,9 @@ public class SwordSandMoldItemUnbakedModel extends BaseMoldItemUnbakedModel {
     protected ResourceLocation getMoldModelId() {
         return CreateModularTools.asResource("block/sand_mold");
     }
+
+    @Override
+    protected ResourceLocation getTopTextureId() {
+        return new ResourceLocation("minecraft", "block/sand");
+    }
 }
