@@ -5,9 +5,13 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.zlt.create_modular_tools.CreateModularTools;
+import net.zlt.create_modular_tools.entity.*;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.molten_metal.MoltenMetalBucketItem;
 import net.zlt.create_modular_tools.item.tool.*;
@@ -128,17 +132,57 @@ public final class AllItems {
     public static final Item DIAMOND_SHOVEL_HEAD = register("diamond_shovel_head", new DiamondShovelHeadToolModuleItem(new Item.Properties().stacksTo(1)));
 
     public static final Item WOODEN_PICKAXE_HEAD = register("wooden_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
-    public static final Item OAK_PICKAXE_HEAD = register("oak_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
-    public static final Item SPRUCE_PICKAXE_HEAD = register("spruce_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
-    public static final Item BIRCH_PICKAXE_HEAD = register("birch_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
-    public static final Item JUNGLE_PICKAXE_HEAD = register("jungle_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
-    public static final Item ACACIA_PICKAXE_HEAD = register("acacia_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
-    public static final Item DARK_OAK_PICKAXE_HEAD = register("dark_oak_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
-    public static final Item MANGROVE_PICKAXE_HEAD = register("mangrove_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
+    public static final Item OAK_PICKAXE_HEAD = register("oak_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownOakPickaxeHead(level, shooter, stack);
+        }
+    });
+    public static final Item SPRUCE_PICKAXE_HEAD = register("spruce_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownSprucePickaxeHead(level, shooter, stack);
+        }
+    });
+    public static final Item BIRCH_PICKAXE_HEAD = register("birch_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownBirchPickaxeHead(level, shooter, stack);
+        }
+    });
+    public static final Item JUNGLE_PICKAXE_HEAD = register("jungle_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownJunglePickaxeHead(level, shooter, stack);
+        }
+    });
+    public static final Item ACACIA_PICKAXE_HEAD = register("acacia_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownAcaciaPickaxeHead(level, shooter, stack);
+        }
+    });
+    public static final Item DARK_OAK_PICKAXE_HEAD = register("dark_oak_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownDarkOakPickaxeHead(level, shooter, stack);
+        }
+    });
+    public static final Item MANGROVE_PICKAXE_HEAD = register("mangrove_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownMangrovePickaxeHead(level, shooter, stack);
+        }
+    });
     public static final Item CHERRY_PICKAXE_HEAD = register("cherry_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
         @Override
         public SoundEvent getSound() {
             return ToolModuleConstants.CHERRY_WOOD_SOUND;
+        }
+
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownCherryPickaxeHead(level, shooter, stack);
         }
     });
     public static final Item BAMBOO_PICKAXE_HEAD = register("bamboo_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
@@ -146,17 +190,32 @@ public final class AllItems {
         public SoundEvent getSound() {
             return ToolModuleConstants.BAMBOO_WOOD_SOUND;
         }
+
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownBambooPickaxeHead(level, shooter, stack);
+        }
     });
     public static final Item CRIMSON_PICKAXE_HEAD = register("crimson_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
         @Override
         public SoundEvent getSound() {
             return ToolModuleConstants.NETHER_WOOD_SOUND;
         }
+
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownCrimsonPickaxeHead(level, shooter, stack);
+        }
     });
     public static final Item WARPED_PICKAXE_HEAD = register("warped_pickaxe_head", new WoodenPickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)) {
         @Override
         public SoundEvent getSound() {
             return ToolModuleConstants.NETHER_WOOD_SOUND;
+        }
+
+        @Override
+        protected ThrownBoomerang createThrownBoomerang(Level level, LivingEntity shooter, ItemStack stack) {
+            return new ThrownWarpedPickaxeHead(level, shooter, stack);
         }
     });
     public static final Item STONE_PICKAXE_HEAD = register("stone_pickaxe_head", new StonePickaxeHeadToolModuleItem(new Item.Properties().stacksTo(1)));
