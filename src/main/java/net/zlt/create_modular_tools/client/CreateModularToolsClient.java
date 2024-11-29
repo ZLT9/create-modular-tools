@@ -49,7 +49,7 @@ import net.zlt.create_modular_tools.client.renderer.blockentity.red_sand.*;
 import net.zlt.create_modular_tools.client.renderer.blockentity.sand.*;
 import net.zlt.create_modular_tools.client.renderer.blockentity.white_concrete_powder.*;
 import net.zlt.create_modular_tools.client.renderer.blockentity.yellow_concrete_powder.*;
-import net.zlt.create_modular_tools.client.renderer.entity.*;
+import net.zlt.create_modular_tools.client.renderer.entity.ThrownBoomerangRenderer;
 import net.zlt.create_modular_tools.client.renderer.item.ModularToolRenderer;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
 import net.zlt.create_modular_tools.fluid.AllFluids;
@@ -81,15 +81,15 @@ public class CreateModularToolsClient implements ClientModInitializer {
         BuiltinItemRendererRegistry.INSTANCE.register(AllItems.MODULAR_AXE, new ModularToolRenderer());
         BuiltinItemRendererRegistry.INSTANCE.register(AllItems.MODULAR_HOE, new ModularToolRenderer());
 
-        EntityRendererRegistry.register(AllEntityTypes.WOODEN_PICKAXE_HEAD, ThrownWoodenPickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.STONE_PICKAXE_HEAD, ThrownStonePickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.IRON_PICKAXE_HEAD, ThrownIronPickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.COPPER_PICKAXE_HEAD, ThrownCopperPickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.GOLDEN_PICKAXE_HEAD, ThrownGoldenPickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.NETHERITE_PICKAXE_HEAD, ThrownNetheritePickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.ZINC_PICKAXE_HEAD, ThrownZincPickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.BRASS_PICKAXE_HEAD, ThrownBrassPickaxeHeadRenderer::new);
-        EntityRendererRegistry.register(AllEntityTypes.DIAMOND_PICKAXE_HEAD, ThrownDiamondPickaxeHeadRenderer::new);
+        EntityRendererRegistry.register(AllEntityTypes.WOODEN_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/wooden_pickaxe_head"), CreateModularTools.asResource("textures/item/wooden_pickaxe_head.png"), AllItems.WOODEN_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.STONE_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/stone_pickaxe_head"), CreateModularTools.asResource("textures/item/stone_pickaxe_head.png"), AllItems.STONE_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.IRON_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/iron_pickaxe_head"), CreateModularTools.asResource("textures/item/iron_pickaxe_head.png"), AllItems.IRON_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.COPPER_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/copper_pickaxe_head"), CreateModularTools.asResource("textures/item/copper_pickaxe_head.png"), AllItems.COPPER_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.GOLDEN_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/golden_pickaxe_head"), CreateModularTools.asResource("textures/item/golden_pickaxe_head.png"), AllItems.GOLDEN_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.NETHERITE_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/netherite_pickaxe_head"), CreateModularTools.asResource("textures/item/netherite_pickaxe_head.png"), AllItems.NETHERITE_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.ZINC_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/zinc_pickaxe_head"), CreateModularTools.asResource("textures/item/zinc_pickaxe_head.png"), AllItems.ZINC_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.BRASS_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/brass_pickaxe_head"), CreateModularTools.asResource("textures/item/brass_pickaxe_head.png"), AllItems.BRASS_PICKAXE_HEAD, context));
+        EntityRendererRegistry.register(AllEntityTypes.DIAMOND_PICKAXE_HEAD, context -> new ThrownBoomerangRenderer(CreateModularTools.asResource("item/diamond_pickaxe_head"), CreateModularTools.asResource("textures/item/diamond_pickaxe_head.png"), AllItems.DIAMOND_PICKAXE_HEAD, context));
 
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_SAND_MOLD, SwordSandMoldRenderer::new);
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_SAND_MOLD, ShovelSandMoldRenderer::new);
