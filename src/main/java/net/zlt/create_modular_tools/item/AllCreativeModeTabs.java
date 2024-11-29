@@ -42,6 +42,22 @@ public final class AllCreativeModeTabs {
 
             entries.accept(AllMoldItems.SAND_MOLD);
             entries.accept(AllMoldItems.RED_SAND_MOLD);
+            entries.accept(AllMoldItems.WHITE_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.LIGHT_GRAY_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.GRAY_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.BLACK_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.BROWN_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.RED_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.ORANGE_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.YELLOW_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.LIME_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.GREEN_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.CYAN_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.LIGHT_BLUE_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.BLUE_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.PURPLE_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.MAGENTA_CONCRETE_POWDER_MOLD);
+            entries.accept(AllMoldItems.PINK_CONCRETE_POWDER_MOLD);
 
             entries.accept(AllItems.WOODEN_TOOL_HANDLE);
             entries.accept(AllItems.OAK_TOOL_HANDLE);

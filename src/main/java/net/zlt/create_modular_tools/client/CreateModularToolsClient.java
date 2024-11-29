@@ -31,7 +31,24 @@ import net.zlt.create_modular_tools.block.mold.AllMoldTopTextures;
 import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MoldBlock;
 import net.zlt.create_modular_tools.client.model.CreateModularToolsModelLoadingPlugin;
-import net.zlt.create_modular_tools.client.renderer.blockentity.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.black_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.blue_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.brown_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.cyan_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.gray_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.green_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.light_blue_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.light_gray_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.lime_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.magenta_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.orange_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.pink_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.purple_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.red_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.red_sand.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.sand.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.white_concrete_powder.*;
+import net.zlt.create_modular_tools.client.renderer.blockentity.yellow_concrete_powder.*;
 import net.zlt.create_modular_tools.client.renderer.entity.*;
 import net.zlt.create_modular_tools.client.renderer.item.ModularToolRenderer;
 import net.zlt.create_modular_tools.entity.AllEntityTypes;
@@ -86,9 +103,121 @@ public class CreateModularToolsClient implements ClientModInitializer {
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_RED_SAND_MOLD, AxeRedSandMoldRenderer::new);
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_RED_SAND_MOLD, HoeRedSandMoldRenderer::new);
 
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_WHITE_CONCRETE_POWDER_MOLD, SwordWhiteConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_WHITE_CONCRETE_POWDER_MOLD, ShovelWhiteConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_WHITE_CONCRETE_POWDER_MOLD, PickaxeWhiteConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_WHITE_CONCRETE_POWDER_MOLD, AxeWhiteConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_WHITE_CONCRETE_POWDER_MOLD, HoeWhiteConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_LIGHT_GRAY_CONCRETE_POWDER_MOLD, SwordLightGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_LIGHT_GRAY_CONCRETE_POWDER_MOLD, ShovelLightGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_LIGHT_GRAY_CONCRETE_POWDER_MOLD, PickaxeLightGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_LIGHT_GRAY_CONCRETE_POWDER_MOLD, AxeLightGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_LIGHT_GRAY_CONCRETE_POWDER_MOLD, HoeLightGrayConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_GRAY_CONCRETE_POWDER_MOLD, SwordGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_GRAY_CONCRETE_POWDER_MOLD, ShovelGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_GRAY_CONCRETE_POWDER_MOLD, PickaxeGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_GRAY_CONCRETE_POWDER_MOLD, AxeGrayConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_GRAY_CONCRETE_POWDER_MOLD, HoeGrayConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_BLACK_CONCRETE_POWDER_MOLD, SwordBlackConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_BLACK_CONCRETE_POWDER_MOLD, ShovelBlackConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_BLACK_CONCRETE_POWDER_MOLD, PickaxeBlackConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_BLACK_CONCRETE_POWDER_MOLD, AxeBlackConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_BLACK_CONCRETE_POWDER_MOLD, HoeBlackConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_BROWN_CONCRETE_POWDER_MOLD, SwordBrownConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_BROWN_CONCRETE_POWDER_MOLD, ShovelBrownConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_BROWN_CONCRETE_POWDER_MOLD, PickaxeBrownConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_BROWN_CONCRETE_POWDER_MOLD, AxeBrownConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_BROWN_CONCRETE_POWDER_MOLD, HoeBrownConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_RED_CONCRETE_POWDER_MOLD, SwordRedConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_RED_CONCRETE_POWDER_MOLD, ShovelRedConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_RED_CONCRETE_POWDER_MOLD, PickaxeRedConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_RED_CONCRETE_POWDER_MOLD, AxeRedConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_RED_CONCRETE_POWDER_MOLD, HoeRedConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_ORANGE_CONCRETE_POWDER_MOLD, SwordOrangeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_ORANGE_CONCRETE_POWDER_MOLD, ShovelOrangeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_ORANGE_CONCRETE_POWDER_MOLD, PickaxeOrangeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_ORANGE_CONCRETE_POWDER_MOLD, AxeOrangeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_ORANGE_CONCRETE_POWDER_MOLD, HoeOrangeConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_YELLOW_CONCRETE_POWDER_MOLD, SwordYellowConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_YELLOW_CONCRETE_POWDER_MOLD, ShovelYellowConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_YELLOW_CONCRETE_POWDER_MOLD, PickaxeYellowConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_YELLOW_CONCRETE_POWDER_MOLD, AxeYellowConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_YELLOW_CONCRETE_POWDER_MOLD, HoeYellowConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_LIME_CONCRETE_POWDER_MOLD, SwordLimeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_LIME_CONCRETE_POWDER_MOLD, ShovelLimeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_LIME_CONCRETE_POWDER_MOLD, PickaxeLimeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_LIME_CONCRETE_POWDER_MOLD, AxeLimeConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_LIME_CONCRETE_POWDER_MOLD, HoeLimeConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_GREEN_CONCRETE_POWDER_MOLD, SwordGreenConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_GREEN_CONCRETE_POWDER_MOLD, ShovelGreenConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_GREEN_CONCRETE_POWDER_MOLD, PickaxeGreenConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_GREEN_CONCRETE_POWDER_MOLD, AxeGreenConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_GREEN_CONCRETE_POWDER_MOLD, HoeGreenConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_CYAN_CONCRETE_POWDER_MOLD, SwordCyanConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_CYAN_CONCRETE_POWDER_MOLD, ShovelCyanConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_CYAN_CONCRETE_POWDER_MOLD, PickaxeCyanConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_CYAN_CONCRETE_POWDER_MOLD, AxeCyanConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_CYAN_CONCRETE_POWDER_MOLD, HoeCyanConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_LIGHT_BLUE_CONCRETE_POWDER_MOLD, SwordLightBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_LIGHT_BLUE_CONCRETE_POWDER_MOLD, ShovelLightBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_LIGHT_BLUE_CONCRETE_POWDER_MOLD, PickaxeLightBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_LIGHT_BLUE_CONCRETE_POWDER_MOLD, AxeLightBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_LIGHT_BLUE_CONCRETE_POWDER_MOLD, HoeLightBlueConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_BLUE_CONCRETE_POWDER_MOLD, SwordBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_BLUE_CONCRETE_POWDER_MOLD, ShovelBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_BLUE_CONCRETE_POWDER_MOLD, PickaxeBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_BLUE_CONCRETE_POWDER_MOLD, AxeBlueConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_BLUE_CONCRETE_POWDER_MOLD, HoeBlueConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_PURPLE_CONCRETE_POWDER_MOLD, SwordPurpleConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_PURPLE_CONCRETE_POWDER_MOLD, ShovelPurpleConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_PURPLE_CONCRETE_POWDER_MOLD, PickaxePurpleConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_PURPLE_CONCRETE_POWDER_MOLD, AxePurpleConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_PURPLE_CONCRETE_POWDER_MOLD, HoePurpleConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_MAGENTA_CONCRETE_POWDER_MOLD, SwordMagentaConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_MAGENTA_CONCRETE_POWDER_MOLD, ShovelMagentaConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_MAGENTA_CONCRETE_POWDER_MOLD, PickaxeMagentaConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_MAGENTA_CONCRETE_POWDER_MOLD, AxeMagentaConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_MAGENTA_CONCRETE_POWDER_MOLD, HoeMagentaConcretePowderMoldRenderer::new);
+
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SWORD_PINK_CONCRETE_POWDER_MOLD, SwordPinkConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.SHOVEL_PINK_CONCRETE_POWDER_MOLD, ShovelPinkConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.PICKAXE_PINK_CONCRETE_POWDER_MOLD, PickaxePinkConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.AXE_PINK_CONCRETE_POWDER_MOLD, AxePinkConcretePowderMoldRenderer::new);
+        BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_PINK_CONCRETE_POWDER_MOLD, HoePinkConcretePowderMoldRenderer::new);
+
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutoutMipped(),
             AllMoldBlocks.SAND_MOLD,
             AllMoldBlocks.RED_SAND_MOLD,
+            AllMoldBlocks.WHITE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.LIGHT_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.BLACK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.BROWN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.RED_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.ORANGE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.YELLOW_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.LIME_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.GREEN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.CYAN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.LIGHT_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PURPLE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.MAGENTA_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PINK_CONCRETE_POWDER_MOLD,
             AllMoldBlocks.SWORD_SAND_MOLD,
             AllMoldBlocks.SHOVEL_SAND_MOLD,
             AllMoldBlocks.PICKAXE_SAND_MOLD,
@@ -98,7 +227,87 @@ public class CreateModularToolsClient implements ClientModInitializer {
             AllMoldBlocks.SHOVEL_RED_SAND_MOLD,
             AllMoldBlocks.PICKAXE_RED_SAND_MOLD,
             AllMoldBlocks.AXE_RED_SAND_MOLD,
-            AllMoldBlocks.HOE_RED_SAND_MOLD
+            AllMoldBlocks.HOE_RED_SAND_MOLD,
+            AllMoldBlocks.SWORD_WHITE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_WHITE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_WHITE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_WHITE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_WHITE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_LIGHT_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_LIGHT_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_LIGHT_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_LIGHT_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_LIGHT_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_GRAY_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_BLACK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_BLACK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_BLACK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_BLACK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_BLACK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_BROWN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_BROWN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_BROWN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_BROWN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_BROWN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_RED_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_RED_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_RED_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_RED_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_RED_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_ORANGE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_ORANGE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_ORANGE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_ORANGE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_ORANGE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_YELLOW_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_YELLOW_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_YELLOW_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_YELLOW_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_YELLOW_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_LIME_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_LIME_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_LIME_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_LIME_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_LIME_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_GREEN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_GREEN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_GREEN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_GREEN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_GREEN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_CYAN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_CYAN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_CYAN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_CYAN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_CYAN_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_LIGHT_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_LIGHT_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_LIGHT_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_LIGHT_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_LIGHT_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_BLUE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_PURPLE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_PURPLE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_PURPLE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_PURPLE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_PURPLE_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_MAGENTA_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_MAGENTA_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_MAGENTA_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_MAGENTA_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_MAGENTA_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SWORD_PINK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.SHOVEL_PINK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.PICKAXE_PINK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.AXE_PINK_CONCRETE_POWDER_MOLD,
+            AllMoldBlocks.HOE_PINK_CONCRETE_POWDER_MOLD
         );
 
         FluidRenderHandlerRegistry.INSTANCE.register(AllFluids.MOLTEN_IRON, AllFluids.FLOWING_MOLTEN_IRON, new SimpleFluidRenderHandler(CreateModularTools.asResource("block/molten_iron_still"), CreateModularTools.asResource("block/molten_iron_flow")));
@@ -126,6 +335,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.SWORD_BLADE, AllToolModuleTypes.SWORD_BLADE,
             AllMoldTopTextureIds.EMPTY_SAND_SWORD_BLADE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_SWORD_BLADE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_SWORD_BLADE,
             AllMoldTopTextureIds.LAVA_SWORD_BLADE,
             AllMoldTopTextureIds.MOLTEN_IRON_SWORD_BLADE,
             AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_BLADE,
@@ -139,6 +364,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.SHOVEL_HEAD, AllToolModuleTypes.SHOVEL_HEAD,
             AllMoldTopTextureIds.EMPTY_SAND_SHOVEL_HEAD,
             AllMoldTopTextureIds.EMPTY_RED_SAND_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_SHOVEL_HEAD,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_SHOVEL_HEAD,
             AllMoldTopTextureIds.LAVA_SHOVEL_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HEAD,
@@ -152,6 +393,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.PICKAXE_HEAD, AllToolModuleTypes.PICKAXE_HEAD,
             AllMoldTopTextureIds.EMPTY_SAND_PICKAXE_HEAD,
             AllMoldTopTextureIds.EMPTY_RED_SAND_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_PICKAXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_PICKAXE_HEAD,
             AllMoldTopTextureIds.LAVA_PICKAXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HEAD,
@@ -165,6 +422,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.AXE_HEAD, AllToolModuleTypes.AXE_HEAD,
             AllMoldTopTextureIds.EMPTY_SAND_AXE_HEAD,
             AllMoldTopTextureIds.EMPTY_RED_SAND_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_AXE_HEAD,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_AXE_HEAD,
             AllMoldTopTextureIds.LAVA_AXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_AXE_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HEAD,
@@ -178,6 +451,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.HOE_HEAD, AllToolModuleTypes.HOE_HEAD,
             AllMoldTopTextureIds.EMPTY_SAND_HOE_HEAD,
             AllMoldTopTextureIds.EMPTY_RED_SAND_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_HOE_HEAD,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_HOE_HEAD,
             AllMoldTopTextureIds.LAVA_HOE_HEAD,
             AllMoldTopTextureIds.MOLTEN_IRON_HOE_HEAD,
             AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HEAD,
@@ -191,6 +480,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_SWORD_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_SWORD_HANDLE,
             AllMoldTopTextureIds.LAVA_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_SWORD_HANDLE,
@@ -204,6 +509,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.POMMEL_SWORD_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_POMMEL_SWORD_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_POMMEL_SWORD_HANDLE,
             AllMoldTopTextureIds.LAVA_POMMEL_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_POMMEL_SWORD_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL_SWORD_HANDLE,
@@ -217,6 +538,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_SHOVEL_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_SHOVEL_HANDLE,
             AllMoldTopTextureIds.LAVA_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_SHOVEL_HANDLE,
@@ -230,6 +567,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_SHOVEL_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_GRIP_SHOVEL_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_GRIP_SHOVEL_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_SHOVEL_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_SHOVEL_HANDLE,
@@ -243,6 +596,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_PICKAXE_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_PICKAXE_HANDLE,
             AllMoldTopTextureIds.LAVA_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_PICKAXE_HANDLE,
@@ -256,6 +625,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_PICKAXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_GRIP_PICKAXE_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_GRIP_PICKAXE_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_PICKAXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_PICKAXE_HANDLE,
@@ -269,6 +654,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_AXE_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_AXE_HANDLE,
             AllMoldTopTextureIds.LAVA_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_AXE_HANDLE,
@@ -282,6 +683,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_AXE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_GRIP_AXE_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_GRIP_AXE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_GRIP_AXE_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_AXE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_AXE_HANDLE,
@@ -295,6 +712,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_HOE_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_HOE_HANDLE,
             AllMoldTopTextureIds.LAVA_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_HOE_HANDLE,
@@ -308,6 +741,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.GRIP_HOE_HANDLE, AllToolModuleTypes.TOOL_HANDLE,
             AllMoldTopTextureIds.EMPTY_SAND_GRIP_HOE_HANDLE,
             AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_GRIP_HOE_HANDLE,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_GRIP_HOE_HANDLE,
             AllMoldTopTextureIds.LAVA_GRIP_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP_HOE_HANDLE,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP_HOE_HANDLE,
@@ -321,6 +770,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.GRIP, AllToolModuleTypes.TOOL_GRIP,
             AllMoldTopTextureIds.EMPTY_SAND_GRIP,
             AllMoldTopTextureIds.EMPTY_RED_SAND_GRIP,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_GRIP,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_GRIP,
             AllMoldTopTextureIds.LAVA_GRIP,
             AllMoldTopTextureIds.MOLTEN_IRON_GRIP,
             AllMoldTopTextureIds.MOLTEN_COPPER_GRIP,
@@ -334,6 +799,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.GUARD, AllToolModuleTypes.SWORD_GUARD,
             AllMoldTopTextureIds.EMPTY_SAND_GUARD,
             AllMoldTopTextureIds.EMPTY_RED_SAND_GUARD,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_GUARD,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_GUARD,
             AllMoldTopTextureIds.LAVA_GUARD,
             AllMoldTopTextureIds.MOLTEN_IRON_GUARD,
             AllMoldTopTextureIds.MOLTEN_COPPER_GUARD,
@@ -347,6 +828,22 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerForNonSolidSlot(AllMoldTopTextures.POMMEL, AllToolModuleTypes.SWORD_POMMEL,
             AllMoldTopTextureIds.EMPTY_SAND_POMMEL,
             AllMoldTopTextureIds.EMPTY_RED_SAND_POMMEL,
+            AllMoldTopTextureIds.EMPTY_WHITE_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_LIGHT_GRAY_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_GRAY_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_BLACK_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_BROWN_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_RED_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_ORANGE_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_YELLOW_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_LIME_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_GREEN_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_CYAN_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_LIGHT_BLUE_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_BLUE_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_PURPLE_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_MAGENTA_CONCRETE_POWDER_POMMEL,
+            AllMoldTopTextureIds.EMPTY_PINK_CONCRETE_POWDER_POMMEL,
             AllMoldTopTextureIds.LAVA_POMMEL,
             AllMoldTopTextureIds.MOLTEN_IRON_POMMEL,
             AllMoldTopTextureIds.MOLTEN_COPPER_POMMEL,
@@ -677,9 +1174,25 @@ public class CreateModularToolsClient implements ClientModInitializer {
         registerToolModuleModelIdGetterForToolWithModules(toolWrap, AllModularTools.HOE, List.of(AllToolModuleTypes.TOOL_GRIP), idGripHoe);
     }
 
-    private static void registerForNonSolidSlot(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation idEmptySand, ResourceLocation idEmptyRedSand, ResourceLocation idLava, ResourceLocation idMoltenIron, ResourceLocation idMoltenCopper, ResourceLocation idMoltenGold, ResourceLocation idMoltenNetherite, ResourceLocation idMoltenZinc, ResourceLocation idMoltenBrass, ResourceLocation idMoltenDiamond) {
+    private static void registerForNonSolidSlot(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, ResourceLocation idEmptySand, ResourceLocation idEmptyRedSand, ResourceLocation idEmptyWhiteConcretePowder, ResourceLocation idEmptyLightGrayConcretePowder, ResourceLocation idEmptyGrayConcretePowder, ResourceLocation idEmptyBlackConcretePowder, ResourceLocation idEmptyBrownConcretePowder, ResourceLocation idEmptyRedConcretePowder, ResourceLocation idEmptyOrangeConcretePowder, ResourceLocation idEmptyYellowConcretePowder, ResourceLocation idEmptyLimeConcretePowder, ResourceLocation idEmptyGreenConcretePowder, ResourceLocation idEmptyCyanConcretePowder, ResourceLocation idEmptyLightBlueConcretePowder, ResourceLocation idEmptyBlueConcretePowder, ResourceLocation idEmptyPurpleConcretePowder, ResourceLocation idEmptyMagentaConcretePowder, ResourceLocation idEmptyPinkConcretePowder, ResourceLocation idLava, ResourceLocation idMoltenIron, ResourceLocation idMoltenCopper, ResourceLocation idMoltenGold, ResourceLocation idMoltenNetherite, ResourceLocation idMoltenZinc, ResourceLocation idMoltenBrass, ResourceLocation idMoltenDiamond) {
         registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.SAND_MOLDS, toolModuleType, idEmptySand);
         registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.RED_SAND_MOLDS, toolModuleType, idEmptyRedSand);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.WHITE_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyWhiteConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.LIGHT_GRAY_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyLightGrayConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.GRAY_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyGrayConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.BLACK_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyBlackConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.BROWN_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyBrownConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.RED_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyRedConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.ORANGE_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyOrangeConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.YELLOW_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyYellowConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.LIME_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyLimeConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.GREEN_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyGreenConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.CYAN_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyCyanConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.LIGHT_BLUE_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyLightBlueConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.BLUE_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyBlueConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.PURPLE_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyPurpleConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.MAGENTA_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyMagentaConcretePowder);
+        registerEmptyMoldTopTextureIdGetter(moldTopTexture, AllMoldBlocks.PINK_CONCRETE_POWDER_MOLDS, toolModuleType, idEmptyPinkConcretePowder);
         registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, Fluids.LAVA, idLava);
         registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_IRON, idMoltenIron);
         registerFullMoldTopTextureIdGetter(moldTopTexture, toolModuleType, AllFluids.MOLTEN_COPPER, idMoltenCopper);
