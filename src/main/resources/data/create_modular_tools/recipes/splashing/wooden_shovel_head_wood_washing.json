@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "create_modular_tools:wooden_shovel_heads"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:wooden_shovel_head"
+    }
+  ]
+}

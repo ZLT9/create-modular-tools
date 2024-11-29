@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "create_modular_tools:wooden_tool_handles"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:wooden_tool_handle"
+    }
+  ]
+}
