@@ -20,6 +20,83 @@ public final class AllEntityTypes {
             .trackedUpdateRate(20)
             .forceTrackedVelocityUpdates(true));
 
+    public static final EntityType<ThrownOakPickaxeHead> OAK_PICKAXE_HEAD = register("oak_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownOakPickaxeHead>create(MobCategory.MISC, ThrownOakPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownSprucePickaxeHead> SPRUCE_PICKAXE_HEAD = register("spruce_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownSprucePickaxeHead>create(MobCategory.MISC, ThrownSprucePickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownBirchPickaxeHead> BIRCH_PICKAXE_HEAD = register("birch_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownBirchPickaxeHead>create(MobCategory.MISC, ThrownBirchPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownJunglePickaxeHead> JUNGLE_PICKAXE_HEAD = register("jungle_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownJunglePickaxeHead>create(MobCategory.MISC, ThrownJunglePickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownAcaciaPickaxeHead> ACACIA_PICKAXE_HEAD = register("acacia_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownAcaciaPickaxeHead>create(MobCategory.MISC, ThrownAcaciaPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownDarkOakPickaxeHead> DARK_OAK_PICKAXE_HEAD = register("dark_oak_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownDarkOakPickaxeHead>create(MobCategory.MISC, ThrownDarkOakPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownMangrovePickaxeHead> MANGROVE_PICKAXE_HEAD = register("mangrove_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownMangrovePickaxeHead>create(MobCategory.MISC, ThrownMangrovePickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownCherryPickaxeHead> CHERRY_PICKAXE_HEAD = register("cherry_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownCherryPickaxeHead>create(MobCategory.MISC, ThrownCherryPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownBambooPickaxeHead> BAMBOO_PICKAXE_HEAD = register("bamboo_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownBambooPickaxeHead>create(MobCategory.MISC, ThrownBambooPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownCrimsonPickaxeHead> CRIMSON_PICKAXE_HEAD = register("crimson_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownCrimsonPickaxeHead>create(MobCategory.MISC, ThrownCrimsonPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
+    public static final EntityType<ThrownWarpedPickaxeHead> WARPED_PICKAXE_HEAD = register("warped_pickaxe_head",
+        FabricEntityTypeBuilder.<ThrownWarpedPickaxeHead>create(MobCategory.MISC, ThrownWarpedPickaxeHead::new)
+            .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
+            .trackRangeChunks(4)
+            .trackedUpdateRate(20)
+            .forceTrackedVelocityUpdates(true));
+
     public static final EntityType<ThrownStonePickaxeHead> STONE_PICKAXE_HEAD = register("stone_pickaxe_head",
         FabricEntityTypeBuilder.<ThrownStonePickaxeHead>create(MobCategory.MISC, ThrownStonePickaxeHead::new)
             .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
