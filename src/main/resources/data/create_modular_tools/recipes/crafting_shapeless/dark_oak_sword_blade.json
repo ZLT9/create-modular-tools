@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "create_modular_tools:wooden_tool_handles"
+      "tag": "create_modular_tools:wooden_sword_blades"
     },
     {
       "item": "minecraft:dark_oak_planks"
     }
   ],
   "result": {
-    "item": "create_modular_tools:dark_oak_tool_handle"
+    "item": "create_modular_tools:dark_oak_sword_blade"
   }
 }

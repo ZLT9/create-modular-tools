@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "create_modular_tools:wooden_tool_handles"
+      "tag": "create_modular_tools:wooden_sword_guards"
     },
     {
       "item": "minecraft:spruce_planks"
     }
   ],
   "result": {
-    "item": "create_modular_tools:spruce_tool_handle"
+    "item": "create_modular_tools:spruce_sword_guard"
   }
 }

@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "create_modular_tools:wooden_tool_handles"
+      "tag": "create_modular_tools:wooden_pickaxe_heads"
     },
     {
       "item": "minecraft:acacia_planks"
     }
   ],
   "result": {
-    "item": "create_modular_tools:acacia_tool_handle"
+    "item": "create_modular_tools:acacia_pickaxe_head"
   }
 }
