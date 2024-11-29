@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:wooden_axe_head",
+    "create_modular_tools:oak_axe_head",
+    "create_modular_tools:spruce_axe_head",
+    "create_modular_tools:birch_axe_head",
+    "create_modular_tools:jungle_axe_head",
+    "create_modular_tools:acacia_axe_head",
+    "create_modular_tools:dark_oak_axe_head",
+    "create_modular_tools:mangrove_axe_head",
+    "create_modular_tools:cherry_axe_head",
+    "create_modular_tools:bamboo_axe_head",
+    "create_modular_tools:crimson_axe_head",
+    "create_modular_tools:warped_axe_head"
+  ]
+}

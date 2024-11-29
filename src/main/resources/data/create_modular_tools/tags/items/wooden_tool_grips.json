@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:wooden_tool_grip",
+    "create_modular_tools:oak_tool_grip",
+    "create_modular_tools:spruce_tool_grip",
+    "create_modular_tools:birch_tool_grip",
+    "create_modular_tools:jungle_tool_grip",
+    "create_modular_tools:acacia_tool_grip",
+    "create_modular_tools:dark_oak_tool_grip",
+    "create_modular_tools:mangrove_tool_grip",
+    "create_modular_tools:cherry_tool_grip",
+    "create_modular_tools:bamboo_tool_grip",
+    "create_modular_tools:crimson_tool_grip",
+    "create_modular_tools:warped_tool_grip"
+  ]
+}

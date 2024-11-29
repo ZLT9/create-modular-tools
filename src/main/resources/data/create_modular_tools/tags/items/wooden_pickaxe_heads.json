@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:wooden_pickaxe_head",
+    "create_modular_tools:oak_pickaxe_head",
+    "create_modular_tools:spruce_pickaxe_head",
+    "create_modular_tools:birch_pickaxe_head",
+    "create_modular_tools:jungle_pickaxe_head",
+    "create_modular_tools:acacia_pickaxe_head",
+    "create_modular_tools:dark_oak_pickaxe_head",
+    "create_modular_tools:mangrove_pickaxe_head",
+    "create_modular_tools:cherry_pickaxe_head",
+    "create_modular_tools:bamboo_pickaxe_head",
+    "create_modular_tools:crimson_pickaxe_head",
+    "create_modular_tools:warped_pickaxe_head"
+  ]
+}

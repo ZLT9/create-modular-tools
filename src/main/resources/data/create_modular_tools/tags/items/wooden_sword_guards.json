@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:wooden_sword_guard",
+    "create_modular_tools:oak_sword_guard",
+    "create_modular_tools:spruce_sword_guard",
+    "create_modular_tools:birch_sword_guard",
+    "create_modular_tools:jungle_sword_guard",
+    "create_modular_tools:acacia_sword_guard",
+    "create_modular_tools:dark_oak_sword_guard",
+    "create_modular_tools:mangrove_sword_guard",
+    "create_modular_tools:cherry_sword_guard",
+    "create_modular_tools:bamboo_sword_guard",
+    "create_modular_tools:crimson_sword_guard",
+    "create_modular_tools:warped_sword_guard"
+  ]
+}

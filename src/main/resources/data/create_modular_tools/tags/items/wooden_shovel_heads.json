@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:wooden_shovel_head",
+    "create_modular_tools:oak_shovel_head",
+    "create_modular_tools:spruce_shovel_head",
+    "create_modular_tools:birch_shovel_head",
+    "create_modular_tools:jungle_shovel_head",
+    "create_modular_tools:acacia_shovel_head",
+    "create_modular_tools:dark_oak_shovel_head",
+    "create_modular_tools:mangrove_shovel_head",
+    "create_modular_tools:cherry_shovel_head",
+    "create_modular_tools:bamboo_shovel_head",
+    "create_modular_tools:crimson_shovel_head",
+    "create_modular_tools:warped_shovel_head"
+  ]
+}

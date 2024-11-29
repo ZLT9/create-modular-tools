@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:wooden_hoe_head",
+    "create_modular_tools:oak_hoe_head",
+    "create_modular_tools:spruce_hoe_head",
+    "create_modular_tools:birch_hoe_head",
+    "create_modular_tools:jungle_hoe_head",
+    "create_modular_tools:acacia_hoe_head",
+    "create_modular_tools:dark_oak_hoe_head",
+    "create_modular_tools:mangrove_hoe_head",
+    "create_modular_tools:cherry_hoe_head",
+    "create_modular_tools:bamboo_hoe_head",
+    "create_modular_tools:crimson_hoe_head",
+    "create_modular_tools:warped_hoe_head"
+  ]
+}
