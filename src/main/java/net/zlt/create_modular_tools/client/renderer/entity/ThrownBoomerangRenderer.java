@@ -21,12 +21,19 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class ThrownBoomerangRenderer extends EntityRenderer<ThrownBoomerang> {
+public class ThrownBoomerangRenderer extends EntityRenderer<ThrownBoomerang> {
     private final ThrownBoomerangModel MODEL;
+    private final ResourceLocation TEXTURE_LOCATION;
 
-    public ThrownBoomerangRenderer(ResourceLocation bakedModelLocation, Item item, EntityRendererProvider.Context context) {
+    public ThrownBoomerangRenderer(ResourceLocation bakedModelLocation, ResourceLocation textureLocation, Item item, EntityRendererProvider.Context context) {
         super(context);
         MODEL = new ThrownBoomerangModel(bakedModelLocation, item.getDefaultInstance());
+        TEXTURE_LOCATION = textureLocation;
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(ThrownBoomerang entity) {
+        return TEXTURE_LOCATION;
     }
 
     @Override
