@@ -15,7 +15,7 @@
     "hidden": false,
     "icon": {
       "item": "create_modular_tools:modular_pickaxe",
-      "nbt": "{Damage:0,ToolModules:{PickaxeHead:{id:\"create_modular_tools:brass_pickaxe_head\"},ToolGrip:{id:\"create_modular_tools:copper_tool_grip\"},ToolHandle:{id:\"create_modular_tools:zinc_tool_handle\"}}}"
+      "nbt": "{Damage:0,ToolModules:{PickaxeHead:{id:\"create_modular_tools:brass_pickaxe_head\"},ToolGrip:{id:\"create_modular_tools:zinc_tool_grip\"},ToolHandle:{id:\"create_modular_tools:netherite_tool_handle\"},ToolWrap:{id:\"create_modular_tools:purple_wool_tool_wrap\"}}}"
     },
     "show_toast": false,
     "title": {
