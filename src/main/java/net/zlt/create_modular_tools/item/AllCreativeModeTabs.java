@@ -63,6 +63,18 @@ public final class AllCreativeModeTabs {
             entries.accept(AllItems.MOLTEN_BRASS_BUCKET);
             entries.accept(AllItems.MOLTEN_DIAMOND_BUCKET);
 
+            entries.accept(AllItems.OAK_EMPTY_MOLD);
+            entries.accept(AllItems.SPRUCE_EMPTY_MOLD);
+            entries.accept(AllItems.BIRCH_EMPTY_MOLD);
+            entries.accept(AllItems.JUNGLE_EMPTY_MOLD);
+            entries.accept(AllItems.ACACIA_EMPTY_MOLD);
+            entries.accept(AllItems.DARK_OAK_EMPTY_MOLD);
+            entries.accept(AllItems.MANGROVE_EMPTY_MOLD);
+            entries.accept(AllItems.CHERRY_EMPTY_MOLD);
+            entries.accept(AllItems.BAMBOO_EMPTY_MOLD);
+            entries.accept(AllItems.CRIMSON_EMPTY_MOLD);
+            entries.accept(AllItems.WARPED_EMPTY_MOLD);
+
             entries.accept(AllMoldItems.SAND_MOLD);
             entries.accept(AllMoldItems.RED_SAND_MOLD);
             entries.accept(AllMoldItems.WHITE_CONCRETE_POWDER_MOLD);
