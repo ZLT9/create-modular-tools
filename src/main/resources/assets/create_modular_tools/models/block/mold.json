@@ -5,7 +5,7 @@
     "side": "create_modular_tools:block/mold_side",
     "top": "create_modular_tools:block/mold_top",
     "bottom": "create_modular_tools:block/mold_bottom",
-    "particle": "#interior"
+    "particle": "#bottom"
   },
   "elements": [
     {
