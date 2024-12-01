@@ -6,11 +6,13 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.zlt.create_modular_tools.CreateModularTools;
+import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.entity.*;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.molten_metal.MoltenMetalBucketItem;
@@ -34,6 +36,18 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public final class AllItems {
     private AllItems() {
     }
+
+    public static final Item OAK_EMPTY_MOLD = register("oak_empty_mold", new BlockItem(AllBlocks.OAK_EMPTY_MOLD, new Item.Properties()));
+    public static final Item SPRUCE_EMPTY_MOLD = register("spruce_empty_mold", new BlockItem(AllBlocks.SPRUCE_EMPTY_MOLD, new Item.Properties()));
+    public static final Item BIRCH_EMPTY_MOLD = register("birch_empty_mold", new BlockItem(AllBlocks.BIRCH_EMPTY_MOLD, new Item.Properties()));
+    public static final Item JUNGLE_EMPTY_MOLD = register("jungle_empty_mold", new BlockItem(AllBlocks.JUNGLE_EMPTY_MOLD, new Item.Properties()));
+    public static final Item ACACIA_EMPTY_MOLD = register("acacia_empty_mold", new BlockItem(AllBlocks.ACACIA_EMPTY_MOLD, new Item.Properties()));
+    public static final Item DARK_OAK_EMPTY_MOLD = register("dark_oak_empty_mold", new BlockItem(AllBlocks.DARK_OAK_EMPTY_MOLD, new Item.Properties()));
+    public static final Item MANGROVE_EMPTY_MOLD = register("mangrove_empty_mold", new BlockItem(AllBlocks.MANGROVE_EMPTY_MOLD, new Item.Properties()));
+    public static final Item CHERRY_EMPTY_MOLD = register("cherry_empty_mold", new BlockItem(AllBlocks.CHERRY_EMPTY_MOLD, new Item.Properties()));
+    public static final Item BAMBOO_EMPTY_MOLD = register("bamboo_empty_mold", new BlockItem(AllBlocks.BAMBOO_EMPTY_MOLD, new Item.Properties()));
+    public static final Item CRIMSON_EMPTY_MOLD = register("crimson_empty_mold", new BlockItem(AllBlocks.CRIMSON_EMPTY_MOLD, new Item.Properties()));
+    public static final Item WARPED_EMPTY_MOLD = register("warped_empty_mold", new BlockItem(AllBlocks.WARPED_EMPTY_MOLD, new Item.Properties()));
 
     public static final Item MOLTEN_IRON_BUCKET = register("molten_iron_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_IRON, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final Item MOLTEN_COPPER_BUCKET = register("molten_copper_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_COPPER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
