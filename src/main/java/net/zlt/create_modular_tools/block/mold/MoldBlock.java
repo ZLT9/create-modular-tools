@@ -45,8 +45,8 @@ import java.util.UUID;
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public abstract class MoldBlock extends HorizontalDirectionalBlock {
-    protected static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0);
-    protected static final VoxelShape COLLISION_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
+    public static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0);
+    public static final VoxelShape COLLISION_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
     public static final IntegerProperty LIGHT_LEVEL = FluidTankBlock.LIGHT_LEVEL;
 
     public MoldBlock(Properties properties) {
