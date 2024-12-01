@@ -25,6 +25,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluids;
 import net.zlt.create_modular_tools.CreateModularTools;
+import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.block.mold.AllMoldTopTextures;
@@ -211,6 +212,17 @@ public class CreateModularToolsClient implements ClientModInitializer {
         BlockEntityRenderers.register(AllMoldBlockEntityTypes.HOE_PINK_CONCRETE_POWDER_MOLD, HoePinkConcretePowderMoldRenderer::new);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutoutMipped(),
+            AllBlocks.OAK_EMPTY_MOLD,
+            AllBlocks.SPRUCE_EMPTY_MOLD,
+            AllBlocks.BIRCH_EMPTY_MOLD,
+            AllBlocks.JUNGLE_EMPTY_MOLD,
+            AllBlocks.ACACIA_EMPTY_MOLD,
+            AllBlocks.DARK_OAK_EMPTY_MOLD,
+            AllBlocks.MANGROVE_EMPTY_MOLD,
+            AllBlocks.CHERRY_EMPTY_MOLD,
+            AllBlocks.BAMBOO_EMPTY_MOLD,
+            AllBlocks.CRIMSON_EMPTY_MOLD,
+            AllBlocks.WARPED_EMPTY_MOLD,
             AllMoldBlocks.SAND_MOLD,
             AllMoldBlocks.RED_SAND_MOLD,
             AllMoldBlocks.WHITE_CONCRETE_POWDER_MOLD,
