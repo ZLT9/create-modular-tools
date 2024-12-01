@@ -26,7 +26,7 @@ import net.zlt.create_modular_tools.tool.module.AllToolModules;
 import java.util.function.Consumer;
 
 public class DataGenerator implements DataGeneratorEntrypoint {
-    public static final ResourceLocation ADVANCEMENTS_BACKGROUND = CreateModularTools.asResource("textures/block/mold_bottom.png");
+    public static final ResourceLocation ADVANCEMENTS_BACKGROUND = CreateModularTools.asResource("textures/block/oak_mold_bottom.png");
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {

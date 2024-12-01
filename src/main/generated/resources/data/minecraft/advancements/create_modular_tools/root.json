@@ -7,7 +7,7 @@
   },
   "display": {
     "announce_to_chat": false,
-    "background": "create_modular_tools:textures/block/mold_bottom.png",
+    "background": "create_modular_tools:textures/block/oak_mold_bottom.png",
     "description": {
       "translate": "advancements.create_modular_tools.root.description"
     },
