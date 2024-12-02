@@ -18,17 +18,17 @@ public final class AllBlocks {
     private AllBlocks() {
     }
 
-    public static final Block OAK_MOLD = register("oak_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-    public static final Block SPRUCE_MOLD = register("spruce_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS)));
-    public static final Block BIRCH_MOLD = register("birch_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.BIRCH_PLANKS)));
-    public static final Block JUNGLE_MOLD = register("jungle_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.JUNGLE_PLANKS)));
-    public static final Block ACACIA_MOLD = register("acacia_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS)));
-    public static final Block DARK_OAK_MOLD = register("dark_oak_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.DARK_OAK_PLANKS)));
-    public static final Block MANGROVE_MOLD = register("mangrove_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.MANGROVE_PLANKS)));
-    public static final Block CHERRY_MOLD = register("cherry_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS)));
-    public static final Block BAMBOO_MOLD = register("bamboo_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.BAMBOO_PLANKS)));
-    public static final Block CRIMSON_MOLD = register("crimson_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_PLANKS)));
-    public static final Block WARPED_MOLD = register("warped_mold", new EmptyMoldBlock(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS)));
+    public static final Block OAK_MOLD = register("oak_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block SPRUCE_MOLD = register("spruce_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.SPRUCE_PLANKS)));
+    public static final Block BIRCH_MOLD = register("birch_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.BIRCH_PLANKS)));
+    public static final Block JUNGLE_MOLD = register("jungle_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.JUNGLE_PLANKS)));
+    public static final Block ACACIA_MOLD = register("acacia_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS)));
+    public static final Block DARK_OAK_MOLD = register("dark_oak_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.DARK_OAK_PLANKS)));
+    public static final Block MANGROVE_MOLD = register("mangrove_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.MANGROVE_PLANKS)));
+    public static final Block CHERRY_MOLD = register("cherry_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS)));
+    public static final Block BAMBOO_MOLD = register("bamboo_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.BAMBOO_PLANKS)));
+    public static final Block CRIMSON_MOLD = register("crimson_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_PLANKS)));
+    public static final Block WARPED_MOLD = register("warped_mold", new MoldBlock(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS)));
 
     public static final Block MOLTEN_IRON = register("molten_iron", new LiquidBlock(AllFluids.MOLTEN_IRON, FabricBlockSettings.copy(Blocks.LAVA)));
     public static final Block MOLTEN_COPPER = register("molten_copper", new LiquidBlock(AllFluids.MOLTEN_COPPER, FabricBlockSettings.copy(Blocks.LAVA)));

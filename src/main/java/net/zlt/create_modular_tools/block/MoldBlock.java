@@ -18,8 +18,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class EmptyMoldBlock extends HorizontalDirectionalBlock {
-    public EmptyMoldBlock(Properties properties) {
+public class MoldBlock extends HorizontalDirectionalBlock {
+    public MoldBlock(Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
     }

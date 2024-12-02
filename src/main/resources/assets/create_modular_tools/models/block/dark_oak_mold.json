@@ -1,5 +1,5 @@
 {
-  "parent": "create_modular_tools:block/empty_mold",
+  "parent": "create_modular_tools:block/mold",
   "textures": {
     "side": "create_modular_tools:block/dark_oak_mold_side",
     "top": "create_modular_tools:block/dark_oak_mold_top",
