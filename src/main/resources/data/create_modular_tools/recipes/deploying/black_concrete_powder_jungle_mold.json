@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:jungle_mold"
+    },
+    {
+      "item": "minecraft:black_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:black_concrete_powder_jungle_mold"
+    }
+  ]
+}

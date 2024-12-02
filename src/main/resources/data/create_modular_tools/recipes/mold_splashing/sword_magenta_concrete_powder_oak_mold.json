@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_splashing",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:sword_magenta_concrete_powder_oak_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:sword_magenta_concrete_powder_oak_mold"
+    }
+  ]
+}

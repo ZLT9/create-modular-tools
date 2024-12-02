@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:mangrove_mold"
+    },
+    {
+      "item": "minecraft:orange_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:orange_concrete_powder_mangrove_mold"
+    }
+  ]
+}

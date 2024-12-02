@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "create_modular_tools:block/pink_concrete_powder_dark_oak_mold",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "create_modular_tools:block/pink_concrete_powder_dark_oak_mold",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "create_modular_tools:block/pink_concrete_powder_dark_oak_mold"
+    },
+    "facing=west": {
+      "model": "create_modular_tools:block/pink_concrete_powder_dark_oak_mold",
+      "y": 90
+    }
+  }
+}

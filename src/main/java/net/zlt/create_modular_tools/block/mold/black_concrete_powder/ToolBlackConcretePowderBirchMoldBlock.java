@@ -1,0 +1,21 @@
+package net.zlt.create_modular_tools.block.mold.black_concrete_powder;
+
+import net.minecraft.MethodsReturnNonnullByDefault;
+import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
+import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
+
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
+public abstract class ToolBlackConcretePowderBirchMoldBlock extends ToolMaterialMoldBlock {
+    public ToolBlackConcretePowderBirchMoldBlock(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    protected MaterialMoldBlock getMoldBlock() {
+        return AllMoldBlocks.BLACK_CONCRETE_POWDER_BIRCH_MOLD;
+    }
+}

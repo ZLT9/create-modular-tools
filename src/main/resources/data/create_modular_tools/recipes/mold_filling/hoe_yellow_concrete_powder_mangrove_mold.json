@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_filling",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:hoe_yellow_concrete_powder_mangrove_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:hoe_yellow_concrete_powder_mangrove_mold"
+    }
+  ]
+}

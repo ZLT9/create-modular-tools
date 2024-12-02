@@ -50,7 +50,7 @@ public abstract class MaterialMoldBlock extends HorizontalDirectionalBlock {
     public static final IntegerProperty LIGHT_LEVEL = FluidTankBlock.LIGHT_LEVEL;
 
     public MaterialMoldBlock(Properties properties) {
-        super(properties.sound(AllSoundTypes.SAND_MOLD).strength(2.0f));
+        super(properties);
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 

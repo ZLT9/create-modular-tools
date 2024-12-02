@@ -508,14 +508,24 @@ public final class AllItems {
         return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(path), item);
     }
 
-    private static void registerToolModuleFuel(Item... toolModules) {
-        for (Item toolModule : toolModules) {
-            FuelRegistry.INSTANCE.add(toolModule, 100);
+    private static void registerFuel(Item... items) {
+        for (Item item : items) {
+            FuelRegistry.INSTANCE.add(item, 100);
         }
     }
 
     public static void init() {
-        registerToolModuleFuel(
+        registerFuel(
+            OAK_MOLD,
+            SPRUCE_MOLD,
+            BIRCH_MOLD,
+            JUNGLE_MOLD,
+            ACACIA_MOLD,
+            DARK_OAK_MOLD,
+            MANGROVE_MOLD,
+            CHERRY_MOLD,
+            BAMBOO_MOLD,
+
             WOODEN_SWORD_BLADE,
             OAK_SWORD_BLADE,
             SPRUCE_SWORD_BLADE,

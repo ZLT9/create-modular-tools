@@ -14,11 +14,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public abstract class ToolGreenConcretePowderMoldItemUnbakedModel extends ToolMaterialMoldItemUnbakedModel {
     @Override
-    protected ResourceLocation getMoldModelId() {
-        return CreateModularTools.asResource("block/green_concrete_powder_mold");
-    }
-
-    @Override
     protected ResourceLocation getTopTextureId() {
         return new ResourceLocation("minecraft", "block/green_concrete_powder");
     }

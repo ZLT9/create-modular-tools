@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:birch_mold"
+    },
+    {
+      "item": "minecraft:green_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:green_concrete_powder_birch_mold"
+    }
+  ]
+}

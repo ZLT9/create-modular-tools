@@ -1,0 +1,6 @@
+{
+  "parent": "create_modular_tools:block/material_dark_oak_mold",
+  "textures": {
+    "interior": "minecraft:block/lime_concrete_powder"
+  }
+}

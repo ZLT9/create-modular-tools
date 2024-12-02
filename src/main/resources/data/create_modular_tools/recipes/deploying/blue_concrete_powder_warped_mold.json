@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:warped_mold"
+    },
+    {
+      "item": "minecraft:blue_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:blue_concrete_powder_warped_mold"
+    }
+  ]
+}

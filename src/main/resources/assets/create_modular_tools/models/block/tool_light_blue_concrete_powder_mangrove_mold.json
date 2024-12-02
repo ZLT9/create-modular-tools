@@ -1,0 +1,6 @@
+{
+  "parent": "create_modular_tools:block/tool_material_mangrove_mold",
+  "textures": {
+    "interior": "minecraft:block/light_blue_concrete_powder"
+  }
+}

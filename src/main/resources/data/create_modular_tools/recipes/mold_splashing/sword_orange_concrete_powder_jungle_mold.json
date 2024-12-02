@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_splashing",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:sword_orange_concrete_powder_jungle_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:sword_orange_concrete_powder_jungle_mold"
+    }
+  ]
+}

@@ -14,11 +14,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public abstract class ToolSandMoldItemUnbakedModel extends ToolMaterialMoldItemUnbakedModel {
     @Override
-    protected ResourceLocation getMoldModelId() {
-        return CreateModularTools.asResource("block/sand_mold");
-    }
-
-    @Override
     protected ResourceLocation getTopTextureId() {
         return new ResourceLocation("minecraft", "block/sand");
     }

@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:dark_oak_mold"
+    },
+    {
+      "item": "minecraft:sand"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:sand_dark_oak_mold"
+    }
+  ]
+}

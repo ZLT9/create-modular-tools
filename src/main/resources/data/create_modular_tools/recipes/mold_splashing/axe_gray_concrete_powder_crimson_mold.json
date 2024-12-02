@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_splashing",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:axe_gray_concrete_powder_crimson_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:axe_gray_concrete_powder_crimson_mold"
+    }
+  ]
+}

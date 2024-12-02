@@ -1,0 +1,6 @@
+{
+  "parent": "create_modular_tools:block/material_crimson_mold",
+  "textures": {
+    "interior": "minecraft:block/yellow_concrete_powder"
+  }
+}

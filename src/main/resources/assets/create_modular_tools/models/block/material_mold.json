@@ -2,9 +2,6 @@
   "credit": "Made with Blockbench",
   "parent": "block/block",
   "textures": {
-    "side": "create_modular_tools:block/spruce_mold_side",
-    "top": "create_modular_tools:block/spruce_mold_top",
-    "bottom": "create_modular_tools:block/spruce_mold_bottom",
     "particle": "#bottom"
   },
   "elements": [

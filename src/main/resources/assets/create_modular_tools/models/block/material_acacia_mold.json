@@ -1,0 +1,8 @@
+{
+  "parent": "create_modular_tools:block/material_mold",
+  "textures": {
+    "side": "create_modular_tools:block/acacia_mold_side",
+    "top": "create_modular_tools:block/acacia_mold_top",
+    "bottom": "create_modular_tools:block/acacia_mold_bottom"
+  }
+}

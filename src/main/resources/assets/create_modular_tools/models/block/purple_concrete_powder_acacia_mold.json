@@ -1,0 +1,6 @@
+{
+  "parent": "create_modular_tools:block/material_acacia_mold",
+  "textures": {
+    "interior": "minecraft:block/purple_concrete_powder"
+  }
+}

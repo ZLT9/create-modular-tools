@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_emptying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:pickaxe_light_gray_concrete_powder_crimson_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:pickaxe_light_gray_concrete_powder_crimson_mold"
+    }
+  ]
+}

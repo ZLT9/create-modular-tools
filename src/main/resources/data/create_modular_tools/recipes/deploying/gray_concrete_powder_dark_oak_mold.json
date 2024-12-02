@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:dark_oak_mold"
+    },
+    {
+      "item": "minecraft:gray_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:gray_concrete_powder_dark_oak_mold"
+    }
+  ]
+}

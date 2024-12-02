@@ -1,0 +1,6 @@
+{
+  "parent": "create_modular_tools:block/tool_material_cherry_mold",
+  "textures": {
+    "interior": "minecraft:block/red_sand"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_emptying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:hoe_gray_concrete_powder_dark_oak_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:hoe_gray_concrete_powder_dark_oak_mold"
+    }
+  ]
+}

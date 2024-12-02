@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:cherry_mold"
+    },
+    {
+      "item": "minecraft:lime_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:lime_concrete_powder_cherry_mold"
+    }
+  ]
+}

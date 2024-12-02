@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "create_modular_tools:block/purple_concrete_powder_acacia_mold",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "create_modular_tools:block/purple_concrete_powder_acacia_mold",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "create_modular_tools:block/purple_concrete_powder_acacia_mold"
+    },
+    "facing=west": {
+      "model": "create_modular_tools:block/purple_concrete_powder_acacia_mold",
+      "y": 90
+    }
+  }
+}

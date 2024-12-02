@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_pressing",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:axe_white_concrete_powder_spruce_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:modular_axe"
+    }
+  ]
+}

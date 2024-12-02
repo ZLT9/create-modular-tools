@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:oak_mold"
+    },
+    {
+      "item": "minecraft:sand"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:sand_oak_mold"
+    }
+  ]
+}

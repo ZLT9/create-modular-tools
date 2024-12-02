@@ -1,6 +1,0 @@
-{
-  "parent": "create_modular_tools:block/material_mold",
-  "textures": {
-    "interior": "minecraft:block/purple_concrete_powder"
-  }
-}

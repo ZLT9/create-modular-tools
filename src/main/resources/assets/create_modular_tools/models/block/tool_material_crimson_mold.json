@@ -1,0 +1,8 @@
+{
+  "parent": "create_modular_tools:block/tool_material_mold",
+  "textures": {
+    "side": "create_modular_tools:block/crimson_mold_side",
+    "top": "create_modular_tools:block/crimson_mold_top",
+    "bottom": "create_modular_tools:block/crimson_mold_bottom"
+  }
+}

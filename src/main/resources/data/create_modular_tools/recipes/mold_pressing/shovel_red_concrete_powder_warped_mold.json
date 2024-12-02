@@ -1,0 +1,13 @@
+{
+  "type": "create_modular_tools:mold_pressing",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:shovel_red_concrete_powder_warped_mold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:modular_shovel"
+    }
+  ]
+}
