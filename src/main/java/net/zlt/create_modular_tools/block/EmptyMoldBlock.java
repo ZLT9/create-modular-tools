@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.zlt.create_modular_tools.block.mold.MoldBlock;
+import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -37,11 +37,11 @@ public class EmptyMoldBlock extends HorizontalDirectionalBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return MoldBlock.COLLISION_SHAPE;
+        return MaterialMoldBlock.COLLISION_SHAPE;
     }
 
     @Override
     public VoxelShape getVisualShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return MoldBlock.SHAPE;
+        return MaterialMoldBlock.SHAPE;
     }
 }

@@ -2,39 +2,39 @@ package net.zlt.create_modular_tools.block.mold.light_gray_concrete_powder;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.MoldBlock;
+import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class LightGrayConcretePowderMoldBlock extends MoldBlock {
+public class LightGrayConcretePowderMoldBlock extends MaterialMoldBlock {
     public LightGrayConcretePowderMoldBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    protected MoldBlock getSwordMoldBlock() {
+    protected MaterialMoldBlock getSwordMoldBlock() {
         return AllMoldBlocks.SWORD_LIGHT_GRAY_CONCRETE_POWDER_MOLD;
     }
 
     @Override
-    protected MoldBlock getShovelMoldBlock() {
+    protected MaterialMoldBlock getShovelMoldBlock() {
         return AllMoldBlocks.SHOVEL_LIGHT_GRAY_CONCRETE_POWDER_MOLD;
     }
 
     @Override
-    protected MoldBlock getPickaxeMoldBlock() {
+    protected MaterialMoldBlock getPickaxeMoldBlock() {
         return AllMoldBlocks.PICKAXE_LIGHT_GRAY_CONCRETE_POWDER_MOLD;
     }
 
     @Override
-    protected MoldBlock getAxeMoldBlock() {
+    protected MaterialMoldBlock getAxeMoldBlock() {
         return AllMoldBlocks.AXE_LIGHT_GRAY_CONCRETE_POWDER_MOLD;
     }
 
     @Override
-    protected MoldBlock getHoeMoldBlock() {
+    protected MaterialMoldBlock getHoeMoldBlock() {
         return AllMoldBlocks.HOE_LIGHT_GRAY_CONCRETE_POWDER_MOLD;
     }
 }

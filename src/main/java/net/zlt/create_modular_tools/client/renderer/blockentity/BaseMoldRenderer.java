@@ -23,7 +23,7 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
 import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
-import net.zlt.create_modular_tools.block.mold.MoldBlock;
+import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -96,7 +96,7 @@ public abstract class BaseMoldRenderer<T extends MoldBlockEntity> implements Blo
         poseStack.pushPose();
 
         poseStack.translate(0.5, 0.0, 0.5);
-        poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValue(MoldBlock.FACING).toYRot()));
+        poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValue(MaterialMoldBlock.FACING).toYRot()));
         poseStack.translate(-0.5, 0.1875, -0.5);
 
         TOP.render(poseStack, getBaseMaterial().buffer(buffer, resourceLocation -> RenderType.cutout(), isEnchanted), packedLight, packedOverlay);

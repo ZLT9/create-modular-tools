@@ -8,7 +8,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
-import net.zlt.create_modular_tools.block.mold.MoldBlock;
+import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -22,7 +22,7 @@ public class ToolModuleType {
     private final String TAG;
     private final int LAYER;
     private final long REQUIRED_MOLTEN_METAL_AMOUNT;
-    private final List<TriFunction<@Nullable MoldTopTexture, MoldBlock, CompoundTag, @Nullable MoldTopTexture>> MOLD_TOP_TEXTURE_GETTERS = new ArrayList<>();
+    private final List<TriFunction<@Nullable MoldTopTexture, MaterialMoldBlock, CompoundTag, @Nullable MoldTopTexture>> MOLD_TOP_TEXTURE_GETTERS = new ArrayList<>();
 
     public ToolModuleType(Component name, String tag, int layer, long requiredMoltenMetalAmount) {
         NAME = name;
@@ -43,15 +43,15 @@ public class ToolModuleType {
         return LAYER;
     }
 
-    public void registerMoldTopTextureGetter(TriFunction<@Nullable MoldTopTexture, MoldBlock, CompoundTag, MoldTopTexture> moldTopTextureGetter) {
+    public void registerMoldTopTextureGetter(TriFunction<@Nullable MoldTopTexture, MaterialMoldBlock, CompoundTag, MoldTopTexture> moldTopTextureGetter) {
         MOLD_TOP_TEXTURE_GETTERS.add(moldTopTextureGetter);
     }
 
     @Nullable
-    public MoldTopTexture getMoldTopTexture(MoldBlock moldBlock, CompoundTag moldNbt) {
+    public MoldTopTexture getMoldTopTexture(MaterialMoldBlock materialMoldBlock, CompoundTag moldNbt) {
         MoldTopTexture moldTopTexture = null;
-        for (TriFunction<@Nullable MoldTopTexture, MoldBlock, CompoundTag, @Nullable MoldTopTexture> moldTopTextureGetter : MOLD_TOP_TEXTURE_GETTERS) {
-            moldTopTexture = moldTopTextureGetter.apply(moldTopTexture, moldBlock, moldNbt);
+        for (TriFunction<@Nullable MoldTopTexture, MaterialMoldBlock, CompoundTag, @Nullable MoldTopTexture> moldTopTextureGetter : MOLD_TOP_TEXTURE_GETTERS) {
+            moldTopTexture = moldTopTextureGetter.apply(moldTopTexture, materialMoldBlock, moldNbt);
         }
         return moldTopTexture;
     }

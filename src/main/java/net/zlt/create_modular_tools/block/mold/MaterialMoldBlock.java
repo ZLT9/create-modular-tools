@@ -44,12 +44,12 @@ import java.util.UUID;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class MoldBlock extends HorizontalDirectionalBlock {
+public abstract class MaterialMoldBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0);
     public static final VoxelShape COLLISION_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
     public static final IntegerProperty LIGHT_LEVEL = FluidTankBlock.LIGHT_LEVEL;
 
-    public MoldBlock(Properties properties) {
+    public MaterialMoldBlock(Properties properties) {
         super(properties.sound(AllSoundTypes.SAND_MOLD).strength(2.0f));
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
@@ -118,15 +118,15 @@ public abstract class MoldBlock extends HorizontalDirectionalBlock {
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    protected abstract MoldBlock getSwordMoldBlock();
+    protected abstract MaterialMoldBlock getSwordMoldBlock();
 
-    protected abstract MoldBlock getShovelMoldBlock();
+    protected abstract MaterialMoldBlock getShovelMoldBlock();
 
-    protected abstract MoldBlock getPickaxeMoldBlock();
+    protected abstract MaterialMoldBlock getPickaxeMoldBlock();
 
-    protected abstract MoldBlock getAxeMoldBlock();
+    protected abstract MaterialMoldBlock getAxeMoldBlock();
 
-    protected abstract MoldBlock getHoeMoldBlock();
+    protected abstract MaterialMoldBlock getHoeMoldBlock();
 
     @Override
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {

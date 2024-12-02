@@ -3,7 +3,7 @@ package net.zlt.create_modular_tools.block.mold.lime_concrete_powder;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
-import net.zlt.create_modular_tools.block.mold.MoldBlock;
+import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -15,7 +15,7 @@ public abstract class BaseLimeConcretePowderMoldBlock extends BaseMoldBlock {
     }
 
     @Override
-    protected MoldBlock getMoldBlock() {
+    protected MaterialMoldBlock getMoldBlock() {
         return AllMoldBlocks.LIME_CONCRETE_POWDER_MOLD;
     }
 }

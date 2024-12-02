@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.block.mold.MoldBlock;
+import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import net.zlt.create_modular_tools.item.mold.BaseMoldItem;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -263,8 +263,8 @@ public abstract class MoldBlockEntity extends BlockEntity implements IHaveGoggle
         lightLevel = Math.min(15, lightLevel);
 
         BlockState blockState = getBlockState();
-        if (blockState.getValue(MoldBlock.LIGHT_LEVEL) != lightLevel) {
-            level.setBlock(getBlockPos(), getBlockState().setValue(MoldBlock.LIGHT_LEVEL, lightLevel), 23);
+        if (blockState.getValue(MaterialMoldBlock.LIGHT_LEVEL) != lightLevel) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(MaterialMoldBlock.LIGHT_LEVEL, lightLevel), 23);
         }
     }
 

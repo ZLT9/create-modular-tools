@@ -1,5 +1,5 @@
 {
-  "parent": "create_modular_tools:block/mold",
+  "parent": "create_modular_tools:block/material_mold",
   "textures": {
     "interior": "minecraft:block/brown_concrete_powder"
   }

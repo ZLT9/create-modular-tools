@@ -34,7 +34,7 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class BaseMoldBlock extends MoldBlock implements EntityBlock {
+public abstract class BaseMoldBlock extends MaterialMoldBlock implements EntityBlock {
     public BaseMoldBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState().setValue(LIGHT_LEVEL, 0));
@@ -174,27 +174,27 @@ public abstract class BaseMoldBlock extends MoldBlock implements EntityBlock {
     }
 
     @Override
-    protected MoldBlock getSwordMoldBlock() {
+    protected MaterialMoldBlock getSwordMoldBlock() {
         return getMoldBlock().getSwordMoldBlock();
     }
 
     @Override
-    protected MoldBlock getShovelMoldBlock() {
+    protected MaterialMoldBlock getShovelMoldBlock() {
         return getMoldBlock().getShovelMoldBlock();
     }
 
     @Override
-    protected MoldBlock getPickaxeMoldBlock() {
+    protected MaterialMoldBlock getPickaxeMoldBlock() {
         return getMoldBlock().getPickaxeMoldBlock();
     }
 
     @Override
-    protected MoldBlock getAxeMoldBlock() {
+    protected MaterialMoldBlock getAxeMoldBlock() {
         return getMoldBlock().getAxeMoldBlock();
     }
 
     @Override
-    protected MoldBlock getHoeMoldBlock() {
+    protected MaterialMoldBlock getHoeMoldBlock() {
         return getMoldBlock().getHoeMoldBlock();
     }
 
@@ -212,5 +212,5 @@ public abstract class BaseMoldBlock extends MoldBlock implements EntityBlock {
 
     public abstract ModularToolItem getModularTool();
 
-    protected abstract MoldBlock getMoldBlock();
+    protected abstract MaterialMoldBlock getMoldBlock();
 }
