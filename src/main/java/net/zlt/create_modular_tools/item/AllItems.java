@@ -37,17 +37,17 @@ public final class AllItems {
     private AllItems() {
     }
 
-    public static final Item OAK_EMPTY_MOLD = register("oak_empty_mold", new BlockItem(AllBlocks.OAK_EMPTY_MOLD, new Item.Properties()));
-    public static final Item SPRUCE_EMPTY_MOLD = register("spruce_empty_mold", new BlockItem(AllBlocks.SPRUCE_EMPTY_MOLD, new Item.Properties()));
-    public static final Item BIRCH_EMPTY_MOLD = register("birch_empty_mold", new BlockItem(AllBlocks.BIRCH_EMPTY_MOLD, new Item.Properties()));
-    public static final Item JUNGLE_EMPTY_MOLD = register("jungle_empty_mold", new BlockItem(AllBlocks.JUNGLE_EMPTY_MOLD, new Item.Properties()));
-    public static final Item ACACIA_EMPTY_MOLD = register("acacia_empty_mold", new BlockItem(AllBlocks.ACACIA_EMPTY_MOLD, new Item.Properties()));
-    public static final Item DARK_OAK_EMPTY_MOLD = register("dark_oak_empty_mold", new BlockItem(AllBlocks.DARK_OAK_EMPTY_MOLD, new Item.Properties()));
-    public static final Item MANGROVE_EMPTY_MOLD = register("mangrove_empty_mold", new BlockItem(AllBlocks.MANGROVE_EMPTY_MOLD, new Item.Properties()));
-    public static final Item CHERRY_EMPTY_MOLD = register("cherry_empty_mold", new BlockItem(AllBlocks.CHERRY_EMPTY_MOLD, new Item.Properties()));
-    public static final Item BAMBOO_EMPTY_MOLD = register("bamboo_empty_mold", new BlockItem(AllBlocks.BAMBOO_EMPTY_MOLD, new Item.Properties()));
-    public static final Item CRIMSON_EMPTY_MOLD = register("crimson_empty_mold", new BlockItem(AllBlocks.CRIMSON_EMPTY_MOLD, new Item.Properties()));
-    public static final Item WARPED_EMPTY_MOLD = register("warped_empty_mold", new BlockItem(AllBlocks.WARPED_EMPTY_MOLD, new Item.Properties()));
+    public static final Item OAK_MOLD = register("oak_mold", new BlockItem(AllBlocks.OAK_MOLD, new Item.Properties()));
+    public static final Item SPRUCE_MOLD = register("spruce_mold", new BlockItem(AllBlocks.SPRUCE_MOLD, new Item.Properties()));
+    public static final Item BIRCH_MOLD = register("birch_mold", new BlockItem(AllBlocks.BIRCH_MOLD, new Item.Properties()));
+    public static final Item JUNGLE_MOLD = register("jungle_mold", new BlockItem(AllBlocks.JUNGLE_MOLD, new Item.Properties()));
+    public static final Item ACACIA_MOLD = register("acacia_mold", new BlockItem(AllBlocks.ACACIA_MOLD, new Item.Properties()));
+    public static final Item DARK_OAK_MOLD = register("dark_oak_mold", new BlockItem(AllBlocks.DARK_OAK_MOLD, new Item.Properties()));
+    public static final Item MANGROVE_MOLD = register("mangrove_mold", new BlockItem(AllBlocks.MANGROVE_MOLD, new Item.Properties()));
+    public static final Item CHERRY_MOLD = register("cherry_mold", new BlockItem(AllBlocks.CHERRY_MOLD, new Item.Properties()));
+    public static final Item BAMBOO_MOLD = register("bamboo_mold", new BlockItem(AllBlocks.BAMBOO_MOLD, new Item.Properties()));
+    public static final Item CRIMSON_MOLD = register("crimson_mold", new BlockItem(AllBlocks.CRIMSON_MOLD, new Item.Properties()));
+    public static final Item WARPED_MOLD = register("warped_mold", new BlockItem(AllBlocks.WARPED_MOLD, new Item.Properties()));
 
     public static final Item MOLTEN_IRON_BUCKET = register("molten_iron_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_IRON, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final Item MOLTEN_COPPER_BUCKET = register("molten_copper_bucket", new MoltenMetalBucketItem(AllFluids.MOLTEN_COPPER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
