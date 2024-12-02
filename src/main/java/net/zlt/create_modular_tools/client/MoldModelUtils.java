@@ -5,7 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -25,7 +25,7 @@ public final class MoldModelUtils {
     private MoldModelUtils() {
     }
 
-    public static void forEachMoldTopTexture(Collection<ToolModuleType> compatibleToolModuleTypes, CompoundTag toolModulesNbt, BaseMoldBlock baseMoldBlock, ModularToolItem modularTool, Consumer<ResourceLocation> action) {
+    public static void forEachMoldTopTexture(Collection<ToolModuleType> compatibleToolModuleTypes, CompoundTag toolModulesNbt, ToolMaterialMoldBlock toolMaterialMoldBlock, ModularToolItem modularTool, Consumer<ResourceLocation> action) {
         List<ResourceLocation> existingToolModuleIds = new ArrayList<>();
 
         for (ToolModuleType toolModuleType : compatibleToolModuleTypes) {
@@ -36,12 +36,12 @@ public final class MoldModelUtils {
             CompoundTag slotNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
             ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString("state"));
             if (slotState == ToolUtils.MoldSlotState.EMPTY) {
-                ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(baseMoldBlock, toolModulesNbt);
+                ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(toolMaterialMoldBlock, toolModulesNbt);
                 if (moldTopTexture == null) {
                     continue;
                 }
 
-                ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(baseMoldBlock, toolModulesNbt);
+                ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(toolMaterialMoldBlock, toolModulesNbt);
                 if (moldTopTextureId != null) {
                     action.accept(moldTopTextureId);
                 }
@@ -51,12 +51,12 @@ public final class MoldModelUtils {
 
             ToolModuleItem toolModule = ToolModuleRegistry.get(slotNbt.getString("id"));
             if (toolModule == null) {
-                ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(baseMoldBlock, toolModulesNbt);
+                ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(toolMaterialMoldBlock, toolModulesNbt);
                 if (moldTopTexture == null) {
                     continue;
                 }
 
-                ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(baseMoldBlock, toolModulesNbt);
+                ResourceLocation moldTopTextureId = moldTopTexture.getTextureId(toolMaterialMoldBlock, toolModulesNbt);
                 if (moldTopTextureId != null) {
                     existingToolModuleIds.add(moldTopTextureId);
                 }

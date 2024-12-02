@@ -13,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class PickaxeLimeConcretePowderMoldBlock extends BaseLimeConcretePowderMoldBlock {
+public class PickaxeLimeConcretePowderMoldBlock extends ToolLimeConcretePowderMoldBlock {
     public PickaxeLimeConcretePowderMoldBlock(Properties properties) {
         super(properties);
     }

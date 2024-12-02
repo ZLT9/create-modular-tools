@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Function;
@@ -16,14 +16,14 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class HoeSandMoldItemUnbakedModel extends BaseSandMoldItemUnbakedModel {
+public class HoeSandMoldItemUnbakedModel extends ToolSandMoldItemUnbakedModel {
     @Override
     protected BakedModel createDynamic(BakedModel baseSandMoldModel, BakedQuad interiorTopQuad, Function<Material, TextureAtlasSprite> spriteGetter) {
         return new HoeSandMoldItemDynamicBakedModel(baseSandMoldModel, interiorTopQuad, spriteGetter);
     }
 
     @Override
-    protected BaseMoldBlock getMoldBlock() {
+    protected ToolMaterialMoldBlock getMoldBlock() {
         return AllMoldBlocks.HOE_SAND_MOLD;
     }
 }

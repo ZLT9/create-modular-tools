@@ -6,19 +6,19 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.zlt.create_modular_tools.block.entity.mold.red_concrete_powder.ShovelRedConcretePowderMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class ShovelRedConcretePowderMoldRenderer extends BaseRedConcretePowderMoldRenderer<ShovelRedConcretePowderMoldBlockEntity> {
+public class ShovelRedConcretePowderMoldRenderer extends ToolRedConcretePowderMoldRenderer<ShovelRedConcretePowderMoldBlockEntity> {
     public ShovelRedConcretePowderMoldRenderer(BlockEntityRendererProvider.Context context) {
     }
 
     @Override
-    protected BaseMoldBlock getMoldBlock() {
+    protected ToolMaterialMoldBlock getMoldBlock() {
         return AllMoldBlocks.SHOVEL_RED_CONCRETE_POWDER_MOLD;
     }
 }

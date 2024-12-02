@@ -2,7 +2,7 @@ package net.zlt.create_modular_tools.block.mold;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
-import net.zlt.create_modular_tools.item.mold.BaseMoldItem;
+import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
@@ -19,7 +19,7 @@ public final class MoldUtils {
             return false;
         }
 
-        BaseMoldBlock moldBlock = ((BaseMoldBlock) ((BaseMoldItem) moldStack.getItem()).getBlock());
+        ToolMaterialMoldBlock moldBlock = ((ToolMaterialMoldBlock) ((ToolMaterialMoldItem) moldStack.getItem()).getBlock());
 
         for (String key : toolModulesNbt.getAllKeys()) {
             ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(key);

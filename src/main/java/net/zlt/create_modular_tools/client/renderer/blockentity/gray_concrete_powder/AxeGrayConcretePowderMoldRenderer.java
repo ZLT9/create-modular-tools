@@ -6,19 +6,19 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.zlt.create_modular_tools.block.entity.mold.gray_concrete_powder.AxeGrayConcretePowderMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class AxeGrayConcretePowderMoldRenderer extends BaseGrayConcretePowderMoldRenderer<AxeGrayConcretePowderMoldBlockEntity> {
+public class AxeGrayConcretePowderMoldRenderer extends ToolGrayConcretePowderMoldRenderer<AxeGrayConcretePowderMoldBlockEntity> {
     public AxeGrayConcretePowderMoldRenderer(BlockEntityRendererProvider.Context context) {
     }
 
     @Override
-    protected BaseMoldBlock getMoldBlock() {
+    protected ToolMaterialMoldBlock getMoldBlock() {
         return AllMoldBlocks.AXE_GRAY_CONCRETE_POWDER_MOLD;
     }
 }

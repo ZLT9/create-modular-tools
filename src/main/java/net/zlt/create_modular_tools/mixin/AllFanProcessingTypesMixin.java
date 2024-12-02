@@ -9,7 +9,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
-import net.zlt.create_modular_tools.item.mold.BaseMoldItem;
+import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -38,7 +38,7 @@ public abstract class AllFanProcessingTypesMixin {
             return true;
         }
 
-        if (!(stack.getItem() instanceof BaseMoldItem) || AllRecipeTypes.MOLD_SPLASHING.find(SPLASHING_WRAPPER, level).isEmpty()) {
+        if (!(stack.getItem() instanceof ToolMaterialMoldItem) || AllRecipeTypes.MOLD_SPLASHING.find(SPLASHING_WRAPPER, level).isEmpty()) {
             return false;
         }
 
@@ -58,7 +58,7 @@ public abstract class AllFanProcessingTypesMixin {
                 Fluid fluid = (Fluid) moldSlot.contents();
 
                 if (fluidIngredient == null) {
-                    if (BaseMoldItem.canBeFilledWith(fluid)) {
+                    if (ToolMaterialMoldItem.canBeFilledWith(fluid)) {
                         fluidIngredient = fluid;
                     } else {
                         return false;
@@ -74,7 +74,7 @@ public abstract class AllFanProcessingTypesMixin {
 
     @Inject(method = "process", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
     private void createModularTools$process(ItemStack stack, Level level, CallbackInfoReturnable<List<ItemStack>> cir) {
-        if (!(stack.getItem() instanceof BaseMoldItem)) {
+        if (!(stack.getItem() instanceof ToolMaterialMoldItem)) {
             return;
         }
 

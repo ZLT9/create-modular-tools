@@ -29,7 +29,7 @@ import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.block.mold.AllMoldTopTextures;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import net.zlt.create_modular_tools.client.model.CreateModularToolsModelLoadingPlugin;
 import net.zlt.create_modular_tools.client.renderer.blockentity.black_concrete_powder.*;
@@ -1130,7 +1130,7 @@ public class CreateModularToolsClient implements ClientModInitializer {
         toolModule.registerModelIdGetter((original, modularTool, nbt) -> original == null && modularTool == tool && includedToolModuleTypes.stream().allMatch(toolModuleType -> nbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND)) && excludedToolModuleTypes.stream().noneMatch(toolModuleType -> nbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND)) ? modelId : original);
     }
 
-    private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, Set<BaseMoldBlock> moldBlocks, ToolModuleType toolModuleType, ResourceLocation textureId) {
+    private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, Set<ToolMaterialMoldBlock> moldBlocks, ToolModuleType toolModuleType, ResourceLocation textureId) {
         moldTopTexture.registerTextureIdGetter((original, baseMoldBlock, nbt) -> original == null && moldBlocks.contains(baseMoldBlock) && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString("state")) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
     }
 

@@ -6,19 +6,19 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.zlt.create_modular_tools.block.entity.mold.blue_concrete_powder.PickaxeBlueConcretePowderMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class PickaxeBlueConcretePowderMoldRenderer extends BaseBlueConcretePowderMoldRenderer<PickaxeBlueConcretePowderMoldBlockEntity> {
+public class PickaxeBlueConcretePowderMoldRenderer extends ToolBlueConcretePowderMoldRenderer<PickaxeBlueConcretePowderMoldBlockEntity> {
     public PickaxeBlueConcretePowderMoldRenderer(BlockEntityRendererProvider.Context context) {
     }
 
     @Override
-    protected BaseMoldBlock getMoldBlock() {
+    protected ToolMaterialMoldBlock getMoldBlock() {
         return AllMoldBlocks.PICKAXE_BLUE_CONCRETE_POWDER_MOLD;
     }
 }

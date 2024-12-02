@@ -13,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class AxeLightGrayConcretePowderMoldBlock extends BaseLightGrayConcretePowderMoldBlock {
+public class AxeLightGrayConcretePowderMoldBlock extends ToolLightGrayConcretePowderMoldBlock {
     public AxeLightGrayConcretePowderMoldBlock(Properties properties) {
         super(properties);
     }

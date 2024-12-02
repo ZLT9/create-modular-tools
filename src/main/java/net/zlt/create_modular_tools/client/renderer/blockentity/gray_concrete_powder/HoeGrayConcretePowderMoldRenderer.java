@@ -6,19 +6,19 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.zlt.create_modular_tools.block.entity.mold.gray_concrete_powder.HoeGrayConcretePowderMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class HoeGrayConcretePowderMoldRenderer extends BaseGrayConcretePowderMoldRenderer<HoeGrayConcretePowderMoldBlockEntity> {
+public class HoeGrayConcretePowderMoldRenderer extends ToolGrayConcretePowderMoldRenderer<HoeGrayConcretePowderMoldBlockEntity> {
     public HoeGrayConcretePowderMoldRenderer(BlockEntityRendererProvider.Context context) {
     }
 
     @Override
-    protected BaseMoldBlock getMoldBlock() {
+    protected ToolMaterialMoldBlock getMoldBlock() {
         return AllMoldBlocks.HOE_GRAY_CONCRETE_POWDER_MOLD;
     }
 }

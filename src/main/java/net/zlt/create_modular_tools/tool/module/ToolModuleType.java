@@ -7,7 +7,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import org.jetbrains.annotations.Nullable;
 
@@ -61,23 +61,23 @@ public class ToolModuleType {
     }
 
     public static class MoldTopTexture {
-        private final List<TriFunction<@Nullable ResourceLocation, BaseMoldBlock, CompoundTag, @Nullable ResourceLocation>> TEXTURE_ID_GETTERS = new ArrayList<>();
+        private final List<TriFunction<@Nullable ResourceLocation, ToolMaterialMoldBlock, CompoundTag, @Nullable ResourceLocation>> TEXTURE_ID_GETTERS = new ArrayList<>();
 
         public boolean clicked(int x, int y) {
             return false;
         }
 
         @Environment(EnvType.CLIENT)
-        public void registerTextureIdGetter(TriFunction<@Nullable ResourceLocation, BaseMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter) {
+        public void registerTextureIdGetter(TriFunction<@Nullable ResourceLocation, ToolMaterialMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter) {
             TEXTURE_ID_GETTERS.add(textureIdGetter);
         }
 
         @Environment(EnvType.CLIENT)
         @Nullable
-        public ResourceLocation getTextureId(BaseMoldBlock baseMoldBlock, CompoundTag moldNbt) {
+        public ResourceLocation getTextureId(ToolMaterialMoldBlock toolMaterialMoldBlock, CompoundTag moldNbt) {
             ResourceLocation id = null;
-            for (TriFunction<@Nullable ResourceLocation, BaseMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter : TEXTURE_ID_GETTERS) {
-                id = textureIdGetter.apply(id, baseMoldBlock, moldNbt);
+            for (TriFunction<@Nullable ResourceLocation, ToolMaterialMoldBlock, CompoundTag, @Nullable ResourceLocation> textureIdGetter : TEXTURE_ID_GETTERS) {
+                id = textureIdGetter.apply(id, toolMaterialMoldBlock, moldNbt);
             }
             return id;
         }

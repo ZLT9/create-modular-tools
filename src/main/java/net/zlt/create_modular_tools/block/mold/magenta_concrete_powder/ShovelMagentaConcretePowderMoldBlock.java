@@ -13,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class ShovelMagentaConcretePowderMoldBlock extends BaseMagentaConcretePowderMoldBlock {
+public class ShovelMagentaConcretePowderMoldBlock extends ToolMagentaConcretePowderMoldBlock {
     public ShovelMagentaConcretePowderMoldBlock(Properties properties) {
         super(properties);
     }

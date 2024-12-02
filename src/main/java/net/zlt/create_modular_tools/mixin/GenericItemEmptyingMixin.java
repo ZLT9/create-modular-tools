@@ -8,7 +8,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
-import net.zlt.create_modular_tools.item.mold.BaseMoldItem;
+import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
@@ -30,7 +30,7 @@ public abstract class GenericItemEmptyingMixin {
 
     @Inject(method = "canItemBeEmptied", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
     private static void createModularTools$canItemBeEmptied(Level world, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (!(stack.getItem() instanceof BaseMoldItem) || AllRecipeTypes.MOLD_EMPTYING.find(WRAPPER, world).isEmpty()) {
+        if (!(stack.getItem() instanceof ToolMaterialMoldItem) || AllRecipeTypes.MOLD_EMPTYING.find(WRAPPER, world).isEmpty()) {
             return;
         }
 
@@ -64,7 +64,7 @@ public abstract class GenericItemEmptyingMixin {
 
     @Inject(method = "emptyItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;copy()Lnet/minecraft/world/item/ItemStack;"), cancellable = true)
     private static void createModularTools$emptyItem(Level world, ItemStack stack, boolean simulate, CallbackInfoReturnable<Pair<FluidStack, ItemStack>> cir) {
-        if (!(stack.getItem() instanceof BaseMoldItem)) {
+        if (!(stack.getItem() instanceof ToolMaterialMoldItem)) {
             return;
         }
 

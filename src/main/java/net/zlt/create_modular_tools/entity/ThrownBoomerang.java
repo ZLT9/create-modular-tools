@@ -30,7 +30,7 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
-import net.zlt.create_modular_tools.block.mold.BaseMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
@@ -238,7 +238,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
             if (isNewToolModuleEnchanted) {
                 level().playSound(null, blockPos, AllSoundEvents.ENCHANTED_TOOL_MODULE, SoundSource.BLOCKS, 0.5f, 0.8f);
             }
-            BaseMoldBlock.playMoldSlotSound(level(), blockPos, null, slot.state() == ToolUtils.MoldSlotState.SOLID, isNewToolModuleEnchanted ? null : slot.tag());
+            ToolMaterialMoldBlock.playMoldSlotSound(level(), blockPos, null, slot.state() == ToolUtils.MoldSlotState.SOLID, isNewToolModuleEnchanted ? null : slot.tag());
 
             discard();
         }
