@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=east": {
-      "model": "create_modular_tools:block/shovel_pink_concrete_powder_mold",
+      "model": "create_modular_tools:block/base_pink_concrete_powder_mold",
       "y": 270
     },
     "facing=north": {
-      "model": "create_modular_tools:block/shovel_pink_concrete_powder_mold",
+      "model": "create_modular_tools:block/base_pink_concrete_powder_mold",
       "y": 180
     },
     "facing=south": {
-      "model": "create_modular_tools:block/shovel_pink_concrete_powder_mold"
+      "model": "create_modular_tools:block/base_pink_concrete_powder_mold"
     },
     "facing=west": {
-      "model": "create_modular_tools:block/shovel_pink_concrete_powder_mold",
+      "model": "create_modular_tools:block/base_pink_concrete_powder_mold",
       "y": 90
     }
   }
