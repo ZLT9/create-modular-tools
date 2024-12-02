@@ -33,7 +33,7 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.CustomEnchantabilityItem;
 import net.zlt.create_modular_tools.item.FireproofItem;
 import net.zlt.create_modular_tools.item.TooltipUtils;
@@ -392,7 +392,7 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
         }
 
         CompoundTag nbt = stack.getOrCreateTag();
-        nbt.put(MoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
+        nbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
 
         return stack;
     }

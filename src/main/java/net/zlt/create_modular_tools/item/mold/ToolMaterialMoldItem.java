@@ -19,7 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.fluid.MoltenMetalFluid;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -124,7 +124,7 @@ public class ToolMaterialMoldItem extends BlockItem {
         nbt.put(BlockItem.BLOCK_ENTITY_TAG, blockEntityNbt);
 
         CompoundTag toolModulesNbt = new CompoundTag();
-        blockEntityNbt.put(MoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
+        blockEntityNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
 
         for (ToolModuleType toolModuleType : MoldRegistry.getRequired(((ToolMaterialMoldBlock) getBlock()).getModularTool())) {
             CompoundTag slotNbt = new CompoundTag();

@@ -11,13 +11,13 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class SwordMoldBlockEntity extends MoldBlockEntity {
-    public SwordMoldBlockEntity(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState blockState) {
+public abstract class AxeMaterialMoldBlockEntity extends ToolMaterialMoldBlockEntity {
+    public AxeMaterialMoldBlockEntity(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState blockState) {
         super(blockEntityType, pos, blockState);
     }
 
     @Override
     public ModularToolItem getModularTool() {
-        return AllModularTools.SWORD;
+        return AllModularTools.AXE;
     }
 }

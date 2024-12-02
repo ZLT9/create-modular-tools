@@ -30,7 +30,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
@@ -109,7 +109,7 @@ public final class ToolUtils {
 
     public static CompoundTag getToolModulesNbt(ItemStack stack) {
         CompoundTag nbt = stack.getTag();
-        return nbt == null || nbt.isEmpty() ? new CompoundTag() : nbt.getCompound(MoldBlockEntity.TOOL_MODULES_TAG);
+        return nbt == null || nbt.isEmpty() ? new CompoundTag() : nbt.getCompound(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG);
     }
 
     public static CompoundTag getToolModulesNbt(@Nullable CompoundTag nbt) {
@@ -118,7 +118,7 @@ public final class ToolUtils {
         }
 
         CompoundTag blockEntityNbt = nbt.getCompound(BlockItem.BLOCK_ENTITY_TAG);
-        return blockEntityNbt.isEmpty() ? new CompoundTag() : blockEntityNbt.getCompound(MoldBlockEntity.TOOL_MODULES_TAG);
+        return blockEntityNbt.isEmpty() ? new CompoundTag() : blockEntityNbt.getCompound(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG);
     }
 
     public static boolean didBlockChange(BlockState originalBlockState, UseOnContext context) {

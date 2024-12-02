@@ -29,7 +29,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.damage.AllDamageTypes;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -205,11 +205,11 @@ public abstract class ThrownBoomerang extends AttackableArrow {
 
         BlockPos blockPos = result.getBlockPos();
         BlockEntity blockEntity = level().getBlockEntity(blockPos);
-        if (!(blockEntity instanceof MoldBlockEntity moldBlockEntity) || !MoldRegistry.isCompatible(moldBlockEntity.getModularTool(), TOOL_MODULE.getType())) {
+        if (!(blockEntity instanceof ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) || !MoldRegistry.isCompatible(toolMaterialMoldBlockEntity.getModularTool(), TOOL_MODULE.getType())) {
             return;
         }
 
-        CompoundTag toolModulesNbt = moldBlockEntity.getToolModulesNbt();
+        CompoundTag toolModulesNbt = toolMaterialMoldBlockEntity.getToolModulesNbt();
         if (!toolModulesNbt.contains(TOOL_MODULE.getType().getTag(), Tag.TAG_COMPOUND)) {
             for (String key : toolModulesNbt.getAllKeys()) {
                 if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(key).getString("state")) == ToolUtils.MoldSlotState.FLUID) {
@@ -228,7 +228,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
                         Containers.dropItemStack(level(), blockPos.getX(), blockPos.getY(), blockPos.getZ(), toolModuleStack);
                     }
                 }
-                moldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE, boomerangItem.getTag());
+                toolMaterialMoldBlockEntity.putToolModule(TOOL_MODULE.getType(), TOOL_MODULE, boomerangItem.getTag());
             }
             SoundEvent toolModuleSound = TOOL_MODULE.getSound();
             if (toolModuleSound != null) {

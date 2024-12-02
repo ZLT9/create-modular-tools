@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.mold.AllMoldItems;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.AllToolModules;
@@ -39,11 +39,11 @@ public final class AllCreativeModeTabs {
             CompoundTag toolGripNbt = new CompoundTag();
             toolGripNbt.putString("id", AllToolModules.ZINC_TOOL_GRIP.getId());
             toolModulesNbt.put(AllToolModuleTypes.TOOL_GRIP.getTag(), toolGripNbt);
-            stackNbt.put(MoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
+            stackNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
             CompoundTag toolWrapNbt = new CompoundTag();
             toolWrapNbt.putString("id", AllToolModules.PURPLE_WOOL_TOOL_WRAP.getId());
             toolModulesNbt.put(AllToolModuleTypes.TOOL_WRAP.getTag(), toolWrapNbt);
-            stackNbt.put(MoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
+            stackNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
             return stack;
         })
         .title(Component.translatable("itemGroup.create_modular_tools.base"))

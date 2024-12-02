@@ -40,12 +40,12 @@ import java.util.*;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class MoldBlockEntity extends BlockEntity implements IHaveGoggleInformation {
+public abstract class ToolMaterialMoldBlockEntity extends BlockEntity implements IHaveGoggleInformation {
     public static final String TOOL_MODULES_TAG = "ToolModules";
 
     protected CompoundTag toolModulesNbt;
 
-    public MoldBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState) {
+    public ToolMaterialMoldBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState) {
         super(type, pos, blockState);
         clearToolModules();
     }

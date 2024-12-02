@@ -21,7 +21,7 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -36,7 +36,7 @@ import java.util.*;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class ToolMaterialMoldRenderer<T extends MoldBlockEntity> implements BlockEntityRenderer<T> {
+public abstract class ToolMaterialMoldRenderer<T extends ToolMaterialMoldBlockEntity> implements BlockEntityRenderer<T> {
     private static final ModelPart TOP = createInteriorLayer().bakeRoot();
     private static final Map<ResourceLocation, Material> MATERIALS = new HashMap<>();
 

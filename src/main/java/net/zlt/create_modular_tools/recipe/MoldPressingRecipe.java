@@ -22,7 +22,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
@@ -92,7 +92,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
 
         CompoundTag nbt = result.getOrCreateTag();
         nbt.putUUID("UUID", UUID.randomUUID());
-        nbt.put(MoldBlockEntity.TOOL_MODULES_TAG, resultToolModulesNbt);
+        nbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, resultToolModulesNbt);
 
         Map<Enchantment, Integer> finalResultEnchantments = Maps.newHashMap();
         if (resultEnchantments != null) {

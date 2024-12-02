@@ -18,7 +18,7 @@ import net.zlt.create_modular_tools.advancement.BoomerangCatchTrigger;
 import net.zlt.create_modular_tools.advancement.BoomerangHitEntityTrigger;
 import net.zlt.create_modular_tools.advancement.BoomerangStopTrigger;
 import net.zlt.create_modular_tools.advancement.BoomerangThrowTrigger;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.AllToolModules;
@@ -57,7 +57,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
             toolWrapNbt.putString("id", AllToolModules.PURPLE_WOOL_TOOL_WRAP.getId());
             rootStackToolModulesNbt.put(AllToolModuleTypes.TOOL_WRAP.getTag(), toolWrapNbt);
             CompoundTag rootStackNbt = rootStack.getOrCreateTag();
-            rootStackNbt.put(MoldBlockEntity.TOOL_MODULES_TAG, rootStackToolModulesNbt);
+            rootStackNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, rootStackToolModulesNbt);
 
             Advancement rootAdvancement = Advancement.Builder.advancement()
                 .display(

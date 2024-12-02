@@ -6,7 +6,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.InventoryMenu;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.client.renderer.blockentity.ToolMaterialMoldRenderer;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -14,7 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @Environment(EnvType.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class ToolGreenConcretePowderMoldRenderer<T extends MoldBlockEntity> extends ToolMaterialMoldRenderer<T> {
+public abstract class ToolGreenConcretePowderMoldRenderer<T extends ToolMaterialMoldBlockEntity> extends ToolMaterialMoldRenderer<T> {
     protected final Material BASE_MATERIAL = new Material(InventoryMenu.BLOCK_ATLAS, new ResourceLocation("minecraft", "block/green_concrete_powder"));
 
     @Override

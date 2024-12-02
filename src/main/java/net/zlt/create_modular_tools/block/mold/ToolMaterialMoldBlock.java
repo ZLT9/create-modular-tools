@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
-import net.zlt.create_modular_tools.block.entity.mold.MoldBlockEntity;
+import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
@@ -48,13 +48,13 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof MoldBlockEntity moldBlockEntity)) {
+        if (!(level.getBlockEntity(pos) instanceof ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity)) {
             return InteractionResult.PASS;
         }
 
         ItemStack stack = player.getItemInHand(hand);
         if (!stack.isEmpty()) {
-            CompoundTag toolModulesNbt = moldBlockEntity.getToolModulesNbt();
+            CompoundTag toolModulesNbt = toolMaterialMoldBlockEntity.getToolModulesNbt();
 
             if (stack.getItem() instanceof ToolModuleItem toolModule) {
                 if (!MoldRegistry.isCompatible(getModularTool(), toolModule.getType())) {
@@ -83,7 +83,7 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
                             player.getInventory().placeItemBackInInventory(returnedToolModuleStack);
                         }
                     }
-                    moldBlockEntity.putToolModule(toolModule.getType(), toolModule, stack.getTag());
+                    toolMaterialMoldBlockEntity.putToolModule(toolModule.getType(), toolModule, stack.getTag());
                 }
 
                 SoundEvent toolModuleSound = toolModule.getSound();
@@ -115,7 +115,7 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
             return InteractionResult.PASS;
         }
 
-        CompoundTag toolModulesNbt = moldBlockEntity.getToolModulesNbt();
+        CompoundTag toolModulesNbt = toolMaterialMoldBlockEntity.getToolModulesNbt();
 
         List<ToolModuleType> existingToolModuleTypes = new ArrayList<>();
         Iterator<ToolModuleType> it = MoldRegistry.getCompatible(getModularTool()).descendingIterator();
@@ -153,9 +153,9 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
 
             if (!level.isClientSide) {
                 if (moldSlot.state() == ToolUtils.MoldSlotState.EMPTY) {
-                    moldBlockEntity.removeToolModule(toolModuleType);
+                    toolMaterialMoldBlockEntity.removeToolModule(toolModuleType);
                 } else if (moldSlot.state() == ToolUtils.MoldSlotState.SOLID) {
-                    moldBlockEntity.putToolModule(toolModuleType, null, null);
+                    toolMaterialMoldBlockEntity.putToolModule(toolModuleType, null, null);
 
                     if (!player.isCreative() && moldSlot.contents() != null) {
                         ItemStack returnedToolModuleStack = ((ToolModuleItem) moldSlot.contents()).getDefaultInstance();
