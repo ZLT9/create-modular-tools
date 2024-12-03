@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:oak_mold"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:brown_concrete_powder_oak_mold"
+    }
+  ]
+}

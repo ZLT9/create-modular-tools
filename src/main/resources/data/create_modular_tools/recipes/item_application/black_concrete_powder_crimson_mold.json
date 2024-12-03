@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:crimson_mold"
+    },
+    {
+      "item": "minecraft:black_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:black_concrete_powder_crimson_mold"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:bamboo_mold"
+    },
+    {
+      "item": "minecraft:gray_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:gray_concrete_powder_bamboo_mold"
+    }
+  ]
+}

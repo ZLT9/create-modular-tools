@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:jungle_mold"
+    },
+    {
+      "item": "minecraft:pink_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:pink_concrete_powder_jungle_mold"
+    }
+  ]
+}

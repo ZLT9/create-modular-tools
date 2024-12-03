@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "create_modular_tools:acacia_mold"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_modular_tools:red_concrete_powder_acacia_mold"
+    }
+  ]
+}
