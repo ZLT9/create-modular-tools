@@ -208,7 +208,7 @@ public abstract class MaterialMoldBlock extends HorizontalDirectionalBlock {
     }
 
     protected ItemStack getStack() {
-        return new ItemStack(this);
+        return asItem().getDefaultInstance();
     }
 
     protected ItemStack getStack(ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) {
