@@ -2,6 +2,7 @@ package net.zlt.create_modular_tools.block.mold;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.zlt.create_modular_tools.AllTags;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -28,7 +29,7 @@ public final class MoldUtils {
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(key);
-            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString("state")) != ToolUtils.MoldSlotState.SOLID || !ToolModuleRegistry.containsId(slotNbt.getString("id"))) {
+            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE)) != ToolUtils.MoldSlotState.SOLID || !ToolModuleRegistry.containsId(slotNbt.getString(AllTags.TOOL_MODULE_ID))) {
                 return false;
             }
         }

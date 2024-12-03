@@ -28,6 +28,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.zlt.create_modular_tools.AllTags;
 import net.zlt.create_modular_tools.advancement.AllCriterionTriggers;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
@@ -212,7 +213,7 @@ public abstract class ThrownBoomerang extends AttackableArrow {
         CompoundTag toolModulesNbt = toolMaterialMoldBlockEntity.getToolModulesNbt();
         if (!toolModulesNbt.contains(TOOL_MODULE.getType().getTag(), Tag.TAG_COMPOUND)) {
             for (String key : toolModulesNbt.getAllKeys()) {
-                if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(key).getString("state")) == ToolUtils.MoldSlotState.FLUID) {
+                if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(key).getString(AllTags.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.FLUID) {
                     return;
                 }
             }
@@ -289,14 +290,14 @@ public abstract class ThrownBoomerang extends AttackableArrow {
     @Override
     public void addAdditionalSaveData(CompoundTag nbt) {
         super.addAdditionalSaveData(nbt);
-        nbt.put("Boomerang", boomerangItem.save(new CompoundTag()));
+        nbt.put(AllTags.THROWN_BOOMERANG_ITEM, boomerangItem.save(new CompoundTag()));
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag nbt) {
         super.readAdditionalSaveData(nbt);
-        if (nbt.contains("Boomerang", Tag.TAG_COMPOUND)) {
-            boomerangItem = ItemStack.of(nbt.getCompound("Boomerang"));
+        if (nbt.contains(AllTags.THROWN_BOOMERANG_ITEM, Tag.TAG_COMPOUND)) {
+            boomerangItem = ItemStack.of(nbt.getCompound(AllTags.THROWN_BOOMERANG_ITEM));
         }
     }
 

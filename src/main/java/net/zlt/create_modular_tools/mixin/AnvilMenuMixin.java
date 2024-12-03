@@ -11,6 +11,7 @@ import net.minecraft.world.inventory.ItemCombinerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.zlt.create_modular_tools.AllTags;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -46,12 +47,12 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
         }
 
         CompoundTag enchantedBook = itemStack3.save(new CompoundTag());
-        if (modularToolNbt.contains("DirectEnchantments", CompoundTag.TAG_LIST)) {
-            modularToolNbt.getList("DirectEnchantments", CompoundTag.TAG_COMPOUND).add(enchantedBook);
+        if (modularToolNbt.contains(AllTags.MODULAR_TOOL_DIRECT_ENCHANTMENTS, CompoundTag.TAG_LIST)) {
+            modularToolNbt.getList(AllTags.MODULAR_TOOL_DIRECT_ENCHANTMENTS, CompoundTag.TAG_COMPOUND).add(enchantedBook);
         } else {
             ListTag directEnchantmentsNbt = new ListTag();
             directEnchantmentsNbt.add(enchantedBook);
-            modularToolNbt.put("DirectEnchantments", directEnchantmentsNbt);
+            modularToolNbt.put(AllTags.MODULAR_TOOL_DIRECT_ENCHANTMENTS, directEnchantmentsNbt);
         }
     }
 }

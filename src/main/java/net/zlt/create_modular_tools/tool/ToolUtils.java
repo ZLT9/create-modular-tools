@@ -3,7 +3,6 @@ package net.zlt.create_modular_tools.tool;
 import com.google.common.collect.BiMap;
 import com.mojang.datafixers.util.Pair;
 import com.simibubi.create.AllSoundEvents;
-import com.simibubi.create.AllTags;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.fabricmc.fabric.mixin.content.registry.HoeItemAccessor;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -30,6 +29,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.zlt.create_modular_tools.AllTags;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
@@ -85,8 +85,8 @@ public final class ToolUtils {
         }
 
         CompoundTag slotNbt = toolModulesNbt.getCompound(toolModuleTypeTag);
-        MoldSlotState slotState = MoldSlotState.fromName(slotNbt.getString("state"));
-        String slotContentsId = slotNbt.getString("id");
+        MoldSlotState slotState = MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE));
+        String slotContentsId = slotNbt.getString(AllTags.TOOL_MODULE_ID);
 
         if (slotState == MoldSlotState.EMPTY) {
             return new MoldSlot(MoldSlotState.EMPTY, null, null);
@@ -144,7 +144,7 @@ public final class ToolUtils {
             return player.isShiftKeyDown() ? wrenchable.onSneakWrenched(blockState, context) : wrenchable.onWrenched(blockState, context);
         }
 
-        if (player.isShiftKeyDown() && AllTags.AllBlockTags.WRENCH_PICKUP.matches(blockState)) {
+        if (player.isShiftKeyDown() && com.simibubi.create.AllTags.AllBlockTags.WRENCH_PICKUP.matches(blockState)) {
             if (level instanceof ServerLevel serverLevel) {
                 if (!player.isCreative()) {
                     Block.getDrops(blockState, serverLevel, blockPos, level.getBlockEntity(blockPos), player, context.getItemInHand()).forEach(itemStack -> player.getInventory().placeItemBackInInventory(itemStack));

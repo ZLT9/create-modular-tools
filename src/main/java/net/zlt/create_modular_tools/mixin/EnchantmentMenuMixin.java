@@ -11,6 +11,7 @@ import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.zlt.create_modular_tools.AllTags;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -51,7 +52,7 @@ public abstract class EnchantmentMenuMixin {
         ListTag directEnchantments = new ListTag();
         directEnchantments.add(enchantedBookNbt);
 
-        resultNbt.put("DirectEnchantments", directEnchantments);
+        resultNbt.put(AllTags.MODULAR_TOOL_DIRECT_ENCHANTMENTS, directEnchantments);
 
         result = null;
     }

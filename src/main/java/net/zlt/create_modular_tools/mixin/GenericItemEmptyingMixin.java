@@ -8,6 +8,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
+import net.zlt.create_modular_tools.AllTags;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.tool.ToolUtils;
@@ -76,7 +77,7 @@ public abstract class GenericItemEmptyingMixin {
 
         ItemStack resultingItem = stack.copy();
         CompoundTag resultingNbt = resultingItem.getTag();
-        resultingNbt.putUUID("UUID", UUID.randomUUID());
+        resultingNbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
         CompoundTag resultingToolModulesNbt = ToolUtils.getToolModulesNbt(resultingNbt);
 
         Fluid resultingFluid = null;
@@ -94,7 +95,7 @@ public abstract class GenericItemEmptyingMixin {
 
             if (moldSlot.state() == ToolUtils.MoldSlotState.FLUID) {
                 CompoundTag resultingToolModuleNbt = new CompoundTag();
-                resultingToolModuleNbt.putString("state", ToolUtils.MoldSlotState.EMPTY.toString());
+                resultingToolModuleNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
                 resultingToolModulesNbt.put(toolModuleTypeTag, resultingToolModuleNbt);
                 resultingFluid = (Fluid) moldSlot.contents();
                 resultingFluidAmount += toolModuleType.getRequiredMoltenMetalAmount();

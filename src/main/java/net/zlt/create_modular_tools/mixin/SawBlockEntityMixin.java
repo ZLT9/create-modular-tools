@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.zlt.create_modular_tools.AllTags;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
@@ -58,7 +59,7 @@ public abstract class SawBlockEntityMixin extends BlockBreakingKineticBlockEntit
         List<ItemStack> results = new ArrayList<>();
         for (ToolModuleType toolModuleType : modularToolItem.getCompatible()) {
             CompoundTag toolModuleNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
-            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleNbt.getString("id"));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(toolModuleNbt.getString(AllTags.TOOL_MODULE_ID));
             if (toolModule != null) {
                 ItemStack toolModuleStack = toolModule.getDefaultInstance();
                 if (toolModuleNbt.contains("tag", Tag.TAG_COMPOUND)) {
@@ -71,7 +72,7 @@ public abstract class SawBlockEntityMixin extends BlockBreakingKineticBlockEntit
 
         CompoundTag inputNbt = inputStack.getTag();
         if (inputNbt != null) {
-            for (Tag enchantedBookNbt : inputNbt.getList("DirectEnchantments", CompoundTag.TAG_COMPOUND)) {
+            for (Tag enchantedBookNbt : inputNbt.getList(AllTags.MODULAR_TOOL_DIRECT_ENCHANTMENTS, CompoundTag.TAG_COMPOUND)) {
                 results.add(ItemStack.of((CompoundTag) enchantedBookNbt));
             }
         }
