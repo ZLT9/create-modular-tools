@@ -1,11 +1,15 @@
 package net.zlt.create_modular_tools;
 
 import com.simibubi.create.foundation.model.BakedQuadHelper;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Direction;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Arrays;
 
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 public abstract class Utils {
     private Utils() {
     }
