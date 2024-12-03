@@ -28,7 +28,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.zlt.create_modular_tools.AllTagNames;
-import net.zlt.create_modular_tools.block.AllSoundTypes;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.AllItemTags;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
