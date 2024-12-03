@@ -94,7 +94,7 @@ public abstract class BeltDeployerCallbacksMixin {
         if (!hasToolModulesNbt) {
             resultNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
         }
-        resultNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+        resultNbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
         copy.stack.setTag(resultNbt);
     }
 }

@@ -92,7 +92,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         }
 
         CompoundTag nbt = result.getOrCreateTag();
-        nbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+        nbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
         nbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, resultToolModulesNbt);
 
         Map<Enchantment, Integer> finalResultEnchantments = Maps.newHashMap();

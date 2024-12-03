@@ -130,7 +130,7 @@ public abstract class FillingBySpoutMixin {
             }
         }
 
-        result.getTag().putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+        result.getTag().putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
 
         stack.shrink(1);
         cir.setReturnValue(result);

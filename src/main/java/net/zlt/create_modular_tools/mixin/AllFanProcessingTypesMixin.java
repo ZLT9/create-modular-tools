@@ -87,7 +87,7 @@ public abstract class AllFanProcessingTypesMixin {
 
         ItemStack result = stack.copy();
         CompoundTag resultNbt = result.getTag();
-        resultNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+        resultNbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
         CompoundTag resultToolModulesNbt = ToolUtils.getToolModulesNbt(resultNbt);
 
         for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {

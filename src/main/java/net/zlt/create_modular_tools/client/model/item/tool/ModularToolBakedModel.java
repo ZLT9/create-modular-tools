@@ -116,7 +116,7 @@ public class ModularToolBakedModel implements BakedModel {
         public BakedModel resolve(BakedModel model, ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity entity, int seed) {
             try {
                 CompoundTag nbt = stack.getTag();
-                return MODEL_CACHE.get(nbt.getUUID(AllTagNames.ITEM_STACK_UUID), () -> UNBAKED_MODEL.bakeOverride(stack, DUMMY_MODEL));
+                return MODEL_CACHE.get(nbt.getUUID(AllTagNames.ITEM_STACK_UNIQUE_ID), () -> UNBAKED_MODEL.bakeOverride(stack, DUMMY_MODEL));
             } catch (Exception e) {
                 return DYNAMIC_MODEL;
             }

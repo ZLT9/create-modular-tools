@@ -77,7 +77,7 @@ public abstract class GenericItemEmptyingMixin {
 
         ItemStack resultingItem = stack.copy();
         CompoundTag resultingNbt = resultingItem.getTag();
-        resultingNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+        resultingNbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
         CompoundTag resultingToolModulesNbt = ToolUtils.getToolModulesNbt(resultingNbt);
 
         Fluid resultingFluid = null;

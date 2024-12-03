@@ -125,7 +125,7 @@ public class ToolMaterialMoldItemBakedModel implements BakedModel {
         public BakedModel resolve(BakedModel model, ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity entity, int seed) {
             try {
                 CompoundTag nbt = stack.getTag();
-                return MODEL_CACHE.get(nbt.getUUID(AllTagNames.ITEM_STACK_UUID), () -> UNBAKED_MODEL.bakeOverride(nbt, BASE_SAND_MOLD_MODEL, INTERIOR_TOP_QUAD, SPRITE_GETTER));
+                return MODEL_CACHE.get(nbt.getUUID(AllTagNames.ITEM_STACK_UNIQUE_ID), () -> UNBAKED_MODEL.bakeOverride(nbt, BASE_SAND_MOLD_MODEL, INTERIOR_TOP_QUAD, SPRITE_GETTER));
             } catch (Exception e) {
                 return DYNAMIC_MODEL;
             }

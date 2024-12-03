@@ -2507,8 +2507,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         ClientPickBlockApplyCallback.EVENT.register((player, hit, stack) -> {
             if (stack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof MaterialMoldBlock) {
                 CompoundTag nbt = stack.getTag();
-                if (nbt != null && !nbt.contains(AllTagNames.ITEM_STACK_UUID, Tag.TAG_INT_ARRAY)) {
-                    nbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+                if (nbt != null && !nbt.contains(AllTagNames.ITEM_STACK_UNIQUE_ID, Tag.TAG_INT_ARRAY)) {
+                    nbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
                 }
             }
             return stack;

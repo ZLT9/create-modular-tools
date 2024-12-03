@@ -68,7 +68,7 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
             itemEntity.discard();
         } else {
             CompoundTag remainderNbt = remainder.getTag();
-            remainderNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+            remainderNbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
             CompoundTag remainderToolModulesNbt = ToolUtils.getToolModulesNbt(remainderNbt);
             for (String toolModuleTypeTag : remainderToolModulesNbt.getAllKeys()) {
                 CompoundTag remainderToolModuleNbt = new CompoundTag();
@@ -121,7 +121,7 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
 
         ItemStack remainder = input.stack.copy();
         CompoundTag remainderNbt = remainder.getTag();
-        remainderNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+        remainderNbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
         CompoundTag remainderToolModulesNbt = ToolUtils.getToolModulesNbt(remainderNbt);
         for (String toolModuleTypeTag : remainderToolModulesNbt.getAllKeys()) {
             CompoundTag remainderToolModuleNbt = new CompoundTag();
