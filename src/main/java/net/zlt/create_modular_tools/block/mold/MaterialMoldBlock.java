@@ -214,7 +214,7 @@ public abstract class MaterialMoldBlock extends HorizontalDirectionalBlock {
     protected ItemStack getStack(ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) {
         ItemStack stack = new ItemStack(this);
         CompoundTag nbt = stack.getOrCreateTag();
-        nbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
+        nbt.putUUID(AllTagNames.ITEM_STACK_UNIQUE_ID, UUID.randomUUID());
         CompoundTag blockEntityNbt = new CompoundTag();
         nbt.put(BlockItem.BLOCK_ENTITY_TAG, blockEntityNbt);
         blockEntityNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolMaterialMoldBlockEntity.getToolModulesNbt().copy());
