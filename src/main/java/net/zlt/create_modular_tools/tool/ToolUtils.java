@@ -3,6 +3,7 @@ package net.zlt.create_modular_tools.tool;
 import com.google.common.collect.BiMap;
 import com.mojang.datafixers.util.Pair;
 import com.simibubi.create.AllSoundEvents;
+import com.simibubi.create.AllTags;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.fabricmc.fabric.mixin.content.registry.HoeItemAccessor;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -144,7 +145,7 @@ public final class ToolUtils {
             return player.isShiftKeyDown() ? wrenchable.onSneakWrenched(blockState, context) : wrenchable.onWrenched(blockState, context);
         }
 
-        if (player.isShiftKeyDown() && com.simibubi.create.AllTags.AllBlockTags.WRENCH_PICKUP.matches(blockState)) {
+        if (player.isShiftKeyDown() && AllTags.AllBlockTags.WRENCH_PICKUP.matches(blockState)) {
             if (level instanceof ServerLevel serverLevel) {
                 if (!player.isCreative()) {
                     Block.getDrops(blockState, serverLevel, blockPos, level.getBlockEntity(blockPos), player, context.getItemInHand()).forEach(itemStack -> player.getInventory().placeItemBackInInventory(itemStack));
