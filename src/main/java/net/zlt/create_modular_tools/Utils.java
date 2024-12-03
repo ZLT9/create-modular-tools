@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class Utils {
+public final class Utils {
     private Utils() {
     }
 
