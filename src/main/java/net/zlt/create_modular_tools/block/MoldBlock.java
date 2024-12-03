@@ -1,10 +1,14 @@
 package net.zlt.create_modular_tools.block;
 
+import net.fabricmc.fabric.api.entity.FakePlayer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,5 +47,19 @@ public class MoldBlock extends HorizontalDirectionalBlock {
     @Override
     public VoxelShape getVisualShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return MaterialMoldBlock.SHAPE;
+    }
+
+    @Override
+    public void attack(BlockState state, Level level, BlockPos pos, Player player) {
+        if (level.isClientSide || player instanceof FakePlayer) {
+            return;
+        }
+
+        level.destroyBlock(pos, false);
+        if (level.getBlockState(pos) == state || player.isCreative()) {
+            return;
+        }
+
+        player.getInventory().placeItemBackInInventory(new ItemStack(this));
     }
 }
