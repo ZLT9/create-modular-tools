@@ -26,6 +26,10 @@
                 }
               ],
               "source": "block_entity"
+            },
+            {
+              "function": "create_modular_tools:set_unique_id",
+              "target": "UniqueId"
             }
           ],
           "name": "create_modular_tools:sword_light_gray_concrete_powder_bamboo_mold"

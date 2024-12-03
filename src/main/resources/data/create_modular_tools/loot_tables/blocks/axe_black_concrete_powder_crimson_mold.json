@@ -26,6 +26,10 @@
                 }
               ],
               "source": "block_entity"
+            },
+            {
+              "function": "create_modular_tools:set_unique_id",
+              "target": "UniqueId"
             }
           ],
           "name": "create_modular_tools:axe_black_concrete_powder_crimson_mold"
