@@ -17,8 +17,8 @@ public final class AllDamageTypes {
     public static final ResourceKey<DamageType> PASSIVE_BOOMERANG = register("passive_boomerang");
     public static final ResourceKey<DamageType> ACTIVE_BOOMERANG = register("active_boomerang");
 
-    private static ResourceKey<DamageType> register(String path) {
-        return ResourceKey.create(Registries.DAMAGE_TYPE, CreateModularTools.asResource(path));
+    private static ResourceKey<DamageType> register(String id) {
+        return ResourceKey.create(Registries.DAMAGE_TYPE, CreateModularTools.asResource(id));
     }
 
     public static void init() {

@@ -38,8 +38,8 @@ public final class AllBlocks {
     public static final Block MOLTEN_BRASS = register("molten_brass", new LiquidBlock(AllFluids.MOLTEN_BRASS, FabricBlockSettings.copy(Blocks.LAVA)));
     public static final Block MOLTEN_DIAMOND = register("molten_diamond", new LiquidBlock(AllFluids.MOLTEN_DIAMOND, FabricBlockSettings.copy(Blocks.LAVA)));
 
-    private static Block register(String path, Block block) {
-        return Registry.register(BuiltInRegistries.BLOCK, CreateModularTools.asResource(path), block);
+    private static Block register(String id, Block block) {
+        return Registry.register(BuiltInRegistries.BLOCK, CreateModularTools.asResource(id), block);
     }
 
     public static void init() {

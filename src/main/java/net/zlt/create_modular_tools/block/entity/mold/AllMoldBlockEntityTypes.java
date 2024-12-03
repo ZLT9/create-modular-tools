@@ -1038,8 +1038,8 @@ public final class AllMoldBlockEntityTypes {
     public static final BlockEntityType<HoePinkConcretePowderCrimsonMoldBlockEntity> HOE_PINK_CONCRETE_POWDER_CRIMSON_MOLD = register("hoe_pink_concrete_powder_crimson_mold", FabricBlockEntityTypeBuilder.create(HoePinkConcretePowderCrimsonMoldBlockEntity::new, AllMoldBlocks.HOE_PINK_CONCRETE_POWDER_CRIMSON_MOLD).build());
     public static final BlockEntityType<HoePinkConcretePowderWarpedMoldBlockEntity> HOE_PINK_CONCRETE_POWDER_WARPED_MOLD = register("hoe_pink_concrete_powder_warped_mold", FabricBlockEntityTypeBuilder.create(HoePinkConcretePowderWarpedMoldBlockEntity::new, AllMoldBlocks.HOE_PINK_CONCRETE_POWDER_WARPED_MOLD).build());
 
-    private static <T extends BlockEntity> BlockEntityType<T> register(String path, BlockEntityType<T> blockEntityType) {
-        return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, CreateModularTools.asResource(path), blockEntityType);
+    private static <T extends BlockEntity> BlockEntityType<T> register(String id, BlockEntityType<T> blockEntityType) {
+        return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, CreateModularTools.asResource(id), blockEntityType);
     }
 
     public static void init() {

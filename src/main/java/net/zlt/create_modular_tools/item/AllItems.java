@@ -504,8 +504,8 @@ public final class AllItems {
     public static final Item MAGENTA_WOOL_TOOL_WRAP = register("magenta_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
     public static final Item PINK_WOOL_TOOL_WRAP = register("pink_wool_tool_wrap", new WoolToolWrapToolModuleItem(new Item.Properties().stacksTo(1)));
 
-    private static Item register(String path, Item item) {
-        return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(path), item);
+    private static Item register(String id, Item item) {
+        return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(id), item);
     }
 
     private static void registerFuel(Item... items) {

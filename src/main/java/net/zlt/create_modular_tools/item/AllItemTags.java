@@ -15,8 +15,8 @@ public final class AllItemTags {
     public static final TagKey<Item> AXES_FOR_MOLDS = create("axes_for_molds");
     public static final TagKey<Item> HOES_FOR_MOLDS = create("hoes_for_molds");
 
-    private static TagKey<Item> create(String path) {
-        return TagKey.create(BuiltInRegistries.ITEM.key(), CreateModularTools.asResource(path));
+    private static TagKey<Item> create(String id) {
+        return TagKey.create(BuiltInRegistries.ITEM.key(), CreateModularTools.asResource(id));
     }
 
     public static void init() {

@@ -1415,8 +1415,8 @@ public final class AllMoldItems {
     public static final Item AXE_PINK_CONCRETE_POWDER_WARPED_MOLD = register("axe_pink_concrete_powder_warped_mold", new ToolMaterialMoldItem(AllMoldBlocks.AXE_PINK_CONCRETE_POWDER_WARPED_MOLD, new Item.Properties().stacksTo(1)));
     public static final Item HOE_PINK_CONCRETE_POWDER_WARPED_MOLD = register("hoe_pink_concrete_powder_warped_mold", new ToolMaterialMoldItem(AllMoldBlocks.HOE_PINK_CONCRETE_POWDER_WARPED_MOLD, new Item.Properties().stacksTo(1)));
 
-    private static Item register(String path, Item item) {
-        return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(path), item);
+    private static Item register(String id, Item item) {
+        return Registry.register(BuiltInRegistries.ITEM, CreateModularTools.asResource(id), item);
     }
 
     public static void init() {

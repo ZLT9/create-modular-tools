@@ -15,8 +15,8 @@ public final class AllModularTools {
     public static final ModularToolItem AXE = register("axe", AllItems.MODULAR_AXE);
     public static final ModularToolItem HOE = register("hoe", AllItems.MODULAR_HOE);
 
-    private static ModularToolItem register(String path, Item modularTool) {
-        return ModularToolRegistry.register(CreateModularTools.asResource(path), modularTool);
+    private static ModularToolItem register(String id, Item modularTool) {
+        return ModularToolRegistry.register(CreateModularTools.asResource(id), modularTool);
     }
 
     public static void init() {

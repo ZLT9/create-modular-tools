@@ -32,8 +32,8 @@ public final class AllFluids {
     public static final FlowingFluid FLOWING_MOLTEN_BRASS = register("flowing_molten_brass", new MoltenBrassFluid.Flowing());
     public static final FlowingFluid FLOWING_MOLTEN_DIAMOND = register("flowing_molten_diamond", new MoltenDiamondFluid.Flowing());
 
-    private static FlowingFluid register(String path, FlowingFluid fluid) {
-        return Registry.register(BuiltInRegistries.FLUID, CreateModularTools.asResource(path), fluid);
+    private static FlowingFluid register(String id, FlowingFluid fluid) {
+        return Registry.register(BuiltInRegistries.FLUID, CreateModularTools.asResource(id), fluid);
     }
 
     @SuppressWarnings("UnstableApiUsage")

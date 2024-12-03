@@ -153,8 +153,8 @@ public final class AllEntityTypes {
             .trackedUpdateRate(20)
             .forceTrackedVelocityUpdates(true));
 
-    private static <T extends Entity> EntityType<T> register(String path, FabricEntityTypeBuilder<T> entityTypeBuilder) {
-        return Registry.register(BuiltInRegistries.ENTITY_TYPE, CreateModularTools.asResource(path), entityTypeBuilder.build());
+    private static <T extends Entity> EntityType<T> register(String id, FabricEntityTypeBuilder<T> entityTypeBuilder) {
+        return Registry.register(BuiltInRegistries.ENTITY_TYPE, CreateModularTools.asResource(id), entityTypeBuilder.build());
     }
 
     public static void init() {

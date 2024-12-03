@@ -17,8 +17,8 @@ public final class AllSoundEvents {
 
     public static final SoundEvent ENCHANTED_TOOL_MODULE = register("enchanted_tool_module");
 
-    private static SoundEvent register(String path) {
-        ResourceLocation location = CreateModularTools.asResource(path);
+    private static SoundEvent register(String id) {
+        ResourceLocation location = CreateModularTools.asResource(id);
         return Registry.register(BuiltInRegistries.SOUND_EVENT, location, SoundEvent.createVariableRangeEvent(location));
     }
 

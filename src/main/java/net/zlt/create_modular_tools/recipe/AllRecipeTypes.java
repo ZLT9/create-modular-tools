@@ -35,8 +35,8 @@ public enum AllRecipeTypes implements IRecipeTypeInfo {
     private final Supplier<RecipeType<?>> TYPE;
 
     AllRecipeTypes(ProcessingRecipeBuilder.ProcessingRecipeFactory<?> processingFactory) {
-        String path = Lang.asId(name());
-        ID = CreateModularTools.asResource(path);
+        String id = Lang.asId(name());
+        ID = CreateModularTools.asResource(id);
         SERIALIZER_OBJECT = Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, ID, new ProcessingRecipeSerializer<>(processingFactory));
         TYPE_OBJECT = com.simibubi.create.AllRecipeTypes.simpleType(ID);
         Registry.register(BuiltInRegistries.RECIPE_TYPE, ID, TYPE_OBJECT);
