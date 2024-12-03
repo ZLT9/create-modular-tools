@@ -22,7 +22,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
@@ -70,17 +70,17 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(key);
-            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE)) != ToolUtils.MoldSlotState.SOLID) {
+            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE)) != ToolUtils.MoldSlotState.SOLID) {
                 continue;
             }
 
-            String toolModuleId = slotNbt.getString(AllTags.TOOL_MODULE_ID);
+            String toolModuleId = slotNbt.getString(AllTagNames.TOOL_MODULE_ID);
             if (!ToolModuleRegistry.containsId(toolModuleId)) {
                 continue;
             }
 
             CompoundTag resultToolModuleNbt = new CompoundTag();
-            resultToolModuleNbt.putString(AllTags.TOOL_MODULE_ID, toolModuleId);
+            resultToolModuleNbt.putString(AllTagNames.TOOL_MODULE_ID, toolModuleId);
             if (slotNbt.contains("tag", Tag.TAG_COMPOUND)) {
                 CompoundTag slotContentsNbt = slotNbt.getCompound("tag");
                 resultToolModuleNbt.put("tag", slotContentsNbt);
@@ -92,7 +92,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
         }
 
         CompoundTag nbt = result.getOrCreateTag();
-        nbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+        nbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
         nbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, resultToolModulesNbt);
 
         Map<Enchantment, Integer> finalResultEnchantments = Maps.newHashMap();
@@ -162,7 +162,7 @@ public class MoldPressingRecipe extends ProcessingRecipe<Container> implements I
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(key);
-            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE)) != ToolUtils.MoldSlotState.SOLID || !ToolModuleRegistry.containsId(slotNbt.getString(AllTags.TOOL_MODULE_ID))) {
+            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE)) != ToolUtils.MoldSlotState.SOLID || !ToolModuleRegistry.containsId(slotNbt.getString(AllTagNames.TOOL_MODULE_ID))) {
                 return false;
             }
 

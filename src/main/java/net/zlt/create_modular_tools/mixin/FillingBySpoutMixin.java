@@ -8,7 +8,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
@@ -85,7 +85,7 @@ public abstract class FillingBySpoutMixin {
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(key);
-            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE));
+            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE));
 
             if (slotState == ToolUtils.MoldSlotState.EMPTY) {
                 requiredMoltenMetalAmount += toolModuleType.getRequiredMoltenMetalAmount();
@@ -122,15 +122,15 @@ public abstract class FillingBySpoutMixin {
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(key);
-            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE));
+            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE));
 
             if (slotState == ToolUtils.MoldSlotState.EMPTY) {
-                slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.FLUID.toString());
-                slotNbt.putString(AllTags.TOOL_MODULE_ID, fluidId);
+                slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.FLUID.toString());
+                slotNbt.putString(AllTagNames.TOOL_MODULE_ID, fluidId);
             }
         }
 
-        result.getTag().putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+        result.getTag().putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
 
         stack.shrink(1);
         cir.setReturnValue(result);

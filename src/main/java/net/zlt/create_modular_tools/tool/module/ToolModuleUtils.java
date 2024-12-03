@@ -9,7 +9,7 @@ import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +29,7 @@ public final class ToolModuleUtils {
     @Environment(EnvType.CLIENT)
     @Nullable
     public static BakedModel getToolModuleModel(ToolModuleType toolModuleType, ModularToolItem modularTool, CompoundTag toolModulesNbt) {
-        ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString(AllTags.TOOL_MODULE_ID));
+        ToolModuleItem toolModule = ToolModuleRegistry.get(toolModulesNbt.getCompound(toolModuleType.getTag()).getString(AllTagNames.TOOL_MODULE_ID));
         if (toolModule == null) {
             return null;
         }

@@ -27,7 +27,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.AllSoundTypes;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.AllItemTags;
@@ -215,7 +215,7 @@ public abstract class MaterialMoldBlock extends HorizontalDirectionalBlock {
     protected ItemStack getStack(ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) {
         ItemStack stack = new ItemStack(this);
         CompoundTag nbt = stack.getOrCreateTag();
-        nbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+        nbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
         CompoundTag blockEntityNbt = new CompoundTag();
         nbt.put(BlockItem.BLOCK_ENTITY_TAG, blockEntityNbt);
         blockEntityNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolMaterialMoldBlockEntity.getToolModulesNbt().copy());

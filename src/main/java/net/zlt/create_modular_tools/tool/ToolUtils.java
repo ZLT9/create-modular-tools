@@ -29,7 +29,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
@@ -85,8 +85,8 @@ public final class ToolUtils {
         }
 
         CompoundTag slotNbt = toolModulesNbt.getCompound(toolModuleTypeTag);
-        MoldSlotState slotState = MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE));
-        String slotContentsId = slotNbt.getString(AllTags.TOOL_MODULE_ID);
+        MoldSlotState slotState = MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE));
+        String slotContentsId = slotNbt.getString(AllTagNames.TOOL_MODULE_ID);
 
         if (slotState == MoldSlotState.EMPTY) {
             return new MoldSlot(MoldSlotState.EMPTY, null, null);

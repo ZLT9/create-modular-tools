@@ -19,7 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.fluid.MoltenMetalFluid;
@@ -119,7 +119,7 @@ public class ToolMaterialMoldItem extends BlockItem {
         ItemStack stack = new ItemStack(this);
 
         CompoundTag nbt = stack.getOrCreateTag();
-        nbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+        nbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
 
         CompoundTag blockEntityNbt = new CompoundTag();
         nbt.put(BlockItem.BLOCK_ENTITY_TAG, blockEntityNbt);
@@ -129,7 +129,7 @@ public class ToolMaterialMoldItem extends BlockItem {
 
         for (ToolModuleType toolModuleType : MoldRegistry.getRequired(((ToolMaterialMoldBlock) getBlock()).getModularTool())) {
             CompoundTag slotNbt = new CompoundTag();
-            slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+            slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
             toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
         }
 
@@ -158,7 +158,7 @@ public class ToolMaterialMoldItem extends BlockItem {
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(key);
-            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.SOLID && !slotNbt.getCompound("tag").getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND).isEmpty()) {
+            if (ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.SOLID && !slotNbt.getCompound("tag").getList(ItemStack.TAG_ENCH, Tag.TAG_COMPOUND).isEmpty()) {
                 return true;
             }
         }

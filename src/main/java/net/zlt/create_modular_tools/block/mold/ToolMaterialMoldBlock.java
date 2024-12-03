@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -64,7 +64,7 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
 
                 if (!toolModulesNbt.contains(toolModule.getType().getTag(), Tag.TAG_COMPOUND)) {
                     for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
-                        if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(toolModuleTypeTag).getString(AllTags.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.FLUID) {
+                        if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(toolModuleTypeTag).getString(AllTagNames.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.FLUID) {
                             return InteractionResult.PASS;
                         }
                     }
@@ -103,7 +103,7 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
             }
 
             for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
-                if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(toolModuleTypeTag).getString(AllTags.MOLD_SLOT_STATE)) != ToolUtils.MoldSlotState.EMPTY) {
+                if (ToolUtils.MoldSlotState.fromName(toolModulesNbt.getCompound(toolModuleTypeTag).getString(AllTagNames.MOLD_SLOT_STATE)) != ToolUtils.MoldSlotState.EMPTY) {
                     return InteractionResult.PASS;
                 }
             }

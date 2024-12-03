@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -71,7 +71,7 @@ public abstract class BeltDeployerCallbacksMixin {
         Level level = blockEntity.getLevel();
         if (level != null) {
             CompoundTag previousToolModuleNbt = toolModulesNbt.getCompound(toolModule.getType().getTag());
-            String previousToolModuleId = previousToolModuleNbt.getString(AllTags.TOOL_MODULE_ID);
+            String previousToolModuleId = previousToolModuleNbt.getString(AllTagNames.TOOL_MODULE_ID);
             ToolModuleItem previousToolModule = ToolModuleRegistry.get(previousToolModuleId);
             if (previousToolModule != null) {
                 Vec3 pos = blockEntity.getPlayer().position();
@@ -85,7 +85,7 @@ public abstract class BeltDeployerCallbacksMixin {
             }
         }
         CompoundTag toolModuleNbt = new CompoundTag();
-        toolModuleNbt.putString(AllTags.TOOL_MODULE_ID, toolModule.getId());
+        toolModuleNbt.putString(AllTagNames.TOOL_MODULE_ID, toolModule.getId());
         CompoundTag heldStackNbt = heldStack.getTag();
         if (heldStackNbt != null) {
             toolModuleNbt.put("tag", heldStackNbt.copy());
@@ -94,7 +94,7 @@ public abstract class BeltDeployerCallbacksMixin {
         if (!hasToolModulesNbt) {
             resultNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
         }
-        resultNbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+        resultNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
         copy.stack.setTag(resultNbt);
     }
 }

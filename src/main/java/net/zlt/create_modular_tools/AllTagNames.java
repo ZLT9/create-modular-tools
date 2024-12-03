@@ -6,8 +6,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public final class AllTags {
-    private AllTags() {
+public final class AllTagNames {
+    private AllTagNames() {
     }
 
     public static final String MODULAR_TOOL_DIRECT_ENCHANTMENTS = "DirectEnchantments";

@@ -24,7 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluids;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.block.entity.mold.AllMoldBlockEntityTypes;
@@ -2507,8 +2507,8 @@ public class CreateModularToolsClient implements ClientModInitializer {
         ClientPickBlockApplyCallback.EVENT.register((player, hit, stack) -> {
             if (stack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof MaterialMoldBlock) {
                 CompoundTag nbt = stack.getTag();
-                if (nbt != null && !nbt.contains(AllTags.ITEM_STACK_UUID, Tag.TAG_INT_ARRAY)) {
-                    nbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+                if (nbt != null && !nbt.contains(AllTagNames.ITEM_STACK_UUID, Tag.TAG_INT_ARRAY)) {
+                    nbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
                 }
             }
             return stack;
@@ -3292,13 +3292,13 @@ public class CreateModularToolsClient implements ClientModInitializer {
     }
 
     private static void registerEmptyMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, Set<ToolMaterialMoldBlock> moldBlocks, ToolModuleType toolModuleType, ResourceLocation textureId) {
-        moldTopTexture.registerTextureIdGetter((original, baseMoldBlock, nbt) -> original == null && moldBlocks.contains(baseMoldBlock) && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString(AllTags.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
+        moldTopTexture.registerTextureIdGetter((original, baseMoldBlock, nbt) -> original == null && moldBlocks.contains(baseMoldBlock) && ToolUtils.MoldSlotState.fromName(nbt.getCompound(toolModuleType.getTag()).getString(AllTagNames.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.EMPTY ? textureId : original);
     }
 
     private static void registerFullMoldTopTextureIdGetter(ToolModuleType.MoldTopTexture moldTopTexture, ToolModuleType toolModuleType, FlowingFluid fluid, ResourceLocation textureId) {
         moldTopTexture.registerTextureIdGetter((original, sandMoldBlock, nbt) -> {
             CompoundTag slotNbt = nbt.getCompound(toolModuleType.getTag());
-            return original == null && ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.FLUID && slotNbt.getString(AllTags.TOOL_MODULE_ID).equals(BuiltInRegistries.FLUID.getKey(fluid).toString()) ? textureId : original;
+            return original == null && ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE)) == ToolUtils.MoldSlotState.FLUID && slotNbt.getString(AllTagNames.TOOL_MODULE_ID).equals(BuiltInRegistries.FLUID.getKey(fluid).toString()) ? textureId : original;
         });
     }
 

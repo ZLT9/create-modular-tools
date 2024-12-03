@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.mold.MoldUtils;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.recipe.MoldPressingRecipe;
@@ -68,11 +68,11 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
             itemEntity.discard();
         } else {
             CompoundTag remainderNbt = remainder.getTag();
-            remainderNbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+            remainderNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
             CompoundTag remainderToolModulesNbt = ToolUtils.getToolModulesNbt(remainderNbt);
             for (String toolModuleTypeTag : remainderToolModulesNbt.getAllKeys()) {
                 CompoundTag remainderToolModuleNbt = new CompoundTag();
-                remainderToolModuleNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+                remainderToolModuleNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
                 remainderToolModulesNbt.put(toolModuleTypeTag, remainderToolModuleNbt);
             }
             itemEntity.setItem(remainder);
@@ -121,11 +121,11 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
 
         ItemStack remainder = input.stack.copy();
         CompoundTag remainderNbt = remainder.getTag();
-        remainderNbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+        remainderNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
         CompoundTag remainderToolModulesNbt = ToolUtils.getToolModulesNbt(remainderNbt);
         for (String toolModuleTypeTag : remainderToolModulesNbt.getAllKeys()) {
             CompoundTag remainderToolModuleNbt = new CompoundTag();
-            remainderToolModuleNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+            remainderToolModuleNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
             remainderToolModulesNbt.put(toolModuleTypeTag, remainderToolModuleNbt);
         }
 

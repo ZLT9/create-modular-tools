@@ -21,7 +21,7 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
@@ -54,7 +54,7 @@ public abstract class ToolMaterialMoldRenderer<T extends ToolMaterialMoldBlockEn
             }
 
             CompoundTag slotNbt = toolModulesNbt.getCompound(toolModuleType.getTag());
-            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTags.MOLD_SLOT_STATE));
+            ToolUtils.MoldSlotState slotState = ToolUtils.MoldSlotState.fromName(slotNbt.getString(AllTagNames.MOLD_SLOT_STATE));
             if (slotState == ToolUtils.MoldSlotState.EMPTY) {
                 ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
                 if (moldTopTexture == null) {
@@ -69,7 +69,7 @@ public abstract class ToolMaterialMoldRenderer<T extends ToolMaterialMoldBlockEn
                 continue;
             }
 
-            ToolModuleItem toolModule = ToolModuleRegistry.get(slotNbt.getString(AllTags.TOOL_MODULE_ID));
+            ToolModuleItem toolModule = ToolModuleRegistry.get(slotNbt.getString(AllTagNames.TOOL_MODULE_ID));
             if (toolModule == null) {
                 ToolModuleType.MoldTopTexture moldTopTexture = toolModuleType.getMoldTopTexture(getMoldBlock(), toolModulesNbt);
                 if (moldTopTexture == null) {

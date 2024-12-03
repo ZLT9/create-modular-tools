@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
@@ -193,10 +193,10 @@ public abstract class ToolMaterialMoldBlockEntity extends BlockEntity implements
         if (MoldRegistry.isCompatible(getModularTool(), toolModuleType)) {
             CompoundTag slotNbt = new CompoundTag();
             if (toolModule == null) {
-                slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+                slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
             } else {
-                slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.SOLID.toString());
-                slotNbt.putString(AllTags.TOOL_MODULE_ID, toolModule.getId());
+                slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.SOLID.toString());
+                slotNbt.putString(AllTagNames.TOOL_MODULE_ID, toolModule.getId());
                 if (toolModuleNbt != null) {
                     slotNbt.put("tag", toolModuleNbt);
                 }
@@ -237,7 +237,7 @@ public abstract class ToolMaterialMoldBlockEntity extends BlockEntity implements
         CompoundTag toolModulesNbt = new CompoundTag();
         for (ToolModuleType toolModuleType : MoldRegistry.getRequired(getModularTool())) {
             CompoundTag slotNbt = new CompoundTag();
-            slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+            slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
             toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
         }
         return toolModulesNbt;
@@ -286,7 +286,7 @@ public abstract class ToolMaterialMoldBlockEntity extends BlockEntity implements
                     fluids.add(fluid);
                 } else {
                     CompoundTag slotNbt = new CompoundTag();
-                    slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+                    slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
                     toolModulesNbt.put(toolModuleTypeTag, slotNbt);
                     hasEmptySlots = true;
                 }
@@ -296,7 +296,7 @@ public abstract class ToolMaterialMoldBlockEntity extends BlockEntity implements
         if (!fluidSlots.isEmpty() && (hasEmptySlots || fluids.size() > 1)) {
             for (String fluid : fluidSlots) {
                 CompoundTag slotNbt = new CompoundTag();
-                slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+                slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
                 toolModulesNbt.put(fluid, slotNbt);
             }
         }
@@ -304,7 +304,7 @@ public abstract class ToolMaterialMoldBlockEntity extends BlockEntity implements
         for (ToolModuleType toolModuleType : MoldRegistry.getRequired(getModularTool())) {
             if (!(toolModulesNbt.contains(toolModuleType.getTag(), Tag.TAG_COMPOUND))) {
                 CompoundTag slotNbt = new CompoundTag();
-                slotNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
+                slotNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.EMPTY.toString());
                 toolModulesNbt.put(toolModuleType.getTag(), slotNbt);
             }
         }

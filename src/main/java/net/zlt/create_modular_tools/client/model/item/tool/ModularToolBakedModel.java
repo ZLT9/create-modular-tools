@@ -21,7 +21,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -116,7 +116,7 @@ public class ModularToolBakedModel implements BakedModel {
         public BakedModel resolve(BakedModel model, ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity entity, int seed) {
             try {
                 CompoundTag nbt = stack.getTag();
-                return MODEL_CACHE.get(nbt.getUUID(AllTags.ITEM_STACK_UUID), () -> UNBAKED_MODEL.bakeOverride(stack, DUMMY_MODEL));
+                return MODEL_CACHE.get(nbt.getUUID(AllTagNames.ITEM_STACK_UUID), () -> UNBAKED_MODEL.bakeOverride(stack, DUMMY_MODEL));
             } catch (Exception e) {
                 return DYNAMIC_MODEL;
             }

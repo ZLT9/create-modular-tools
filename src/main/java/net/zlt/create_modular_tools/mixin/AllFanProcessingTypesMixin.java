@@ -9,7 +9,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
-import net.zlt.create_modular_tools.AllTags;
+import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
@@ -87,7 +87,7 @@ public abstract class AllFanProcessingTypesMixin {
 
         ItemStack result = stack.copy();
         CompoundTag resultNbt = result.getTag();
-        resultNbt.putUUID(AllTags.ITEM_STACK_UUID, UUID.randomUUID());
+        resultNbt.putUUID(AllTagNames.ITEM_STACK_UUID, UUID.randomUUID());
         CompoundTag resultToolModulesNbt = ToolUtils.getToolModulesNbt(resultNbt);
 
         for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
@@ -111,8 +111,8 @@ public abstract class AllFanProcessingTypesMixin {
                 }
 
                 CompoundTag resultToolModuleNbt = new CompoundTag();
-                resultToolModuleNbt.putString(AllTags.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.SOLID.toString());
-                resultToolModuleNbt.putString(AllTags.TOOL_MODULE_ID, toolModule.getId());
+                resultToolModuleNbt.putString(AllTagNames.MOLD_SLOT_STATE, ToolUtils.MoldSlotState.SOLID.toString());
+                resultToolModuleNbt.putString(AllTagNames.TOOL_MODULE_ID, toolModule.getId());
                 resultToolModulesNbt.put(toolModuleTypeTag, resultToolModuleNbt);
             }
         }
