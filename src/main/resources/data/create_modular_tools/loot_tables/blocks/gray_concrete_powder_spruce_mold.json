@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create_modular_tools:gray_concrete_powder_spruce_mold"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "create_modular_tools:blocks/gray_concrete_powder_spruce_mold"
+}

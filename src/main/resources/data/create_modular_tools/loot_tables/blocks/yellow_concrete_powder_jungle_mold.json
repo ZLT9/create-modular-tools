@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create_modular_tools:yellow_concrete_powder_jungle_mold"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "create_modular_tools:blocks/yellow_concrete_powder_jungle_mold"
+}

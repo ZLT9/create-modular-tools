@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_name",
+              "source": "block_entity"
+            },
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "ToolModules",
+                  "target": "BlockEntityTag.ToolModules"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "create_modular_tools:hoe_red_sand_crimson_mold"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "create_modular_tools:blocks/hoe_red_sand_crimson_mold"
+}
