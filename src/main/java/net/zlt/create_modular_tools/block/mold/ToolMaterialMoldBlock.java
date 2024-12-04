@@ -19,6 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -182,7 +183,25 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
 
-        return InteractionResult.PASS;
+        for (ToolModuleType toolModuleType : existingToolModuleTypes) {
+            ToolUtils.MoldSlot moldSlot = ToolUtils.getMoldSlot(toolModulesNbt, toolModuleType);
+            if (moldSlot.state() != ToolUtils.MoldSlotState.EMPTY) {
+                return InteractionResult.PASS;
+            }
+        }
+
+        if (!level.isClientSide) {
+            Block result = getMaterialMoldBlock();
+            if (result != this) {
+                level.destroyBlock(pos, false);
+            }
+            level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+            level.setBlock(pos, result.defaultBlockState().setValue(FACING, player.getDirection().getOpposite()), 3);
+        }
+
+        level.playSound(player, pos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 0.25f, 0.8f);
+
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override
