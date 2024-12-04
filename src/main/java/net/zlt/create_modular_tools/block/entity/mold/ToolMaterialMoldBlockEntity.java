@@ -24,7 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 import net.zlt.create_modular_tools.item.mold.ToolMaterialMoldItem;
 import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
@@ -264,8 +264,8 @@ public abstract class ToolMaterialMoldBlockEntity extends BlockEntity implements
         lightLevel = Math.min(15, lightLevel);
 
         BlockState blockState = getBlockState();
-        if (blockState.getValue(MaterialMoldBlock.LIGHT_LEVEL) != lightLevel) {
-            level.setBlock(getBlockPos(), getBlockState().setValue(MaterialMoldBlock.LIGHT_LEVEL, lightLevel), 23);
+        if (blockState.getValue(ToolMaterialMoldBlock.LIGHT_LEVEL) != lightLevel) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(ToolMaterialMoldBlock.LIGHT_LEVEL, lightLevel), 23);
         }
     }
 
