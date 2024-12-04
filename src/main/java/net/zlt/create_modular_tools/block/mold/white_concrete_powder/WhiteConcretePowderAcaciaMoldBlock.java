@@ -1,40 +1,47 @@
 package net.zlt.create_modular_tools.block.mold.white_concrete_powder;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.world.level.block.Block;
+import net.zlt.create_modular_tools.block.AllBlocks;
 import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
-import net.zlt.create_modular_tools.block.mold.MaterialMoldBlock;
+import net.zlt.create_modular_tools.block.mold.ToolMaterialMoldBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class WhiteConcretePowderAcaciaMoldBlock extends MaterialMoldBlock {
+public class WhiteConcretePowderAcaciaMoldBlock extends WhiteConcretePowderMoldBlock {
     public WhiteConcretePowderAcaciaMoldBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    protected MaterialMoldBlock getSwordMoldBlock() {
+    protected Block getMoldBlock() {
+        return AllBlocks.ACACIA_MOLD;
+    }
+
+    @Override
+    protected ToolMaterialMoldBlock getSwordMoldBlock() {
         return AllMoldBlocks.SWORD_WHITE_CONCRETE_POWDER_ACACIA_MOLD;
     }
 
     @Override
-    protected MaterialMoldBlock getShovelMoldBlock() {
+    protected ToolMaterialMoldBlock getShovelMoldBlock() {
         return AllMoldBlocks.SHOVEL_WHITE_CONCRETE_POWDER_ACACIA_MOLD;
     }
 
     @Override
-    protected MaterialMoldBlock getPickaxeMoldBlock() {
+    protected ToolMaterialMoldBlock getPickaxeMoldBlock() {
         return AllMoldBlocks.PICKAXE_WHITE_CONCRETE_POWDER_ACACIA_MOLD;
     }
 
     @Override
-    protected MaterialMoldBlock getAxeMoldBlock() {
+    protected ToolMaterialMoldBlock getAxeMoldBlock() {
         return AllMoldBlocks.AXE_WHITE_CONCRETE_POWDER_ACACIA_MOLD;
     }
 
     @Override
-    protected MaterialMoldBlock getHoeMoldBlock() {
+    protected ToolMaterialMoldBlock getHoeMoldBlock() {
         return AllMoldBlocks.HOE_WHITE_CONCRETE_POWDER_ACACIA_MOLD;
     }
 }

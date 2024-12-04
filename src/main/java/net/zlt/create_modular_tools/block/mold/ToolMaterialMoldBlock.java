@@ -211,28 +211,28 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
     }
 
     @Override
-    protected MaterialMoldBlock getSwordMoldBlock() {
-        return getMoldBlock().getSwordMoldBlock();
+    protected ToolMaterialMoldBlock getSwordMoldBlock() {
+        return getMaterialMoldBlock().getSwordMoldBlock();
     }
 
     @Override
-    protected MaterialMoldBlock getShovelMoldBlock() {
-        return getMoldBlock().getShovelMoldBlock();
+    protected ToolMaterialMoldBlock getShovelMoldBlock() {
+        return getMaterialMoldBlock().getShovelMoldBlock();
     }
 
     @Override
-    protected MaterialMoldBlock getPickaxeMoldBlock() {
-        return getMoldBlock().getPickaxeMoldBlock();
+    protected ToolMaterialMoldBlock getPickaxeMoldBlock() {
+        return getMaterialMoldBlock().getPickaxeMoldBlock();
     }
 
     @Override
-    protected MaterialMoldBlock getAxeMoldBlock() {
-        return getMoldBlock().getAxeMoldBlock();
+    protected ToolMaterialMoldBlock getAxeMoldBlock() {
+        return getMaterialMoldBlock().getAxeMoldBlock();
     }
 
     @Override
-    protected MaterialMoldBlock getHoeMoldBlock() {
-        return getMoldBlock().getHoeMoldBlock();
+    protected ToolMaterialMoldBlock getHoeMoldBlock() {
+        return getMaterialMoldBlock().getHoeMoldBlock();
     }
 
     public static void playMoldSlotSound(Level level, BlockPos pos, @Nullable Player player, boolean isReplacing, @Nullable CompoundTag previousContentsNbt) {
@@ -249,7 +249,7 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
 
     public abstract ModularToolItem getModularTool();
 
-    protected abstract MaterialMoldBlock getMoldBlock();
+    protected abstract MaterialMoldBlock getMaterialMoldBlock();
 
     protected ItemStack getStack(ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) {
         ItemStack stack = new ItemStack(this);

@@ -37,58 +37,71 @@ public abstract class MaterialMoldBlock extends MoldBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack stack = player.getItemInHand(hand);
-        if (stack.isEmpty()) {
-            return InteractionResult.PASS;
-        }
-
         Block result;
-        List<ToolModuleType> additionalSlots = new ArrayList<>();
-        boolean isModularTool = stack.getItem() instanceof ModularToolItem;
 
-        if (stack.is(AllItemTags.SWORDS_FOR_MOLDS)) {
-            result = getSwordMoldBlock();
+        if (stack.isEmpty()) {
+            result = getMoldBlock();
 
-            if (!isModularTool) {
-                additionalSlots.add(AllToolModuleTypes.SWORD_POMMEL);
-                additionalSlots.add(AllToolModuleTypes.SWORD_GUARD);
+            if (!level.isClientSide) {
+                if (result != this) {
+                    level.destroyBlock(pos, false);
+                }
+                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                level.setBlock(pos, result.defaultBlockState().setValue(FACING, player.getDirection().getOpposite()), 3);
+
+                if (!player.isCreative()) {
+                    player.getInventory().placeItemBackInInventory(getMaterialStack());
+                }
             }
-        } else if (stack.is(AllItemTags.SHOVELS_FOR_MOLDS)) {
-            result = getShovelMoldBlock();
-
-            if (!isModularTool) {
-                additionalSlots.add(AllToolModuleTypes.TOOL_GRIP);
-            }
-        } else if (stack.is(AllItemTags.PICKAXES_FOR_MOLDS)) {
-            result = getPickaxeMoldBlock();
-        } else if (stack.is(AllItemTags.AXES_FOR_MOLDS)) {
-            result = getAxeMoldBlock();
-        } else if (stack.is(AllItemTags.HOES_FOR_MOLDS)) {
-            result = getHoeMoldBlock();
         } else {
-            return InteractionResult.PASS;
-        }
+            List<ToolModuleType> additionalSlots = new ArrayList<>();
+            boolean isModularTool = stack.getItem() instanceof ModularToolItem;
 
-        if (!level.isClientSide) {
-            if (result != this) {
-                level.destroyBlock(pos, false);
+            if (stack.is(AllItemTags.SWORDS_FOR_MOLDS)) {
+                result = getSwordMoldBlock();
+
+                if (!isModularTool) {
+                    additionalSlots.add(AllToolModuleTypes.SWORD_POMMEL);
+                    additionalSlots.add(AllToolModuleTypes.SWORD_GUARD);
+                }
+            } else if (stack.is(AllItemTags.SHOVELS_FOR_MOLDS)) {
+                result = getShovelMoldBlock();
+
+                if (!isModularTool) {
+                    additionalSlots.add(AllToolModuleTypes.TOOL_GRIP);
+                }
+            } else if (stack.is(AllItemTags.PICKAXES_FOR_MOLDS)) {
+                result = getPickaxeMoldBlock();
+            } else if (stack.is(AllItemTags.AXES_FOR_MOLDS)) {
+                result = getAxeMoldBlock();
+            } else if (stack.is(AllItemTags.HOES_FOR_MOLDS)) {
+                result = getHoeMoldBlock();
+            } else {
+                return InteractionResult.PASS;
             }
-            level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-            level.setBlock(pos, result.defaultBlockState().setValue(FACING, player.getDirection().getOpposite()), 3);
-            if (level.getBlockEntity(pos) instanceof ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) {
-                toolMaterialMoldBlockEntity.clearToolModules();
-                if (isModularTool) {
-                    CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(stack);
-                    if (!toolModulesNbt.isEmpty()) {
-                        for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
-                            ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(toolModuleTypeTag);
-                            if (toolModuleType != null) {
-                                toolMaterialMoldBlockEntity.putToolModule(toolModuleType, null, null);
+
+            if (!level.isClientSide) {
+                if (result != this) {
+                    level.destroyBlock(pos, false);
+                }
+                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                level.setBlock(pos, result.defaultBlockState().setValue(FACING, player.getDirection().getOpposite()), 3);
+                if (level.getBlockEntity(pos) instanceof ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) {
+                    toolMaterialMoldBlockEntity.clearToolModules();
+                    if (isModularTool) {
+                        CompoundTag toolModulesNbt = ToolUtils.getToolModulesNbt(stack);
+                        if (!toolModulesNbt.isEmpty()) {
+                            for (String toolModuleTypeTag : toolModulesNbt.getAllKeys()) {
+                                ToolModuleType toolModuleType = ToolModuleTypeRegistry.get(toolModuleTypeTag);
+                                if (toolModuleType != null) {
+                                    toolMaterialMoldBlockEntity.putToolModule(toolModuleType, null, null);
+                                }
                             }
                         }
                     }
-                }
-                for (ToolModuleType toolModuleType : additionalSlots) {
-                    toolMaterialMoldBlockEntity.putToolModule(toolModuleType, null, null);
+                    for (ToolModuleType toolModuleType : additionalSlots) {
+                        toolMaterialMoldBlockEntity.putToolModule(toolModuleType, null, null);
+                    }
                 }
             }
         }
@@ -98,13 +111,17 @@ public abstract class MaterialMoldBlock extends MoldBlock {
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    protected abstract MaterialMoldBlock getSwordMoldBlock();
+    protected abstract Block getMoldBlock();
 
-    protected abstract MaterialMoldBlock getShovelMoldBlock();
+    protected abstract ItemStack getMaterialStack();
 
-    protected abstract MaterialMoldBlock getPickaxeMoldBlock();
+    protected abstract ToolMaterialMoldBlock getSwordMoldBlock();
 
-    protected abstract MaterialMoldBlock getAxeMoldBlock();
+    protected abstract ToolMaterialMoldBlock getShovelMoldBlock();
 
-    protected abstract MaterialMoldBlock getHoeMoldBlock();
+    protected abstract ToolMaterialMoldBlock getPickaxeMoldBlock();
+
+    protected abstract ToolMaterialMoldBlock getAxeMoldBlock();
+
+    protected abstract ToolMaterialMoldBlock getHoeMoldBlock();
 }
