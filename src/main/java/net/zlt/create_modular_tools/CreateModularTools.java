@@ -22,6 +22,8 @@ import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.item.mold.AllMoldItems;
 import net.zlt.create_modular_tools.loot.function.AllLootItemFunctionTypes;
 import net.zlt.create_modular_tools.mold.MoldRegistry;
+import net.zlt.create_modular_tools.ponder.AllPonderScenes;
+import net.zlt.create_modular_tools.ponder.PonderIndex;
 import net.zlt.create_modular_tools.recipe.AllRecipeTypes;
 import net.zlt.create_modular_tools.sound.AllSoundEvents;
 import net.zlt.create_modular_tools.tool.AllModularTools;
@@ -64,6 +66,8 @@ public class CreateModularTools implements ModInitializer {
         AllEntityTypes.init();
         AllCriterionTriggers.init();
         AllLootItemFunctionTypes.init();
+        AllPonderScenes.init();
+        PonderIndex.init();
 
         MoldRegistry.addRequired(AllModularTools.SWORD, AllToolModuleTypes.TOOL_HANDLE, AllToolModuleTypes.SWORD_BLADE);
         MoldRegistry.addCompatible(AllModularTools.SWORD, AllToolModuleTypes.SWORD_POMMEL, AllToolModuleTypes.SWORD_GUARD);
