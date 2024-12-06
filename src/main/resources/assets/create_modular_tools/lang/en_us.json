@@ -1488,5 +1488,19 @@
   "entity.create_modular_tools.brass_pickaxe_head": "Brass Pickaxe Head",
   "entity.create_modular_tools.diamond_pickaxe_head": "Diamond Pickaxe Head",
   "create_modular_tools.resource_pack.hindu_arabic_enchantments": "Hindu-Arabic Enchantments",
-  "sound.create_modular_tools.enchanted_tool_module": "Enchanted tool module"
+  "sound.create_modular_tools.enchanted_tool_module": "Enchanted tool module",
+  "create_modular_tools.ponder.mold_setup.header": "Setting up Molds",
+  "create_modular_tools.ponder.mold_setup.text_1": "Place a mold to start preparing it for use",
+  "create_modular_tools.ponder.mold_setup.text_2": "Use sand, red sand, or concrete powder to fill it",
+  "create_modular_tools.ponder.mold_setup.text_3": "Right-Click with an empty hand to remove its contents",
+  "create_modular_tools.ponder.mold_setup.text_4": "Use a tool to cast its shape",
+  "create_modular_tools.ponder.mold_setup.text_5": "Right-Click with an empty hand to remove its shape",
+  "create_modular_tools.ponder.mold_using.header": "Using Molds",
+  "create_modular_tools.ponder.mold_using.text_1": "Use a compatible tool module to put it in the mold",
+  "create_modular_tools.ponder.mold_using.text_2": "Right-Click a module with an empty hand to remove it from the mold",
+  "create_modular_tools.ponder.mold_using.text_3": "Right-Click the shape of an optional tool module to remove it from the mold",
+  "create_modular_tools.ponder.mold_using.text_4": "Left-Click the mold to grab it",
+  "create_modular_tools.ponder.mold_using.text_5": "Use a Spout to pour lava or molten metal into the mold's empty slots",
+  "create_modular_tools.ponder.mold_using.text_6": "Use an Encased Fan with water to solidify the molten metal in the mold",
+  "create_modular_tools.ponder.mold_using.text_7": "Use a Mechanical Press to assemble the modular tool"
 }

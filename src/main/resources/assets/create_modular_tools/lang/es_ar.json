@@ -1488,5 +1488,19 @@
   "entity.create_modular_tools.brass_pickaxe_head": "Cabeza de pico de latón",
   "entity.create_modular_tools.diamond_pickaxe_head": "Cabeza de pico de diamante",
   "create_modular_tools.resource_pack.hindu_arabic_enchantments": "Encantamientos indo-arábigos",
-  "sound.create_modular_tools.enchanted_tool_module": "Módulo de herramienta encantado"
+  "sound.create_modular_tools.enchanted_tool_module": "Módulo de herramienta encantado",
+  "create_modular_tools.ponder.mold_setup.header": "Configurar moldes",
+  "create_modular_tools.ponder.mold_setup.text_1": "Poné un molde para empezar a prepararlo para usar",
+  "create_modular_tools.ponder.mold_setup.text_2": "Usá arena, arena rojiza, o cemento para llenarlo",
+  "create_modular_tools.ponder.mold_setup.text_3": "Usá click derecho con una mano vacía para sacarle su contenido",
+  "create_modular_tools.ponder.mold_setup.text_4": "Usá una herramienta para darle su forma",
+  "create_modular_tools.ponder.mold_setup.text_5": "Usá click derecho con una mano vacía para sacarle su forma",
+  "create_modular_tools.ponder.mold_using.header": "Usar moldes",
+  "create_modular_tools.ponder.mold_using.text_1": "Usá un módulo de herramienta compatible para ponerlo en el molde",
+  "create_modular_tools.ponder.mold_using.text_2": "Usá click derecho en un módulo con una mano vacía para sacarlo del molde",
+  "create_modular_tools.ponder.mold_using.text_3": "Usá click derecho en la forma de un módulo de herramienta opcional para sacarla del molde",
+  "create_modular_tools.ponder.mold_using.text_4": "Usá click izquierdo en el molde para agarrarlo",
+  "create_modular_tools.ponder.mold_using.text_5": "Usá un Spout para verter lava o metal fundido en los espacios vacíos del molde",
+  "create_modular_tools.ponder.mold_using.text_6": "Usá un Encased Fan con agua para solidificar el metal fundido en el molde",
+  "create_modular_tools.ponder.mold_using.text_7": "Usá una Mechanical Press para ensamblar la herramienta modular"
 }
