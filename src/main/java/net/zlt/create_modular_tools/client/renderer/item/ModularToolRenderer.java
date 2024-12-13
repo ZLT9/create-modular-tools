@@ -17,7 +17,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.zlt.create_modular_tools.mixin.ItemRendererAccessor;
+import net.zlt.create_modular_tools.mixin.client.ItemRendererAccessor;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;

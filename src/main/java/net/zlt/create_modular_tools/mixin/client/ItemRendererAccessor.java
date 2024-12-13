@@ -1,4 +1,4 @@
-package net.zlt.create_modular_tools.mixin;
+package net.zlt.create_modular_tools.mixin.client;
 
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.renderer.entity.ItemRenderer;
