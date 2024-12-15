@@ -1,5 +1,6 @@
 package net.zlt.create_modular_tools.block;
 
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.fabricmc.fabric.api.entity.FakePlayer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -20,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class MoldBlock extends HorizontalDirectionalBlock {
+public class MoldBlock extends HorizontalDirectionalBlock implements IWrenchable {
     public static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0);
     public static final VoxelShape COLLISION_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
 
