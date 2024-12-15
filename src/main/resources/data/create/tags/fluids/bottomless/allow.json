@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "create_modular_tools:molten_iron",
+    "create_modular_tools:molten_copper",
+    "create_modular_tools:molten_gold",
+    "create_modular_tools:molten_netherite",
+    "create_modular_tools:molten_zinc",
+    "create_modular_tools:molten_brass",
+    "create_modular_tools:molten_diamond"
+  ]
+}
