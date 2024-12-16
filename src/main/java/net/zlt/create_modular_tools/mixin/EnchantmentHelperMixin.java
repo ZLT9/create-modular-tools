@@ -18,12 +18,12 @@ public abstract class EnchantmentHelperMixin {
     }
 
     @ModifyExpressionValue(method = "getEnchantmentCost", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/Item;getEnchantmentValue()I"))
-    private static int createModularTools$getEnchantmentCost(int original, @Local(argsOnly = true) ItemStack stack, @Local Item item) {
+    private static int createModularTools$getEnchantmentValueToGetCost(int original, @Local(argsOnly = true) ItemStack stack, @Local Item item) {
         return getEnchantmentValue(original, stack, item);
     }
 
     @ModifyExpressionValue(method = "selectEnchantment", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/Item;getEnchantmentValue()I"))
-    private static int createModularTools$selectEnchantment(int original, @Local(argsOnly = true) ItemStack stack, @Local Item item) {
+    private static int createModularTools$getEnchantmentValueToSelectEnchantment(int original, @Local(argsOnly = true) ItemStack stack, @Local Item item) {
         return getEnchantmentValue(original, stack, item);
     }
 }
