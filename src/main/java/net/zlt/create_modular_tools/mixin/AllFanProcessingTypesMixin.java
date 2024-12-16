@@ -34,7 +34,7 @@ public abstract class AllFanProcessingTypesMixin {
     private static SplashingRecipe.SplashingWrapper SPLASHING_WRAPPER;
 
     @ModifyReturnValue(method = "canProcess", at = @At("RETURN"))
-    private boolean createModularTools$canProcess(boolean original, @Local(argsOnly = true) ItemStack stack, @Local(argsOnly = true) Level level) {
+    private boolean createModularTools$canSolidifyMold(boolean original, @Local(argsOnly = true) ItemStack stack, @Local(argsOnly = true) Level level) {
         if (original) {
             return true;
         }
@@ -74,7 +74,7 @@ public abstract class AllFanProcessingTypesMixin {
     }
 
     @Inject(method = "process", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
-    private void createModularTools$process(ItemStack stack, Level level, CallbackInfoReturnable<List<ItemStack>> cir) {
+    private void createModularTools$solidifyMold(ItemStack stack, Level level, CallbackInfoReturnable<List<ItemStack>> cir) {
         if (!(stack.getItem() instanceof ToolMaterialMoldItem)) {
             return;
         }
