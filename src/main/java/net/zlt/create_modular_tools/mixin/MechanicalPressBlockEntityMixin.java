@@ -48,7 +48,7 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
     }
 
     @Inject(method = "tryProcessInWorld", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/press/MechanicalPressBlockEntity;getRecipe(Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional;"), cancellable = true)
-    private void createModularTools$tryProcessInWorld(ItemEntity itemEntity, boolean simulate, CallbackInfoReturnable<Boolean> cir, @Local ItemStack item) {
+    private void createModularTools$tryPressMoldInWorld(ItemEntity itemEntity, boolean simulate, CallbackInfoReturnable<Boolean> cir, @Local ItemStack item) {
         Optional<MoldPressingRecipe> recipe = getMoldPressingRecipe(item);
         if (recipe.isEmpty()) {
             return;
@@ -97,7 +97,7 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
     }
 
     @Inject(method = "tryProcessOnBelt", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/press/MechanicalPressBlockEntity;getRecipe(Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional;"), cancellable = true)
-    private void createModularTools$tryProcessOnBelt(TransportedItemStack input, List<ItemStack> outputList, boolean simulate, CallbackInfoReturnable<Boolean> cir) {
+    private void createModularTools$tryPressMoldOnBelt(TransportedItemStack input, List<ItemStack> outputList, boolean simulate, CallbackInfoReturnable<Boolean> cir) {
         Optional<MoldPressingRecipe> recipe = getMoldPressingRecipe(input.stack);
         if (recipe.isEmpty()) {
             return;
