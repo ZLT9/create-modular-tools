@@ -32,7 +32,7 @@ public abstract class FillingBySpoutMixin {
     private static Container WRAPPER;
 
     @Inject(method = "canItemBeFilled", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
-    private static void createModularTools$canItemBeFilled(Level world, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+    private static void createModularTools$canMoldBeFilled(Level world, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (!(stack.getItem() instanceof ToolMaterialMoldItem) || AllRecipeTypes.MOLD_FILLING.find(WRAPPER, world).isEmpty()) {
             return;
         }
@@ -57,7 +57,7 @@ public abstract class FillingBySpoutMixin {
     }
 
     @Inject(method = "getRequiredAmountForItem", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
-    private static void createModularTools$getRequiredAmountForItem(Level world, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<Long> cir) {
+    private static void createModularTools$getRequiredAmountForMold(Level world, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<Long> cir) {
         if (!(stack.getItem() instanceof ToolMaterialMoldItem moldItem)) {
             return;
         }
@@ -95,7 +95,7 @@ public abstract class FillingBySpoutMixin {
     }
 
     @Inject(method = "fillItem", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
-    private static void createModularTools$fillItem(Level world, long requiredAmount, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<ItemStack> cir) {
+    private static void createModularTools$fillMold(Level world, long requiredAmount, ItemStack stack, FluidStack availableFluid, CallbackInfoReturnable<ItemStack> cir) {
         if (!(stack.getItem() instanceof ToolMaterialMoldItem moldItem) || !(moldItem.getBlock() instanceof ToolMaterialMoldBlock moldBlock)) {
             return;
         }
