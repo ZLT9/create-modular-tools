@@ -14,7 +14,7 @@ public abstract class ItemEntityMixin {
     public abstract ItemStack getItem();
 
     @ModifyExpressionValue(method = "fireImmune", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;fireImmune()Z"))
-    private boolean createModularTools$fireImmune(boolean original) {
+    private boolean createModularTools$isFireproof(boolean original) {
         return original || getItem().getItem() instanceof FireproofItem fireproofItem && fireproofItem.isFireproof(getItem());
     }
 }
