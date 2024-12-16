@@ -42,7 +42,7 @@ public abstract class SawBlockEntityMixin extends BlockBreakingKineticBlockEntit
     }
 
     @Inject(method = "getRecipes", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/recipe/RecipeConditions;isOfType([Lnet/minecraft/world/item/crafting/RecipeType;)Ljava/util/function/Predicate;"), cancellable = true)
-    private void createModularTools$getRecipes(CallbackInfoReturnable<List<? extends Recipe<?>>> cir) {
+    private void createModularTools$getModularToolCuttingRecipe(CallbackInfoReturnable<List<? extends Recipe<?>>> cir) {
         ItemStack inputStack = inventory.getStackInSlot(0);
         if (!(inputStack.getItem() instanceof ModularToolItem modularToolItem) || AllRecipeTypes.MODULAR_TOOL_CUTTING.find(inventory, level).isEmpty()) {
             return;
