@@ -26,7 +26,7 @@ import java.util.Optional;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public abstract class MoltenMetalFluid extends FlowingFluid implements SolidifiableFluid {
+public abstract class MoltenMetalFluid extends FlowingFluid implements SolidifiableFluid, CustomFogLava {
     protected abstract Block getBlock();
 
     @Override

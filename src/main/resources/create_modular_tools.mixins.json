@@ -24,6 +24,8 @@
     "WeaponEnchantmentCategoryMixin"
   ],
   "client": [
+    "client.CameraMixin",
+    "client.FogRendererMixin",
     "client.ItemRendererAccessor",
     "client.LevelRendererMixin"
   ],

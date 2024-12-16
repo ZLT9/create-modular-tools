@@ -45,6 +45,11 @@ public abstract class MoltenBrassFluid extends MoltenMetalFluid {
         return com.simibubi.create.AllBlocks.BRASS_BLOCK.get();
     }
 
+    @Override
+    public float[] getColor() {
+        return new float[]{ 0.71f, 0.53f, 0.0f };
+    }
+
     public static class Flowing extends MoltenBrassFluid {
         @Override
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {

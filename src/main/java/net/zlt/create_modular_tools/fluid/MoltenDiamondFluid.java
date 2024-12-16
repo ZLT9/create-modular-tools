@@ -46,6 +46,11 @@ public abstract class MoltenDiamondFluid extends MoltenMetalFluid {
         return Blocks.DIAMOND_BLOCK;
     }
 
+    @Override
+    public float[] getColor() {
+        return new float[]{ 0.53f, 0.76f, 0.74f };
+    }
+
     public static class Flowing extends MoltenDiamondFluid {
         @Override
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {

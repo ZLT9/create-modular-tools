@@ -46,6 +46,11 @@ public abstract class MoltenCopperFluid extends MoltenMetalFluid {
         return Blocks.COPPER_BLOCK;
     }
 
+    @Override
+    public float[] getColor() {
+        return new float[]{ 0.76f, 0.33f, 0.0f };
+    }
+
     public static class Flowing extends MoltenCopperFluid {
         @Override
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {

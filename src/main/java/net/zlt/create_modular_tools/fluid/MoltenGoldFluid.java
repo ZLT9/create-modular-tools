@@ -67,6 +67,11 @@ public abstract class MoltenGoldFluid extends MoltenMetalFluid {
         return Blocks.GOLD_BLOCK;
     }
 
+    @Override
+    public float[] getColor() {
+        return new float[]{ 0.71f, 0.57f, 0.0f };
+    }
+
     public static class Flowing extends MoltenGoldFluid {
         @Override
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {

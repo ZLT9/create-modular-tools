@@ -45,6 +45,11 @@ public abstract class MoltenZincFluid extends MoltenMetalFluid {
         return com.simibubi.create.AllBlocks.ZINC_BLOCK.get();
     }
 
+    @Override
+    public float[] getColor() {
+        return new float[]{ 0.41f, 0.57f, 0.49f };
+    }
+
     public static class Flowing extends MoltenZincFluid {
         @Override
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {

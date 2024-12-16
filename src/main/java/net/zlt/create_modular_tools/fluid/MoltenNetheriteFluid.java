@@ -46,6 +46,11 @@ public abstract class MoltenNetheriteFluid extends MoltenMetalFluid {
         return Blocks.NETHERITE_BLOCK;
     }
 
+    @Override
+    public float[] getColor() {
+        return new float[]{ 0.14f, 0.03f, 0.05f };
+    }
+
     public static class Flowing extends MoltenNetheriteFluid {
         @Override
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
