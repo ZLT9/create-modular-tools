@@ -16,7 +16,7 @@ public abstract class PlayerMixin extends LivingEntity {
     }
 
     @ModifyExpressionValue(method = "getDestroySpeed", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/enchantment/EnchantmentHelper;hasAquaAffinity(Lnet/minecraft/world/entity/LivingEntity;)Z"))
-    private boolean createModularTools$getDestroySpeed(boolean original) {
+    private boolean createModularTools$isWaterproof(boolean original) {
         return original || getMainHandItem().getItem() instanceof WaterproofItem waterproofItem && waterproofItem.isWaterproof(getMainHandItem());
     }
 }
