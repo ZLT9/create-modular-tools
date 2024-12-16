@@ -30,7 +30,7 @@ public abstract class GenericItemEmptyingMixin {
     private static Container WRAPPER;
 
     @Inject(method = "canItemBeEmptied", at = @At(value = "RETURN", ordinal = 2), cancellable = true)
-    private static void createModularTools$canItemBeEmptied(Level world, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+    private static void createModularTools$canMoldBeEmptied(Level world, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (!(stack.getItem() instanceof ToolMaterialMoldItem) || AllRecipeTypes.MOLD_EMPTYING.find(WRAPPER, world).isEmpty()) {
             return;
         }
@@ -64,7 +64,7 @@ public abstract class GenericItemEmptyingMixin {
     }
 
     @Inject(method = "emptyItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;copy()Lnet/minecraft/world/item/ItemStack;"), cancellable = true)
-    private static void createModularTools$emptyItem(Level world, ItemStack stack, boolean simulate, CallbackInfoReturnable<Pair<FluidStack, ItemStack>> cir) {
+    private static void createModularTools$emptyMold(Level world, ItemStack stack, boolean simulate, CallbackInfoReturnable<Pair<FluidStack, ItemStack>> cir) {
         if (!(stack.getItem() instanceof ToolMaterialMoldItem)) {
             return;
         }
