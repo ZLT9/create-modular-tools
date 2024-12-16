@@ -11,12 +11,12 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(GrindstoneMenu.class)
 public abstract class GrindstoneMenuMixin {
     @ModifyExpressionValue(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 0))
-    private boolean createModularTools$createResult1(boolean original, @Local(ordinal = 0) ItemStack itemStack) {
+    private boolean createModularTools$ignoreFirstModularToolInGrindstone(boolean original, @Local(ordinal = 0) ItemStack itemStack) {
         return original || itemStack.getItem() instanceof ModularToolItem;
     }
 
     @ModifyExpressionValue(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 1))
-    private boolean createModularTools$createResult2(boolean original, @Local(ordinal = 1) ItemStack itemStack2) {
+    private boolean createModularTools$ignoreSecondModularToolInGrindstone(boolean original, @Local(ordinal = 1) ItemStack itemStack2) {
         return original || itemStack2.getItem() instanceof ModularToolItem;
     }
 }
