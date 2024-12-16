@@ -25,7 +25,7 @@ public abstract class LevelRendererMixin {
     private ClientLevel level;
 
     @ModifyExpressionValue(method = "renderHitOutline", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getShape(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;"))
-    private VoxelShape createModularTools$renderHitOutline(VoxelShape original, @Local(argsOnly = true) Entity entity, @Local(argsOnly = true) BlockPos pos, @Local(argsOnly = true) BlockState state) {
+    private VoxelShape createModularTools$renderMoldOutline(VoxelShape original, @Local(argsOnly = true) Entity entity, @Local(argsOnly = true) BlockPos pos, @Local(argsOnly = true) BlockState state) {
         return state.getBlock() instanceof MoldBlock ? state.getVisualShape(level, pos, CollisionContext.of(entity)) : original;
     }
 }
