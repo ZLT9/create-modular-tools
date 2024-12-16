@@ -14,7 +14,7 @@ public abstract class ItemStackMixin {
     public abstract Item getItem();
 
     @ModifyExpressionValue(method = "isDamageableItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/Item;getMaxDamage()I"))
-    private int createModularTools$isDamageableItem(int original) {
+    private int createModularTools$getStackMaxDamage(int original) {
         return original <= 0 && getItem() instanceof DamageableItem damageableItem ? damageableItem.getMaxDamage((ItemStack) (Object) this) : original;
     }
 }
