@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(targets = "net.minecraft.world.item.enchantment.EnchantmentCategory$6")
 public abstract class WeaponEnchantmentCategoryMixin {
     @ModifyReturnValue(method = "canEnchant", at = @At("RETURN"))
-    private boolean createModularTools$canEnchant(boolean original, @Local(argsOnly = true) Item item) {
+    private boolean createModularTools$canEnchantModularWeapon(boolean original, @Local(argsOnly = true) Item item) {
         return original || item instanceof ModularToolItem modularTool && modularTool.canApplyEnchantmentOf(EnchantmentCategory.WEAPON);
     }
 }
