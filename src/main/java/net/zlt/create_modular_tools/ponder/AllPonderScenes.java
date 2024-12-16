@@ -255,7 +255,7 @@ public final class AllPonderScenes {
         scene.idle(10);
         scene.world.modifyBlockEntity(spout, MechanicalPressBlockEntity.class, be -> be.getPressingBehaviour().start(PressingBehaviour.Mode.BELT));
         scene.idle(30);
-        scene.world.modifyBlockEntity(spout, MechanicalPressBlockEntity.class, be -> be.getPressingBehaviour().makePressingParticleEffect(util.vector.centerOf(mold.south()).add(0, 8 / 16f, 0), solidMoldStack));
+        scene.world.modifyBlockEntity(spout, MechanicalPressBlockEntity.class, be -> be.getPressingBehaviour().makePressingParticleEffect(util.vector.centerOf(mold).add(0, 8 / 16f, 0), solidMoldStack));
         scene.world.removeItemsFromBelt(mold);
         scene.world.createItemOnBeltLike(mold, Direction.UP, AllMoldItems.PICKAXE_SAND_OAK_MOLD.getDefaultInstance());
         ItemStack modularPickaxe = new ItemStack(AllItems.MODULAR_PICKAXE);
