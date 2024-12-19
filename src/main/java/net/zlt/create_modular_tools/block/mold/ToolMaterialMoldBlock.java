@@ -2,7 +2,6 @@ package net.zlt.create_modular_tools.block.mold;
 
 import com.simibubi.create.content.fluids.tank.FluidTankBlock;
 import com.simibubi.create.content.kinetics.deployer.DeployerFakePlayer;
-import net.fabricmc.fabric.api.entity.FakePlayer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,7 +20,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -211,22 +209,21 @@ public abstract class ToolMaterialMoldBlock extends MaterialMoldBlock implements
 
     @Override
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {
-        if (level.isClientSide || player instanceof FakePlayer) {
+        if (!(level.getBlockEntity(pos) instanceof ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity)) {
+            super.attack(state, level, pos, player);
             return;
         }
 
-        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (level.isClientSide) {
+            return;
+        }
 
         level.destroyBlock(pos, false);
         if (level.getBlockState(pos) == state || player.isCreative()) {
             return;
         }
 
-        if (blockEntity instanceof ToolMaterialMoldBlockEntity toolMaterialMoldBlockEntity) {
-            player.getInventory().placeItemBackInInventory(getStack(toolMaterialMoldBlockEntity));
-        } else {
-            player.getInventory().placeItemBackInInventory(asItem().getDefaultInstance());
-        }
+        player.getInventory().placeItemBackInInventory(getStack(toolMaterialMoldBlockEntity));
     }
 
     @Override

@@ -1,7 +1,6 @@
 package net.zlt.create_modular_tools.block;
 
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
-import net.fabricmc.fabric.api.entity.FakePlayer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -63,7 +62,7 @@ public class MoldBlock extends HorizontalDirectionalBlock implements IWrenchable
 
     @Override
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {
-        if (level.isClientSide || player instanceof FakePlayer) {
+        if (level.isClientSide) {
             return;
         }
 
