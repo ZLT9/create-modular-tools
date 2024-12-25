@@ -130,7 +130,8 @@ public final class AllEntityTypes {
             .dimensions(EntityDimensions.scalable(0.5f, 0.5f))
             .trackRangeChunks(4)
             .trackedUpdateRate(20)
-            .forceTrackedVelocityUpdates(true));
+            .forceTrackedVelocityUpdates(true)
+            .fireImmune());
 
     public static final EntityType<ThrownZincPickaxeHead> ZINC_PICKAXE_HEAD = register("zinc_pickaxe_head",
         FabricEntityTypeBuilder.<ThrownZincPickaxeHead>create(MobCategory.MISC, ThrownZincPickaxeHead::new)
