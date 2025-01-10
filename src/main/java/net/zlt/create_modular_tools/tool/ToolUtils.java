@@ -163,17 +163,13 @@ public final class ToolUtils {
     }
 
     public static InteractionResult shovelOnUse(BlockState originalBlockState, UseOnContext context, ModularToolItem modularTool) {
-        if (didBlockChange(originalBlockState, context)) {
+        if (didBlockChange(originalBlockState, context) || context.getClickedFace() == Direction.DOWN) {
             return InteractionResult.PASS;
         }
 
         Level level = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
         BlockState blockState = level.getBlockState(blockPos);
-
-        if (context.getClickedFace() == Direction.DOWN) {
-            return InteractionResult.PASS;
-        }
 
         Player player = context.getPlayer();
         BlockState blockState2 = ShovelItem.FLATTENABLES.get(blockState.getBlock());
