@@ -5,17 +5,12 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
-import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.CreateModularTools;
-import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.mold.AllMoldItems;
-import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
-import net.zlt.create_modular_tools.tool.module.AllToolModules;
+import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -27,26 +22,7 @@ public final class AllCreativeModeTabs {
 
     public static final ResourceKey<CreativeModeTab> BASE_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), CreateModularTools.asResource("base"));
     public static final CreativeModeTab BASE = register(BASE_KEY, FabricItemGroup.builder()
-        .icon(() -> {
-            ItemStack stack = new ItemStack(AllItems.MODULAR_PICKAXE);
-            CompoundTag stackNbt = stack.getOrCreateTag();
-            CompoundTag toolModulesNbt = new CompoundTag();
-            CompoundTag pickaxeHeadNbt = new CompoundTag();
-            pickaxeHeadNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.BRASS_PICKAXE_HEAD.getId());
-            toolModulesNbt.put(AllToolModuleTypes.PICKAXE_HEAD.getTag(), pickaxeHeadNbt);
-            CompoundTag toolHandleNbt = new CompoundTag();
-            toolHandleNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.NETHERITE_TOOL_HANDLE.getId());
-            toolModulesNbt.put(AllToolModuleTypes.TOOL_HANDLE.getTag(), toolHandleNbt);
-            CompoundTag toolGripNbt = new CompoundTag();
-            toolGripNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.ZINC_TOOL_GRIP.getId());
-            toolModulesNbt.put(AllToolModuleTypes.TOOL_GRIP.getTag(), toolGripNbt);
-            stackNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
-            CompoundTag toolWrapNbt = new CompoundTag();
-            toolWrapNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.PURPLE_WOOL_TOOL_WRAP.getId());
-            toolModulesNbt.put(AllToolModuleTypes.TOOL_WRAP.getTag(), toolWrapNbt);
-            stackNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
-            return stack;
-        })
+        .icon(ModularToolItem::getModIcon)
         .title(Component.translatable("itemGroup.create_modular_tools.base"))
         .build());
 

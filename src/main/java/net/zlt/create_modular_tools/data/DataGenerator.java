@@ -8,21 +8,16 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
-import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.advancement.BoomerangCatchTrigger;
 import net.zlt.create_modular_tools.advancement.BoomerangHitEntityTrigger;
 import net.zlt.create_modular_tools.advancement.BoomerangStopTrigger;
 import net.zlt.create_modular_tools.advancement.BoomerangThrowTrigger;
-import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
 import net.zlt.create_modular_tools.item.AllItems;
-import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
-import net.zlt.create_modular_tools.tool.module.AllToolModules;
+import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 
 import java.util.function.Consumer;
 
@@ -43,26 +38,9 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         public void generateAdvancement(Consumer<Advancement> consumer) {
-            ItemStack rootStack = new ItemStack(AllItems.MODULAR_PICKAXE);
-            CompoundTag rootStackToolModulesNbt = new CompoundTag();
-            CompoundTag pickaxeHeadNbt = new CompoundTag();
-            pickaxeHeadNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.BRASS_PICKAXE_HEAD.getId());
-            rootStackToolModulesNbt.put(AllToolModuleTypes.PICKAXE_HEAD.getTag(), pickaxeHeadNbt);
-            CompoundTag toolHandleNbt = new CompoundTag();
-            toolHandleNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.NETHERITE_TOOL_HANDLE.getId());
-            rootStackToolModulesNbt.put(AllToolModuleTypes.TOOL_HANDLE.getTag(), toolHandleNbt);
-            CompoundTag toolGripNbt = new CompoundTag();
-            toolGripNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.ZINC_TOOL_GRIP.getId());
-            rootStackToolModulesNbt.put(AllToolModuleTypes.TOOL_GRIP.getTag(), toolGripNbt);
-            CompoundTag toolWrapNbt = new CompoundTag();
-            toolWrapNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.PURPLE_WOOL_TOOL_WRAP.getId());
-            rootStackToolModulesNbt.put(AllToolModuleTypes.TOOL_WRAP.getTag(), toolWrapNbt);
-            CompoundTag rootStackNbt = rootStack.getOrCreateTag();
-            rootStackNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, rootStackToolModulesNbt);
-
             Advancement rootAdvancement = Advancement.Builder.advancement()
                 .display(
-                    rootStack,
+                    ModularToolItem.getModIcon(),
                     Component.translatable("advancements.create_modular_tools.root.title"),
                     Component.translatable("advancements.create_modular_tools.root.description"),
                     ADVANCEMENTS_BACKGROUND,

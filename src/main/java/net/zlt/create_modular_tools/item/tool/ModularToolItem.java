@@ -32,13 +32,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_modular_tools.AllTagNames;
 import net.zlt.create_modular_tools.CreateModularTools;
 import net.zlt.create_modular_tools.block.entity.mold.ToolMaterialMoldBlockEntity;
-import net.zlt.create_modular_tools.item.CustomEnchantabilityItem;
-import net.zlt.create_modular_tools.item.FireproofItem;
-import net.zlt.create_modular_tools.item.TooltipUtils;
-import net.zlt.create_modular_tools.item.WaterproofItem;
+import net.zlt.create_modular_tools.item.*;
 import net.zlt.create_modular_tools.item.tool.module.ToolModuleItem;
 import net.zlt.create_modular_tools.tool.ModularToolRegistry;
 import net.zlt.create_modular_tools.tool.ToolUtils;
+import net.zlt.create_modular_tools.tool.module.AllToolModules;
 import net.zlt.create_modular_tools.tool.module.ToolModuleRegistry;
 import net.zlt.create_modular_tools.tool.module.ToolModuleType;
 import org.jetbrains.annotations.Nullable;
@@ -522,5 +520,22 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
     @Unmodifiable
     public List<ToolModuleType> getRequired() {
         return REQUIRED;
+    }
+
+    public static ItemStack withModules(Item modularTool, ToolModuleItem... toolModules) {
+        CompoundTag resultToolModulesNbt = new CompoundTag();
+        for (ToolModuleItem toolModule : toolModules) {
+            CompoundTag toolModuleNbt = new CompoundTag();
+            toolModuleNbt.putString(AllTagNames.TOOL_MODULE_ID, toolModule.getId());
+            resultToolModulesNbt.put(toolModule.getType().getTag(), toolModuleNbt);
+        }
+        ItemStack result = new ItemStack(modularTool);
+        CompoundTag resultNbt = result.getOrCreateTag();
+        resultNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, resultToolModulesNbt);
+        return result;
+    }
+
+    public static ItemStack getModIcon() {
+        return ModularToolItem.withModules(AllItems.MODULAR_PICKAXE, AllToolModules.BRASS_PICKAXE_HEAD, AllToolModules.NETHERITE_TOOL_HANDLE, AllToolModules.ZINC_TOOL_GRIP, AllToolModules.PURPLE_WOOL_TOOL_WRAP);
     }
 }

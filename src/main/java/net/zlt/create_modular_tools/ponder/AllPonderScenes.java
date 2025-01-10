@@ -22,6 +22,7 @@ import net.zlt.create_modular_tools.block.mold.AllMoldBlocks;
 import net.zlt.create_modular_tools.fluid.AllFluids;
 import net.zlt.create_modular_tools.item.AllItems;
 import net.zlt.create_modular_tools.item.mold.AllMoldItems;
+import net.zlt.create_modular_tools.item.tool.ModularToolItem;
 import net.zlt.create_modular_tools.tool.ToolUtils;
 import net.zlt.create_modular_tools.tool.module.AllToolModuleTypes;
 import net.zlt.create_modular_tools.tool.module.AllToolModules;
@@ -258,17 +259,7 @@ public final class AllPonderScenes {
         scene.world.modifyBlockEntity(spout, MechanicalPressBlockEntity.class, be -> be.getPressingBehaviour().makePressingParticleEffect(util.vector.centerOf(mold).add(0, 8 / 16f, 0), solidMoldStack));
         scene.world.removeItemsFromBelt(mold);
         scene.world.createItemOnBeltLike(mold, Direction.UP, AllMoldItems.PICKAXE_SAND_OAK_MOLD.getDefaultInstance());
-        ItemStack modularPickaxe = new ItemStack(AllItems.MODULAR_PICKAXE);
-        CompoundTag modularPickaxeNbt = modularPickaxe.getOrCreateTag();
-        CompoundTag toolModulesNbt = new CompoundTag();
-        CompoundTag handleNbt = new CompoundTag();
-        handleNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.ZINC_TOOL_HANDLE.getId());
-        CompoundTag headNbt = new CompoundTag();
-        headNbt.putString(AllTagNames.TOOL_MODULE_ID, AllToolModules.BRASS_PICKAXE_HEAD.getId());
-        toolModulesNbt.put(AllToolModuleTypes.TOOL_HANDLE.getTag(), handleNbt);
-        toolModulesNbt.put(AllToolModuleTypes.PICKAXE_HEAD.getTag(), headNbt);
-        modularPickaxeNbt.put(ToolMaterialMoldBlockEntity.TOOL_MODULES_TAG, toolModulesNbt);
-        scene.world.createItemEntity(util.vector.centerOf(mold.above()), util.vector.of(0, 0, 0), modularPickaxe);
+        scene.world.createItemEntity(util.vector.centerOf(mold.above()), util.vector.of(0, 0, 0), ModularToolItem.withModules(AllItems.MODULAR_PICKAXE, AllToolModules.ZINC_TOOL_HANDLE, AllToolModules.BRASS_PICKAXE_HEAD));
     }
 
     public static void init() {
