@@ -29,7 +29,7 @@ import java.util.UUID;
 
 @Mixin(AllFanProcessingTypes.SplashingType.class)
 public abstract class AllFanProcessingTypesMixin {
-    @Shadow
+    @Shadow(remap = false)
     @Final
     private static SplashingRecipe.SplashingWrapper SPLASHING_WRAPPER;
 

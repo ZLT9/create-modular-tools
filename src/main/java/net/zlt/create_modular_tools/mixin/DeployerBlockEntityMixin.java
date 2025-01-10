@@ -24,7 +24,7 @@ public abstract class DeployerBlockEntityMixin extends KineticBlockEntity {
         super(type, pos, blockState);
     }
 
-    @Inject(method = "getRecipe", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/deployer/DeployerRecipeSearchEvent;addRecipe(Ljava/util/function/Supplier;I)V", ordinal = 0))
+    @Inject(method = "getRecipe", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/deployer/DeployerRecipeSearchEvent;addRecipe(Ljava/util/function/Supplier;I)V", ordinal = 0), remap = false)
     private void createModularTools$addToolModuleDeployingRecipes(ItemStack stack, CallbackInfoReturnable<Recipe<? extends Container>> cir, @Local DeployerRecipeSearchEvent event) {
         event.addRecipe(() -> SequencedAssemblyRecipe.getRecipe(level, event.getInventory(), AllRecipeTypes.TOOL_MODULE_DEPLOYING.getType(), ToolModuleDeployingRecipe.class), 100);
         event.addRecipe(() -> AllRecipeTypes.TOOL_MODULE_DEPLOYING.find(event.getInventory(), level), 50);

@@ -34,7 +34,7 @@ import java.util.stream.Stream;
 
 @Mixin(SawBlockEntity.class)
 public abstract class SawBlockEntityMixin extends BlockBreakingKineticBlockEntity implements SidedStorageBlockEntity {
-    @Shadow
+    @Shadow(remap = false)
     public ProcessingInventory inventory;
 
     private SawBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {

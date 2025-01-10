@@ -37,7 +37,7 @@ public abstract class MechanicalPressBlockEntityMixin extends BasinOperatingBloc
     @Final
     private static Container pressingInv;
 
-    @Shadow
+    @Shadow(remap = false)
     public PressingBehaviour pressingBehaviour;
 
     @Shadow
