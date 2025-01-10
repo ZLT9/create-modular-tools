@@ -105,4 +105,4 @@ You can preview the enchantments and features your tool will have by checking th
 
 Once assembled, you can continue enchanting your modular tools directly, without needing to worry about the individual modules, just like with Vanilla tools. However, surpassing Vanilla enchantment level limits is only possible by enchanting the modules individually before assembling the tool.
 
-Disassembling an enchanted modular tool will return all of its modules with their enchantments intact. If you enchanted the tool directly after assembly, you'll also receive an enchanted book with all the added enchantments, ensuring you don't lose any.
+Disassembling an enchanted modular tool will return all of its modules with their enchantments intact. If you enchanted the tool directly after assembly, you'll also receive the original enchanted books you used, ensuring you don't lose any.
