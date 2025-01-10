@@ -6,14 +6,11 @@ import com.simibubi.create.foundation.utility.Components;
 import io.github.fabricators_of_create.porting_lib.item.DamageableItem;
 import io.github.fabricators_of_create.porting_lib.tool.ToolAction;
 import io.github.fabricators_of_create.porting_lib.tool.addons.ToolActionItem;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -471,9 +468,6 @@ public abstract class ModularToolItem extends Item implements DamageableItem, To
     public abstract Component getToolCategorySingularName();
 
     public abstract Component getToolCategoryPluralName();
-
-    @Environment(EnvType.CLIENT)
-    public abstract ResourceLocation getIcon();
 
     public void addCompatible(ToolModuleType toolModuleType) {
         if (isCompatible(toolModuleType)) {
