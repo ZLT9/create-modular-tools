@@ -1,19 +1,14 @@
-# Create: Modular Tools
+<p align="center">
+    <img alt="Create Modular Tools Title" src="https://github.com/user-attachments/assets/128af0ae-4ff9-49d7-9103-bb2d7fb16149" />
+</p>
 
-A Minecraft Create mod addon that adds modular tools.
+<p align="center">A Minecraft Create mod addon that adds modular tools.</p>
 
-Get it on [Modrinth](https://modrinth.com/mod/create-modular-tools).
+<p align="center">Get it on <a href="https://modrinth.com/mod/create-modular-tools">Modrinth</a>.</p>
 
-> **Note**: This mod is in alpha, so expect things to break or change in the future.  
-> It is not recommended for survival worlds yet, but feel free to test it and report any issues.  
-> Suggestions are also welcome!
+<p align="center">If you'd like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!</p>
 
-If you would like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!
-
-<a href='https://ko-fi.com/J3J810251V' target='_blank'><img src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com'></a>
-
-Currently, the mod does not have ponders or custom integration with recipe viewer mods like JEI, REI, or EMI.  
-Refer to the sections below to learn how to use the mod.
+<div align="center"><a href="https://ko-fi.com/J3J810251V" target="_blank"><img src="https://github.com/user-attachments/assets/b3ce08b0-f5d0-4052-8fdc-a211c76d1726" alt="Buy Me a Coffee at ko-fi.com" /></a></div>
 
 ## Melting Metals
 
@@ -29,7 +24,7 @@ You can disassemble tools (both Vanilla and modular) into their parts by droppin
 
 ![Disassembling an Iron Sword](https://github.com/user-attachments/assets/0b2a657b-e0ae-423c-b923-614954d380bc)
 
-Each part of a tool is referred to as a 'tool module'.
+Each part of a tool is referred to as a tool module.
 
 ## Tool Modules
 
@@ -75,16 +70,13 @@ You can use a Mechanical Press to assemble a modular tool from a completely soli
 
 ![Modular Hoe Recipe](https://github.com/user-attachments/assets/f60031fd-80de-407e-957c-639f032af633)
 
-> **Note**: If molten metal is present in a mold, you cannot add or remove tool modules, but you can still replace existing tool modules.
+> **Note:**
+>
+> If molten metal is present in a mold, you cannot add or remove tool modules, but you can still replace existing tool modules.
 
 ## Permanent Tools
 
 Modular tools do not disappear when broken. Instead, they remain in your inventory, so you can repair them later on.
-
-> **Note**: Broken modular tools retain their enchantments, meaning you can use Mending to repair them with XP, even if they are broken.
-> 
-> In the current alpha version of Create: Modular Tools, the only way to repair modular tools that don't have Mending is disassembling and reassembling them, which doesn't remove their enchantments.  
-> A more robust repair system may be added in a future version.
 
 ## Enchanting Modules
 
